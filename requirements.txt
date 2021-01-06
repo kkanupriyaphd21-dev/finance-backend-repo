@@ -1,0 +1,2 @@
+# Core dependencies for the backend bootstrap
+Django==3.2
