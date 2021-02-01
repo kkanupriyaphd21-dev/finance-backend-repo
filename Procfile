@@ -1,2 +1,1 @@
-web: python manage.py runserver 0.0.0.0:8000
-release: echo release ready
+web: sh -c 'gunicorn microfinance.wsgi && pip install -r requirements.txt'
