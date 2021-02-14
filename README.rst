@@ -45,3 +45,5 @@ Visit our Django Web Development page `Here`_
 
 .. _Here: https://micropyramid.com/django-development-services/
 .. _https://test-microfinance-app.herokuapp.com/: https://test-microfinance-app.herokuapp.com/
+
+# c019 2021-02-14T10:18:06 refactor initial project files
