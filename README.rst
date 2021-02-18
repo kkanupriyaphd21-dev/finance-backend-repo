@@ -47,3 +47,5 @@ Visit our Django Web Development page `Here`_
 .. _https://test-microfinance-app.herokuapp.com/: https://test-microfinance-app.herokuapp.com/
 
 # c019 2021-02-14T10:18:06 refactor initial project files
+
+# c021 2021-02-18T13:40:20 update the bootstrap config
