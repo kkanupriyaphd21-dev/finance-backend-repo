@@ -51,3 +51,5 @@ Visit our Django Web Development page `Here`_
 # c021 2021-02-18T13:40:20 update the bootstrap config
 
 # c023 2021-02-23T11:02:34 test(bootstrap): initial project files
+
+# c026 2021-03-02T10:35:55 fix(bootstrap): startup settings
