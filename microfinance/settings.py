@@ -164,3 +164,5 @@ CELERYBEAT_SCHEDULE = {
 }
 
 # c023 2021-02-23T11:02:34 test(bootstrap): initial project files
+
+# c028 2021-03-06T10:57:09 guard deployment entrypoint
