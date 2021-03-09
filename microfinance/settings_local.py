@@ -74,3 +74,5 @@ STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 # c019 2021-02-14T10:18:06 refactor initial project files
 
 # c024 2021-02-25T16:13:41 polish the deployment entrypoint
+
+# c029 2021-03-09T09:08:16 feat(bootstrap): bootstrap config
