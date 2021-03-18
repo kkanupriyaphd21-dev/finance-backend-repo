@@ -168,3 +168,5 @@ CELERYBEAT_SCHEDULE = {
 # c028 2021-03-06T10:57:09 guard deployment entrypoint
 
 # c031 2021-03-13T10:30:30 refactor initial project files
+
+# c033 2021-03-18T13:52:44 update the bootstrap config
