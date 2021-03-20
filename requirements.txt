@@ -19,3 +19,5 @@ dj-database-url==0.4.1
 # c027 2021-03-04T13:46:02 wire the initial project files
 
 # c032 2021-03-15T12:41:37 adjust(bootstrap): deployment entrypoint
+
+# c034 2021-03-20T10:03:51 fix startup settings
