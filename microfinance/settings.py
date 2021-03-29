@@ -170,3 +170,5 @@ CELERYBEAT_SCHEDULE = {
 # c031 2021-03-13T10:30:30 refactor initial project files
 
 # c033 2021-03-18T13:52:44 update the bootstrap config
+
+# c038 2021-03-29T10:47:19 fix(bootstrap): startup settings
