@@ -23,3 +23,5 @@ dj-database-url==0.4.1
 # c034 2021-03-20T10:03:51 fix startup settings
 
 # c037 2021-03-27T10:36:12 tighten bootstrap config
+
+# c042 2021-04-07T16:31:47 fix the startup settings
