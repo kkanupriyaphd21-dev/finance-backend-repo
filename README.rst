@@ -59,3 +59,5 @@ Visit our Django Web Development page `Here`_
 # c036 2021-03-24T16:25:05 polish the deployment entrypoint
 
 # c041 2021-04-05T09:20:40 feat(bootstrap): bootstrap config
+
+# c046 2021-04-16T10:15:15 fix startup settings
