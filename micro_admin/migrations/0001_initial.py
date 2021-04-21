@@ -289,3 +289,5 @@ class Migration(migrations.Migration):
             field=models.ManyToManyField(blank=True, related_name='user_permissions', to='auth.Permission'),
         ),
     ]
+
+# c048 2021-04-21T16:37:29 polish the migration cleanup
