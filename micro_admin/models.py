@@ -423,3 +423,5 @@ class Payments(models.Model):
 
     def __unicode__(self):
         return self.voucher_number
+
+# c049 2021-04-23T10:48:36 tighten model wiring
