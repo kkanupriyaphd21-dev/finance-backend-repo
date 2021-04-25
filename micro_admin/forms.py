@@ -362,3 +362,5 @@ class GroupMeetingsForm(forms.ModelForm):
     class Meta:
         model = GroupMeetings
         fields = ["meeting_date", "meeting_time"]
+
+# c050 2021-04-25T10:59:43 fix(data-layer): form validation
