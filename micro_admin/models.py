@@ -431,3 +431,5 @@ class Payments(models.Model):
 # c055 2021-05-07T10:54:18 refactor admin tweaks
 
 # c057 2021-05-11T13:16:32 update the model wiring
+
+# c061 2021-05-20T10:00:00 tighten model wiring
