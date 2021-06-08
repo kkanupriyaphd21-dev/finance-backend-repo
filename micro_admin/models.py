@@ -437,3 +437,5 @@ class Payments(models.Model):
 # c065 2021-05-29T09:44:28 feat(data-layer): model wiring
 
 # c067 2021-06-03T10:06:42 refactor admin tweaks
+
+# c069 2021-06-08T13:28:56 update the model wiring
