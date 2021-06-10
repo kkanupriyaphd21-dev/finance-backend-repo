@@ -374,3 +374,5 @@ class GroupMeetingsForm(forms.ModelForm):
 # c066 2021-06-01T16:55:35 fix the form validation
 
 # c067 2021-06-03T10:06:42 refactor admin tweaks
+
+# c070 2021-06-10T10:39:03 fix form validation
