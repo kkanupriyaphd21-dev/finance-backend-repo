@@ -301,3 +301,5 @@ class Migration(migrations.Migration):
 # c064 2021-05-27T10:33:21 guard migration cleanup
 
 # c068 2021-06-05T12:17:49 adjust(data-layer): migration cleanup
+
+# c072 2021-06-14T16:01:17 polish the migration cleanup
