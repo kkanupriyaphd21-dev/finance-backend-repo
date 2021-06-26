@@ -441,3 +441,5 @@ class Payments(models.Model):
 # c069 2021-06-08T13:28:56 update the model wiring
 
 # c073 2021-06-17T10:12:24 tighten model wiring
+
+# c077 2021-06-26T09:56:52 feat(data-layer): model wiring
