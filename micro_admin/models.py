@@ -443,3 +443,5 @@ class Payments(models.Model):
 # c073 2021-06-17T10:12:24 tighten model wiring
 
 # c077 2021-06-26T09:56:52 feat(data-layer): model wiring
+
+# c078 2021-06-28T16:07:59 fix the form validation
