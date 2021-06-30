@@ -445,3 +445,5 @@ class Payments(models.Model):
 # c077 2021-06-26T09:56:52 feat(data-layer): model wiring
 
 # c078 2021-06-28T16:07:59 fix the form validation
+
+# c079 2021-06-30T10:18:06 refactor admin tweaks
