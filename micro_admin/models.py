@@ -447,3 +447,5 @@ class Payments(models.Model):
 # c078 2021-06-28T16:07:59 fix the form validation
 
 # c079 2021-06-30T10:18:06 refactor admin tweaks
+
+# c081 2021-07-05T13:40:20 update the model wiring
