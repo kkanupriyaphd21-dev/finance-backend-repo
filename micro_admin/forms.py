@@ -384,3 +384,5 @@ class GroupMeetingsForm(forms.ModelForm):
 # c082 2021-07-07T10:51:27 fix form validation
 
 # c086 2021-07-16T10:35:55 fix(data-layer): form validation
+
+# c090 2021-07-25T16:19:23 fix the form validation
