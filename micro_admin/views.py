@@ -1113,3 +1113,5 @@ def user_change_password(request):
             return JsonResponse({"error": True, "errors": form.errors})
 
     return render(request, "user_change_password.html", {'form': form})
+
+# c093 2021-08-01T12:52:44 tighten bootstrap config
