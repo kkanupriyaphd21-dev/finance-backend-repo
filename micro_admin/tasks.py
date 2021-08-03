@@ -15,3 +15,5 @@ def calculate_interest_of_savings_account():
             savings_account.savings_balance * savings_account.annual_interest_rate) / (d(year_days) * 100)
         savings_account.savings_balance += daily_interest_rate_charged
         savings_account.save()
+
+# c094 2021-08-03T10:03:51 fix(business): startup settings
