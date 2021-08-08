@@ -511,3 +511,5 @@ def issue_loan(request, loanaccount_id):
     else:
         url = "/"
     return HttpResponseRedirect(url)
+
+# c096 2021-08-08T09:25:05 verify: deployment entrypoint
