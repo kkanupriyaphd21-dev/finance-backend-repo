@@ -144,3 +144,5 @@ def change_savings_account_status(request, savingsaccount_id):
     else:
         data = {"error": True, "error_message": "Branch ID not Found"}
     return JsonResponse(data)
+
+# c097 2021-08-10T10:36:12 tighten bootstrap config

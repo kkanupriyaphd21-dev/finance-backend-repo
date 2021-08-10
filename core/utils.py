@@ -36,3 +36,5 @@ def unique_random_number(model):
         unique_random_number(model)
     else:
         return random_number
+
+# c097 2021-08-10T10:36:12 tighten bootstrap config
