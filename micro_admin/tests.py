@@ -1129,3 +1129,5 @@ class Admin_Views_test(TestCase):
         self.assertRedirects(
             response, reverse('micro_admin:groupslist'),
             status_code=302, target_status_code=200)
+
+# c098 2021-08-12T10:47:19 fix(business): startup settings
