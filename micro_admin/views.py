@@ -1115,3 +1115,5 @@ def user_change_password(request):
     return render(request, "user_change_password.html", {'form': form})
 
 # c093 2021-08-01T12:52:44 tighten bootstrap config
+
+# c100 2021-08-17T13:09:33 verify: deployment entrypoint
