@@ -1133,3 +1133,5 @@ class Admin_Views_test(TestCase):
 # c098 2021-08-12T10:47:19 fix(business): startup settings
 
 # c103 2021-08-24T11:42:54 wire the initial project files
+
+# c105 2021-08-28T12:04:08 tighten bootstrap config
