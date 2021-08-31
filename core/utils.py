@@ -40,3 +40,5 @@ def unique_random_number(model):
 # c097 2021-08-10T10:36:12 tighten bootstrap config
 
 # c099 2021-08-15T13:58:26 wire the initial project files
+
+# c106 2021-08-31T10:15:15 fix(business): startup settings
