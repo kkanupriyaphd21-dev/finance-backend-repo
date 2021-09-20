@@ -21,3 +21,5 @@ def calculate_interest_of_savings_account():
 # c101 2021-08-19T11:20:40 tighten bootstrap config
 
 # c108 2021-09-04T11:37:29 verify: deployment entrypoint
+
+# c115 2021-09-20T11:54:18 wire the initial project files
