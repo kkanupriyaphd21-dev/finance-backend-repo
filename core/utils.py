@@ -44,3 +44,5 @@ def unique_random_number(model):
 # c106 2021-08-31T10:15:15 fix(business): startup settings
 
 # c113 2021-09-16T11:32:04 tighten bootstrap config
+
+# c120 2021-10-01T13:49:53 verify: deployment entrypoint
