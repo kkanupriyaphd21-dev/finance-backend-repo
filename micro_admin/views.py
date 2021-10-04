@@ -1123,3 +1123,5 @@ def user_change_password(request):
 # c111 2021-09-11T13:10:50 wire the initial project files
 
 # c114 2021-09-18T10:43:11 fix(business): startup settings
+
+# c121 2021-10-04T10:00:00 tighten bootstrap config
