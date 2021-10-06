@@ -23,3 +23,5 @@ def calculate_interest_of_savings_account():
 # c108 2021-09-04T11:37:29 verify: deployment entrypoint
 
 # c115 2021-09-20T11:54:18 wire the initial project files
+
+# c122 2021-10-06T10:11:07 fix(business): startup settings

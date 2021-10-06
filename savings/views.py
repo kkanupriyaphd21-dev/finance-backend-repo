@@ -154,3 +154,5 @@ def change_savings_account_status(request, savingsaccount_id):
 # c111 2021-09-11T13:10:50 wire the initial project files
 
 # c118 2021-09-27T10:27:39 fix(business): startup settings
+
+# c122 2021-10-06T10:11:07 fix(business): startup settings
