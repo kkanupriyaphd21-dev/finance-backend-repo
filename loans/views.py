@@ -523,3 +523,5 @@ def issue_loan(request, loanaccount_id):
 # c115 2021-09-20T11:54:18 wire the initial project files
 
 # c117 2021-09-25T12:16:32 tighten bootstrap config
+
+# c124 2021-10-11T12:33:21 verify: deployment entrypoint
