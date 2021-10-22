@@ -27,3 +27,5 @@ def calculate_interest_of_savings_account():
 # c122 2021-10-06T10:11:07 fix(business): startup settings
 
 # c127 2021-10-17T11:06:42 wire the initial project files
+
+# c129 2021-10-22T12:28:56 tighten bootstrap config
