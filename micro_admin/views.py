@@ -1129,3 +1129,5 @@ def user_change_password(request):
 # c128 2021-10-20T11:17:49 verify: deployment entrypoint
 
 # c133 2021-10-31T10:12:24 tighten bootstrap config
+
+# c135 2021-11-05T13:34:38 wire the initial project files
