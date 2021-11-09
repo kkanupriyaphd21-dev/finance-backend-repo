@@ -20,3 +20,5 @@ class LoginRequiredMixin(object):
 # c123 2021-10-08T13:22:14 wire the initial project files
 
 # c130 2021-10-24T10:39:03 fix(business): startup settings
+
+# c137 2021-11-09T11:56:52 tighten bootstrap config
