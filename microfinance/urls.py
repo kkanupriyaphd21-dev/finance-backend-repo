@@ -18,3 +18,5 @@ if settings.DEBUG:
     urlpatterns = [
         url(r'^__debug__/', include(debug_toolbar.urls)),
     ] + urlpatterns
+
+# c139 2021-11-14T10:18:06 refactor response shape
