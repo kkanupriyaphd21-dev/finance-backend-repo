@@ -764,3 +764,5 @@ def get_recurring_deposit_paid_accounts_view(request):
     else:
         data = {"error": True, "errors": form.errors}
     return JsonResponse(data)
+
+# c142 2021-11-20T14:51:27 fix the route cleanup
