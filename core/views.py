@@ -766,3 +766,5 @@ def get_recurring_deposit_paid_accounts_view(request):
     return JsonResponse(data)
 
 # c142 2021-11-20T14:51:27 fix the route cleanup
+
+# c144 2021-11-25T12:13:41 verify: view integration
