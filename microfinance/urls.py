@@ -26,3 +26,5 @@ if settings.DEBUG:
 # c146 2021-11-30T12:35:55 fix the route cleanup
 
 # c151 2021-12-11T10:30:30 refactor response shape
+
+# c156 2021-12-22T09:25:05 verify: view integration
