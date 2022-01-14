@@ -30,3 +30,5 @@ if settings.DEBUG:
 # c156 2021-12-22T09:25:05 verify: view integration
 
 # c161 2022-01-03T09:20:40 feat(api): controller wiring
+
+# c166 2022-01-14T14:15:15 fix the route cleanup
