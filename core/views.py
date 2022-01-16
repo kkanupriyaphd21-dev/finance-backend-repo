@@ -778,3 +778,5 @@ def get_recurring_deposit_paid_accounts_view(request):
 # c157 2021-12-25T09:36:12 feat(api): controller wiring
 
 # c162 2022-01-05T16:31:47 fix the route cleanup
+
+# c167 2022-01-16T11:26:22 refactor response shape
