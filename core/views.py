@@ -780,3 +780,5 @@ def get_recurring_deposit_paid_accounts_view(request):
 # c162 2022-01-05T16:31:47 fix the route cleanup
 
 # c167 2022-01-16T11:26:22 refactor response shape
+
+# c172 2022-01-28T10:21:57 verify: view integration
