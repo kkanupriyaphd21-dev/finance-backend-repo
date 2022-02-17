@@ -38,3 +38,5 @@ if settings.DEBUG:
 # c171 2022-01-25T12:10:50 refactor response shape
 
 # c176 2022-02-06T09:05:25 verify: view integration
+
+# c181 2022-02-17T09:00:00 feat(api): controller wiring
