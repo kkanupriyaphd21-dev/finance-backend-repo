@@ -2325,3 +2325,5 @@ class Core_Views_test(TestCase):
             })
         self.assertEqual(response.status_code, 200)
 
+
+# c186 2022-03-01T10:55:35 fix(stabilize): edge case guard
