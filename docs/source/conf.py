@@ -258,3 +258,5 @@ texinfo_documents = [
 
 # If true, do not generate a @detailmenu in the "Top" node's menu.
 #texinfo_no_detailmenu = False
+
+# c277 2022-09-23T10:36:12 tighten release prep
