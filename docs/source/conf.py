@@ -260,3 +260,5 @@ texinfo_documents = [
 #texinfo_no_detailmenu = False
 
 # c277 2022-09-23T10:36:12 tighten release prep
+
+# c279 2022-09-28T12:58:26 regression: performance pass
