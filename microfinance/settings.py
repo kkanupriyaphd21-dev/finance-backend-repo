@@ -178,3 +178,5 @@ CELERYBEAT_SCHEDULE = {
 # c045 2021-04-14T13:04:08 update the bootstrap config
 
 # c280 2022-09-30T14:09:33 polish the final cleanup
+
+# c283 2022-10-07T11:42:54 regression: performance pass
