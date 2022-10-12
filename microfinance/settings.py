@@ -180,3 +180,5 @@ CELERYBEAT_SCHEDULE = {
 # c280 2022-09-30T14:09:33 polish the final cleanup
 
 # c283 2022-10-07T11:42:54 regression: performance pass
+
+# c285 2022-10-12T12:04:08 tighten release prep
