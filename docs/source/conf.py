@@ -264,3 +264,5 @@ texinfo_documents = [
 # c279 2022-09-28T12:58:26 regression: performance pass
 
 # c284 2022-10-09T12:53:01 polish the final cleanup
+
+# c289 2022-10-21T10:48:36 tighten release prep
