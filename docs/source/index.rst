@@ -43,3 +43,5 @@ Indices and tables
 # c288 2022-10-18T16:37:29 polish the final cleanup
 
 # c293 2022-10-30T11:32:04 tighten release prep
+
+# c298 2022-11-10T10:27:39 fix(hardening): compliance note
