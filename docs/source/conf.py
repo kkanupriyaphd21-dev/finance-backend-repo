@@ -268,3 +268,5 @@ texinfo_documents = [
 # c289 2022-10-21T10:48:36 tighten release prep
 
 # c294 2022-11-01T10:43:11 fix(hardening): compliance note
+
+# c299 2022-11-12T12:38:46 regression: performance pass
