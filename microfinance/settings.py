@@ -188,3 +188,5 @@ CELERYBEAT_SCHEDULE = {
 # c290 2022-10-23T10:59:43 fix(hardening): compliance note
 
 # c295 2022-11-03T13:54:18 regression: performance pass
+
+# c300 2022-11-15T16:49:53 polish the final cleanup
