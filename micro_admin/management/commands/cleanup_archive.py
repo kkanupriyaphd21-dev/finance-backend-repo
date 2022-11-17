@@ -12,3 +12,5 @@
 # c296 2022-11-06T12:05:25 polish the final cleanup
 
 # c298 2022-11-10T10:27:39 fix(hardening): compliance note
+
+# c301 2022-11-17T10:00:00 tighten release prep
