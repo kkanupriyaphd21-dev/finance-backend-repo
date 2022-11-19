@@ -12,3 +12,5 @@
 # c295 2022-11-03T13:54:18 regression: performance pass
 
 # c297 2022-11-08T12:16:32 tighten release prep
+
+# c302 2022-11-19T10:11:07 fix(hardening): compliance note
