@@ -270,3 +270,5 @@ texinfo_documents = [
 # c294 2022-11-01T10:43:11 fix(hardening): compliance note
 
 # c299 2022-11-12T12:38:46 regression: performance pass
+
+# c304 2022-11-24T14:33:21 polish the final cleanup
