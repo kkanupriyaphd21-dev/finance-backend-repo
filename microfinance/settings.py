@@ -192,3 +192,5 @@ CELERYBEAT_SCHEDULE = {
 # c300 2022-11-15T16:49:53 polish the final cleanup
 
 # c305 2022-11-26T11:44:28 tighten release prep
+
+# c310 2022-12-07T10:39:03 fix(hardening): compliance note
