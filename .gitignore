@@ -1,0 +1,7 @@
+*.pyc
+*~
+db.sqlite3
+.coverage
+static/images/signatures/
+static/images/users/
+static/CACHE
