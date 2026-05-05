@@ -1,0 +1,1722 @@
+{
+  "metadata": {
+    "generated": true,
+    "count": 71
+  },
+  "prs": [
+    {
+      "number": 1,
+      "title": "fix: Idempotency eviction race causes duplicate transaction events",
+      "body": "Fix for issue #1.",
+      "branch_name": "auto/pr-1",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_2",
+      "author_token_env": "GITHUB_TOKEN_2",
+      "reviewer_developer": "DEV_4",
+      "reviewer_token_env": "GITHUB_TOKEN_3",
+      "files_changed": [
+        "savings/views.py",
+        "src/risk/exposure.py",
+        "templates/listof_receipts.html"
+      ],
+      "created_date": "2021-08-03T12:15:00",
+      "merged_date": "2021-08-17T12:15:00",
+      "linked_issue_number": 1,
+      "milestone": "v1.0",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "Looks good; add a regression test."
+      }
+    },
+    {
+      "number": 2,
+      "title": "fix: Idempotency eviction race causes duplicate receipt events",
+      "body": "Fix for issue #2.",
+      "branch_name": "auto/pr-2",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_3",
+      "author_token_env": "GITHUB_TOKEN_3",
+      "reviewer_developer": "DEV_4",
+      "reviewer_token_env": "GITHUB_TOKEN_4",
+      "files_changed": [
+        "micro_admin/views.py",
+        "templates/listof_receipts.html",
+        "src/api/routes.py"
+      ],
+      "created_date": "2021-11-28T14:21:00",
+      "merged_date": "2021-12-04T14:21:00",
+      "linked_issue_number": 2,
+      "milestone": "v1.1",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "Looks good; add a regression test."
+      }
+    },
+    {
+      "number": 3,
+      "title": "fix: Ledger export misses timezone normalization for DST zones",
+      "body": "Fix for issue #3.",
+      "branch_name": "auto/pr-3",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_2",
+      "author_token_env": "GITHUB_TOKEN_2",
+      "reviewer_developer": "DEV_4",
+      "reviewer_token_env": "GITHUB_TOKEN_1",
+      "files_changed": [
+        "loans/views.py"
+      ],
+      "created_date": "2022-01-24T09:02:00",
+      "merged_date": "2022-02-13T09:02:00",
+      "linked_issue_number": 3,
+      "milestone": "v1.2",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "Looks good; add a regression test."
+      }
+    },
+    {
+      "number": 4,
+      "title": "fix: Ledger advisory lock collisions across partitions",
+      "body": "Fix for issue #6.",
+      "branch_name": "auto/pr-4",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_4",
+      "author_token_env": "GITHUB_TOKEN_4",
+      "reviewer_developer": "DEV_2",
+      "reviewer_token_env": "GITHUB_TOKEN_3",
+      "files_changed": [
+        "loans/views.py",
+        "src/risk/exposure.py",
+        "micro_admin/models.py"
+      ],
+      "created_date": "2022-12-09T10:32:00",
+      "merged_date": "2022-12-27T10:32:00",
+      "linked_issue_number": 6,
+      "milestone": "v1.1",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "Looks good; add a regression test."
+      }
+    },
+    {
+      "number": 5,
+      "title": "fix: Export advisory lock collisions across partitions",
+      "body": "Fix for issue #9.",
+      "branch_name": "auto/pr-5",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_4",
+      "author_token_env": "GITHUB_TOKEN_4",
+      "reviewer_developer": "DEV_2",
+      "reviewer_token_env": "GITHUB_TOKEN_1",
+      "files_changed": [
+        "loans/views.py",
+        "templates/listof_receipts.html",
+        "templates/generalledger.html"
+      ],
+      "created_date": "2022-04-23T09:05:00",
+      "merged_date": "2022-05-07T09:05:00",
+      "linked_issue_number": 9,
+      "milestone": "v1.0",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "Looks good; add a regression test."
+      }
+    },
+    {
+      "number": 6,
+      "title": "fix: Payment retry flow accepts zero amount on duplicate submit",
+      "body": "Fix for issue #10.",
+      "branch_name": "auto/pr-6",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_2",
+      "author_token_env": "GITHUB_TOKEN_2",
+      "reviewer_developer": "DEV_4",
+      "reviewer_token_env": "GITHUB_TOKEN_4",
+      "files_changed": [
+        "src/ledger/posting_engine.py",
+        "savings/views.py"
+      ],
+      "created_date": "2022-03-08T13:01:00",
+      "merged_date": "2022-03-09T13:01:00",
+      "linked_issue_number": 10,
+      "milestone": "v1.2",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "Looks good; add a regression test."
+      }
+    },
+    {
+      "number": 7,
+      "title": "fix: Reconciliation API non-deterministic ordering breaks checksum",
+      "body": "Fix for issue #11.",
+      "branch_name": "auto/pr-7",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_4",
+      "author_token_env": "GITHUB_TOKEN_4",
+      "reviewer_developer": "DEV_3",
+      "reviewer_token_env": "GITHUB_TOKEN_2",
+      "files_changed": [
+        "templates/generalledger.html",
+        "micro_admin/views.py",
+        "savings/views.py"
+      ],
+      "created_date": "2023-07-10T15:51:00",
+      "merged_date": "2023-07-16T15:51:00",
+      "linked_issue_number": 11,
+      "milestone": "v1.0",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "Looks good; add a regression test."
+      }
+    },
+    {
+      "number": 8,
+      "title": "fix: Risk aggregation export misses timezone normalization for DST zones",
+      "body": "Fix for issue #14.",
+      "branch_name": "auto/pr-8",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_2",
+      "author_token_env": "GITHUB_TOKEN_2",
+      "reviewer_developer": "DEV_4",
+      "reviewer_token_env": "GITHUB_TOKEN_1",
+      "files_changed": [
+        "micro_admin/views.py"
+      ],
+      "created_date": "2023-12-27T15:09:00",
+      "merged_date": "2023-12-26T15:09:00",
+      "linked_issue_number": 14,
+      "milestone": "v1.1",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "Looks good; add a regression test."
+      }
+    },
+    {
+      "number": 9,
+      "title": "fix: Payment retry flow accepts zero amount on duplicate submit",
+      "body": "Fix for issue #15.",
+      "branch_name": "auto/pr-9",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_1",
+      "author_token_env": "GITHUB_TOKEN_1",
+      "reviewer_developer": "DEV_2",
+      "reviewer_token_env": "GITHUB_TOKEN_2",
+      "files_changed": [
+        "loans/views.py"
+      ],
+      "created_date": "2021-08-23T11:37:00",
+      "merged_date": "2021-08-31T11:37:00",
+      "linked_issue_number": 15,
+      "milestone": "v1.1",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "Looks good; add a regression test."
+      }
+    },
+    {
+      "number": 10,
+      "title": "fix: Idempotency eviction race causes duplicate disbursement events",
+      "body": "Fix for issue #16.",
+      "branch_name": "auto/pr-10",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_3",
+      "author_token_env": "GITHUB_TOKEN_3",
+      "reviewer_developer": "DEV_1",
+      "reviewer_token_env": "GITHUB_TOKEN_1",
+      "files_changed": [
+        "src/risk/exposure.py",
+        "loans/views.py",
+        "micro_admin/views.py"
+      ],
+      "created_date": "2021-07-05T16:13:00",
+      "merged_date": "2021-07-13T16:13:00",
+      "linked_issue_number": 16,
+      "milestone": "v1.2",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "Looks good; add a regression test."
+      }
+    },
+    {
+      "number": 11,
+      "title": "fix: Risk aggregation export misses timezone normalization for DST zones",
+      "body": "Fix for issue #18.",
+      "branch_name": "auto/pr-11",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_2",
+      "author_token_env": "GITHUB_TOKEN_2",
+      "reviewer_developer": "DEV_1",
+      "reviewer_token_env": "GITHUB_TOKEN_3",
+      "files_changed": [
+        "micro_admin/forms.py",
+        "micro_admin/models.py"
+      ],
+      "created_date": "2022-06-05T08:21:00",
+      "merged_date": "2022-06-15T08:21:00",
+      "linked_issue_number": 18,
+      "milestone": "v1.0",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "Looks good; add a regression test."
+      }
+    },
+    {
+      "number": 12,
+      "title": "fix: Payment retry flow accepts zero amount on duplicate submit",
+      "body": "Fix for issue #19.",
+      "branch_name": "auto/pr-12",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_4",
+      "author_token_env": "GITHUB_TOKEN_4",
+      "reviewer_developer": "DEV_2",
+      "reviewer_token_env": "GITHUB_TOKEN_1",
+      "files_changed": [
+        "micro_admin/forms.py",
+        "micro_admin/views.py"
+      ],
+      "created_date": "2022-04-26T09:22:00",
+      "merged_date": "2022-04-25T09:22:00",
+      "linked_issue_number": 19,
+      "milestone": "v1.0",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "Looks good; add a regression test."
+      }
+    },
+    {
+      "number": 13,
+      "title": "fix: Reconciliation API non-deterministic ordering breaks checksum",
+      "body": "Fix for issue #20.",
+      "branch_name": "auto/pr-13",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_2",
+      "author_token_env": "GITHUB_TOKEN_2",
+      "reviewer_developer": "DEV_1",
+      "reviewer_token_env": "GITHUB_TOKEN_4",
+      "files_changed": [
+        "src/risk/exposure.py",
+        "templates/generalledger.html",
+        "micro_admin/models.py"
+      ],
+      "created_date": "2023-06-13T12:52:00",
+      "merged_date": "2023-06-22T12:52:00",
+      "linked_issue_number": 20,
+      "milestone": "v1.1",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "Looks good; add a regression test."
+      }
+    },
+    {
+      "number": 14,
+      "title": "fix: Batch job OOM when group cardinality spikes",
+      "body": "Fix for issue #21.",
+      "branch_name": "auto/pr-14",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_3",
+      "author_token_env": "GITHUB_TOKEN_3",
+      "reviewer_developer": "DEV_2",
+      "reviewer_token_env": "GITHUB_TOKEN_4",
+      "files_changed": [
+        "templates/listof_receipts.html",
+        "micro_admin/views.py"
+      ],
+      "created_date": "2021-03-07T17:27:00",
+      "merged_date": "2021-03-25T17:27:00",
+      "linked_issue_number": 21,
+      "milestone": "v1.0",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "Looks good; add a regression test."
+      }
+    },
+    {
+      "number": 15,
+      "title": "fix: Batch job OOM when group cardinality spikes",
+      "body": "Fix for issue #22.",
+      "branch_name": "auto/pr-15",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_4",
+      "author_token_env": "GITHUB_TOKEN_4",
+      "reviewer_developer": "DEV_1",
+      "reviewer_token_env": "GITHUB_TOKEN_2",
+      "files_changed": [
+        "src/risk/exposure.py",
+        "micro_admin/models.py"
+      ],
+      "created_date": "2022-08-20T12:42:00",
+      "merged_date": "2022-08-28T12:42:00",
+      "linked_issue_number": 22,
+      "milestone": "v1.2",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "Looks good; add a regression test."
+      }
+    },
+    {
+      "number": 16,
+      "title": "fix: Receipt reprint flow shows duplicate row when print fails",
+      "body": "Fix for issue #23.",
+      "branch_name": "auto/pr-16",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_2",
+      "author_token_env": "GITHUB_TOKEN_2",
+      "reviewer_developer": "DEV_1",
+      "reviewer_token_env": "GITHUB_TOKEN_1",
+      "files_changed": [
+        "loans/views.py",
+        "savings/views.py",
+        "src/risk/exposure.py"
+      ],
+      "created_date": "2022-09-17T15:28:00",
+      "merged_date": "2022-09-17T15:28:00",
+      "linked_issue_number": 23,
+      "milestone": "v1.1",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "Looks good; add a regression test."
+      }
+    },
+    {
+      "number": 17,
+      "title": "fix: Mobile: client update loses branch selection on slow network",
+      "body": "Fix for issue #26.",
+      "branch_name": "auto/pr-17",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_4",
+      "author_token_env": "GITHUB_TOKEN_4",
+      "reviewer_developer": "DEV_3",
+      "reviewer_token_env": "GITHUB_TOKEN_1",
+      "files_changed": [
+        "loans/views.py"
+      ],
+      "created_date": "2023-12-18T10:47:00",
+      "merged_date": "2023-12-27T10:47:00",
+      "linked_issue_number": 26,
+      "milestone": "v1.0",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "Looks good; add a regression test."
+      }
+    },
+    {
+      "number": 18,
+      "title": "fix: Reconciliation API non-deterministic ordering breaks checksum",
+      "body": "Fix for issue #27.",
+      "branch_name": "auto/pr-18",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_2",
+      "author_token_env": "GITHUB_TOKEN_2",
+      "reviewer_developer": "DEV_3",
+      "reviewer_token_env": "GITHUB_TOKEN_3",
+      "files_changed": [
+        "templates/listof_receipts.html",
+        "src/ledger/posting_engine.py",
+        "micro_admin/models.py"
+      ],
+      "created_date": "2021-10-11T14:44:00",
+      "merged_date": "2021-10-19T14:44:00",
+      "linked_issue_number": 27,
+      "milestone": "v1.2",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "Looks good; add a regression test."
+      }
+    },
+    {
+      "number": 19,
+      "title": "fix: Mobile: client update loses branch selection on slow network",
+      "body": "Fix for issue #28.",
+      "branch_name": "auto/pr-19",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_2",
+      "author_token_env": "GITHUB_TOKEN_2",
+      "reviewer_developer": "DEV_4",
+      "reviewer_token_env": "GITHUB_TOKEN_1",
+      "files_changed": [
+        "src/risk/exposure.py",
+        "micro_admin/models.py",
+        "templates/listof_receipts.html"
+      ],
+      "created_date": "2023-12-01T17:57:00",
+      "merged_date": "2023-12-16T17:57:00",
+      "linked_issue_number": 28,
+      "milestone": "v1.0",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "Looks good; add a regression test."
+      }
+    },
+    {
+      "number": 20,
+      "title": "fix: Reconciliation export misses timezone normalization for DST zones",
+      "body": "Fix for issue #29.",
+      "branch_name": "auto/pr-20",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_1",
+      "author_token_env": "GITHUB_TOKEN_1",
+      "reviewer_developer": "DEV_2",
+      "reviewer_token_env": "GITHUB_TOKEN_3",
+      "files_changed": [
+        "src/ledger/posting_engine.py"
+      ],
+      "created_date": "2023-04-06T15:11:00",
+      "merged_date": "2023-04-24T15:11:00",
+      "linked_issue_number": 29,
+      "milestone": "v1.0",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "Looks good; add a regression test."
+      }
+    },
+    {
+      "number": 21,
+      "title": "fix: Reconciliation API non-deterministic ordering breaks checksum",
+      "body": "Fix for issue #30.",
+      "branch_name": "auto/pr-21",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_1",
+      "author_token_env": "GITHUB_TOKEN_1",
+      "reviewer_developer": "DEV_2",
+      "reviewer_token_env": "GITHUB_TOKEN_4",
+      "files_changed": [
+        "micro_admin/forms.py",
+        "micro_admin/views.py"
+      ],
+      "created_date": "2021-05-27T08:48:00",
+      "merged_date": "2021-06-05T08:48:00",
+      "linked_issue_number": 30,
+      "milestone": "v1.0",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "Looks good; add a regression test."
+      }
+    },
+    {
+      "number": 22,
+      "title": "fix: Export advisory lock collisions across partitions",
+      "body": "Fix for issue #31.",
+      "branch_name": "auto/pr-22",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_2",
+      "author_token_env": "GITHUB_TOKEN_2",
+      "reviewer_developer": "DEV_3",
+      "reviewer_token_env": "GITHUB_TOKEN_1",
+      "files_changed": [
+        "templates/generalledger.html",
+        "micro_admin/views.py",
+        "src/api/routes.py"
+      ],
+      "created_date": "2022-08-20T14:25:00",
+      "merged_date": "2022-09-03T14:25:00",
+      "linked_issue_number": 31,
+      "milestone": "v1.1",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "Looks good; add a regression test."
+      }
+    },
+    {
+      "number": 23,
+      "title": "fix: Search endpoint returns stale results after cache warmup",
+      "body": "Fix for issue #32.",
+      "branch_name": "auto/pr-23",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_2",
+      "author_token_env": "GITHUB_TOKEN_2",
+      "reviewer_developer": "DEV_3",
+      "reviewer_token_env": "GITHUB_TOKEN_4",
+      "files_changed": [
+        "loans/views.py"
+      ],
+      "created_date": "2022-12-25T15:45:00",
+      "merged_date": "2022-12-30T15:45:00",
+      "linked_issue_number": 32,
+      "milestone": "v1.2",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "Looks good; add a regression test."
+      }
+    },
+    {
+      "number": 24,
+      "title": "fix: Mobile: client update loses branch selection on slow network",
+      "body": "Fix for issue #34.",
+      "branch_name": "auto/pr-24",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_4",
+      "author_token_env": "GITHUB_TOKEN_4",
+      "reviewer_developer": "DEV_3",
+      "reviewer_token_env": "GITHUB_TOKEN_2",
+      "files_changed": [
+        "src/api/routes.py",
+        "templates/generalledger.html"
+      ],
+      "created_date": "2023-10-11T09:15:00",
+      "merged_date": "2023-10-26T09:15:00",
+      "linked_issue_number": 34,
+      "milestone": "v1.1",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "Looks good; add a regression test."
+      }
+    },
+    {
+      "number": 25,
+      "title": "fix: Posting worker export misses timezone normalization for DST zones",
+      "body": "Fix for issue #35.",
+      "branch_name": "auto/pr-25",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_4",
+      "author_token_env": "GITHUB_TOKEN_4",
+      "reviewer_developer": "DEV_2",
+      "reviewer_token_env": "GITHUB_TOKEN_1",
+      "files_changed": [
+        "src/ledger/posting_engine.py",
+        "loans/views.py",
+        "src/risk/exposure.py"
+      ],
+      "created_date": "2023-12-12T13:44:00",
+      "merged_date": "2023-12-19T13:44:00",
+      "linked_issue_number": 35,
+      "milestone": "v1.1",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "Looks good; add a regression test."
+      }
+    },
+    {
+      "number": 26,
+      "title": "fix: Mobile: client update loses branch selection on slow network",
+      "body": "Fix for issue #37.",
+      "branch_name": "auto/pr-26",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_3",
+      "author_token_env": "GITHUB_TOKEN_3",
+      "reviewer_developer": "DEV_4",
+      "reviewer_token_env": "GITHUB_TOKEN_4",
+      "files_changed": [
+        "src/risk/exposure.py"
+      ],
+      "created_date": "2023-05-15T10:03:00",
+      "merged_date": "2023-06-01T10:03:00",
+      "linked_issue_number": 37,
+      "milestone": "v1.0",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "Looks good; add a regression test."
+      }
+    },
+    {
+      "number": 27,
+      "title": "fix: Idempotency eviction race causes duplicate disbursement events",
+      "body": "Fix for issue #39.",
+      "branch_name": "auto/pr-27",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_2",
+      "author_token_env": "GITHUB_TOKEN_2",
+      "reviewer_developer": "DEV_1",
+      "reviewer_token_env": "GITHUB_TOKEN_4",
+      "files_changed": [
+        "loans/views.py"
+      ],
+      "created_date": "2022-05-25T09:10:00",
+      "merged_date": "2022-06-07T09:10:00",
+      "linked_issue_number": 39,
+      "milestone": "v1.0",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "Looks good; add a regression test."
+      }
+    },
+    {
+      "number": 28,
+      "title": "fix: Mobile: client update loses branch selection on slow network",
+      "body": "Fix for issue #41.",
+      "branch_name": "auto/pr-28",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_3",
+      "author_token_env": "GITHUB_TOKEN_3",
+      "reviewer_developer": "DEV_1",
+      "reviewer_token_env": "GITHUB_TOKEN_4",
+      "files_changed": [
+        "templates/generalledger.html",
+        "loans/views.py"
+      ],
+      "created_date": "2022-08-21T17:58:00",
+      "merged_date": "2022-08-24T17:58:00",
+      "linked_issue_number": 41,
+      "milestone": "v1.2",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "Looks good; add a regression test."
+      }
+    },
+    {
+      "number": 29,
+      "title": "fix: Idempotency eviction race causes duplicate transaction events",
+      "body": "Fix for issue #42.",
+      "branch_name": "auto/pr-29",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_1",
+      "author_token_env": "GITHUB_TOKEN_1",
+      "reviewer_developer": "DEV_3",
+      "reviewer_token_env": "GITHUB_TOKEN_3",
+      "files_changed": [
+        "templates/generalledger.html",
+        "src/api/routes.py"
+      ],
+      "created_date": "2021-02-26T12:36:00",
+      "merged_date": "2021-03-04T12:36:00",
+      "linked_issue_number": 42,
+      "milestone": "v1.2",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "Looks good; add a regression test."
+      }
+    },
+    {
+      "number": 30,
+      "title": "fix: Payment retry flow accepts zero amount on duplicate submit",
+      "body": "Fix for issue #44.",
+      "branch_name": "auto/pr-30",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_3",
+      "author_token_env": "GITHUB_TOKEN_3",
+      "reviewer_developer": "DEV_4",
+      "reviewer_token_env": "GITHUB_TOKEN_1",
+      "files_changed": [
+        "micro_admin/models.py"
+      ],
+      "created_date": "2023-03-07T11:33:00",
+      "merged_date": "2023-03-11T11:33:00",
+      "linked_issue_number": 44,
+      "milestone": "v1.1",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "Looks good; add a regression test."
+      }
+    },
+    {
+      "number": 31,
+      "title": "fix: Payment retry flow accepts zero amount on duplicate submit",
+      "body": "Fix for issue #47.",
+      "branch_name": "auto/pr-31",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_3",
+      "author_token_env": "GITHUB_TOKEN_3",
+      "reviewer_developer": "DEV_1",
+      "reviewer_token_env": "GITHUB_TOKEN_2",
+      "files_changed": [
+        "savings/views.py"
+      ],
+      "created_date": "2023-09-14T08:18:00",
+      "merged_date": "2023-09-23T08:18:00",
+      "linked_issue_number": 47,
+      "milestone": "v1.0",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "Looks good; add a regression test."
+      }
+    },
+    {
+      "number": 32,
+      "title": "fix: Search endpoint returns stale results after cache warmup",
+      "body": "Fix for issue #49.",
+      "branch_name": "auto/pr-32",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_2",
+      "author_token_env": "GITHUB_TOKEN_2",
+      "reviewer_developer": "DEV_4",
+      "reviewer_token_env": "GITHUB_TOKEN_1",
+      "files_changed": [
+        "micro_admin/models.py",
+        "micro_admin/views.py",
+        "savings/views.py"
+      ],
+      "created_date": "2021-07-20T15:00:00",
+      "merged_date": "2021-07-26T15:00:00",
+      "linked_issue_number": 49,
+      "milestone": "v1.1",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "Looks good; add a regression test."
+      }
+    },
+    {
+      "number": 33,
+      "title": "fix: Ledger export misses timezone normalization for DST zones",
+      "body": "Fix for issue #50.",
+      "branch_name": "auto/pr-33",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_2",
+      "author_token_env": "GITHUB_TOKEN_2",
+      "reviewer_developer": "DEV_3",
+      "reviewer_token_env": "GITHUB_TOKEN_4",
+      "files_changed": [
+        "micro_admin/forms.py",
+        "src/api/routes.py",
+        "src/risk/exposure.py"
+      ],
+      "created_date": "2021-07-26T09:28:00",
+      "merged_date": "2021-08-15T09:28:00",
+      "linked_issue_number": 50,
+      "milestone": "v1.2",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "Looks good; add a regression test."
+      }
+    },
+    {
+      "number": 34,
+      "title": "fix: Mobile: client update loses branch selection on slow network",
+      "body": "Fix for issue #51.",
+      "branch_name": "auto/pr-34",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_2",
+      "author_token_env": "GITHUB_TOKEN_2",
+      "reviewer_developer": "DEV_1",
+      "reviewer_token_env": "GITHUB_TOKEN_3",
+      "files_changed": [
+        "loans/views.py",
+        "templates/listof_receipts.html",
+        "src/api/routes.py"
+      ],
+      "created_date": "2022-04-20T17:09:00",
+      "merged_date": "2022-04-27T17:09:00",
+      "linked_issue_number": 51,
+      "milestone": "v1.1",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "Looks good; add a regression test."
+      }
+    },
+    {
+      "number": 35,
+      "title": "fix: Payment retry flow accepts zero amount on duplicate submit",
+      "body": "Fix for issue #52.",
+      "branch_name": "auto/pr-35",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_3",
+      "author_token_env": "GITHUB_TOKEN_3",
+      "reviewer_developer": "DEV_4",
+      "reviewer_token_env": "GITHUB_TOKEN_4",
+      "files_changed": [
+        "templates/generalledger.html",
+        "savings/views.py",
+        "src/risk/exposure.py"
+      ],
+      "created_date": "2021-07-13T14:36:00",
+      "merged_date": "2021-07-18T14:36:00",
+      "linked_issue_number": 52,
+      "milestone": "v1.2",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "Looks good; add a regression test."
+      }
+    },
+    {
+      "number": 36,
+      "title": "fix: Reconciliation export misses timezone normalization for DST zones",
+      "body": "Fix for issue #53.",
+      "branch_name": "auto/pr-36",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_1",
+      "author_token_env": "GITHUB_TOKEN_1",
+      "reviewer_developer": "DEV_3",
+      "reviewer_token_env": "GITHUB_TOKEN_3",
+      "files_changed": [
+        "templates/generalledger.html",
+        "src/risk/exposure.py",
+        "loans/views.py"
+      ],
+      "created_date": "2021-09-23T09:57:00",
+      "merged_date": "2021-10-01T09:57:00",
+      "linked_issue_number": 53,
+      "milestone": "v1.2",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "Looks good; add a regression test."
+      }
+    },
+    {
+      "number": 37,
+      "title": "fix: Batch job OOM when group cardinality spikes",
+      "body": "Fix for issue #55.",
+      "branch_name": "auto/pr-37",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_4",
+      "author_token_env": "GITHUB_TOKEN_4",
+      "reviewer_developer": "DEV_1",
+      "reviewer_token_env": "GITHUB_TOKEN_1",
+      "files_changed": [
+        "micro_admin/views.py",
+        "src/ledger/posting_engine.py",
+        "loans/views.py"
+      ],
+      "created_date": "2023-06-16T12:37:00",
+      "merged_date": "2023-06-17T12:37:00",
+      "linked_issue_number": 55,
+      "milestone": "v1.0",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "Looks good; add a regression test."
+      }
+    },
+    {
+      "number": 38,
+      "title": "fix: Receipt reprint flow shows duplicate row when print fails",
+      "body": "Fix for issue #56.",
+      "branch_name": "auto/pr-38",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_2",
+      "author_token_env": "GITHUB_TOKEN_2",
+      "reviewer_developer": "DEV_4",
+      "reviewer_token_env": "GITHUB_TOKEN_3",
+      "files_changed": [
+        "src/api/routes.py",
+        "templates/listof_receipts.html"
+      ],
+      "created_date": "2022-08-19T09:06:00",
+      "merged_date": "2022-08-19T09:06:00",
+      "linked_issue_number": 56,
+      "milestone": "v1.0",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "Looks good; add a regression test."
+      }
+    },
+    {
+      "number": 39,
+      "title": "fix: Posting worker advisory lock collisions across partitions",
+      "body": "Fix for issue #57.",
+      "branch_name": "auto/pr-39",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_3",
+      "author_token_env": "GITHUB_TOKEN_3",
+      "reviewer_developer": "DEV_1",
+      "reviewer_token_env": "GITHUB_TOKEN_4",
+      "files_changed": [
+        "src/api/routes.py",
+        "micro_admin/models.py",
+        "src/risk/exposure.py"
+      ],
+      "created_date": "2023-05-18T11:54:00",
+      "merged_date": "2023-05-24T11:54:00",
+      "linked_issue_number": 57,
+      "milestone": "v1.0",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "Looks good; add a regression test."
+      }
+    },
+    {
+      "number": 40,
+      "title": "fix: Reconciliation API non-deterministic ordering breaks checksum",
+      "body": "Fix for issue #58.",
+      "branch_name": "auto/pr-40",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_2",
+      "author_token_env": "GITHUB_TOKEN_2",
+      "reviewer_developer": "DEV_4",
+      "reviewer_token_env": "GITHUB_TOKEN_3",
+      "files_changed": [
+        "micro_admin/models.py"
+      ],
+      "created_date": "2021-05-30T16:13:00",
+      "merged_date": "2021-06-05T16:13:00",
+      "linked_issue_number": 58,
+      "milestone": "v1.0",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "Looks good; add a regression test."
+      }
+    },
+    {
+      "number": 41,
+      "title": "fix: Export export misses timezone normalization for DST zones",
+      "body": "Fix for issue #61.",
+      "branch_name": "auto/pr-41",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_2",
+      "author_token_env": "GITHUB_TOKEN_2",
+      "reviewer_developer": "DEV_3",
+      "reviewer_token_env": "GITHUB_TOKEN_3",
+      "files_changed": [
+        "src/risk/exposure.py",
+        "savings/views.py",
+        "templates/listof_receipts.html"
+      ],
+      "created_date": "2022-09-24T10:04:00",
+      "merged_date": "2022-09-29T10:04:00",
+      "linked_issue_number": 61,
+      "milestone": "v1.1",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "Looks good; add a regression test."
+      }
+    },
+    {
+      "number": 42,
+      "title": "fix: Batch job OOM when group cardinality spikes",
+      "body": "Fix for issue #62.",
+      "branch_name": "auto/pr-42",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_4",
+      "author_token_env": "GITHUB_TOKEN_4",
+      "reviewer_developer": "DEV_3",
+      "reviewer_token_env": "GITHUB_TOKEN_2",
+      "files_changed": [
+        "templates/generalledger.html",
+        "micro_admin/forms.py",
+        "micro_admin/models.py"
+      ],
+      "created_date": "2023-02-19T09:20:00",
+      "merged_date": "2023-03-05T09:20:00",
+      "linked_issue_number": 62,
+      "milestone": "v1.2",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "Looks good; add a regression test."
+      }
+    },
+    {
+      "number": 43,
+      "title": "fix: Posting worker memory amplification under skewed distribution",
+      "body": "Fix for issue #63.",
+      "branch_name": "auto/pr-43",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_4",
+      "author_token_env": "GITHUB_TOKEN_4",
+      "reviewer_developer": "DEV_2",
+      "reviewer_token_env": "GITHUB_TOKEN_3",
+      "files_changed": [
+        "templates/generalledger.html",
+        "micro_admin/views.py",
+        "loans/views.py"
+      ],
+      "created_date": "2021-08-19T13:55:00",
+      "merged_date": "2021-08-23T13:55:00",
+      "linked_issue_number": 63,
+      "milestone": "v1.2",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "Looks good; add a regression test."
+      }
+    },
+    {
+      "number": 44,
+      "title": "fix: Risk aggregation memory amplification under skewed distribution",
+      "body": "Fix for issue #64.",
+      "branch_name": "auto/pr-44",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_3",
+      "author_token_env": "GITHUB_TOKEN_3",
+      "reviewer_developer": "DEV_2",
+      "reviewer_token_env": "GITHUB_TOKEN_2",
+      "files_changed": [
+        "micro_admin/models.py",
+        "micro_admin/views.py",
+        "savings/views.py"
+      ],
+      "created_date": "2023-12-05T17:59:00",
+      "merged_date": "2023-12-16T17:59:00",
+      "linked_issue_number": 64,
+      "milestone": "v1.0",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "Looks good; add a regression test."
+      }
+    },
+    {
+      "number": 45,
+      "title": "fix: Risk aggregation memory amplification under skewed distribution",
+      "body": "Fix for issue #65.",
+      "branch_name": "auto/pr-45",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_1",
+      "author_token_env": "GITHUB_TOKEN_1",
+      "reviewer_developer": "DEV_3",
+      "reviewer_token_env": "GITHUB_TOKEN_2",
+      "files_changed": [
+        "src/risk/exposure.py"
+      ],
+      "created_date": "2022-12-11T13:49:00",
+      "merged_date": "2022-12-23T13:49:00",
+      "linked_issue_number": 65,
+      "milestone": "v1.1",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "Looks good; add a regression test."
+      }
+    },
+    {
+      "number": 46,
+      "title": "fix: Idempotency eviction race causes duplicate receipt events",
+      "body": "Fix for issue #67.",
+      "branch_name": "auto/pr-46",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_4",
+      "author_token_env": "GITHUB_TOKEN_4",
+      "reviewer_developer": "DEV_3",
+      "reviewer_token_env": "GITHUB_TOKEN_2",
+      "files_changed": [
+        "templates/generalledger.html"
+      ],
+      "created_date": "2022-09-09T08:31:00",
+      "merged_date": "2022-09-19T08:31:00",
+      "linked_issue_number": 67,
+      "milestone": "v1.2",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "Looks good; add a regression test."
+      }
+    },
+    {
+      "number": 47,
+      "title": "fix: Batch job OOM when group cardinality spikes",
+      "body": "Fix for issue #69.",
+      "branch_name": "auto/pr-47",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_3",
+      "author_token_env": "GITHUB_TOKEN_3",
+      "reviewer_developer": "DEV_1",
+      "reviewer_token_env": "GITHUB_TOKEN_1",
+      "files_changed": [
+        "micro_admin/forms.py",
+        "savings/views.py",
+        "micro_admin/views.py"
+      ],
+      "created_date": "2023-10-05T14:55:00",
+      "merged_date": "2023-10-13T14:55:00",
+      "linked_issue_number": 69,
+      "milestone": "v1.2",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "Looks good; add a regression test."
+      }
+    },
+    {
+      "number": 48,
+      "title": "fix: Mobile: client update loses branch selection on slow network",
+      "body": "Fix for issue #70.",
+      "branch_name": "auto/pr-48",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_4",
+      "author_token_env": "GITHUB_TOKEN_4",
+      "reviewer_developer": "DEV_1",
+      "reviewer_token_env": "GITHUB_TOKEN_2",
+      "files_changed": [
+        "src/api/routes.py",
+        "micro_admin/models.py"
+      ],
+      "created_date": "2021-10-28T09:11:00",
+      "merged_date": "2021-11-12T09:11:00",
+      "linked_issue_number": 70,
+      "milestone": "v1.1",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "Looks good; add a regression test."
+      }
+    },
+    {
+      "number": 49,
+      "title": "fix: Ledger advisory lock collisions across partitions",
+      "body": "Fix for issue #71.",
+      "branch_name": "auto/pr-49",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_3",
+      "author_token_env": "GITHUB_TOKEN_3",
+      "reviewer_developer": "DEV_1",
+      "reviewer_token_env": "GITHUB_TOKEN_2",
+      "files_changed": [
+        "src/api/routes.py",
+        "src/ledger/posting_engine.py"
+      ],
+      "created_date": "2023-05-07T08:23:00",
+      "merged_date": "2023-05-08T08:23:00",
+      "linked_issue_number": 71,
+      "milestone": "v1.0",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "Looks good; add a regression test."
+      }
+    },
+    {
+      "number": 50,
+      "title": "fix: Risk aggregation memory amplification under skewed distribution",
+      "body": "Fix for issue #72.",
+      "branch_name": "auto/pr-50",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_2",
+      "author_token_env": "GITHUB_TOKEN_2",
+      "reviewer_developer": "DEV_1",
+      "reviewer_token_env": "GITHUB_TOKEN_4",
+      "files_changed": [
+        "src/api/routes.py",
+        "micro_admin/models.py",
+        "templates/generalledger.html"
+      ],
+      "created_date": "2022-10-24T09:32:00",
+      "merged_date": "2022-11-04T09:32:00",
+      "linked_issue_number": 72,
+      "milestone": "v1.2",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "Looks good; add a regression test."
+      }
+    },
+    {
+      "number": 51,
+      "title": "fix: Batch job OOM when group cardinality spikes",
+      "body": "Fix for issue #73.",
+      "branch_name": "auto/pr-51",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_2",
+      "author_token_env": "GITHUB_TOKEN_2",
+      "reviewer_developer": "DEV_4",
+      "reviewer_token_env": "GITHUB_TOKEN_4",
+      "files_changed": [
+        "src/risk/exposure.py",
+        "templates/listof_receipts.html"
+      ],
+      "created_date": "2023-01-13T12:46:00",
+      "merged_date": "2023-01-16T12:46:00",
+      "linked_issue_number": 73,
+      "milestone": "v1.2",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "Looks good; add a regression test."
+      }
+    },
+    {
+      "number": 52,
+      "title": "fix: Receipt reprint flow shows duplicate row when print fails",
+      "body": "Fix for issue #75.",
+      "branch_name": "auto/pr-52",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_1",
+      "author_token_env": "GITHUB_TOKEN_1",
+      "reviewer_developer": "DEV_3",
+      "reviewer_token_env": "GITHUB_TOKEN_4",
+      "files_changed": [
+        "src/ledger/posting_engine.py",
+        "micro_admin/models.py",
+        "templates/listof_receipts.html"
+      ],
+      "created_date": "2021-09-08T09:18:00",
+      "merged_date": "2021-09-14T09:18:00",
+      "linked_issue_number": 75,
+      "milestone": "v1.1",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "Looks good; add a regression test."
+      }
+    },
+    {
+      "number": 53,
+      "title": "fix: Mobile: client update loses branch selection on slow network",
+      "body": "Fix for issue #76.",
+      "branch_name": "auto/pr-53",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_3",
+      "author_token_env": "GITHUB_TOKEN_3",
+      "reviewer_developer": "DEV_4",
+      "reviewer_token_env": "GITHUB_TOKEN_1",
+      "files_changed": [
+        "micro_admin/forms.py",
+        "loans/views.py",
+        "micro_admin/models.py"
+      ],
+      "created_date": "2023-05-12T16:15:00",
+      "merged_date": "2023-05-21T16:15:00",
+      "linked_issue_number": 76,
+      "milestone": "v1.2",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "Looks good; add a regression test."
+      }
+    },
+    {
+      "number": 54,
+      "title": "fix: Mobile: client update loses branch selection on slow network",
+      "body": "Fix for issue #79.",
+      "branch_name": "auto/pr-54",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_2",
+      "author_token_env": "GITHUB_TOKEN_2",
+      "reviewer_developer": "DEV_1",
+      "reviewer_token_env": "GITHUB_TOKEN_3",
+      "files_changed": [
+        "loans/views.py"
+      ],
+      "created_date": "2021-03-11T15:44:00",
+      "merged_date": "2021-03-13T15:44:00",
+      "linked_issue_number": 79,
+      "milestone": "v1.2",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "Looks good; add a regression test."
+      }
+    },
+    {
+      "number": 55,
+      "title": "fix: Payment retry flow accepts zero amount on duplicate submit",
+      "body": "Fix for issue #80.",
+      "branch_name": "auto/pr-55",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_4",
+      "author_token_env": "GITHUB_TOKEN_4",
+      "reviewer_developer": "DEV_1",
+      "reviewer_token_env": "GITHUB_TOKEN_3",
+      "files_changed": [
+        "micro_admin/views.py"
+      ],
+      "created_date": "2023-06-08T09:53:00",
+      "merged_date": "2023-06-16T09:53:00",
+      "linked_issue_number": 80,
+      "milestone": "v1.2",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "Looks good; add a regression test."
+      }
+    },
+    {
+      "number": 56,
+      "title": "fix: Search endpoint returns stale results after cache warmup",
+      "body": "Fix for issue #81.",
+      "branch_name": "auto/pr-56",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_1",
+      "author_token_env": "GITHUB_TOKEN_1",
+      "reviewer_developer": "DEV_3",
+      "reviewer_token_env": "GITHUB_TOKEN_4",
+      "files_changed": [
+        "templates/generalledger.html",
+        "micro_admin/forms.py",
+        "micro_admin/models.py"
+      ],
+      "created_date": "2023-09-29T16:35:00",
+      "merged_date": "2023-10-15T16:35:00",
+      "linked_issue_number": 81,
+      "milestone": "v1.0",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "Looks good; add a regression test."
+      }
+    },
+    {
+      "number": 57,
+      "title": "fix: Idempotency eviction race causes duplicate transaction events",
+      "body": "Fix for issue #82.",
+      "branch_name": "auto/pr-57",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_2",
+      "author_token_env": "GITHUB_TOKEN_2",
+      "reviewer_developer": "DEV_4",
+      "reviewer_token_env": "GITHUB_TOKEN_1",
+      "files_changed": [
+        "templates/listof_receipts.html",
+        "src/risk/exposure.py",
+        "src/ledger/posting_engine.py"
+      ],
+      "created_date": "2023-06-26T15:40:00",
+      "merged_date": "2023-06-26T15:40:00",
+      "linked_issue_number": 82,
+      "milestone": "v1.1",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "Looks good; add a regression test."
+      }
+    },
+    {
+      "number": 58,
+      "title": "fix: Ledger export misses timezone normalization for DST zones",
+      "body": "Fix for issue #83.",
+      "branch_name": "auto/pr-58",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_3",
+      "author_token_env": "GITHUB_TOKEN_3",
+      "reviewer_developer": "DEV_1",
+      "reviewer_token_env": "GITHUB_TOKEN_2",
+      "files_changed": [
+        "src/risk/exposure.py",
+        "loans/views.py"
+      ],
+      "created_date": "2022-11-29T08:55:00",
+      "merged_date": "2022-12-13T08:55:00",
+      "linked_issue_number": 83,
+      "milestone": "v1.2",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "Looks good; add a regression test."
+      }
+    },
+    {
+      "number": 59,
+      "title": "fix: Posting worker advisory lock collisions across partitions",
+      "body": "Fix for issue #84.",
+      "branch_name": "auto/pr-59",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_1",
+      "author_token_env": "GITHUB_TOKEN_1",
+      "reviewer_developer": "DEV_4",
+      "reviewer_token_env": "GITHUB_TOKEN_4",
+      "files_changed": [
+        "templates/generalledger.html",
+        "templates/listof_receipts.html",
+        "loans/views.py"
+      ],
+      "created_date": "2021-12-19T12:20:00",
+      "merged_date": "2021-12-22T12:20:00",
+      "linked_issue_number": 84,
+      "milestone": "v1.1",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "Looks good; add a regression test."
+      }
+    },
+    {
+      "number": 60,
+      "title": "fix: Batch job OOM when group cardinality spikes",
+      "body": "Fix for issue #86.",
+      "branch_name": "auto/pr-60",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_4",
+      "author_token_env": "GITHUB_TOKEN_4",
+      "reviewer_developer": "DEV_2",
+      "reviewer_token_env": "GITHUB_TOKEN_3",
+      "files_changed": [
+        "micro_admin/views.py"
+      ],
+      "created_date": "2021-03-21T10:43:00",
+      "merged_date": "2021-03-27T10:43:00",
+      "linked_issue_number": 86,
+      "milestone": "v1.1",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "Looks good; add a regression test."
+      }
+    },
+    {
+      "number": 61,
+      "title": "fix: Mobile: client update loses branch selection on slow network",
+      "body": "Fix for issue #87.",
+      "branch_name": "auto/pr-61",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_3",
+      "author_token_env": "GITHUB_TOKEN_3",
+      "reviewer_developer": "DEV_4",
+      "reviewer_token_env": "GITHUB_TOKEN_4",
+      "files_changed": [
+        "templates/generalledger.html"
+      ],
+      "created_date": "2023-12-07T12:49:00",
+      "merged_date": "2023-12-08T12:49:00",
+      "linked_issue_number": 87,
+      "milestone": "v1.1",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "Looks good; add a regression test."
+      }
+    },
+    {
+      "number": 62,
+      "title": "fix: Batch job OOM when group cardinality spikes",
+      "body": "Fix for issue #88.",
+      "branch_name": "auto/pr-62",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_2",
+      "author_token_env": "GITHUB_TOKEN_2",
+      "reviewer_developer": "DEV_1",
+      "reviewer_token_env": "GITHUB_TOKEN_3",
+      "files_changed": [
+        "src/risk/exposure.py",
+        "micro_admin/forms.py"
+      ],
+      "created_date": "2022-09-02T10:45:00",
+      "merged_date": "2022-09-01T10:45:00",
+      "linked_issue_number": 88,
+      "milestone": "v1.1",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "Looks good; add a regression test."
+      }
+    },
+    {
+      "number": 63,
+      "title": "fix: Payment retry flow accepts zero amount on duplicate submit",
+      "body": "Fix for issue #89.",
+      "branch_name": "auto/pr-63",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_4",
+      "author_token_env": "GITHUB_TOKEN_4",
+      "reviewer_developer": "DEV_1",
+      "reviewer_token_env": "GITHUB_TOKEN_3",
+      "files_changed": [
+        "templates/listof_receipts.html"
+      ],
+      "created_date": "2023-07-22T14:49:00",
+      "merged_date": "2023-07-20T14:49:00",
+      "linked_issue_number": 89,
+      "milestone": "v1.0",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "Looks good; add a regression test."
+      }
+    },
+    {
+      "number": 64,
+      "title": "fix: Batch job OOM when group cardinality spikes",
+      "body": "Fix for issue #90.",
+      "branch_name": "auto/pr-64",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_2",
+      "author_token_env": "GITHUB_TOKEN_2",
+      "reviewer_developer": "DEV_1",
+      "reviewer_token_env": "GITHUB_TOKEN_1",
+      "files_changed": [
+        "src/risk/exposure.py",
+        "micro_admin/views.py",
+        "micro_admin/forms.py"
+      ],
+      "created_date": "2022-08-11T10:20:00",
+      "merged_date": "2022-08-26T10:20:00",
+      "linked_issue_number": 90,
+      "milestone": "v1.2",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "Looks good; add a regression test."
+      }
+    },
+    {
+      "number": 65,
+      "title": "fix: Ledger advisory lock collisions across partitions",
+      "body": "Fix for issue #91.",
+      "branch_name": "auto/pr-65",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_1",
+      "author_token_env": "GITHUB_TOKEN_1",
+      "reviewer_developer": "DEV_2",
+      "reviewer_token_env": "GITHUB_TOKEN_4",
+      "files_changed": [
+        "savings/views.py",
+        "templates/listof_receipts.html"
+      ],
+      "created_date": "2022-10-30T17:02:00",
+      "merged_date": "2022-11-12T17:02:00",
+      "linked_issue_number": 91,
+      "milestone": "v1.0",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "Looks good; add a regression test."
+      }
+    },
+    {
+      "number": 66,
+      "title": "fix: Reconciliation API non-deterministic ordering breaks checksum",
+      "body": "Fix for issue #93.",
+      "branch_name": "auto/pr-66",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_3",
+      "author_token_env": "GITHUB_TOKEN_3",
+      "reviewer_developer": "DEV_4",
+      "reviewer_token_env": "GITHUB_TOKEN_2",
+      "files_changed": [
+        "micro_admin/forms.py"
+      ],
+      "created_date": "2022-12-20T16:06:00",
+      "merged_date": "2023-01-06T16:06:00",
+      "linked_issue_number": 93,
+      "milestone": "v1.0",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "Looks good; add a regression test."
+      }
+    },
+    {
+      "number": 67,
+      "title": "fix: Reconciliation export misses timezone normalization for DST zones",
+      "body": "Fix for issue #94.",
+      "branch_name": "auto/pr-67",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_4",
+      "author_token_env": "GITHUB_TOKEN_4",
+      "reviewer_developer": "DEV_3",
+      "reviewer_token_env": "GITHUB_TOKEN_3",
+      "files_changed": [
+        "micro_admin/models.py"
+      ],
+      "created_date": "2021-11-19T16:29:00",
+      "merged_date": "2021-12-03T16:29:00",
+      "linked_issue_number": 94,
+      "milestone": "v1.2",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "Looks good; add a regression test."
+      }
+    },
+    {
+      "number": 68,
+      "title": "fix: Search endpoint returns stale results after cache warmup",
+      "body": "Fix for issue #95.",
+      "branch_name": "auto/pr-68",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_1",
+      "author_token_env": "GITHUB_TOKEN_1",
+      "reviewer_developer": "DEV_4",
+      "reviewer_token_env": "GITHUB_TOKEN_3",
+      "files_changed": [
+        "templates/listof_receipts.html"
+      ],
+      "created_date": "2023-07-15T16:00:00",
+      "merged_date": "2023-07-26T16:00:00",
+      "linked_issue_number": 95,
+      "milestone": "v1.2",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "Looks good; add a regression test."
+      }
+    },
+    {
+      "number": 69,
+      "title": "fix: Batch job OOM when group cardinality spikes",
+      "body": "Fix for issue #96.",
+      "branch_name": "auto/pr-69",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_3",
+      "author_token_env": "GITHUB_TOKEN_3",
+      "reviewer_developer": "DEV_4",
+      "reviewer_token_env": "GITHUB_TOKEN_1",
+      "files_changed": [
+        "templates/generalledger.html",
+        "src/ledger/posting_engine.py",
+        "src/risk/exposure.py"
+      ],
+      "created_date": "2021-08-07T09:25:00",
+      "merged_date": "2021-08-26T09:25:00",
+      "linked_issue_number": 96,
+      "milestone": "v1.1",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "Looks good; add a regression test."
+      }
+    },
+    {
+      "number": 70,
+      "title": "fix: Payment retry flow accepts zero amount on duplicate submit",
+      "body": "Fix for issue #98.",
+      "branch_name": "auto/pr-70",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_1",
+      "author_token_env": "GITHUB_TOKEN_1",
+      "reviewer_developer": "DEV_2",
+      "reviewer_token_env": "GITHUB_TOKEN_3",
+      "files_changed": [
+        "src/api/routes.py"
+      ],
+      "created_date": "2023-03-20T12:50:00",
+      "merged_date": "2023-03-27T12:50:00",
+      "linked_issue_number": 98,
+      "milestone": "v1.1",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "Looks good; add a regression test."
+      }
+    },
+    {
+      "number": 71,
+      "title": "fix: Search endpoint returns stale results after cache warmup",
+      "body": "Fix for issue #99.",
+      "branch_name": "auto/pr-71",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_2",
+      "author_token_env": "GITHUB_TOKEN_2",
+      "reviewer_developer": "DEV_4",
+      "reviewer_token_env": "GITHUB_TOKEN_4",
+      "files_changed": [
+        "src/risk/exposure.py",
+        "templates/generalledger.html"
+      ],
+      "created_date": "2023-03-10T14:44:00",
+      "merged_date": "2023-03-18T14:44:00",
+      "linked_issue_number": 99,
+      "milestone": "v1.2",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "Looks good; add a regression test."
+      }
+    }
+  ]
+}

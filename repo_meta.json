@@ -1,0 +1,97 @@
+{
+  "repo_config": {
+    "name": "ai-botapplication-backend",
+    "description": "Backend application for loans, savings, reporting, and branch workflows.",
+    "private": false,
+    "has_issues": true,
+    "has_projects": false,
+    "has_wiki": false,
+    "default_branch": "main",
+    "topics": [
+      "django",
+      "python",
+      "backend",
+      "finance",
+      "web-app"
+    ]
+  },
+  "labels": [
+    {
+      "name": "bug",
+      "color": "d73a4a",
+      "description": "Something is broken"
+    },
+    {
+      "name": "enhancement",
+      "color": "a2eeef",
+      "description": "A new capability"
+    },
+    {
+      "name": "question",
+      "color": "d876e3",
+      "description": "Needs product or implementation clarification"
+    },
+    {
+      "name": "docs",
+      "color": "0075ca",
+      "description": "Documentation work"
+    },
+    {
+      "name": "priority:critical",
+      "color": "b60205",
+      "description": "Needs attention now"
+    },
+    {
+      "name": "priority:high",
+      "color": "e11d21",
+      "description": "Important"
+    },
+    {
+      "name": "priority:medium",
+      "color": "fbca04",
+      "description": "Normal priority"
+    },
+    {
+      "name": "priority:low",
+      "color": "0e8a16",
+      "description": "Nice to have"
+    },
+    {
+      "name": "needs-investigation",
+      "color": "d4c5f9",
+      "description": "Needs more details before work starts"
+    }
+  ],
+  "milestones": [
+    {
+      "title": "v1.0",
+      "description": "First production cut",
+      "due_date": "2021-09-30",
+      "state": "closed"
+    },
+    {
+      "title": "v1.1",
+      "description": "Feature complete with core workflows",
+      "due_date": "2021-12-31",
+      "state": "closed"
+    },
+    {
+      "title": "v1.2",
+      "description": "Stabilization and polish",
+      "due_date": "2022-06-30",
+      "state": "closed"
+    },
+    {
+      "title": "v2.0",
+      "description": "Hardening and release prep",
+      "due_date": "2022-12-30",
+      "state": "closed"
+    },
+    {
+      "title": "backlog",
+      "description": "Ideas and follow-up work",
+      "due_date": "2023-12-31",
+      "state": "open"
+    }
+  ]
+}

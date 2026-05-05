@@ -1,0 +1,1922 @@
+{
+  "metadata": {
+    "target_issues": 70,
+    "start_issues_date": "2021-05-01",
+    "end_issues_date": "2022-12-30",
+    "notes": "Issue history for release planning and support triage."
+  },
+  "issues": [
+    {
+      "number": 1,
+      "title": "Guarantor validation crashes when guarantor list is empty",
+      "body": "We are seeing a crash in micro_admin/models.py when a loan is saved without any guarantors. The record imports fine, but the edit form explodes on submit when the guarantor section is left blank.\n\n**Steps to reproduce**\n1. Open an existing loan\n2. Clear the guarantor list\n3. Save the form\n\n**Expected**\nThe form should validate and ask for a guarantor if the rule requires one.\n\n**Observed**\nThe page returns a 500 and the form does not recover gracefully.\n\n**Notes**\nThis started showing up after the latest repayment rule changes.",
+      "labels": [
+        "bug",
+        "loan",
+        "priority:high"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_D",
+      "github_token_env": "GITHUB_TOKEN_4",
+      "created_date": "2021-05-03T09:05:00",
+      "closed_date": "2021-05-07T09:05:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 1,
+      "milestone": "v1.1",
+      "comments": [
+        {
+          "author_developer": "DEV_D",
+          "github_token_env": "GITHUB_TOKEN_4",
+          "date": "2021-05-03T11:15:00",
+          "body": "Confirmed. This is coming from micro_admin/models.py and the repro is solid."
+        },
+        {
+          "author_developer": "DEV_B",
+          "github_token_env": "GITHUB_TOKEN_2",
+          "date": "2021-05-03T13:45:00",
+          "body": "I can take this one. I will add a regression test and keep the change small."
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "title": "Payment form accepts zero amount on retry",
+      "body": "A support user reported that micro_admin/views.py allows a zero-value payment when the submit button is clicked twice in a row. The first submit succeeds, the second one should be rejected but currently slips through.\n\n**Expected**\nA duplicate submission should be blocked.\n\n**Observed**\nThe payment is recorded twice, once with amount and once with zero.\n\n**Context**\nThis is more visible on slower connections and after the form gets resubmitted from the browser back button.",
+      "labels": [
+        "bug",
+        "payment",
+        "priority:high"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_B",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "created_date": "2021-05-16T10:15:00",
+      "closed_date": "2021-05-21T10:15:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 2,
+      "milestone": "v1.0",
+      "comments": [
+        {
+          "author_developer": "DEV_D",
+          "github_token_env": "GITHUB_TOKEN_4",
+          "date": "2021-05-16T12:25:00",
+          "body": "Confirmed. This is coming from micro_admin/views.py and the repro is solid."
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "title": "Ledger totals drift after deleting a stale receipt",
+      "body": "Users noticed that totals shown by templates/pdfgeneral_ledger.html no longer match the receipt summary after a stale receipt is removed. The mismatch only appears in branches with several backdated entries.\n\n**Expected**\nSummary and detail rows should agree.\n\n**Observed**\nThe total drops by one entry even though the item was only marked inactive.\n\n**Additional detail**\nThe issue is reproducible in the month-end report for branch NAGPUR-02.",
+      "labels": [
+        "bug",
+        "ledger",
+        "priority:medium"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_C",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "created_date": "2021-05-29T11:25:00",
+      "closed_date": "2021-06-04T11:25:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 3,
+      "milestone": "v1.1",
+      "comments": [
+        {
+          "author_developer": "DEV_D",
+          "github_token_env": "GITHUB_TOKEN_4",
+          "date": "2021-05-29T13:35:00",
+          "body": "Confirmed. This is coming from templates/pdfgeneral_ledger.html and the repro is solid."
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "title": "Receipt list duplicates row after retry flow",
+      "body": "While testing the retry flow in templates/listof_receipts.html, the same receipt appears twice after a failed print attempt. The duplicate is not visible in the database, only in the rendered page.\n\n**Expected**\nOne row per receipt.\n\n**Observed**\nThe render shows the receipt twice if the page is refreshed immediately after submit.",
+      "labels": [
+        "bug",
+        "receipt",
+        "priority:high"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_A",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "created_date": "2021-06-11T14:35:00",
+      "closed_date": "2021-06-18T14:35:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 4,
+      "milestone": "v1.0",
+      "comments": [
+        {
+          "author_developer": "DEV_D",
+          "github_token_env": "GITHUB_TOKEN_4",
+          "date": "2021-06-11T16:45:00",
+          "body": "Confirmed. This is coming from templates/listof_receipts.html and the repro is solid."
+        },
+        {
+          "author_developer": "DEV_B",
+          "github_token_env": "GITHUB_TOKEN_2",
+          "date": "2021-06-11T19:15:00",
+          "body": "I can take this one. I will add a regression test and keep the change small."
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "title": "Client update loses branch selection after save",
+      "body": "Updating client details in micro_admin/views.py resets the branch dropdown if the user edits an address field first. The change is subtle but a few branch admins spotted it during daily use.\n\n**Steps**\nOpen a client, change address, switch branch, save, then reopen.\n\n**Expected**\nThe selected branch should stay attached to the record.\n\n**Observed**\nThe branch falls back to the default one.",
+      "labels": [
+        "bug",
+        "client",
+        "priority:medium"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_D",
+      "github_token_env": "GITHUB_TOKEN_4",
+      "created_date": "2021-06-20T15:45:00",
+      "closed_date": "2021-06-28T15:45:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 5,
+      "milestone": "v1.0",
+      "comments": [
+        {
+          "author_developer": "DEV_D",
+          "github_token_env": "GITHUB_TOKEN_4",
+          "date": "2021-06-20T17:55:00",
+          "body": "Confirmed. This is coming from micro_admin/views.py and the repro is solid."
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "title": "Savings withdrawal can go negative on partial edit",
+      "body": "An edit path in templates/transactions.html does not re-check the account balance before saving a withdrawal. This is only visible when an existing transaction is reopened and changed from the list view.\n\n**Expected**\nThe balance should never fall below zero.\n\n**Observed**\nA negative amount is accepted and the ledger is off by one transaction.",
+      "labels": [
+        "bug",
+        "savings",
+        "priority:critical"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_B",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "created_date": "2021-07-03T16:55:00",
+      "closed_date": "2021-07-12T16:55:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 6,
+      "milestone": "v1.0",
+      "comments": [
+        {
+          "author_developer": "DEV_D",
+          "github_token_env": "GITHUB_TOKEN_4",
+          "date": "2021-07-03T19:05:00",
+          "body": "Confirmed. This is coming from templates/transactions.html and the repro is solid."
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "title": "Group interest calc uses old rate after approval",
+      "body": "When a group loan moves from pending to approved, micro_admin/models.py keeps the previous rate until the page is reloaded. That makes the first preview misleading and the branch manager has to refresh manually.\n\n**Expected**\nThe new rate should be reflected immediately.\n\n**Observed**\nThe old percentage remains in the preview pane.",
+      "labels": [
+        "bug",
+        "group",
+        "priority:medium"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_C",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "created_date": "2021-07-16T19:05:00",
+      "closed_date": "2021-07-26T19:05:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 7,
+      "milestone": "v1.1",
+      "comments": [
+        {
+          "author_developer": "DEV_D",
+          "github_token_env": "GITHUB_TOKEN_4",
+          "date": "2021-07-16T21:15:00",
+          "body": "Confirmed. This is coming from micro_admin/models.py and the repro is solid."
+        },
+        {
+          "author_developer": "DEV_B",
+          "github_token_env": "GITHUB_TOKEN_2",
+          "date": "2021-07-16T23:45:00",
+          "body": "I can take this one. I will add a regression test and keep the change small."
+        }
+      ]
+    },
+    {
+      "number": 8,
+      "title": "Add installment preview to loan workflow",
+      "body": "It would help the field team if micro_admin/tests.py showed a lightweight installment preview before the final save. This is mostly about avoiding a second call back to the office when the calculation looks off.\n\n**Desired behavior**\nShow a preview block with amount, tenure, and the next due date.\n\n**Why now**\nSeveral branches are asking for this while training new staff.",
+      "labels": [
+        "enhancement",
+        "loan",
+        "priority:medium"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_A",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "created_date": "2021-07-29T09:15:00",
+      "closed_date": "2021-08-02T09:15:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 8,
+      "milestone": "v1.2",
+      "comments": [
+        {
+          "author_developer": "DEV_A",
+          "github_token_env": "GITHUB_TOKEN_1",
+          "date": "2021-07-29T12:35:00",
+          "body": "Makes sense. I would keep the API backward compatible and hide the change behind a default."
+        }
+      ]
+    },
+    {
+      "number": 9,
+      "title": "Export ledger with optional branch filter",
+      "body": "Users running monthly reports asked for a branch filter in micro_admin/views.py. Right now they have to export the full ledger and filter it manually in a spreadsheet.\n\n**Acceptance criteria**\n- branch filter is optional\n- existing export stays unchanged when the filter is empty\n- the output still matches the current PDF layout",
+      "labels": [
+        "enhancement",
+        "ledger",
+        "priority:low"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_D",
+      "github_token_env": "GITHUB_TOKEN_4",
+      "created_date": "2021-08-07T10:25:00",
+      "closed_date": "2021-08-12T10:25:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 9,
+      "milestone": "v1.2",
+      "comments": [
+        {
+          "author_developer": "DEV_A",
+          "github_token_env": "GITHUB_TOKEN_1",
+          "date": "2021-08-07T13:45:00",
+          "body": "Makes sense. I would keep the API backward compatible and hide the change behind a default."
+        },
+        {
+          "author_developer": "DEV_C",
+          "github_token_env": "GITHUB_TOKEN_3",
+          "date": "2021-08-08T11:25:00",
+          "body": "I can wire this up once we agree on the UI copy."
+        }
+      ]
+    },
+    {
+      "number": 10,
+      "title": "Improve payment form hints for first-time operators",
+      "body": "Operators asked for a clearer hint set in micro_admin/views.py, especially around date entry and amount rounding. The form is usable today, but the warnings are easy to miss.\n\n**Desired outcome**\nAdd inline guidance without changing the underlying validation rules.",
+      "labels": [
+        "enhancement",
+        "payment",
+        "priority:low"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_B",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "created_date": "2021-08-20T11:35:00",
+      "closed_date": "2021-08-26T11:35:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 10,
+      "milestone": "v1.1",
+      "comments": [
+        {
+          "author_developer": "DEV_A",
+          "github_token_env": "GITHUB_TOKEN_1",
+          "date": "2021-08-20T14:55:00",
+          "body": "Makes sense. I would keep the API backward compatible and hide the change behind a default."
+        }
+      ]
+    },
+    {
+      "number": 11,
+      "title": "Allow receipt reprint from the list page",
+      "body": "Support asked for a quick reprint action in templates/receiptsform.html. The current flow forces users to open the receipt first, which is fine on desktop but annoying on smaller screens.\n\n**Requested behavior**\nAdd a reprint action to the row menu.",
+      "labels": [
+        "enhancement",
+        "receipt",
+        "priority:low"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_C",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "created_date": "2021-09-02T14:45:00",
+      "closed_date": "2021-09-09T14:45:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 11,
+      "milestone": "v1.2",
+      "comments": [
+        {
+          "author_developer": "DEV_A",
+          "github_token_env": "GITHUB_TOKEN_1",
+          "date": "2021-09-02T18:05:00",
+          "body": "Makes sense. I would keep the API backward compatible and hide the change behind a default."
+        }
+      ]
+    },
+    {
+      "number": 12,
+      "title": "Make client search remember the last branch",
+      "body": "Branch users want templates/clientledgertable.html to remember the last branch they were working in. It would save them from reselecting the same branch dozens of times a day.\n\n**Request**\nPersist the branch choice per user session.",
+      "labels": [
+        "enhancement",
+        "client",
+        "priority:low"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_A",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "created_date": "2021-09-15T15:55:00",
+      "closed_date": "2021-09-23T15:55:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 12,
+      "milestone": "v1.2",
+      "comments": [
+        {
+          "author_developer": "DEV_A",
+          "github_token_env": "GITHUB_TOKEN_1",
+          "date": "2021-09-15T19:15:00",
+          "body": "Makes sense. I would keep the API backward compatible and hide the change behind a default."
+        }
+      ]
+    },
+    {
+      "number": 13,
+      "title": "Should we document the branch approval flow?",
+      "body": "We keep answering the same support question about who can approve a loan and where the approval history lives. Should we add a short section to README.rst before the next rollout?\n\n**Context**\nThe answer seems obvious to the team, but not to the branch office.",
+      "labels": [
+        "question",
+        "needs-investigation"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_D",
+      "github_token_env": "GITHUB_TOKEN_4",
+      "created_date": "2021-09-24T16:05:00",
+      "closed_date": "2021-10-03T16:05:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 13,
+      "milestone": "backlog",
+      "comments": [
+        {
+          "author_developer": "DEV_B",
+          "github_token_env": "GITHUB_TOKEN_2",
+          "date": "2021-09-24T17:55:00",
+          "body": "I think we should document it before changing the behavior."
+        }
+      ]
+    },
+    {
+      "number": 14,
+      "title": "Docs: add setup notes for local branch testing",
+      "body": "The onboarding notes in docs/source/index.rst are missing the steps for local branch testing. This keeps coming up when someone clones the app and tries to run it against a test database.\n\n**Scope**\nAdd the missing steps and a short troubleshooting section.",
+      "labels": [
+        "docs",
+        "priority:low"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_B",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "created_date": "2021-10-07T19:15:00",
+      "closed_date": "2021-10-17T19:15:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 14,
+      "milestone": "v1.1",
+      "comments": [
+        {
+          "author_developer": "DEV_C",
+          "github_token_env": "GITHUB_TOKEN_3",
+          "date": "2021-10-07T20:30:00",
+          "body": "Good idea. I will update the doc and the small template copy in the same pass."
+        }
+      ]
+    },
+    {
+      "number": 15,
+      "title": "Guarantor validation crashes when guarantor list is empty",
+      "body": "We are seeing a crash in micro_admin/forms.py when a loan is saved without any guarantors. The record imports fine, but the edit form explodes on submit when the guarantor section is left blank.\n\n**Steps to reproduce**\n1. Open an existing loan\n2. Clear the guarantor list\n3. Save the form\n\n**Expected**\nThe form should validate and ask for a guarantor if the rule requires one.\n\n**Observed**\nThe page returns a 500 and the form does not recover gracefully.\n\n**Notes**\nThis started showing up after the latest repayment rule changes.",
+      "labels": [
+        "bug",
+        "loan",
+        "priority:high"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_C",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "created_date": "2021-10-20T09:25:00",
+      "closed_date": "2021-10-24T09:25:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 15,
+      "milestone": "v1.1",
+      "comments": [
+        {
+          "author_developer": "DEV_D",
+          "github_token_env": "GITHUB_TOKEN_4",
+          "date": "2021-10-20T11:35:00",
+          "body": "Confirmed. This is coming from micro_admin/forms.py and the repro is solid."
+        }
+      ]
+    },
+    {
+      "number": 16,
+      "title": "Payment form accepts zero amount on retry",
+      "body": "A support user reported that templates/list_of_payments.html allows a zero-value payment when the submit button is clicked twice in a row. The first submit succeeds, the second one should be rejected but currently slips through.\n\n**Expected**\nA duplicate submission should be blocked.\n\n**Observed**\nThe payment is recorded twice, once with amount and once with zero.\n\n**Context**\nThis is more visible on slower connections and after the form gets resubmitted from the browser back button.",
+      "labels": [
+        "bug",
+        "payment",
+        "priority:high"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_A",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "created_date": "2021-11-02T10:35:00",
+      "closed_date": "2021-11-07T10:35:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 16,
+      "milestone": "v1.0",
+      "comments": [
+        {
+          "author_developer": "DEV_D",
+          "github_token_env": "GITHUB_TOKEN_4",
+          "date": "2021-11-02T12:45:00",
+          "body": "Confirmed. This is coming from templates/list_of_payments.html and the repro is solid."
+        },
+        {
+          "author_developer": "DEV_B",
+          "github_token_env": "GITHUB_TOKEN_2",
+          "date": "2021-11-02T15:15:00",
+          "body": "I can take this one. I will add a regression test and keep the change small."
+        }
+      ]
+    },
+    {
+      "number": 17,
+      "title": "Ledger totals drift after deleting a stale receipt",
+      "body": "Users noticed that totals shown by micro_admin/views.py no longer match the receipt summary after a stale receipt is removed. The mismatch only appears in branches with several backdated entries.\n\n**Expected**\nSummary and detail rows should agree.\n\n**Observed**\nThe total drops by one entry even though the item was only marked inactive.\n\n**Additional detail**\nThe issue is reproducible in the month-end report for branch NAGPUR-02.",
+      "labels": [
+        "bug",
+        "ledger",
+        "priority:medium"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_D",
+      "github_token_env": "GITHUB_TOKEN_4",
+      "created_date": "2021-11-11T11:45:00",
+      "closed_date": "2021-11-17T11:45:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 17,
+      "milestone": "v1.1",
+      "comments": [
+        {
+          "author_developer": "DEV_D",
+          "github_token_env": "GITHUB_TOKEN_4",
+          "date": "2021-11-11T13:55:00",
+          "body": "Confirmed. This is coming from micro_admin/views.py and the repro is solid."
+        }
+      ]
+    },
+    {
+      "number": 18,
+      "title": "Receipt list duplicates row after retry flow",
+      "body": "While testing the retry flow in micro_admin/views.py, the same receipt appears twice after a failed print attempt. The duplicate is not visible in the database, only in the rendered page.\n\n**Expected**\nOne row per receipt.\n\n**Observed**\nThe render shows the receipt twice if the page is refreshed immediately after submit.",
+      "labels": [
+        "bug",
+        "receipt",
+        "priority:high"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_B",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "created_date": "2021-11-24T14:55:00",
+      "closed_date": "2021-12-01T14:55:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 18,
+      "milestone": "v1.0",
+      "comments": [
+        {
+          "author_developer": "DEV_D",
+          "github_token_env": "GITHUB_TOKEN_4",
+          "date": "2021-11-24T17:05:00",
+          "body": "Confirmed. This is coming from micro_admin/views.py and the repro is solid."
+        }
+      ]
+    },
+    {
+      "number": 19,
+      "title": "Client update loses branch selection after save",
+      "body": "Updating client details in micro_admin/forms.py resets the branch dropdown if the user edits an address field first. The change is subtle but a few branch admins spotted it during daily use.\n\n**Steps**\nOpen a client, change address, switch branch, save, then reopen.\n\n**Expected**\nThe selected branch should stay attached to the record.\n\n**Observed**\nThe branch falls back to the default one.",
+      "labels": [
+        "bug",
+        "client",
+        "priority:medium"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_C",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "created_date": "2021-12-07T15:05:00",
+      "closed_date": "2021-12-15T15:05:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 19,
+      "milestone": "v1.0",
+      "comments": [
+        {
+          "author_developer": "DEV_D",
+          "github_token_env": "GITHUB_TOKEN_4",
+          "date": "2021-12-07T17:15:00",
+          "body": "Confirmed. This is coming from micro_admin/forms.py and the repro is solid."
+        },
+        {
+          "author_developer": "DEV_B",
+          "github_token_env": "GITHUB_TOKEN_2",
+          "date": "2021-12-07T19:45:00",
+          "body": "I can take this one. I will add a regression test and keep the change small."
+        }
+      ]
+    },
+    {
+      "number": 20,
+      "title": "Savings withdrawal can go negative on partial edit",
+      "body": "An edit path in templates/deposits.html does not re-check the account balance before saving a withdrawal. This is only visible when an existing transaction is reopened and changed from the list view.\n\n**Expected**\nThe balance should never fall below zero.\n\n**Observed**\nA negative amount is accepted and the ledger is off by one transaction.",
+      "labels": [
+        "bug",
+        "savings",
+        "priority:critical"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_A",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "created_date": "2021-12-20T16:15:00",
+      "closed_date": "2021-12-29T16:15:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 20,
+      "milestone": "v1.0",
+      "comments": [
+        {
+          "author_developer": "DEV_D",
+          "github_token_env": "GITHUB_TOKEN_4",
+          "date": "2021-12-20T18:25:00",
+          "body": "Confirmed. This is coming from templates/deposits.html and the repro is solid."
+        }
+      ]
+    },
+    {
+      "number": 21,
+      "title": "Group interest calc uses old rate after approval",
+      "body": "When a group loan moves from pending to approved, templates/group/dashboard.html keeps the previous rate until the page is reloaded. That makes the first preview misleading and the branch manager has to refresh manually.\n\n**Expected**\nThe new rate should be reflected immediately.\n\n**Observed**\nThe old percentage remains in the preview pane.",
+      "labels": [
+        "bug",
+        "group",
+        "priority:medium"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_D",
+      "github_token_env": "GITHUB_TOKEN_4",
+      "created_date": "2021-12-29T19:25:00",
+      "closed_date": "2022-01-08T19:25:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 21,
+      "milestone": "v1.1",
+      "comments": [
+        {
+          "author_developer": "DEV_D",
+          "github_token_env": "GITHUB_TOKEN_4",
+          "date": "2021-12-29T21:35:00",
+          "body": "Confirmed. This is coming from templates/group/dashboard.html and the repro is solid."
+        }
+      ]
+    },
+    {
+      "number": 22,
+      "title": "Add installment preview to loan workflow",
+      "body": "It would help the field team if micro_admin/views.py showed a lightweight installment preview before the final save. This is mostly about avoiding a second call back to the office when the calculation looks off.\n\n**Desired behavior**\nShow a preview block with amount, tenure, and the next due date.\n\n**Why now**\nSeveral branches are asking for this while training new staff.",
+      "labels": [
+        "enhancement",
+        "loan",
+        "priority:medium"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_B",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "created_date": "2022-01-11T09:35:00",
+      "closed_date": "2022-01-15T09:35:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 22,
+      "milestone": "v1.2",
+      "comments": [
+        {
+          "author_developer": "DEV_A",
+          "github_token_env": "GITHUB_TOKEN_1",
+          "date": "2022-01-11T12:55:00",
+          "body": "Makes sense. I would keep the API backward compatible and hide the change behind a default."
+        }
+      ]
+    },
+    {
+      "number": 23,
+      "title": "Export ledger with optional branch filter",
+      "body": "Users running monthly reports asked for a branch filter in templates/pdfgeneral_ledger.html. Right now they have to export the full ledger and filter it manually in a spreadsheet.\n\n**Acceptance criteria**\n- branch filter is optional\n- existing export stays unchanged when the filter is empty\n- the output still matches the current PDF layout",
+      "labels": [
+        "enhancement",
+        "ledger",
+        "priority:low"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_C",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "created_date": "2022-01-24T10:45:00",
+      "closed_date": "2022-01-29T10:45:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 23,
+      "milestone": "v1.2",
+      "comments": [
+        {
+          "author_developer": "DEV_A",
+          "github_token_env": "GITHUB_TOKEN_1",
+          "date": "2022-01-24T14:05:00",
+          "body": "Makes sense. I would keep the API backward compatible and hide the change behind a default."
+        }
+      ]
+    },
+    {
+      "number": 24,
+      "title": "Improve payment form hints for first-time operators",
+      "body": "Operators asked for a clearer hint set in templates/list_of_payments.html, especially around date entry and amount rounding. The form is usable today, but the warnings are easy to miss.\n\n**Desired outcome**\nAdd inline guidance without changing the underlying validation rules.",
+      "labels": [
+        "enhancement",
+        "payment",
+        "priority:low"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_A",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "created_date": "2022-02-06T11:55:00",
+      "closed_date": "2022-02-12T11:55:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 24,
+      "milestone": "v1.1",
+      "comments": [
+        {
+          "author_developer": "DEV_A",
+          "github_token_env": "GITHUB_TOKEN_1",
+          "date": "2022-02-06T15:15:00",
+          "body": "Makes sense. I would keep the API backward compatible and hide the change behind a default."
+        }
+      ]
+    },
+    {
+      "number": 25,
+      "title": "Allow receipt reprint from the list page",
+      "body": "Support asked for a quick reprint action in micro_admin/forms.py. The current flow forces users to open the receipt first, which is fine on desktop but annoying on smaller screens.\n\n**Requested behavior**\nAdd a reprint action to the row menu.",
+      "labels": [
+        "enhancement",
+        "receipt",
+        "priority:low"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_D",
+      "github_token_env": "GITHUB_TOKEN_4",
+      "created_date": "2022-02-15T14:05:00",
+      "closed_date": "2022-02-22T14:05:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 25,
+      "milestone": "v1.2",
+      "comments": [
+        {
+          "author_developer": "DEV_A",
+          "github_token_env": "GITHUB_TOKEN_1",
+          "date": "2022-02-15T17:25:00",
+          "body": "Makes sense. I would keep the API backward compatible and hide the change behind a default."
+        },
+        {
+          "author_developer": "DEV_C",
+          "github_token_env": "GITHUB_TOKEN_3",
+          "date": "2022-02-16T15:05:00",
+          "body": "I can wire this up once we agree on the UI copy."
+        }
+      ]
+    },
+    {
+      "number": 26,
+      "title": "Make client search remember the last branch",
+      "body": "Branch users want micro_admin/views.py to remember the last branch they were working in. It would save them from reselecting the same branch dozens of times a day.\n\n**Request**\nPersist the branch choice per user session.",
+      "labels": [
+        "enhancement",
+        "client",
+        "priority:low"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_B",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "created_date": "2022-02-28T15:15:00",
+      "closed_date": "2022-03-08T15:15:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 26,
+      "milestone": "v1.2",
+      "comments": [
+        {
+          "author_developer": "DEV_A",
+          "github_token_env": "GITHUB_TOKEN_1",
+          "date": "2022-02-28T18:35:00",
+          "body": "Makes sense. I would keep the API backward compatible and hide the change behind a default."
+        }
+      ]
+    },
+    {
+      "number": 27,
+      "title": "Should we document the branch approval flow?",
+      "body": "We keep answering the same support question about who can approve a loan and where the approval history lives. Should we add a short section to docs/source/conf.py before the next rollout?\n\n**Context**\nThe answer seems obvious to the team, but not to the branch office.",
+      "labels": [
+        "question",
+        "needs-investigation"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_C",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "created_date": "2022-03-13T16:25:00",
+      "closed_date": "2022-03-22T16:25:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 27,
+      "milestone": "backlog",
+      "comments": [
+        {
+          "author_developer": "DEV_B",
+          "github_token_env": "GITHUB_TOKEN_2",
+          "date": "2022-03-13T18:15:00",
+          "body": "I think we should document it before changing the behavior."
+        }
+      ]
+    },
+    {
+      "number": 28,
+      "title": "Docs: add setup notes for local branch testing",
+      "body": "The onboarding notes in README.rst are missing the steps for local branch testing. This keeps coming up when someone clones the app and tries to run it against a test database.\n\n**Scope**\nAdd the missing steps and a short troubleshooting section.",
+      "labels": [
+        "docs",
+        "priority:low"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_A",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "created_date": "2022-03-26T19:35:00",
+      "closed_date": "2022-04-05T19:35:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 28,
+      "milestone": "v1.1",
+      "comments": [
+        {
+          "author_developer": "DEV_C",
+          "github_token_env": "GITHUB_TOKEN_3",
+          "date": "2022-03-26T20:50:00",
+          "body": "Good idea. I will update the doc and the small template copy in the same pass."
+        }
+      ]
+    },
+    {
+      "number": 29,
+      "title": "Guarantor validation crashes when guarantor list is empty",
+      "body": "We are seeing a crash in micro_admin/models.py when a loan is saved without any guarantors. The record imports fine, but the edit form explodes on submit when the guarantor section is left blank.\n\n**Steps to reproduce**\n1. Open an existing loan\n2. Clear the guarantor list\n3. Save the form\n\n**Expected**\nThe form should validate and ask for a guarantor if the rule requires one.\n\n**Observed**\nThe page returns a 500 and the form does not recover gracefully.\n\n**Notes**\nThis started showing up after the latest repayment rule changes.",
+      "labels": [
+        "bug",
+        "loan",
+        "priority:high"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_D",
+      "github_token_env": "GITHUB_TOKEN_4",
+      "created_date": "2022-04-04T09:45:00",
+      "closed_date": "2022-04-08T09:45:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 29,
+      "milestone": "v1.1",
+      "comments": [
+        {
+          "author_developer": "DEV_D",
+          "github_token_env": "GITHUB_TOKEN_4",
+          "date": "2022-04-04T11:55:00",
+          "body": "Confirmed. This is coming from micro_admin/models.py and the repro is solid."
+        }
+      ]
+    },
+    {
+      "number": 30,
+      "title": "Payment form accepts zero amount on retry",
+      "body": "A support user reported that micro_admin/views.py allows a zero-value payment when the submit button is clicked twice in a row. The first submit succeeds, the second one should be rejected but currently slips through.\n\n**Expected**\nA duplicate submission should be blocked.\n\n**Observed**\nThe payment is recorded twice, once with amount and once with zero.\n\n**Context**\nThis is more visible on slower connections and after the form gets resubmitted from the browser back button.",
+      "labels": [
+        "bug",
+        "payment",
+        "priority:high"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_B",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "created_date": "2022-04-17T10:55:00",
+      "closed_date": "2022-04-22T10:55:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 30,
+      "milestone": "v1.0",
+      "comments": [
+        {
+          "author_developer": "DEV_D",
+          "github_token_env": "GITHUB_TOKEN_4",
+          "date": "2022-04-17T13:05:00",
+          "body": "Confirmed. This is coming from micro_admin/views.py and the repro is solid."
+        }
+      ]
+    },
+    {
+      "number": 31,
+      "title": "Ledger totals drift after deleting a stale receipt",
+      "body": "Users noticed that totals shown by templates/pdfgeneral_ledger.html no longer match the receipt summary after a stale receipt is removed. The mismatch only appears in branches with several backdated entries.\n\n**Expected**\nSummary and detail rows should agree.\n\n**Observed**\nThe total drops by one entry even though the item was only marked inactive.\n\n**Additional detail**\nThe issue is reproducible in the month-end report for branch NAGPUR-02.",
+      "labels": [
+        "bug",
+        "ledger",
+        "priority:medium"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_C",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "created_date": "2022-04-30T11:05:00",
+      "closed_date": "2022-05-06T11:05:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 31,
+      "milestone": "v1.1",
+      "comments": [
+        {
+          "author_developer": "DEV_D",
+          "github_token_env": "GITHUB_TOKEN_4",
+          "date": "2022-04-30T13:15:00",
+          "body": "Confirmed. This is coming from templates/pdfgeneral_ledger.html and the repro is solid."
+        },
+        {
+          "author_developer": "DEV_B",
+          "github_token_env": "GITHUB_TOKEN_2",
+          "date": "2022-04-30T15:45:00",
+          "body": "I can take this one. I will add a regression test and keep the change small."
+        }
+      ]
+    },
+    {
+      "number": 32,
+      "title": "Receipt list duplicates row after retry flow",
+      "body": "While testing the retry flow in templates/listof_receipts.html, the same receipt appears twice after a failed print attempt. The duplicate is not visible in the database, only in the rendered page.\n\n**Expected**\nOne row per receipt.\n\n**Observed**\nThe render shows the receipt twice if the page is refreshed immediately after submit.",
+      "labels": [
+        "bug",
+        "receipt",
+        "priority:high"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_A",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "created_date": "2022-05-13T14:15:00",
+      "closed_date": "2022-05-20T14:15:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 32,
+      "milestone": "v1.0",
+      "comments": [
+        {
+          "author_developer": "DEV_D",
+          "github_token_env": "GITHUB_TOKEN_4",
+          "date": "2022-05-13T16:25:00",
+          "body": "Confirmed. This is coming from templates/listof_receipts.html and the repro is solid."
+        }
+      ]
+    },
+    {
+      "number": 33,
+      "title": "Client update loses branch selection after save",
+      "body": "Updating client details in templates/clientledgertable.html resets the branch dropdown if the user edits an address field first. The change is subtle but a few branch admins spotted it during daily use.\n\n**Steps**\nOpen a client, change address, switch branch, save, then reopen.\n\n**Expected**\nThe selected branch should stay attached to the record.\n\n**Observed**\nThe branch falls back to the default one.",
+      "labels": [
+        "bug",
+        "client",
+        "priority:medium"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_D",
+      "github_token_env": "GITHUB_TOKEN_4",
+      "created_date": "2022-05-22T15:25:00",
+      "closed_date": "2022-05-30T15:25:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 33,
+      "milestone": "v1.0",
+      "comments": [
+        {
+          "author_developer": "DEV_D",
+          "github_token_env": "GITHUB_TOKEN_4",
+          "date": "2022-05-22T17:35:00",
+          "body": "Confirmed. This is coming from templates/clientledgertable.html and the repro is solid."
+        }
+      ]
+    },
+    {
+      "number": 34,
+      "title": "Savings withdrawal can go negative on partial edit",
+      "body": "An edit path in savings/views.py does not re-check the account balance before saving a withdrawal. This is only visible when an existing transaction is reopened and changed from the list view.\n\n**Expected**\nThe balance should never fall below zero.\n\n**Observed**\nA negative amount is accepted and the ledger is off by one transaction.",
+      "labels": [
+        "bug",
+        "savings",
+        "priority:critical"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_B",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "created_date": "2022-06-04T16:35:00",
+      "closed_date": "2022-06-13T16:35:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 34,
+      "milestone": "v1.0",
+      "comments": [
+        {
+          "author_developer": "DEV_D",
+          "github_token_env": "GITHUB_TOKEN_4",
+          "date": "2022-06-04T18:45:00",
+          "body": "Confirmed. This is coming from savings/views.py and the repro is solid."
+        },
+        {
+          "author_developer": "DEV_B",
+          "github_token_env": "GITHUB_TOKEN_2",
+          "date": "2022-06-04T21:15:00",
+          "body": "I can take this one. I will add a regression test and keep the change small."
+        }
+      ]
+    },
+    {
+      "number": 35,
+      "title": "Group interest calc uses old rate after approval",
+      "body": "When a group loan moves from pending to approved, micro_admin/views.py keeps the previous rate until the page is reloaded. That makes the first preview misleading and the branch manager has to refresh manually.\n\n**Expected**\nThe new rate should be reflected immediately.\n\n**Observed**\nThe old percentage remains in the preview pane.",
+      "labels": [
+        "bug",
+        "group",
+        "priority:medium"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_C",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "created_date": "2022-06-17T19:45:00",
+      "closed_date": "2022-06-27T19:45:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 35,
+      "milestone": "v1.1",
+      "comments": [
+        {
+          "author_developer": "DEV_D",
+          "github_token_env": "GITHUB_TOKEN_4",
+          "date": "2022-06-17T21:55:00",
+          "body": "Confirmed. This is coming from micro_admin/views.py and the repro is solid."
+        }
+      ]
+    },
+    {
+      "number": 36,
+      "title": "Add installment preview to loan workflow",
+      "body": "It would help the field team if micro_admin/tests.py showed a lightweight installment preview before the final save. This is mostly about avoiding a second call back to the office when the calculation looks off.\n\n**Desired behavior**\nShow a preview block with amount, tenure, and the next due date.\n\n**Why now**\nSeveral branches are asking for this while training new staff.",
+      "labels": [
+        "enhancement",
+        "loan",
+        "priority:medium"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_A",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "created_date": "2022-06-30T09:55:00",
+      "closed_date": "2022-07-04T09:55:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 36,
+      "milestone": "v1.2",
+      "comments": [
+        {
+          "author_developer": "DEV_A",
+          "github_token_env": "GITHUB_TOKEN_1",
+          "date": "2022-06-30T13:15:00",
+          "body": "Makes sense. I would keep the API backward compatible and hide the change behind a default."
+        }
+      ]
+    },
+    {
+      "number": 37,
+      "title": "Export ledger with optional branch filter",
+      "body": "Users running monthly reports asked for a branch filter in micro_admin/views.py. Right now they have to export the full ledger and filter it manually in a spreadsheet.\n\n**Acceptance criteria**\n- branch filter is optional\n- existing export stays unchanged when the filter is empty\n- the output still matches the current PDF layout",
+      "labels": [
+        "enhancement",
+        "ledger",
+        "priority:low"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_D",
+      "github_token_env": "GITHUB_TOKEN_4",
+      "created_date": "2022-07-09T10:05:00",
+      "closed_date": "2022-07-14T10:05:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 37,
+      "milestone": "v1.2",
+      "comments": [
+        {
+          "author_developer": "DEV_A",
+          "github_token_env": "GITHUB_TOKEN_1",
+          "date": "2022-07-09T13:25:00",
+          "body": "Makes sense. I would keep the API backward compatible and hide the change behind a default."
+        },
+        {
+          "author_developer": "DEV_C",
+          "github_token_env": "GITHUB_TOKEN_3",
+          "date": "2022-07-10T11:05:00",
+          "body": "I can wire this up once we agree on the UI copy."
+        }
+      ]
+    },
+    {
+      "number": 38,
+      "title": "Improve payment form hints for first-time operators",
+      "body": "Operators asked for a clearer hint set in micro_admin/views.py, especially around date entry and amount rounding. The form is usable today, but the warnings are easy to miss.\n\n**Desired outcome**\nAdd inline guidance without changing the underlying validation rules.",
+      "labels": [
+        "enhancement",
+        "payment",
+        "priority:low"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_B",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "created_date": "2022-07-22T11:15:00",
+      "closed_date": "2022-07-28T11:15:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 38,
+      "milestone": "v1.1",
+      "comments": [
+        {
+          "author_developer": "DEV_A",
+          "github_token_env": "GITHUB_TOKEN_1",
+          "date": "2022-07-22T14:35:00",
+          "body": "Makes sense. I would keep the API backward compatible and hide the change behind a default."
+        }
+      ]
+    },
+    {
+      "number": 39,
+      "title": "Allow receipt reprint from the list page",
+      "body": "Support asked for a quick reprint action in templates/receiptsform.html. The current flow forces users to open the receipt first, which is fine on desktop but annoying on smaller screens.\n\n**Requested behavior**\nAdd a reprint action to the row menu.",
+      "labels": [
+        "enhancement",
+        "receipt",
+        "priority:low"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_C",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "created_date": "2022-08-04T14:25:00",
+      "closed_date": "2022-08-11T14:25:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 39,
+      "milestone": "v1.2",
+      "comments": [
+        {
+          "author_developer": "DEV_A",
+          "github_token_env": "GITHUB_TOKEN_1",
+          "date": "2022-08-04T17:45:00",
+          "body": "Makes sense. I would keep the API backward compatible and hide the change behind a default."
+        }
+      ]
+    },
+    {
+      "number": 40,
+      "title": "Make client search remember the last branch",
+      "body": "Branch users want micro_admin/forms.py to remember the last branch they were working in. It would save them from reselecting the same branch dozens of times a day.\n\n**Request**\nPersist the branch choice per user session.",
+      "labels": [
+        "enhancement",
+        "client",
+        "priority:low"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_A",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "created_date": "2022-08-17T15:35:00",
+      "closed_date": "2022-08-25T15:35:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 40,
+      "milestone": "v1.2",
+      "comments": [
+        {
+          "author_developer": "DEV_A",
+          "github_token_env": "GITHUB_TOKEN_1",
+          "date": "2022-08-17T18:55:00",
+          "body": "Makes sense. I would keep the API backward compatible and hide the change behind a default."
+        }
+      ]
+    },
+    {
+      "number": 41,
+      "title": "Should we document the branch approval flow?",
+      "body": "We keep answering the same support question about who can approve a loan and where the approval history lives. Should we add a short section to docs/source/index.rst before the next rollout?\n\n**Context**\nThe answer seems obvious to the team, but not to the branch office.",
+      "labels": [
+        "question",
+        "needs-investigation"
+      ],
+      "state": "open",
+      "filed_by_developer": "DEV_D",
+      "github_token_env": "GITHUB_TOKEN_4",
+      "created_date": "2022-08-26T16:45:00",
+      "closed_date": null,
+      "closed_reason": "open",
+      "linked_pr_number": 41,
+      "milestone": "backlog",
+      "comments": [
+        {
+          "author_developer": "DEV_B",
+          "github_token_env": "GITHUB_TOKEN_2",
+          "date": "2022-08-26T18:35:00",
+          "body": "I think we should document it before changing the behavior."
+        }
+      ]
+    },
+    {
+      "number": 42,
+      "title": "Docs: add setup notes for local branch testing",
+      "body": "The onboarding notes in docs/source/conf.py are missing the steps for local branch testing. This keeps coming up when someone clones the app and tries to run it against a test database.\n\n**Scope**\nAdd the missing steps and a short troubleshooting section.",
+      "labels": [
+        "docs",
+        "priority:low"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_B",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "created_date": "2022-09-08T19:55:00",
+      "closed_date": "2022-09-18T19:55:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 42,
+      "milestone": "v1.1",
+      "comments": [
+        {
+          "author_developer": "DEV_C",
+          "github_token_env": "GITHUB_TOKEN_3",
+          "date": "2022-09-08T21:10:00",
+          "body": "Good idea. I will update the doc and the small template copy in the same pass."
+        }
+      ]
+    },
+    {
+      "number": 43,
+      "title": "Guarantor validation crashes when guarantor list is empty",
+      "body": "We are seeing a crash in micro_admin/forms.py when a loan is saved without any guarantors. The record imports fine, but the edit form explodes on submit when the guarantor section is left blank.\n\n**Steps to reproduce**\n1. Open an existing loan\n2. Clear the guarantor list\n3. Save the form\n\n**Expected**\nThe form should validate and ask for a guarantor if the rule requires one.\n\n**Observed**\nThe page returns a 500 and the form does not recover gracefully.\n\n**Notes**\nThis started showing up after the latest repayment rule changes.",
+      "labels": [
+        "bug",
+        "loan",
+        "priority:high"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_C",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "created_date": "2022-09-21T09:05:00",
+      "closed_date": "2022-09-25T09:05:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 43,
+      "milestone": "v1.1",
+      "comments": [
+        {
+          "author_developer": "DEV_D",
+          "github_token_env": "GITHUB_TOKEN_4",
+          "date": "2022-09-21T11:15:00",
+          "body": "Confirmed. This is coming from micro_admin/forms.py and the repro is solid."
+        },
+        {
+          "author_developer": "DEV_B",
+          "github_token_env": "GITHUB_TOKEN_2",
+          "date": "2022-09-21T13:45:00",
+          "body": "I can take this one. I will add a regression test and keep the change small."
+        }
+      ]
+    },
+    {
+      "number": 44,
+      "title": "Payment form accepts zero amount on retry",
+      "body": "A support user reported that templates/list_of_payments.html allows a zero-value payment when the submit button is clicked twice in a row. The first submit succeeds, the second one should be rejected but currently slips through.\n\n**Expected**\nA duplicate submission should be blocked.\n\n**Observed**\nThe payment is recorded twice, once with amount and once with zero.\n\n**Context**\nThis is more visible on slower connections and after the form gets resubmitted from the browser back button.",
+      "labels": [
+        "bug",
+        "payment",
+        "priority:high"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_A",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "created_date": "2022-10-04T10:15:00",
+      "closed_date": "2022-10-09T10:15:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 44,
+      "milestone": "v1.0",
+      "comments": [
+        {
+          "author_developer": "DEV_D",
+          "github_token_env": "GITHUB_TOKEN_4",
+          "date": "2022-10-04T12:25:00",
+          "body": "Confirmed. This is coming from templates/list_of_payments.html and the repro is solid."
+        }
+      ]
+    },
+    {
+      "number": 45,
+      "title": "Ledger totals drift after deleting a stale receipt",
+      "body": "Users noticed that totals shown by micro_admin/views.py no longer match the receipt summary after a stale receipt is removed. The mismatch only appears in branches with several backdated entries.\n\n**Expected**\nSummary and detail rows should agree.\n\n**Observed**\nThe total drops by one entry even though the item was only marked inactive.\n\n**Additional detail**\nThe issue is reproducible in the month-end report for branch NAGPUR-02.",
+      "labels": [
+        "bug",
+        "ledger",
+        "priority:medium"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_D",
+      "github_token_env": "GITHUB_TOKEN_4",
+      "created_date": "2022-10-13T11:25:00",
+      "closed_date": "2022-10-19T11:25:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 45,
+      "milestone": "v1.1",
+      "comments": [
+        {
+          "author_developer": "DEV_D",
+          "github_token_env": "GITHUB_TOKEN_4",
+          "date": "2022-10-13T13:35:00",
+          "body": "Confirmed. This is coming from micro_admin/views.py and the repro is solid."
+        }
+      ]
+    },
+    {
+      "number": 46,
+      "title": "Receipt list duplicates row after retry flow",
+      "body": "While testing the retry flow in micro_admin/views.py, the same receipt appears twice after a failed print attempt. The duplicate is not visible in the database, only in the rendered page.\n\n**Expected**\nOne row per receipt.\n\n**Observed**\nThe render shows the receipt twice if the page is refreshed immediately after submit.",
+      "labels": [
+        "bug",
+        "receipt",
+        "priority:high"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_B",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "created_date": "2022-10-26T14:35:00",
+      "closed_date": "2022-11-02T14:35:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 46,
+      "milestone": "v1.0",
+      "comments": [
+        {
+          "author_developer": "DEV_D",
+          "github_token_env": "GITHUB_TOKEN_4",
+          "date": "2022-10-26T16:45:00",
+          "body": "Confirmed. This is coming from micro_admin/views.py and the repro is solid."
+        },
+        {
+          "author_developer": "DEV_B",
+          "github_token_env": "GITHUB_TOKEN_2",
+          "date": "2022-10-26T19:15:00",
+          "body": "I can take this one. I will add a regression test and keep the change small."
+        }
+      ]
+    },
+    {
+      "number": 47,
+      "title": "Client update loses branch selection after save",
+      "body": "Updating client details in micro_admin/views.py resets the branch dropdown if the user edits an address field first. The change is subtle but a few branch admins spotted it during daily use.\n\n**Steps**\nOpen a client, change address, switch branch, save, then reopen.\n\n**Expected**\nThe selected branch should stay attached to the record.\n\n**Observed**\nThe branch falls back to the default one.",
+      "labels": [
+        "bug",
+        "client",
+        "priority:medium"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_C",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "created_date": "2022-11-08T15:45:00",
+      "closed_date": "2022-11-16T15:45:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 47,
+      "milestone": "v1.0",
+      "comments": [
+        {
+          "author_developer": "DEV_D",
+          "github_token_env": "GITHUB_TOKEN_4",
+          "date": "2022-11-08T17:55:00",
+          "body": "Confirmed. This is coming from micro_admin/views.py and the repro is solid."
+        }
+      ]
+    },
+    {
+      "number": 48,
+      "title": "Savings withdrawal can go negative on partial edit",
+      "body": "An edit path in templates/transactions.html does not re-check the account balance before saving a withdrawal. This is only visible when an existing transaction is reopened and changed from the list view.\n\n**Expected**\nThe balance should never fall below zero.\n\n**Observed**\nA negative amount is accepted and the ledger is off by one transaction.",
+      "labels": [
+        "bug",
+        "savings",
+        "priority:critical"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_A",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "created_date": "2022-11-21T16:55:00",
+      "closed_date": "2022-11-30T16:55:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 48,
+      "milestone": "v1.0",
+      "comments": [
+        {
+          "author_developer": "DEV_D",
+          "github_token_env": "GITHUB_TOKEN_4",
+          "date": "2022-11-21T19:05:00",
+          "body": "Confirmed. This is coming from templates/transactions.html and the repro is solid."
+        }
+      ]
+    },
+    {
+      "number": 49,
+      "title": "Group interest calc uses old rate after approval",
+      "body": "When a group loan moves from pending to approved, micro_admin/models.py keeps the previous rate until the page is reloaded. That makes the first preview misleading and the branch manager has to refresh manually.\n\n**Expected**\nThe new rate should be reflected immediately.\n\n**Observed**\nThe old percentage remains in the preview pane.",
+      "labels": [
+        "bug",
+        "group",
+        "priority:medium"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_D",
+      "github_token_env": "GITHUB_TOKEN_4",
+      "created_date": "2022-11-30T19:05:00",
+      "closed_date": "2022-12-10T19:05:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 49,
+      "milestone": "v1.1",
+      "comments": [
+        {
+          "author_developer": "DEV_D",
+          "github_token_env": "GITHUB_TOKEN_4",
+          "date": "2022-11-30T21:15:00",
+          "body": "Confirmed. This is coming from micro_admin/models.py and the repro is solid."
+        },
+        {
+          "author_developer": "DEV_B",
+          "github_token_env": "GITHUB_TOKEN_2",
+          "date": "2022-11-30T23:45:00",
+          "body": "I can take this one. I will add a regression test and keep the change small."
+        }
+      ]
+    },
+    {
+      "number": 50,
+      "title": "Add installment preview to loan workflow",
+      "body": "It would help the field team if micro_admin/views.py showed a lightweight installment preview before the final save. This is mostly about avoiding a second call back to the office when the calculation looks off.\n\n**Desired behavior**\nShow a preview block with amount, tenure, and the next due date.\n\n**Why now**\nSeveral branches are asking for this while training new staff.",
+      "labels": [
+        "enhancement",
+        "loan",
+        "priority:medium"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_B",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "created_date": "2022-12-13T09:15:00",
+      "closed_date": "2022-12-17T09:15:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 50,
+      "milestone": "v1.2",
+      "comments": [
+        {
+          "author_developer": "DEV_A",
+          "github_token_env": "GITHUB_TOKEN_1",
+          "date": "2022-12-13T12:35:00",
+          "body": "Makes sense. I would keep the API backward compatible and hide the change behind a default."
+        }
+      ]
+    },
+    {
+      "number": 51,
+      "title": "Export ledger with optional branch filter",
+      "body": "Users running monthly reports asked for a branch filter in templates/pdfgeneral_ledger.html. Right now they have to export the full ledger and filter it manually in a spreadsheet.\n\n**Acceptance criteria**\n- branch filter is optional\n- existing export stays unchanged when the filter is empty\n- the output still matches the current PDF layout",
+      "labels": [
+        "enhancement",
+        "ledger",
+        "priority:low"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_C",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "created_date": "2022-12-26T10:25:00",
+      "closed_date": "2022-12-31T10:25:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 51,
+      "milestone": "v1.2",
+      "comments": [
+        {
+          "author_developer": "DEV_A",
+          "github_token_env": "GITHUB_TOKEN_1",
+          "date": "2022-12-26T13:45:00",
+          "body": "Makes sense. I would keep the API backward compatible and hide the change behind a default."
+        }
+      ]
+    },
+    {
+      "number": 52,
+      "title": "Improve payment form hints for first-time operators",
+      "body": "Operators asked for a clearer hint set in templates/list_of_payments.html, especially around date entry and amount rounding. The form is usable today, but the warnings are easy to miss.\n\n**Desired outcome**\nAdd inline guidance without changing the underlying validation rules.",
+      "labels": [
+        "enhancement",
+        "payment",
+        "priority:low"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_A",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "created_date": "2023-01-08T11:35:00",
+      "closed_date": "2023-01-14T11:35:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 52,
+      "milestone": "v1.1",
+      "comments": [
+        {
+          "author_developer": "DEV_A",
+          "github_token_env": "GITHUB_TOKEN_1",
+          "date": "2023-01-08T14:55:00",
+          "body": "Makes sense. I would keep the API backward compatible and hide the change behind a default."
+        }
+      ]
+    },
+    {
+      "number": 53,
+      "title": "Allow receipt reprint from the list page",
+      "body": "Support asked for a quick reprint action in micro_admin/forms.py. The current flow forces users to open the receipt first, which is fine on desktop but annoying on smaller screens.\n\n**Requested behavior**\nAdd a reprint action to the row menu.",
+      "labels": [
+        "enhancement",
+        "receipt",
+        "priority:low"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_D",
+      "github_token_env": "GITHUB_TOKEN_4",
+      "created_date": "2023-01-17T14:45:00",
+      "closed_date": "2023-01-24T14:45:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 53,
+      "milestone": "v1.2",
+      "comments": [
+        {
+          "author_developer": "DEV_A",
+          "github_token_env": "GITHUB_TOKEN_1",
+          "date": "2023-01-17T18:05:00",
+          "body": "Makes sense. I would keep the API backward compatible and hide the change behind a default."
+        },
+        {
+          "author_developer": "DEV_C",
+          "github_token_env": "GITHUB_TOKEN_3",
+          "date": "2023-01-18T15:45:00",
+          "body": "I can wire this up once we agree on the UI copy."
+        }
+      ]
+    },
+    {
+      "number": 54,
+      "title": "Make client search remember the last branch",
+      "body": "Branch users want templates/clientledgertable.html to remember the last branch they were working in. It would save them from reselecting the same branch dozens of times a day.\n\n**Request**\nPersist the branch choice per user session.",
+      "labels": [
+        "enhancement",
+        "client",
+        "priority:low"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_B",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "created_date": "2023-01-30T15:55:00",
+      "closed_date": "2023-02-07T15:55:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 54,
+      "milestone": "v1.2",
+      "comments": [
+        {
+          "author_developer": "DEV_A",
+          "github_token_env": "GITHUB_TOKEN_1",
+          "date": "2023-01-30T19:15:00",
+          "body": "Makes sense. I would keep the API backward compatible and hide the change behind a default."
+        }
+      ]
+    },
+    {
+      "number": 55,
+      "title": "Should we document the branch approval flow?",
+      "body": "We keep answering the same support question about who can approve a loan and where the approval history lives. Should we add a short section to README.rst before the next rollout?\n\n**Context**\nThe answer seems obvious to the team, but not to the branch office.",
+      "labels": [
+        "question",
+        "needs-investigation"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_C",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "created_date": "2023-02-12T16:05:00",
+      "closed_date": "2023-02-21T16:05:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 55,
+      "milestone": "backlog",
+      "comments": [
+        {
+          "author_developer": "DEV_B",
+          "github_token_env": "GITHUB_TOKEN_2",
+          "date": "2023-02-12T17:55:00",
+          "body": "I think we should document it before changing the behavior."
+        }
+      ]
+    },
+    {
+      "number": 56,
+      "title": "Docs: add setup notes for local branch testing",
+      "body": "The onboarding notes in docs/source/index.rst are missing the steps for local branch testing. This keeps coming up when someone clones the app and tries to run it against a test database.\n\n**Scope**\nAdd the missing steps and a short troubleshooting section.",
+      "labels": [
+        "docs",
+        "priority:low"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_A",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "created_date": "2023-02-25T19:15:00",
+      "closed_date": "2023-03-07T19:15:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 56,
+      "milestone": "v1.1",
+      "comments": [
+        {
+          "author_developer": "DEV_C",
+          "github_token_env": "GITHUB_TOKEN_3",
+          "date": "2023-02-25T20:30:00",
+          "body": "Good idea. I will update the doc and the small template copy in the same pass."
+        }
+      ]
+    },
+    {
+      "number": 57,
+      "title": "Guarantor validation crashes when guarantor list is empty",
+      "body": "We are seeing a crash in micro_admin/models.py when a loan is saved without any guarantors. The record imports fine, but the edit form explodes on submit when the guarantor section is left blank.\n\n**Steps to reproduce**\n1. Open an existing loan\n2. Clear the guarantor list\n3. Save the form\n\n**Expected**\nThe form should validate and ask for a guarantor if the rule requires one.\n\n**Observed**\nThe page returns a 500 and the form does not recover gracefully.\n\n**Notes**\nThis started showing up after the latest repayment rule changes.",
+      "labels": [
+        "bug",
+        "loan",
+        "priority:high"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_D",
+      "github_token_env": "GITHUB_TOKEN_4",
+      "created_date": "2023-03-06T09:25:00",
+      "closed_date": "2023-03-10T09:25:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 57,
+      "milestone": "v1.1",
+      "comments": [
+        {
+          "author_developer": "DEV_D",
+          "github_token_env": "GITHUB_TOKEN_4",
+          "date": "2023-03-06T11:35:00",
+          "body": "Confirmed. This is coming from micro_admin/models.py and the repro is solid."
+        }
+      ]
+    },
+    {
+      "number": 58,
+      "title": "Payment form accepts zero amount on retry",
+      "body": "A support user reported that micro_admin/views.py allows a zero-value payment when the submit button is clicked twice in a row. The first submit succeeds, the second one should be rejected but currently slips through.\n\n**Expected**\nA duplicate submission should be blocked.\n\n**Observed**\nThe payment is recorded twice, once with amount and once with zero.\n\n**Context**\nThis is more visible on slower connections and after the form gets resubmitted from the browser back button.",
+      "labels": [
+        "bug",
+        "payment",
+        "priority:high"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_B",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "created_date": "2023-03-19T10:35:00",
+      "closed_date": "2023-03-24T10:35:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 58,
+      "milestone": "v1.0",
+      "comments": [
+        {
+          "author_developer": "DEV_D",
+          "github_token_env": "GITHUB_TOKEN_4",
+          "date": "2023-03-19T12:45:00",
+          "body": "Confirmed. This is coming from micro_admin/views.py and the repro is solid."
+        },
+        {
+          "author_developer": "DEV_B",
+          "github_token_env": "GITHUB_TOKEN_2",
+          "date": "2023-03-19T15:15:00",
+          "body": "I can take this one. I will add a regression test and keep the change small."
+        }
+      ]
+    },
+    {
+      "number": 59,
+      "title": "Ledger totals drift after deleting a stale receipt",
+      "body": "Users noticed that totals shown by templates/pdfgeneral_ledger.html no longer match the receipt summary after a stale receipt is removed. The mismatch only appears in branches with several backdated entries.\n\n**Expected**\nSummary and detail rows should agree.\n\n**Observed**\nThe total drops by one entry even though the item was only marked inactive.\n\n**Additional detail**\nThe issue is reproducible in the month-end report for branch NAGPUR-02.",
+      "labels": [
+        "bug",
+        "ledger",
+        "priority:medium"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_C",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "created_date": "2023-04-01T11:45:00",
+      "closed_date": "2023-04-07T11:45:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 59,
+      "milestone": "v1.1",
+      "comments": [
+        {
+          "author_developer": "DEV_D",
+          "github_token_env": "GITHUB_TOKEN_4",
+          "date": "2023-04-01T13:55:00",
+          "body": "Confirmed. This is coming from templates/pdfgeneral_ledger.html and the repro is solid."
+        }
+      ]
+    },
+    {
+      "number": 60,
+      "title": "Receipt list duplicates row after retry flow",
+      "body": "While testing the retry flow in templates/listof_receipts.html, the same receipt appears twice after a failed print attempt. The duplicate is not visible in the database, only in the rendered page.\n\n**Expected**\nOne row per receipt.\n\n**Observed**\nThe render shows the receipt twice if the page is refreshed immediately after submit.",
+      "labels": [
+        "bug",
+        "receipt",
+        "priority:high"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_A",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "created_date": "2023-04-14T14:55:00",
+      "closed_date": "2023-04-21T14:55:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 60,
+      "milestone": "v1.0",
+      "comments": [
+        {
+          "author_developer": "DEV_D",
+          "github_token_env": "GITHUB_TOKEN_4",
+          "date": "2023-04-14T17:05:00",
+          "body": "Confirmed. This is coming from templates/listof_receipts.html and the repro is solid."
+        }
+      ]
+    },
+    {
+      "number": 61,
+      "title": "Client update loses branch selection after save",
+      "body": "Updating client details in micro_admin/forms.py resets the branch dropdown if the user edits an address field first. The change is subtle but a few branch admins spotted it during daily use.\n\n**Steps**\nOpen a client, change address, switch branch, save, then reopen.\n\n**Expected**\nThe selected branch should stay attached to the record.\n\n**Observed**\nThe branch falls back to the default one.",
+      "labels": [
+        "bug",
+        "client",
+        "priority:medium"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_D",
+      "github_token_env": "GITHUB_TOKEN_4",
+      "created_date": "2023-04-23T15:05:00",
+      "closed_date": "2023-05-01T15:05:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 61,
+      "milestone": "v1.0",
+      "comments": [
+        {
+          "author_developer": "DEV_D",
+          "github_token_env": "GITHUB_TOKEN_4",
+          "date": "2023-04-23T17:15:00",
+          "body": "Confirmed. This is coming from micro_admin/forms.py and the repro is solid."
+        },
+        {
+          "author_developer": "DEV_B",
+          "github_token_env": "GITHUB_TOKEN_2",
+          "date": "2023-04-23T19:45:00",
+          "body": "I can take this one. I will add a regression test and keep the change small."
+        }
+      ]
+    },
+    {
+      "number": 62,
+      "title": "Savings withdrawal can go negative on partial edit",
+      "body": "An edit path in templates/deposits.html does not re-check the account balance before saving a withdrawal. This is only visible when an existing transaction is reopened and changed from the list view.\n\n**Expected**\nThe balance should never fall below zero.\n\n**Observed**\nA negative amount is accepted and the ledger is off by one transaction.",
+      "labels": [
+        "bug",
+        "savings",
+        "priority:critical"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_B",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "created_date": "2023-05-06T16:15:00",
+      "closed_date": "2023-05-15T16:15:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 62,
+      "milestone": "v1.0",
+      "comments": [
+        {
+          "author_developer": "DEV_D",
+          "github_token_env": "GITHUB_TOKEN_4",
+          "date": "2023-05-06T18:25:00",
+          "body": "Confirmed. This is coming from templates/deposits.html and the repro is solid."
+        }
+      ]
+    },
+    {
+      "number": 63,
+      "title": "Group interest calc uses old rate after approval",
+      "body": "When a group loan moves from pending to approved, templates/group/dashboard.html keeps the previous rate until the page is reloaded. That makes the first preview misleading and the branch manager has to refresh manually.\n\n**Expected**\nThe new rate should be reflected immediately.\n\n**Observed**\nThe old percentage remains in the preview pane.",
+      "labels": [
+        "bug",
+        "group",
+        "priority:medium"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_C",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "created_date": "2023-05-19T19:25:00",
+      "closed_date": "2023-05-29T19:25:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 63,
+      "milestone": "v1.1",
+      "comments": [
+        {
+          "author_developer": "DEV_D",
+          "github_token_env": "GITHUB_TOKEN_4",
+          "date": "2023-05-19T21:35:00",
+          "body": "Confirmed. This is coming from templates/group/dashboard.html and the repro is solid."
+        }
+      ]
+    },
+    {
+      "number": 64,
+      "title": "Add installment preview to loan workflow",
+      "body": "It would help the field team if micro_admin/tests.py showed a lightweight installment preview before the final save. This is mostly about avoiding a second call back to the office when the calculation looks off.\n\n**Desired behavior**\nShow a preview block with amount, tenure, and the next due date.\n\n**Why now**\nSeveral branches are asking for this while training new staff.",
+      "labels": [
+        "enhancement",
+        "loan",
+        "priority:medium"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_A",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "created_date": "2023-06-01T09:35:00",
+      "closed_date": "2023-06-05T09:35:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 64,
+      "milestone": "v1.2",
+      "comments": [
+        {
+          "author_developer": "DEV_A",
+          "github_token_env": "GITHUB_TOKEN_1",
+          "date": "2023-06-01T12:55:00",
+          "body": "Makes sense. I would keep the API backward compatible and hide the change behind a default."
+        }
+      ]
+    },
+    {
+      "number": 65,
+      "title": "Export ledger with optional branch filter",
+      "body": "Users running monthly reports asked for a branch filter in micro_admin/views.py. Right now they have to export the full ledger and filter it manually in a spreadsheet.\n\n**Acceptance criteria**\n- branch filter is optional\n- existing export stays unchanged when the filter is empty\n- the output still matches the current PDF layout",
+      "labels": [
+        "enhancement",
+        "ledger",
+        "priority:low"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_D",
+      "github_token_env": "GITHUB_TOKEN_4",
+      "created_date": "2023-06-10T10:45:00",
+      "closed_date": "2023-06-15T10:45:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 65,
+      "milestone": "v1.2",
+      "comments": [
+        {
+          "author_developer": "DEV_A",
+          "github_token_env": "GITHUB_TOKEN_1",
+          "date": "2023-06-10T14:05:00",
+          "body": "Makes sense. I would keep the API backward compatible and hide the change behind a default."
+        },
+        {
+          "author_developer": "DEV_C",
+          "github_token_env": "GITHUB_TOKEN_3",
+          "date": "2023-06-11T11:45:00",
+          "body": "I can wire this up once we agree on the UI copy."
+        }
+      ]
+    },
+    {
+      "number": 66,
+      "title": "Improve payment form hints for first-time operators",
+      "body": "Operators asked for a clearer hint set in micro_admin/views.py, especially around date entry and amount rounding. The form is usable today, but the warnings are easy to miss.\n\n**Desired outcome**\nAdd inline guidance without changing the underlying validation rules.",
+      "labels": [
+        "enhancement",
+        "payment",
+        "priority:low"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_B",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "created_date": "2023-06-23T11:55:00",
+      "closed_date": "2023-06-29T11:55:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 66,
+      "milestone": "v1.1",
+      "comments": [
+        {
+          "author_developer": "DEV_A",
+          "github_token_env": "GITHUB_TOKEN_1",
+          "date": "2023-06-23T15:15:00",
+          "body": "Makes sense. I would keep the API backward compatible and hide the change behind a default."
+        }
+      ]
+    },
+    {
+      "number": 67,
+      "title": "Allow receipt reprint from the list page",
+      "body": "Support asked for a quick reprint action in templates/receiptsform.html. The current flow forces users to open the receipt first, which is fine on desktop but annoying on smaller screens.\n\n**Requested behavior**\nAdd a reprint action to the row menu.",
+      "labels": [
+        "enhancement",
+        "receipt",
+        "priority:low"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_C",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "created_date": "2023-07-06T14:05:00",
+      "closed_date": "2023-07-13T14:05:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 67,
+      "milestone": "v1.2",
+      "comments": [
+        {
+          "author_developer": "DEV_A",
+          "github_token_env": "GITHUB_TOKEN_1",
+          "date": "2023-07-06T17:25:00",
+          "body": "Makes sense. I would keep the API backward compatible and hide the change behind a default."
+        }
+      ]
+    },
+    {
+      "number": 68,
+      "title": "Make client search remember the last branch",
+      "body": "Branch users want micro_admin/views.py to remember the last branch they were working in. It would save them from reselecting the same branch dozens of times a day.\n\n**Request**\nPersist the branch choice per user session.",
+      "labels": [
+        "enhancement",
+        "client",
+        "priority:low"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_A",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "created_date": "2023-07-19T15:15:00",
+      "closed_date": "2023-07-27T15:15:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 68,
+      "milestone": "v1.2",
+      "comments": [
+        {
+          "author_developer": "DEV_A",
+          "github_token_env": "GITHUB_TOKEN_1",
+          "date": "2023-07-19T18:35:00",
+          "body": "Makes sense. I would keep the API backward compatible and hide the change behind a default."
+        }
+      ]
+    },
+    {
+      "number": 69,
+      "title": "Should we document the branch approval flow?",
+      "body": "We keep answering the same support question about who can approve a loan and where the approval history lives. Should we add a short section to docs/source/conf.py before the next rollout?\n\n**Context**\nThe answer seems obvious to the team, but not to the branch office.",
+      "labels": [
+        "question",
+        "needs-investigation"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_D",
+      "github_token_env": "GITHUB_TOKEN_4",
+      "created_date": "2023-07-28T16:25:00",
+      "closed_date": "2023-08-06T16:25:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 69,
+      "milestone": "backlog",
+      "comments": [
+        {
+          "author_developer": "DEV_B",
+          "github_token_env": "GITHUB_TOKEN_2",
+          "date": "2023-07-28T18:15:00",
+          "body": "I think we should document it before changing the behavior."
+        }
+      ]
+    },
+    {
+      "number": 70,
+      "title": "Docs: add setup notes for local branch testing",
+      "body": "The onboarding notes in README.rst are missing the steps for local branch testing. This keeps coming up when someone clones the app and tries to run it against a test database.\n\n**Scope**\nAdd the missing steps and a short troubleshooting section.",
+      "labels": [
+        "docs",
+        "priority:low"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_B",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "created_date": "2023-08-10T19:35:00",
+      "closed_date": "2023-08-20T19:35:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 70,
+      "milestone": "v1.1",
+      "comments": [
+        {
+          "author_developer": "DEV_C",
+          "github_token_env": "GITHUB_TOKEN_3",
+          "date": "2023-08-10T20:50:00",
+          "body": "Good idea. I will update the doc and the small template copy in the same pass."
+        }
+      ]
+    }
+  ]
+}

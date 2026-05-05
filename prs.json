@@ -1,0 +1,2469 @@
+{
+  "metadata": {
+    "target_prs": 85,
+    "notes": "Pull request history for release and maintenance work."
+  },
+  "prs": [
+    {
+      "number": 1,
+      "title": "fix(loan): Guarantor validation crashes when guarantor list is empty",
+      "body": "Refs #1.\n\nWe are seeing a crash in micro_admin/models.py when a loan is saved without any guarantors. The record imports fine, but the edit form explodes on submit when the guarantor section is left blank.\n\n**Steps to reproduce**\n1. Open an existing loan\n2. Clear the guarantor list\n3. Save the form\n\n**Expected**\nThe form should validate and ask for a guarantor if the rule requires one.\n\n**Observed**\nThe page returns a 500 and the form does not recover gracefully.\n\n**Notes**\nThis started showing up after the latest repayment rule changes.",
+      "branch_name": "fix/loan-1",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_A",
+      "author_token_env": "GITHUB_TOKEN_1",
+      "reviewer_developer": "DEV_B",
+      "reviewer_token_env": "GITHUB_TOKEN_2",
+      "files_changed": [
+        "micro_admin/models.py",
+        "micro_admin/views.py"
+      ],
+      "created_date": "2021-05-07T09:00:00",
+      "merged_date": "2021-05-10T09:00:00",
+      "linked_issue_number": 1,
+      "milestone": "v1.1",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "Can you add a regression test for the empty path?",
+        "review_comment_file": "micro_admin/models.py",
+        "review_comment_line": 40,
+        "author_reply": "Good catch. I have added the missing guard and a focused test.",
+        "final_review_type": "APPROVE",
+        "final_review_comment": "Approved."
+      }
+    },
+    {
+      "number": 2,
+      "title": "fix(payment): Payment form accepts zero amount on retry",
+      "body": "Refs #2.\n\nA support user reported that micro_admin/forms.py allows a zero-value payment when the submit button is clicked twice in a row. The first submit succeeds, the second one should be rejected but currently slips through.\n\n**Expected**\nA duplicate submission should be blocked.\n\n**Observed**\nThe payment is recorded twice, once with amount and once with zero.\n\n**Context**\nThis is more visible on slower connections and after the form gets resubmitted from the browser back button.",
+      "branch_name": "fix/payment-2",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_B",
+      "author_token_env": "GITHUB_TOKEN_2",
+      "reviewer_developer": "DEV_A",
+      "reviewer_token_env": "GITHUB_TOKEN_1",
+      "files_changed": [
+        "micro_admin/forms.py",
+        "micro_admin/views.py"
+      ],
+      "created_date": "2021-05-17T10:15:00",
+      "merged_date": "2021-05-21T10:15:00",
+      "linked_issue_number": 2,
+      "milestone": "v1.0",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "This looks good structurally, but I would split the validation from the save logic.",
+        "review_comment_file": "micro_admin/forms.py",
+        "review_comment_line": 41,
+        "author_reply": "Yep, that was the missing branch. Fixed in the latest commit.",
+        "final_review_type": "APPROVE",
+        "final_review_comment": "Approved."
+      }
+    },
+    {
+      "number": 3,
+      "title": "fix(ledger): Ledger totals drift after deleting a stale receipt",
+      "body": "Refs #3.\n\nUsers noticed that totals shown by micro_admin/views.py no longer match the receipt summary after a stale receipt is removed. The mismatch only appears in branches with several backdated entries.\n\n**Expected**\nSummary and detail rows should agree.\n\n**Observed**\nThe total drops by one entry even though the item was only marked inactive.\n\n**Additional detail**\nThe issue is reproducible in the month-end report for branch NAGPUR-02.",
+      "branch_name": "fix/ledger-3",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_C",
+      "author_token_env": "GITHUB_TOKEN_3",
+      "reviewer_developer": "DEV_D",
+      "reviewer_token_env": "GITHUB_TOKEN_4",
+      "files_changed": [
+        "micro_admin/views.py",
+        "templates/generalledger.html"
+      ],
+      "created_date": "2021-05-27T11:30:00",
+      "merged_date": "2021-06-01T11:30:00",
+      "linked_issue_number": 3,
+      "milestone": "v1.1",
+      "review": {
+        "review_type": "REQUEST_CHANGES",
+        "reviewer_comment": "Small nit: please name the helper a little more clearly.",
+        "review_comment_file": "micro_admin/views.py",
+        "review_comment_line": 42,
+        "author_reply": "Thanks, I simplified the path and added coverage for the null case.",
+        "final_review_type": "APPROVE",
+        "final_review_comment": "Approved after the follow-up."
+      }
+    },
+    {
+      "number": 4,
+      "title": "fix(receipt): Receipt list duplicates row after retry flow",
+      "body": "Refs #4.\n\nWhile testing the retry flow in micro_admin/forms.py, the same receipt appears twice after a failed print attempt. The duplicate is not visible in the database, only in the rendered page.\n\n**Expected**\nOne row per receipt.\n\n**Observed**\nThe render shows the receipt twice if the page is refreshed immediately after submit.",
+      "branch_name": "fix/receipt-4",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_D",
+      "author_token_env": "GITHUB_TOKEN_4",
+      "reviewer_developer": "DEV_C",
+      "reviewer_token_env": "GITHUB_TOKEN_3",
+      "files_changed": [
+        "micro_admin/forms.py",
+        "micro_admin/views.py"
+      ],
+      "created_date": "2021-06-03T13:45:00",
+      "merged_date": "2021-06-09T13:45:00",
+      "linked_issue_number": 4,
+      "milestone": "v1.0",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "I verified the main branch, but can you confirm what happens when the queryset is empty?",
+        "review_comment_file": "micro_admin/forms.py",
+        "review_comment_line": 43,
+        "author_reply": "Done. I also tightened the error message so support can spot it faster.",
+        "final_review_type": "APPROVE",
+        "final_review_comment": "Approved."
+      }
+    },
+    {
+      "number": 5,
+      "title": "fix(client): Client update loses branch selection after save",
+      "body": "Refs #5.\n\nUpdating client details in micro_admin/forms.py resets the branch dropdown if the user edits an address field first. The change is subtle but a few branch admins spotted it during daily use.\n\n**Steps**\nOpen a client, change address, switch branch, save, then reopen.\n\n**Expected**\nThe selected branch should stay attached to the record.\n\n**Observed**\nThe branch falls back to the default one.",
+      "branch_name": "fix/client-5",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_A",
+      "author_token_env": "GITHUB_TOKEN_1",
+      "reviewer_developer": "DEV_B",
+      "reviewer_token_env": "GITHUB_TOKEN_2",
+      "files_changed": [
+        "micro_admin/forms.py",
+        "micro_admin/views.py"
+      ],
+      "created_date": "2021-06-13T14:00:00",
+      "merged_date": "2021-06-20T14:00:00",
+      "linked_issue_number": 5,
+      "milestone": "v1.0",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "Thanks for addressing the edge case. Approving after the follow-up commit.",
+        "review_comment_file": "micro_admin/forms.py",
+        "review_comment_line": 44,
+        "author_reply": "Addressed in the follow-up commit and pushed the docs update.",
+        "final_review_type": "APPROVE",
+        "final_review_comment": "Approved."
+      }
+    },
+    {
+      "number": 6,
+      "title": "fix(savings): Savings withdrawal can go negative on partial edit",
+      "body": "Refs #6.\n\nAn edit path in savings/views.py does not re-check the account balance before saving a withdrawal. This is only visible when an existing transaction is reopened and changed from the list view.\n\n**Expected**\nThe balance should never fall below zero.\n\n**Observed**\nA negative amount is accepted and the ledger is off by one transaction.",
+      "branch_name": "fix/savings-6",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_B",
+      "author_token_env": "GITHUB_TOKEN_2",
+      "reviewer_developer": "DEV_A",
+      "reviewer_token_env": "GITHUB_TOKEN_1",
+      "files_changed": [
+        "savings/views.py",
+        "templates/deposits.html"
+      ],
+      "created_date": "2021-06-23T15:15:00",
+      "merged_date": "2021-07-01T15:15:00",
+      "linked_issue_number": 6,
+      "milestone": "v1.0",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "One more pass on the error message would help support a lot.",
+        "review_comment_file": "savings/views.py",
+        "review_comment_line": 45,
+        "author_reply": "Good catch. I have added the missing guard and a focused test.",
+        "final_review_type": "APPROVE",
+        "final_review_comment": "Approved."
+      }
+    },
+    {
+      "number": 7,
+      "title": "fix(group): Group interest calc uses old rate after approval",
+      "body": "Refs #7.\n\nWhen a group loan moves from pending to approved, micro_admin/models.py keeps the previous rate until the page is reloaded. That makes the first preview misleading and the branch manager has to refresh manually.\n\n**Expected**\nThe new rate should be reflected immediately.\n\n**Observed**\nThe old percentage remains in the preview pane.",
+      "branch_name": "fix/group-7",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_C",
+      "author_token_env": "GITHUB_TOKEN_3",
+      "reviewer_developer": "DEV_D",
+      "reviewer_token_env": "GITHUB_TOKEN_4",
+      "files_changed": [
+        "micro_admin/models.py",
+        "micro_admin/views.py"
+      ],
+      "created_date": "2021-06-30T09:30:00",
+      "merged_date": "2021-07-03T09:30:00",
+      "linked_issue_number": 7,
+      "milestone": "v1.1",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "Could you keep the formatting consistent with the adjacent form handlers?",
+        "review_comment_file": "micro_admin/models.py",
+        "review_comment_line": 46,
+        "author_reply": "Yep, that was the missing branch. Fixed in the latest commit.",
+        "final_review_type": "APPROVE",
+        "final_review_comment": "Approved."
+      }
+    },
+    {
+      "number": 8,
+      "title": "feat(loan): Add installment preview to loan workflow",
+      "body": "Refs #8.\n\nIt would help the field team if micro_admin/models.py showed a lightweight installment preview before the final save. This is mostly about avoiding a second call back to the office when the calculation looks off.\n\n**Desired behavior**\nShow a preview block with amount, tenure, and the next due date.\n\n**Why now**\nSeveral branches are asking for this while training new staff.",
+      "branch_name": "feature/loan-8",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_D",
+      "author_token_env": "GITHUB_TOKEN_4",
+      "reviewer_developer": "DEV_C",
+      "reviewer_token_env": "GITHUB_TOKEN_3",
+      "files_changed": [
+        "micro_admin/models.py",
+        "micro_admin/views.py"
+      ],
+      "created_date": "2021-07-10T10:45:00",
+      "merged_date": "2021-07-14T10:45:00",
+      "linked_issue_number": 8,
+      "milestone": "v1.2",
+      "review": {
+        "review_type": "REQUEST_CHANGES",
+        "reviewer_comment": "Can you add a regression test for the empty path?",
+        "review_comment_file": "micro_admin/models.py",
+        "review_comment_line": 47,
+        "author_reply": "Thanks, I simplified the path and added coverage for the null case.",
+        "final_review_type": "APPROVE",
+        "final_review_comment": "Approved after the follow-up."
+      }
+    },
+    {
+      "number": 9,
+      "title": "feat(ledger): Export ledger with optional branch filter",
+      "body": "Refs #9.\n\nUsers running monthly reports asked for a branch filter in micro_admin/views.py. Right now they have to export the full ledger and filter it manually in a spreadsheet.\n\n**Acceptance criteria**\n- branch filter is optional\n- existing export stays unchanged when the filter is empty\n- the output still matches the current PDF layout",
+      "branch_name": "feature/ledger-9",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_A",
+      "author_token_env": "GITHUB_TOKEN_1",
+      "reviewer_developer": "DEV_B",
+      "reviewer_token_env": "GITHUB_TOKEN_2",
+      "files_changed": [
+        "micro_admin/views.py",
+        "templates/generalledger.html"
+      ],
+      "created_date": "2021-07-20T11:00:00",
+      "merged_date": "2021-07-25T11:00:00",
+      "linked_issue_number": 9,
+      "milestone": "v1.2",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "This looks good structurally, but I would split the validation from the save logic.",
+        "review_comment_file": "micro_admin/views.py",
+        "review_comment_line": 48,
+        "author_reply": "Done. I also tightened the error message so support can spot it faster.",
+        "final_review_type": "APPROVE",
+        "final_review_comment": "Approved."
+      }
+    },
+    {
+      "number": 10,
+      "title": "feat(payment): Improve payment form hints for first-time operators",
+      "body": "Refs #10.\n\nOperators asked for a clearer hint set in micro_admin/forms.py, especially around date entry and amount rounding. The form is usable today, but the warnings are easy to miss.\n\n**Desired outcome**\nAdd inline guidance without changing the underlying validation rules.",
+      "branch_name": "feature/payment-10",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_B",
+      "author_token_env": "GITHUB_TOKEN_2",
+      "reviewer_developer": "DEV_A",
+      "reviewer_token_env": "GITHUB_TOKEN_1",
+      "files_changed": [
+        "micro_admin/forms.py",
+        "micro_admin/views.py"
+      ],
+      "created_date": "2021-07-27T13:15:00",
+      "merged_date": "2021-08-02T13:15:00",
+      "linked_issue_number": 10,
+      "milestone": "v1.1",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "Small nit: please name the helper a little more clearly.",
+        "review_comment_file": "micro_admin/forms.py",
+        "review_comment_line": 49,
+        "author_reply": "Addressed in the follow-up commit and pushed the docs update.",
+        "final_review_type": "APPROVE",
+        "final_review_comment": "Approved."
+      }
+    },
+    {
+      "number": 11,
+      "title": "feat(receipt): Allow receipt reprint from the list page",
+      "body": "Refs #11.\n\nSupport asked for a quick reprint action in micro_admin/forms.py. The current flow forces users to open the receipt first, which is fine on desktop but annoying on smaller screens.\n\n**Requested behavior**\nAdd a reprint action to the row menu.",
+      "branch_name": "feature/receipt-11",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_C",
+      "author_token_env": "GITHUB_TOKEN_3",
+      "reviewer_developer": "DEV_D",
+      "reviewer_token_env": "GITHUB_TOKEN_4",
+      "files_changed": [
+        "micro_admin/forms.py",
+        "micro_admin/views.py"
+      ],
+      "created_date": "2021-08-06T14:30:00",
+      "merged_date": "2021-08-13T14:30:00",
+      "linked_issue_number": 11,
+      "milestone": "v1.2",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "I verified the main branch, but can you confirm what happens when the queryset is empty?",
+        "review_comment_file": "micro_admin/forms.py",
+        "review_comment_line": 50,
+        "author_reply": "Good catch. I have added the missing guard and a focused test.",
+        "final_review_type": "APPROVE",
+        "final_review_comment": "Approved."
+      }
+    },
+    {
+      "number": 12,
+      "title": "feat(client): Make client search remember the last branch",
+      "body": "Refs #12.\n\nBranch users want micro_admin/forms.py to remember the last branch they were working in. It would save them from reselecting the same branch dozens of times a day.\n\n**Request**\nPersist the branch choice per user session.",
+      "branch_name": "feature/client-12",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_D",
+      "author_token_env": "GITHUB_TOKEN_4",
+      "reviewer_developer": "DEV_C",
+      "reviewer_token_env": "GITHUB_TOKEN_3",
+      "files_changed": [
+        "micro_admin/forms.py",
+        "micro_admin/views.py"
+      ],
+      "created_date": "2021-08-16T15:45:00",
+      "merged_date": "2021-08-24T15:45:00",
+      "linked_issue_number": 12,
+      "milestone": "v1.2",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "Thanks for addressing the edge case. Approving after the follow-up commit.",
+        "review_comment_file": "micro_admin/forms.py",
+        "review_comment_line": 51,
+        "author_reply": "Yep, that was the missing branch. Fixed in the latest commit.",
+        "final_review_type": "APPROVE",
+        "final_review_comment": "Approved."
+      }
+    },
+    {
+      "number": 13,
+      "title": "docs(docs): Should we document the branch approval flow?",
+      "body": "Discussion for #13.\n\nWe keep answering the same support question about who can approve a loan and where the approval history lives. Should we add a short section to README.rst before the next rollout?\n\n**Context**\nThe answer seems obvious to the team, but not to the branch office.",
+      "branch_name": "docs/docs-13",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_A",
+      "author_token_env": "GITHUB_TOKEN_1",
+      "reviewer_developer": "DEV_B",
+      "reviewer_token_env": "GITHUB_TOKEN_2",
+      "files_changed": [
+        "README.rst",
+        "docs/source/index.rst"
+      ],
+      "created_date": "2021-08-23T09:00:00",
+      "merged_date": "2021-08-26T09:00:00",
+      "linked_issue_number": 13,
+      "milestone": "backlog",
+      "review": {
+        "review_type": "REQUEST_CHANGES",
+        "reviewer_comment": "One more pass on the error message would help support a lot.",
+        "review_comment_file": "README.rst",
+        "review_comment_line": 52,
+        "author_reply": "Thanks, I simplified the path and added coverage for the null case.",
+        "final_review_type": "APPROVE",
+        "final_review_comment": "Approved after the follow-up."
+      }
+    },
+    {
+      "number": 14,
+      "title": "docs(docs): Docs: add setup notes for local branch testing",
+      "body": "Refs #14.\n\nThe onboarding notes in README.rst are missing the steps for local branch testing. This keeps coming up when someone clones the app and tries to run it against a test database.\n\n**Scope**\nAdd the missing steps and a short troubleshooting section.",
+      "branch_name": "docs/docs-14",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_B",
+      "author_token_env": "GITHUB_TOKEN_2",
+      "reviewer_developer": "DEV_A",
+      "reviewer_token_env": "GITHUB_TOKEN_1",
+      "files_changed": [
+        "README.rst",
+        "docs/source/index.rst"
+      ],
+      "created_date": "2021-09-02T10:15:00",
+      "merged_date": "2021-09-06T10:15:00",
+      "linked_issue_number": 14,
+      "milestone": "v1.1",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "Could you keep the formatting consistent with the adjacent form handlers?",
+        "review_comment_file": "README.rst",
+        "review_comment_line": 53,
+        "author_reply": "Done. I also tightened the error message so support can spot it faster.",
+        "final_review_type": "APPROVE",
+        "final_review_comment": "Approved."
+      }
+    },
+    {
+      "number": 15,
+      "title": "fix(loan): Guarantor validation crashes when guarantor list is empty",
+      "body": "Refs #15.\n\nWe are seeing a crash in micro_admin/models.py when a loan is saved without any guarantors. The record imports fine, but the edit form explodes on submit when the guarantor section is left blank.\n\n**Steps to reproduce**\n1. Open an existing loan\n2. Clear the guarantor list\n3. Save the form\n\n**Expected**\nThe form should validate and ask for a guarantor if the rule requires one.\n\n**Observed**\nThe page returns a 500 and the form does not recover gracefully.\n\n**Notes**\nThis started showing up after the latest repayment rule changes.",
+      "branch_name": "fix/loan-15",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_C",
+      "author_token_env": "GITHUB_TOKEN_3",
+      "reviewer_developer": "DEV_D",
+      "reviewer_token_env": "GITHUB_TOKEN_4",
+      "files_changed": [
+        "micro_admin/models.py",
+        "micro_admin/views.py"
+      ],
+      "created_date": "2021-09-12T11:30:00",
+      "merged_date": "2021-09-17T11:30:00",
+      "linked_issue_number": 15,
+      "milestone": "v1.1",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "Can you add a regression test for the empty path?",
+        "review_comment_file": "micro_admin/models.py",
+        "review_comment_line": 54,
+        "author_reply": "Addressed in the follow-up commit and pushed the docs update.",
+        "final_review_type": "APPROVE",
+        "final_review_comment": "Approved."
+      }
+    },
+    {
+      "number": 16,
+      "title": "fix(payment): Payment form accepts zero amount on retry",
+      "body": "Refs #16.\n\nA support user reported that micro_admin/forms.py allows a zero-value payment when the submit button is clicked twice in a row. The first submit succeeds, the second one should be rejected but currently slips through.\n\n**Expected**\nA duplicate submission should be blocked.\n\n**Observed**\nThe payment is recorded twice, once with amount and once with zero.\n\n**Context**\nThis is more visible on slower connections and after the form gets resubmitted from the browser back button.",
+      "branch_name": "fix/payment-16",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_D",
+      "author_token_env": "GITHUB_TOKEN_4",
+      "reviewer_developer": "DEV_C",
+      "reviewer_token_env": "GITHUB_TOKEN_3",
+      "files_changed": [
+        "micro_admin/forms.py",
+        "micro_admin/views.py"
+      ],
+      "created_date": "2021-09-19T13:45:00",
+      "merged_date": "2021-09-25T13:45:00",
+      "linked_issue_number": 16,
+      "milestone": "v1.0",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "This looks good structurally, but I would split the validation from the save logic.",
+        "review_comment_file": "micro_admin/forms.py",
+        "review_comment_line": 55,
+        "author_reply": "Good catch. I have added the missing guard and a focused test.",
+        "final_review_type": "APPROVE",
+        "final_review_comment": "Approved."
+      }
+    },
+    {
+      "number": 17,
+      "title": "fix(ledger): Ledger totals drift after deleting a stale receipt",
+      "body": "Refs #17.\n\nUsers noticed that totals shown by micro_admin/views.py no longer match the receipt summary after a stale receipt is removed. The mismatch only appears in branches with several backdated entries.\n\n**Expected**\nSummary and detail rows should agree.\n\n**Observed**\nThe total drops by one entry even though the item was only marked inactive.\n\n**Additional detail**\nThe issue is reproducible in the month-end report for branch NAGPUR-02.",
+      "branch_name": "fix/ledger-17",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_A",
+      "author_token_env": "GITHUB_TOKEN_1",
+      "reviewer_developer": "DEV_B",
+      "reviewer_token_env": "GITHUB_TOKEN_2",
+      "files_changed": [
+        "micro_admin/views.py",
+        "templates/generalledger.html"
+      ],
+      "created_date": "2021-09-29T14:00:00",
+      "merged_date": "2021-10-06T14:00:00",
+      "linked_issue_number": 17,
+      "milestone": "v1.1",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "Small nit: please name the helper a little more clearly.",
+        "review_comment_file": "micro_admin/views.py",
+        "review_comment_line": 56,
+        "author_reply": "Yep, that was the missing branch. Fixed in the latest commit.",
+        "final_review_type": "APPROVE",
+        "final_review_comment": "Approved."
+      }
+    },
+    {
+      "number": 18,
+      "title": "fix(receipt): Receipt list duplicates row after retry flow",
+      "body": "Refs #18.\n\nWhile testing the retry flow in micro_admin/forms.py, the same receipt appears twice after a failed print attempt. The duplicate is not visible in the database, only in the rendered page.\n\n**Expected**\nOne row per receipt.\n\n**Observed**\nThe render shows the receipt twice if the page is refreshed immediately after submit.",
+      "branch_name": "fix/receipt-18",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_B",
+      "author_token_env": "GITHUB_TOKEN_2",
+      "reviewer_developer": "DEV_A",
+      "reviewer_token_env": "GITHUB_TOKEN_1",
+      "files_changed": [
+        "micro_admin/forms.py",
+        "micro_admin/views.py"
+      ],
+      "created_date": "2021-10-09T15:15:00",
+      "merged_date": "2021-10-17T15:15:00",
+      "linked_issue_number": 18,
+      "milestone": "v1.0",
+      "review": {
+        "review_type": "REQUEST_CHANGES",
+        "reviewer_comment": "I verified the main branch, but can you confirm what happens when the queryset is empty?",
+        "review_comment_file": "micro_admin/forms.py",
+        "review_comment_line": 57,
+        "author_reply": "Thanks, I simplified the path and added coverage for the null case.",
+        "final_review_type": "APPROVE",
+        "final_review_comment": "Approved after the follow-up."
+      }
+    },
+    {
+      "number": 19,
+      "title": "fix(client): Client update loses branch selection after save",
+      "body": "Refs #19.\n\nUpdating client details in micro_admin/forms.py resets the branch dropdown if the user edits an address field first. The change is subtle but a few branch admins spotted it during daily use.\n\n**Steps**\nOpen a client, change address, switch branch, save, then reopen.\n\n**Expected**\nThe selected branch should stay attached to the record.\n\n**Observed**\nThe branch falls back to the default one.",
+      "branch_name": "fix/client-19",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_C",
+      "author_token_env": "GITHUB_TOKEN_3",
+      "reviewer_developer": "DEV_D",
+      "reviewer_token_env": "GITHUB_TOKEN_4",
+      "files_changed": [
+        "micro_admin/forms.py",
+        "micro_admin/views.py"
+      ],
+      "created_date": "2021-10-16T09:30:00",
+      "merged_date": "2021-10-19T09:30:00",
+      "linked_issue_number": 19,
+      "milestone": "v1.0",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "Thanks for addressing the edge case. Approving after the follow-up commit.",
+        "review_comment_file": "micro_admin/forms.py",
+        "review_comment_line": 58,
+        "author_reply": "Done. I also tightened the error message so support can spot it faster.",
+        "final_review_type": "APPROVE",
+        "final_review_comment": "Approved."
+      }
+    },
+    {
+      "number": 20,
+      "title": "fix(savings): Savings withdrawal can go negative on partial edit",
+      "body": "Refs #20.\n\nAn edit path in savings/views.py does not re-check the account balance before saving a withdrawal. This is only visible when an existing transaction is reopened and changed from the list view.\n\n**Expected**\nThe balance should never fall below zero.\n\n**Observed**\nA negative amount is accepted and the ledger is off by one transaction.",
+      "branch_name": "fix/savings-20",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_D",
+      "author_token_env": "GITHUB_TOKEN_4",
+      "reviewer_developer": "DEV_C",
+      "reviewer_token_env": "GITHUB_TOKEN_3",
+      "files_changed": [
+        "savings/views.py",
+        "templates/deposits.html"
+      ],
+      "created_date": "2021-10-26T10:45:00",
+      "merged_date": "2021-10-30T10:45:00",
+      "linked_issue_number": 20,
+      "milestone": "v1.0",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "One more pass on the error message would help support a lot.",
+        "review_comment_file": "savings/views.py",
+        "review_comment_line": 59,
+        "author_reply": "Addressed in the follow-up commit and pushed the docs update.",
+        "final_review_type": "APPROVE",
+        "final_review_comment": "Approved."
+      }
+    },
+    {
+      "number": 21,
+      "title": "fix(group): Group interest calc uses old rate after approval",
+      "body": "Refs #21.\n\nWhen a group loan moves from pending to approved, micro_admin/models.py keeps the previous rate until the page is reloaded. That makes the first preview misleading and the branch manager has to refresh manually.\n\n**Expected**\nThe new rate should be reflected immediately.\n\n**Observed**\nThe old percentage remains in the preview pane.",
+      "branch_name": "fix/group-21",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_A",
+      "author_token_env": "GITHUB_TOKEN_1",
+      "reviewer_developer": "DEV_B",
+      "reviewer_token_env": "GITHUB_TOKEN_2",
+      "files_changed": [
+        "micro_admin/models.py",
+        "micro_admin/views.py"
+      ],
+      "created_date": "2021-11-05T11:00:00",
+      "merged_date": "2021-11-10T11:00:00",
+      "linked_issue_number": 21,
+      "milestone": "v1.1",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "Could you keep the formatting consistent with the adjacent form handlers?",
+        "review_comment_file": "micro_admin/models.py",
+        "review_comment_line": 60,
+        "author_reply": "Good catch. I have added the missing guard and a focused test.",
+        "final_review_type": "APPROVE",
+        "final_review_comment": "Approved."
+      }
+    },
+    {
+      "number": 22,
+      "title": "feat(loan): Add installment preview to loan workflow",
+      "body": "Refs #22.\n\nIt would help the field team if micro_admin/models.py showed a lightweight installment preview before the final save. This is mostly about avoiding a second call back to the office when the calculation looks off.\n\n**Desired behavior**\nShow a preview block with amount, tenure, and the next due date.\n\n**Why now**\nSeveral branches are asking for this while training new staff.",
+      "branch_name": "feature/loan-22",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_B",
+      "author_token_env": "GITHUB_TOKEN_2",
+      "reviewer_developer": "DEV_A",
+      "reviewer_token_env": "GITHUB_TOKEN_1",
+      "files_changed": [
+        "micro_admin/models.py",
+        "micro_admin/views.py"
+      ],
+      "created_date": "2021-11-12T13:15:00",
+      "merged_date": "2021-11-18T13:15:00",
+      "linked_issue_number": 22,
+      "milestone": "v1.2",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "Can you add a regression test for the empty path?",
+        "review_comment_file": "micro_admin/models.py",
+        "review_comment_line": 61,
+        "author_reply": "Yep, that was the missing branch. Fixed in the latest commit.",
+        "final_review_type": "APPROVE",
+        "final_review_comment": "Approved."
+      }
+    },
+    {
+      "number": 23,
+      "title": "feat(ledger): Export ledger with optional branch filter",
+      "body": "Refs #23.\n\nUsers running monthly reports asked for a branch filter in micro_admin/views.py. Right now they have to export the full ledger and filter it manually in a spreadsheet.\n\n**Acceptance criteria**\n- branch filter is optional\n- existing export stays unchanged when the filter is empty\n- the output still matches the current PDF layout",
+      "branch_name": "feature/ledger-23",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_C",
+      "author_token_env": "GITHUB_TOKEN_3",
+      "reviewer_developer": "DEV_D",
+      "reviewer_token_env": "GITHUB_TOKEN_4",
+      "files_changed": [
+        "micro_admin/views.py",
+        "templates/generalledger.html"
+      ],
+      "created_date": "2021-11-22T14:30:00",
+      "merged_date": "2021-11-29T14:30:00",
+      "linked_issue_number": 23,
+      "milestone": "v1.2",
+      "review": {
+        "review_type": "REQUEST_CHANGES",
+        "reviewer_comment": "This looks good structurally, but I would split the validation from the save logic.",
+        "review_comment_file": "micro_admin/views.py",
+        "review_comment_line": 62,
+        "author_reply": "Thanks, I simplified the path and added coverage for the null case.",
+        "final_review_type": "APPROVE",
+        "final_review_comment": "Approved after the follow-up."
+      }
+    },
+    {
+      "number": 24,
+      "title": "feat(payment): Improve payment form hints for first-time operators",
+      "body": "Refs #24.\n\nOperators asked for a clearer hint set in micro_admin/forms.py, especially around date entry and amount rounding. The form is usable today, but the warnings are easy to miss.\n\n**Desired outcome**\nAdd inline guidance without changing the underlying validation rules.",
+      "branch_name": "feature/payment-24",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_D",
+      "author_token_env": "GITHUB_TOKEN_4",
+      "reviewer_developer": "DEV_C",
+      "reviewer_token_env": "GITHUB_TOKEN_3",
+      "files_changed": [
+        "micro_admin/forms.py",
+        "micro_admin/views.py"
+      ],
+      "created_date": "2021-12-02T15:45:00",
+      "merged_date": "2021-12-10T15:45:00",
+      "linked_issue_number": 24,
+      "milestone": "v1.1",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "Small nit: please name the helper a little more clearly.",
+        "review_comment_file": "micro_admin/forms.py",
+        "review_comment_line": 63,
+        "author_reply": "Done. I also tightened the error message so support can spot it faster.",
+        "final_review_type": "APPROVE",
+        "final_review_comment": "Approved."
+      }
+    },
+    {
+      "number": 25,
+      "title": "feat(receipt): Allow receipt reprint from the list page",
+      "body": "Refs #25.\n\nSupport asked for a quick reprint action in micro_admin/forms.py. The current flow forces users to open the receipt first, which is fine on desktop but annoying on smaller screens.\n\n**Requested behavior**\nAdd a reprint action to the row menu.",
+      "branch_name": "feature/receipt-25",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_A",
+      "author_token_env": "GITHUB_TOKEN_1",
+      "reviewer_developer": "DEV_B",
+      "reviewer_token_env": "GITHUB_TOKEN_2",
+      "files_changed": [
+        "micro_admin/forms.py",
+        "micro_admin/views.py"
+      ],
+      "created_date": "2021-12-09T09:00:00",
+      "merged_date": "2021-12-12T09:00:00",
+      "linked_issue_number": 25,
+      "milestone": "v1.2",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "I verified the main branch, but can you confirm what happens when the queryset is empty?",
+        "review_comment_file": "micro_admin/forms.py",
+        "review_comment_line": 64,
+        "author_reply": "Addressed in the follow-up commit and pushed the docs update.",
+        "final_review_type": "APPROVE",
+        "final_review_comment": "Approved."
+      }
+    },
+    {
+      "number": 26,
+      "title": "feat(client): Make client search remember the last branch",
+      "body": "Refs #26.\n\nBranch users want micro_admin/forms.py to remember the last branch they were working in. It would save them from reselecting the same branch dozens of times a day.\n\n**Request**\nPersist the branch choice per user session.",
+      "branch_name": "feature/client-26",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_B",
+      "author_token_env": "GITHUB_TOKEN_2",
+      "reviewer_developer": "DEV_A",
+      "reviewer_token_env": "GITHUB_TOKEN_1",
+      "files_changed": [
+        "micro_admin/forms.py",
+        "micro_admin/views.py"
+      ],
+      "created_date": "2021-12-19T10:15:00",
+      "merged_date": "2021-12-23T10:15:00",
+      "linked_issue_number": 26,
+      "milestone": "v1.2",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "Thanks for addressing the edge case. Approving after the follow-up commit.",
+        "review_comment_file": "micro_admin/forms.py",
+        "review_comment_line": 65,
+        "author_reply": "Good catch. I have added the missing guard and a focused test.",
+        "final_review_type": "APPROVE",
+        "final_review_comment": "Approved."
+      }
+    },
+    {
+      "number": 27,
+      "title": "docs(docs): Should we document the branch approval flow?",
+      "body": "Discussion for #27.\n\nWe keep answering the same support question about who can approve a loan and where the approval history lives. Should we add a short section to README.rst before the next rollout?\n\n**Context**\nThe answer seems obvious to the team, but not to the branch office.",
+      "branch_name": "docs/docs-27",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_C",
+      "author_token_env": "GITHUB_TOKEN_3",
+      "reviewer_developer": "DEV_D",
+      "reviewer_token_env": "GITHUB_TOKEN_4",
+      "files_changed": [
+        "README.rst",
+        "docs/source/index.rst"
+      ],
+      "created_date": "2021-12-29T11:30:00",
+      "merged_date": "2022-01-03T11:30:00",
+      "linked_issue_number": 27,
+      "milestone": "backlog",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "One more pass on the error message would help support a lot.",
+        "review_comment_file": "README.rst",
+        "review_comment_line": 66,
+        "author_reply": "Yep, that was the missing branch. Fixed in the latest commit.",
+        "final_review_type": "APPROVE",
+        "final_review_comment": "Approved."
+      }
+    },
+    {
+      "number": 28,
+      "title": "docs(docs): Docs: add setup notes for local branch testing",
+      "body": "Refs #28.\n\nThe onboarding notes in README.rst are missing the steps for local branch testing. This keeps coming up when someone clones the app and tries to run it against a test database.\n\n**Scope**\nAdd the missing steps and a short troubleshooting section.",
+      "branch_name": "docs/docs-28",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_D",
+      "author_token_env": "GITHUB_TOKEN_4",
+      "reviewer_developer": "DEV_C",
+      "reviewer_token_env": "GITHUB_TOKEN_3",
+      "files_changed": [
+        "README.rst",
+        "docs/source/index.rst"
+      ],
+      "created_date": "2022-01-05T13:45:00",
+      "merged_date": "2022-01-11T13:45:00",
+      "linked_issue_number": 28,
+      "milestone": "v1.1",
+      "review": {
+        "review_type": "REQUEST_CHANGES",
+        "reviewer_comment": "Could you keep the formatting consistent with the adjacent form handlers?",
+        "review_comment_file": "README.rst",
+        "review_comment_line": 67,
+        "author_reply": "Thanks, I simplified the path and added coverage for the null case.",
+        "final_review_type": "APPROVE",
+        "final_review_comment": "Approved after the follow-up."
+      }
+    },
+    {
+      "number": 29,
+      "title": "fix(loan): Guarantor validation crashes when guarantor list is empty",
+      "body": "Refs #29.\n\nWe are seeing a crash in micro_admin/models.py when a loan is saved without any guarantors. The record imports fine, but the edit form explodes on submit when the guarantor section is left blank.\n\n**Steps to reproduce**\n1. Open an existing loan\n2. Clear the guarantor list\n3. Save the form\n\n**Expected**\nThe form should validate and ask for a guarantor if the rule requires one.\n\n**Observed**\nThe page returns a 500 and the form does not recover gracefully.\n\n**Notes**\nThis started showing up after the latest repayment rule changes.",
+      "branch_name": "fix/loan-29",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_A",
+      "author_token_env": "GITHUB_TOKEN_1",
+      "reviewer_developer": "DEV_B",
+      "reviewer_token_env": "GITHUB_TOKEN_2",
+      "files_changed": [
+        "micro_admin/models.py",
+        "micro_admin/views.py"
+      ],
+      "created_date": "2022-01-15T14:00:00",
+      "merged_date": "2022-01-22T14:00:00",
+      "linked_issue_number": 29,
+      "milestone": "v1.1",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "Can you add a regression test for the empty path?",
+        "review_comment_file": "micro_admin/models.py",
+        "review_comment_line": 68,
+        "author_reply": "Done. I also tightened the error message so support can spot it faster.",
+        "final_review_type": "APPROVE",
+        "final_review_comment": "Approved."
+      }
+    },
+    {
+      "number": 30,
+      "title": "fix(payment): Payment form accepts zero amount on retry",
+      "body": "Refs #30.\n\nA support user reported that micro_admin/forms.py allows a zero-value payment when the submit button is clicked twice in a row. The first submit succeeds, the second one should be rejected but currently slips through.\n\n**Expected**\nA duplicate submission should be blocked.\n\n**Observed**\nThe payment is recorded twice, once with amount and once with zero.\n\n**Context**\nThis is more visible on slower connections and after the form gets resubmitted from the browser back button.",
+      "branch_name": "fix/payment-30",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_B",
+      "author_token_env": "GITHUB_TOKEN_2",
+      "reviewer_developer": "DEV_A",
+      "reviewer_token_env": "GITHUB_TOKEN_1",
+      "files_changed": [
+        "micro_admin/forms.py",
+        "micro_admin/views.py"
+      ],
+      "created_date": "2022-01-25T15:15:00",
+      "merged_date": "2022-02-02T15:15:00",
+      "linked_issue_number": 30,
+      "milestone": "v1.0",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "This looks good structurally, but I would split the validation from the save logic.",
+        "review_comment_file": "micro_admin/forms.py",
+        "review_comment_line": 69,
+        "author_reply": "Addressed in the follow-up commit and pushed the docs update.",
+        "final_review_type": "APPROVE",
+        "final_review_comment": "Approved."
+      }
+    },
+    {
+      "number": 31,
+      "title": "fix(ledger): Ledger totals drift after deleting a stale receipt",
+      "body": "Refs #31.\n\nUsers noticed that totals shown by micro_admin/views.py no longer match the receipt summary after a stale receipt is removed. The mismatch only appears in branches with several backdated entries.\n\n**Expected**\nSummary and detail rows should agree.\n\n**Observed**\nThe total drops by one entry even though the item was only marked inactive.\n\n**Additional detail**\nThe issue is reproducible in the month-end report for branch NAGPUR-02.",
+      "branch_name": "fix/ledger-31",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_C",
+      "author_token_env": "GITHUB_TOKEN_3",
+      "reviewer_developer": "DEV_D",
+      "reviewer_token_env": "GITHUB_TOKEN_4",
+      "files_changed": [
+        "micro_admin/views.py",
+        "templates/generalledger.html"
+      ],
+      "created_date": "2022-02-01T09:30:00",
+      "merged_date": "2022-02-04T09:30:00",
+      "linked_issue_number": 31,
+      "milestone": "v1.1",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "Small nit: please name the helper a little more clearly.",
+        "review_comment_file": "micro_admin/views.py",
+        "review_comment_line": 70,
+        "author_reply": "Good catch. I have added the missing guard and a focused test.",
+        "final_review_type": "APPROVE",
+        "final_review_comment": "Approved."
+      }
+    },
+    {
+      "number": 32,
+      "title": "fix(receipt): Receipt list duplicates row after retry flow",
+      "body": "Refs #32.\n\nWhile testing the retry flow in micro_admin/forms.py, the same receipt appears twice after a failed print attempt. The duplicate is not visible in the database, only in the rendered page.\n\n**Expected**\nOne row per receipt.\n\n**Observed**\nThe render shows the receipt twice if the page is refreshed immediately after submit.",
+      "branch_name": "fix/receipt-32",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_D",
+      "author_token_env": "GITHUB_TOKEN_4",
+      "reviewer_developer": "DEV_C",
+      "reviewer_token_env": "GITHUB_TOKEN_3",
+      "files_changed": [
+        "micro_admin/forms.py",
+        "micro_admin/views.py"
+      ],
+      "created_date": "2022-02-11T10:45:00",
+      "merged_date": "2022-02-15T10:45:00",
+      "linked_issue_number": 32,
+      "milestone": "v1.0",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "I verified the main branch, but can you confirm what happens when the queryset is empty?",
+        "review_comment_file": "micro_admin/forms.py",
+        "review_comment_line": 71,
+        "author_reply": "Yep, that was the missing branch. Fixed in the latest commit.",
+        "final_review_type": "APPROVE",
+        "final_review_comment": "Approved."
+      }
+    },
+    {
+      "number": 33,
+      "title": "fix(client): Client update loses branch selection after save",
+      "body": "Refs #33.\n\nUpdating client details in micro_admin/forms.py resets the branch dropdown if the user edits an address field first. The change is subtle but a few branch admins spotted it during daily use.\n\n**Steps**\nOpen a client, change address, switch branch, save, then reopen.\n\n**Expected**\nThe selected branch should stay attached to the record.\n\n**Observed**\nThe branch falls back to the default one.",
+      "branch_name": "fix/client-33",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_A",
+      "author_token_env": "GITHUB_TOKEN_1",
+      "reviewer_developer": "DEV_B",
+      "reviewer_token_env": "GITHUB_TOKEN_2",
+      "files_changed": [
+        "micro_admin/forms.py",
+        "micro_admin/views.py"
+      ],
+      "created_date": "2022-02-21T11:00:00",
+      "merged_date": "2022-02-26T11:00:00",
+      "linked_issue_number": 33,
+      "milestone": "v1.0",
+      "review": {
+        "review_type": "REQUEST_CHANGES",
+        "reviewer_comment": "Thanks for addressing the edge case. Approving after the follow-up commit.",
+        "review_comment_file": "micro_admin/forms.py",
+        "review_comment_line": 72,
+        "author_reply": "Thanks, I simplified the path and added coverage for the null case.",
+        "final_review_type": "APPROVE",
+        "final_review_comment": "Approved after the follow-up."
+      }
+    },
+    {
+      "number": 34,
+      "title": "fix(savings): Savings withdrawal can go negative on partial edit",
+      "body": "Refs #34.\n\nAn edit path in savings/views.py does not re-check the account balance before saving a withdrawal. This is only visible when an existing transaction is reopened and changed from the list view.\n\n**Expected**\nThe balance should never fall below zero.\n\n**Observed**\nA negative amount is accepted and the ledger is off by one transaction.",
+      "branch_name": "fix/savings-34",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_B",
+      "author_token_env": "GITHUB_TOKEN_2",
+      "reviewer_developer": "DEV_A",
+      "reviewer_token_env": "GITHUB_TOKEN_1",
+      "files_changed": [
+        "savings/views.py",
+        "templates/deposits.html"
+      ],
+      "created_date": "2022-02-28T13:15:00",
+      "merged_date": "2022-03-06T13:15:00",
+      "linked_issue_number": 34,
+      "milestone": "v1.0",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "One more pass on the error message would help support a lot.",
+        "review_comment_file": "savings/views.py",
+        "review_comment_line": 73,
+        "author_reply": "Done. I also tightened the error message so support can spot it faster.",
+        "final_review_type": "APPROVE",
+        "final_review_comment": "Approved."
+      }
+    },
+    {
+      "number": 35,
+      "title": "fix(group): Group interest calc uses old rate after approval",
+      "body": "Refs #35.\n\nWhen a group loan moves from pending to approved, micro_admin/models.py keeps the previous rate until the page is reloaded. That makes the first preview misleading and the branch manager has to refresh manually.\n\n**Expected**\nThe new rate should be reflected immediately.\n\n**Observed**\nThe old percentage remains in the preview pane.",
+      "branch_name": "fix/group-35",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_C",
+      "author_token_env": "GITHUB_TOKEN_3",
+      "reviewer_developer": "DEV_D",
+      "reviewer_token_env": "GITHUB_TOKEN_4",
+      "files_changed": [
+        "micro_admin/models.py",
+        "micro_admin/views.py"
+      ],
+      "created_date": "2022-03-10T14:30:00",
+      "merged_date": "2022-03-17T14:30:00",
+      "linked_issue_number": 35,
+      "milestone": "v1.1",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "Could you keep the formatting consistent with the adjacent form handlers?",
+        "review_comment_file": "micro_admin/models.py",
+        "review_comment_line": 74,
+        "author_reply": "Addressed in the follow-up commit and pushed the docs update.",
+        "final_review_type": "APPROVE",
+        "final_review_comment": "Approved."
+      }
+    },
+    {
+      "number": 36,
+      "title": "feat(loan): Add installment preview to loan workflow",
+      "body": "Refs #36.\n\nIt would help the field team if micro_admin/models.py showed a lightweight installment preview before the final save. This is mostly about avoiding a second call back to the office when the calculation looks off.\n\n**Desired behavior**\nShow a preview block with amount, tenure, and the next due date.\n\n**Why now**\nSeveral branches are asking for this while training new staff.",
+      "branch_name": "feature/loan-36",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_D",
+      "author_token_env": "GITHUB_TOKEN_4",
+      "reviewer_developer": "DEV_C",
+      "reviewer_token_env": "GITHUB_TOKEN_3",
+      "files_changed": [
+        "micro_admin/models.py",
+        "micro_admin/views.py"
+      ],
+      "created_date": "2022-03-20T15:45:00",
+      "merged_date": "2022-03-28T15:45:00",
+      "linked_issue_number": 36,
+      "milestone": "v1.2",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "Can you add a regression test for the empty path?",
+        "review_comment_file": "micro_admin/models.py",
+        "review_comment_line": 40,
+        "author_reply": "Good catch. I have added the missing guard and a focused test.",
+        "final_review_type": "APPROVE",
+        "final_review_comment": "Approved."
+      }
+    },
+    {
+      "number": 37,
+      "title": "feat(ledger): Export ledger with optional branch filter",
+      "body": "Refs #37.\n\nUsers running monthly reports asked for a branch filter in micro_admin/views.py. Right now they have to export the full ledger and filter it manually in a spreadsheet.\n\n**Acceptance criteria**\n- branch filter is optional\n- existing export stays unchanged when the filter is empty\n- the output still matches the current PDF layout",
+      "branch_name": "feature/ledger-37",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_A",
+      "author_token_env": "GITHUB_TOKEN_1",
+      "reviewer_developer": "DEV_B",
+      "reviewer_token_env": "GITHUB_TOKEN_2",
+      "files_changed": [
+        "micro_admin/views.py",
+        "templates/generalledger.html"
+      ],
+      "created_date": "2022-03-27T09:00:00",
+      "merged_date": "2022-03-30T09:00:00",
+      "linked_issue_number": 37,
+      "milestone": "v1.2",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "This looks good structurally, but I would split the validation from the save logic.",
+        "review_comment_file": "micro_admin/views.py",
+        "review_comment_line": 41,
+        "author_reply": "Yep, that was the missing branch. Fixed in the latest commit.",
+        "final_review_type": "APPROVE",
+        "final_review_comment": "Approved."
+      }
+    },
+    {
+      "number": 38,
+      "title": "feat(payment): Improve payment form hints for first-time operators",
+      "body": "Refs #38.\n\nOperators asked for a clearer hint set in micro_admin/forms.py, especially around date entry and amount rounding. The form is usable today, but the warnings are easy to miss.\n\n**Desired outcome**\nAdd inline guidance without changing the underlying validation rules.",
+      "branch_name": "feature/payment-38",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_B",
+      "author_token_env": "GITHUB_TOKEN_2",
+      "reviewer_developer": "DEV_A",
+      "reviewer_token_env": "GITHUB_TOKEN_1",
+      "files_changed": [
+        "micro_admin/forms.py",
+        "micro_admin/views.py"
+      ],
+      "created_date": "2022-04-06T10:15:00",
+      "merged_date": "2022-04-10T10:15:00",
+      "linked_issue_number": 38,
+      "milestone": "v1.1",
+      "review": {
+        "review_type": "REQUEST_CHANGES",
+        "reviewer_comment": "Small nit: please name the helper a little more clearly.",
+        "review_comment_file": "micro_admin/forms.py",
+        "review_comment_line": 42,
+        "author_reply": "Thanks, I simplified the path and added coverage for the null case.",
+        "final_review_type": "APPROVE",
+        "final_review_comment": "Approved after the follow-up."
+      }
+    },
+    {
+      "number": 39,
+      "title": "feat(receipt): Allow receipt reprint from the list page",
+      "body": "Refs #39.\n\nSupport asked for a quick reprint action in micro_admin/forms.py. The current flow forces users to open the receipt first, which is fine on desktop but annoying on smaller screens.\n\n**Requested behavior**\nAdd a reprint action to the row menu.",
+      "branch_name": "feature/receipt-39",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_C",
+      "author_token_env": "GITHUB_TOKEN_3",
+      "reviewer_developer": "DEV_D",
+      "reviewer_token_env": "GITHUB_TOKEN_4",
+      "files_changed": [
+        "micro_admin/forms.py",
+        "micro_admin/views.py"
+      ],
+      "created_date": "2022-04-16T11:30:00",
+      "merged_date": "2022-04-21T11:30:00",
+      "linked_issue_number": 39,
+      "milestone": "v1.2",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "I verified the main branch, but can you confirm what happens when the queryset is empty?",
+        "review_comment_file": "micro_admin/forms.py",
+        "review_comment_line": 43,
+        "author_reply": "Done. I also tightened the error message so support can spot it faster.",
+        "final_review_type": "APPROVE",
+        "final_review_comment": "Approved."
+      }
+    },
+    {
+      "number": 40,
+      "title": "feat(client): Make client search remember the last branch",
+      "body": "Refs #40.\n\nBranch users want micro_admin/forms.py to remember the last branch they were working in. It would save them from reselecting the same branch dozens of times a day.\n\n**Request**\nPersist the branch choice per user session.",
+      "branch_name": "feature/client-40",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_D",
+      "author_token_env": "GITHUB_TOKEN_4",
+      "reviewer_developer": "DEV_C",
+      "reviewer_token_env": "GITHUB_TOKEN_3",
+      "files_changed": [
+        "micro_admin/forms.py",
+        "micro_admin/views.py"
+      ],
+      "created_date": "2022-04-23T13:45:00",
+      "merged_date": "2022-04-29T13:45:00",
+      "linked_issue_number": 40,
+      "milestone": "v1.2",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "Thanks for addressing the edge case. Approving after the follow-up commit.",
+        "review_comment_file": "micro_admin/forms.py",
+        "review_comment_line": 44,
+        "author_reply": "Addressed in the follow-up commit and pushed the docs update.",
+        "final_review_type": "APPROVE",
+        "final_review_comment": "Approved."
+      }
+    },
+    {
+      "number": 41,
+      "title": "docs(docs): Should we document the branch approval flow?",
+      "body": "Discussion for #41.\n\nWe keep answering the same support question about who can approve a loan and where the approval history lives. Should we add a short section to README.rst before the next rollout?\n\n**Context**\nThe answer seems obvious to the team, but not to the branch office.",
+      "branch_name": "docs/docs-41",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_A",
+      "author_token_env": "GITHUB_TOKEN_1",
+      "reviewer_developer": "DEV_B",
+      "reviewer_token_env": "GITHUB_TOKEN_2",
+      "files_changed": [
+        "README.rst",
+        "docs/source/index.rst"
+      ],
+      "created_date": "2022-05-03T14:00:00",
+      "merged_date": "2022-05-10T14:00:00",
+      "linked_issue_number": 41,
+      "milestone": "backlog",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "One more pass on the error message would help support a lot.",
+        "review_comment_file": "README.rst",
+        "review_comment_line": 45,
+        "author_reply": "Good catch. I have added the missing guard and a focused test.",
+        "final_review_type": "APPROVE",
+        "final_review_comment": "Approved."
+      }
+    },
+    {
+      "number": 42,
+      "title": "docs(docs): Docs: add setup notes for local branch testing",
+      "body": "Refs #42.\n\nThe onboarding notes in README.rst are missing the steps for local branch testing. This keeps coming up when someone clones the app and tries to run it against a test database.\n\n**Scope**\nAdd the missing steps and a short troubleshooting section.",
+      "branch_name": "docs/docs-42",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_B",
+      "author_token_env": "GITHUB_TOKEN_2",
+      "reviewer_developer": "DEV_A",
+      "reviewer_token_env": "GITHUB_TOKEN_1",
+      "files_changed": [
+        "README.rst",
+        "docs/source/index.rst"
+      ],
+      "created_date": "2022-05-13T15:15:00",
+      "merged_date": "2022-05-21T15:15:00",
+      "linked_issue_number": 42,
+      "milestone": "v1.1",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "Could you keep the formatting consistent with the adjacent form handlers?",
+        "review_comment_file": "README.rst",
+        "review_comment_line": 46,
+        "author_reply": "Yep, that was the missing branch. Fixed in the latest commit.",
+        "final_review_type": "APPROVE",
+        "final_review_comment": "Approved."
+      }
+    },
+    {
+      "number": 43,
+      "title": "fix(loan): Guarantor validation crashes when guarantor list is empty",
+      "body": "Refs #43.\n\nWe are seeing a crash in micro_admin/models.py when a loan is saved without any guarantors. The record imports fine, but the edit form explodes on submit when the guarantor section is left blank.\n\n**Steps to reproduce**\n1. Open an existing loan\n2. Clear the guarantor list\n3. Save the form\n\n**Expected**\nThe form should validate and ask for a guarantor if the rule requires one.\n\n**Observed**\nThe page returns a 500 and the form does not recover gracefully.\n\n**Notes**\nThis started showing up after the latest repayment rule changes.",
+      "branch_name": "fix/loan-43",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_C",
+      "author_token_env": "GITHUB_TOKEN_3",
+      "reviewer_developer": "DEV_D",
+      "reviewer_token_env": "GITHUB_TOKEN_4",
+      "files_changed": [
+        "micro_admin/models.py",
+        "micro_admin/views.py"
+      ],
+      "created_date": "2022-05-20T09:30:00",
+      "merged_date": "2022-05-23T09:30:00",
+      "linked_issue_number": 43,
+      "milestone": "v1.1",
+      "review": {
+        "review_type": "REQUEST_CHANGES",
+        "reviewer_comment": "Can you add a regression test for the empty path?",
+        "review_comment_file": "micro_admin/models.py",
+        "review_comment_line": 47,
+        "author_reply": "Thanks, I simplified the path and added coverage for the null case.",
+        "final_review_type": "APPROVE",
+        "final_review_comment": "Approved after the follow-up."
+      }
+    },
+    {
+      "number": 44,
+      "title": "fix(payment): Payment form accepts zero amount on retry",
+      "body": "Refs #44.\n\nA support user reported that micro_admin/forms.py allows a zero-value payment when the submit button is clicked twice in a row. The first submit succeeds, the second one should be rejected but currently slips through.\n\n**Expected**\nA duplicate submission should be blocked.\n\n**Observed**\nThe payment is recorded twice, once with amount and once with zero.\n\n**Context**\nThis is more visible on slower connections and after the form gets resubmitted from the browser back button.",
+      "branch_name": "fix/payment-44",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_D",
+      "author_token_env": "GITHUB_TOKEN_4",
+      "reviewer_developer": "DEV_C",
+      "reviewer_token_env": "GITHUB_TOKEN_3",
+      "files_changed": [
+        "micro_admin/forms.py",
+        "micro_admin/views.py"
+      ],
+      "created_date": "2022-05-30T10:45:00",
+      "merged_date": "2022-06-03T10:45:00",
+      "linked_issue_number": 44,
+      "milestone": "v1.0",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "This looks good structurally, but I would split the validation from the save logic.",
+        "review_comment_file": "micro_admin/forms.py",
+        "review_comment_line": 48,
+        "author_reply": "Done. I also tightened the error message so support can spot it faster.",
+        "final_review_type": "APPROVE",
+        "final_review_comment": "Approved."
+      }
+    },
+    {
+      "number": 45,
+      "title": "fix(ledger): Ledger totals drift after deleting a stale receipt",
+      "body": "Refs #45.\n\nUsers noticed that totals shown by micro_admin/views.py no longer match the receipt summary after a stale receipt is removed. The mismatch only appears in branches with several backdated entries.\n\n**Expected**\nSummary and detail rows should agree.\n\n**Observed**\nThe total drops by one entry even though the item was only marked inactive.\n\n**Additional detail**\nThe issue is reproducible in the month-end report for branch NAGPUR-02.",
+      "branch_name": "fix/ledger-45",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_A",
+      "author_token_env": "GITHUB_TOKEN_1",
+      "reviewer_developer": "DEV_B",
+      "reviewer_token_env": "GITHUB_TOKEN_2",
+      "files_changed": [
+        "micro_admin/views.py",
+        "templates/generalledger.html"
+      ],
+      "created_date": "2022-06-09T11:00:00",
+      "merged_date": "2022-06-14T11:00:00",
+      "linked_issue_number": 45,
+      "milestone": "v1.1",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "Small nit: please name the helper a little more clearly.",
+        "review_comment_file": "micro_admin/views.py",
+        "review_comment_line": 49,
+        "author_reply": "Addressed in the follow-up commit and pushed the docs update.",
+        "final_review_type": "APPROVE",
+        "final_review_comment": "Approved."
+      }
+    },
+    {
+      "number": 46,
+      "title": "fix(receipt): Receipt list duplicates row after retry flow",
+      "body": "Refs #46.\n\nWhile testing the retry flow in micro_admin/forms.py, the same receipt appears twice after a failed print attempt. The duplicate is not visible in the database, only in the rendered page.\n\n**Expected**\nOne row per receipt.\n\n**Observed**\nThe render shows the receipt twice if the page is refreshed immediately after submit.",
+      "branch_name": "fix/receipt-46",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_B",
+      "author_token_env": "GITHUB_TOKEN_2",
+      "reviewer_developer": "DEV_A",
+      "reviewer_token_env": "GITHUB_TOKEN_1",
+      "files_changed": [
+        "micro_admin/forms.py",
+        "micro_admin/views.py"
+      ],
+      "created_date": "2022-06-16T13:15:00",
+      "merged_date": "2022-06-22T13:15:00",
+      "linked_issue_number": 46,
+      "milestone": "v1.0",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "I verified the main branch, but can you confirm what happens when the queryset is empty?",
+        "review_comment_file": "micro_admin/forms.py",
+        "review_comment_line": 50,
+        "author_reply": "Good catch. I have added the missing guard and a focused test.",
+        "final_review_type": "APPROVE",
+        "final_review_comment": "Approved."
+      }
+    },
+    {
+      "number": 47,
+      "title": "fix(client): Client update loses branch selection after save",
+      "body": "Refs #47.\n\nUpdating client details in micro_admin/forms.py resets the branch dropdown if the user edits an address field first. The change is subtle but a few branch admins spotted it during daily use.\n\n**Steps**\nOpen a client, change address, switch branch, save, then reopen.\n\n**Expected**\nThe selected branch should stay attached to the record.\n\n**Observed**\nThe branch falls back to the default one.",
+      "branch_name": "fix/client-47",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_C",
+      "author_token_env": "GITHUB_TOKEN_3",
+      "reviewer_developer": "DEV_D",
+      "reviewer_token_env": "GITHUB_TOKEN_4",
+      "files_changed": [
+        "micro_admin/forms.py",
+        "micro_admin/views.py"
+      ],
+      "created_date": "2022-06-26T14:30:00",
+      "merged_date": "2022-07-03T14:30:00",
+      "linked_issue_number": 47,
+      "milestone": "v1.0",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "Thanks for addressing the edge case. Approving after the follow-up commit.",
+        "review_comment_file": "micro_admin/forms.py",
+        "review_comment_line": 51,
+        "author_reply": "Yep, that was the missing branch. Fixed in the latest commit.",
+        "final_review_type": "APPROVE",
+        "final_review_comment": "Approved."
+      }
+    },
+    {
+      "number": 48,
+      "title": "fix(savings): Savings withdrawal can go negative on partial edit",
+      "body": "Refs #48.\n\nAn edit path in savings/views.py does not re-check the account balance before saving a withdrawal. This is only visible when an existing transaction is reopened and changed from the list view.\n\n**Expected**\nThe balance should never fall below zero.\n\n**Observed**\nA negative amount is accepted and the ledger is off by one transaction.",
+      "branch_name": "fix/savings-48",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_D",
+      "author_token_env": "GITHUB_TOKEN_4",
+      "reviewer_developer": "DEV_C",
+      "reviewer_token_env": "GITHUB_TOKEN_3",
+      "files_changed": [
+        "savings/views.py",
+        "templates/deposits.html"
+      ],
+      "created_date": "2022-07-06T15:45:00",
+      "merged_date": "2022-07-14T15:45:00",
+      "linked_issue_number": 48,
+      "milestone": "v1.0",
+      "review": {
+        "review_type": "REQUEST_CHANGES",
+        "reviewer_comment": "One more pass on the error message would help support a lot.",
+        "review_comment_file": "savings/views.py",
+        "review_comment_line": 52,
+        "author_reply": "Thanks, I simplified the path and added coverage for the null case.",
+        "final_review_type": "APPROVE",
+        "final_review_comment": "Approved after the follow-up."
+      }
+    },
+    {
+      "number": 49,
+      "title": "fix(group): Group interest calc uses old rate after approval",
+      "body": "Refs #49.\n\nWhen a group loan moves from pending to approved, micro_admin/models.py keeps the previous rate until the page is reloaded. That makes the first preview misleading and the branch manager has to refresh manually.\n\n**Expected**\nThe new rate should be reflected immediately.\n\n**Observed**\nThe old percentage remains in the preview pane.",
+      "branch_name": "fix/group-49",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_A",
+      "author_token_env": "GITHUB_TOKEN_1",
+      "reviewer_developer": "DEV_B",
+      "reviewer_token_env": "GITHUB_TOKEN_2",
+      "files_changed": [
+        "micro_admin/models.py",
+        "micro_admin/views.py"
+      ],
+      "created_date": "2022-07-13T09:00:00",
+      "merged_date": "2022-07-16T09:00:00",
+      "linked_issue_number": 49,
+      "milestone": "v1.1",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "Could you keep the formatting consistent with the adjacent form handlers?",
+        "review_comment_file": "micro_admin/models.py",
+        "review_comment_line": 53,
+        "author_reply": "Done. I also tightened the error message so support can spot it faster.",
+        "final_review_type": "APPROVE",
+        "final_review_comment": "Approved."
+      }
+    },
+    {
+      "number": 50,
+      "title": "feat(loan): Add installment preview to loan workflow",
+      "body": "Refs #50.\n\nIt would help the field team if micro_admin/models.py showed a lightweight installment preview before the final save. This is mostly about avoiding a second call back to the office when the calculation looks off.\n\n**Desired behavior**\nShow a preview block with amount, tenure, and the next due date.\n\n**Why now**\nSeveral branches are asking for this while training new staff.",
+      "branch_name": "feature/loan-50",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_B",
+      "author_token_env": "GITHUB_TOKEN_2",
+      "reviewer_developer": "DEV_A",
+      "reviewer_token_env": "GITHUB_TOKEN_1",
+      "files_changed": [
+        "micro_admin/models.py",
+        "micro_admin/views.py"
+      ],
+      "created_date": "2022-07-23T10:15:00",
+      "merged_date": "2022-07-27T10:15:00",
+      "linked_issue_number": 50,
+      "milestone": "v1.2",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "Can you add a regression test for the empty path?",
+        "review_comment_file": "micro_admin/models.py",
+        "review_comment_line": 54,
+        "author_reply": "Addressed in the follow-up commit and pushed the docs update.",
+        "final_review_type": "APPROVE",
+        "final_review_comment": "Approved."
+      }
+    },
+    {
+      "number": 51,
+      "title": "feat(ledger): Export ledger with optional branch filter",
+      "body": "Refs #51.\n\nUsers running monthly reports asked for a branch filter in micro_admin/views.py. Right now they have to export the full ledger and filter it manually in a spreadsheet.\n\n**Acceptance criteria**\n- branch filter is optional\n- existing export stays unchanged when the filter is empty\n- the output still matches the current PDF layout",
+      "branch_name": "feature/ledger-51",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_C",
+      "author_token_env": "GITHUB_TOKEN_3",
+      "reviewer_developer": "DEV_D",
+      "reviewer_token_env": "GITHUB_TOKEN_4",
+      "files_changed": [
+        "micro_admin/views.py",
+        "templates/generalledger.html"
+      ],
+      "created_date": "2022-08-02T11:30:00",
+      "merged_date": "2022-08-07T11:30:00",
+      "linked_issue_number": 51,
+      "milestone": "v1.2",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "This looks good structurally, but I would split the validation from the save logic.",
+        "review_comment_file": "micro_admin/views.py",
+        "review_comment_line": 55,
+        "author_reply": "Good catch. I have added the missing guard and a focused test.",
+        "final_review_type": "APPROVE",
+        "final_review_comment": "Approved."
+      }
+    },
+    {
+      "number": 52,
+      "title": "feat(payment): Improve payment form hints for first-time operators",
+      "body": "Refs #52.\n\nOperators asked for a clearer hint set in micro_admin/forms.py, especially around date entry and amount rounding. The form is usable today, but the warnings are easy to miss.\n\n**Desired outcome**\nAdd inline guidance without changing the underlying validation rules.",
+      "branch_name": "feature/payment-52",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_D",
+      "author_token_env": "GITHUB_TOKEN_4",
+      "reviewer_developer": "DEV_C",
+      "reviewer_token_env": "GITHUB_TOKEN_3",
+      "files_changed": [
+        "micro_admin/forms.py",
+        "micro_admin/views.py"
+      ],
+      "created_date": "2022-08-09T13:45:00",
+      "merged_date": "2022-08-15T13:45:00",
+      "linked_issue_number": 52,
+      "milestone": "v1.1",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "Small nit: please name the helper a little more clearly.",
+        "review_comment_file": "micro_admin/forms.py",
+        "review_comment_line": 56,
+        "author_reply": "Yep, that was the missing branch. Fixed in the latest commit.",
+        "final_review_type": "APPROVE",
+        "final_review_comment": "Approved."
+      }
+    },
+    {
+      "number": 53,
+      "title": "feat(receipt): Allow receipt reprint from the list page",
+      "body": "Refs #53.\n\nSupport asked for a quick reprint action in micro_admin/forms.py. The current flow forces users to open the receipt first, which is fine on desktop but annoying on smaller screens.\n\n**Requested behavior**\nAdd a reprint action to the row menu.",
+      "branch_name": "feature/receipt-53",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_A",
+      "author_token_env": "GITHUB_TOKEN_1",
+      "reviewer_developer": "DEV_B",
+      "reviewer_token_env": "GITHUB_TOKEN_2",
+      "files_changed": [
+        "micro_admin/forms.py",
+        "micro_admin/views.py"
+      ],
+      "created_date": "2022-08-19T14:00:00",
+      "merged_date": "2022-08-26T14:00:00",
+      "linked_issue_number": 53,
+      "milestone": "v1.2",
+      "review": {
+        "review_type": "REQUEST_CHANGES",
+        "reviewer_comment": "I verified the main branch, but can you confirm what happens when the queryset is empty?",
+        "review_comment_file": "micro_admin/forms.py",
+        "review_comment_line": 57,
+        "author_reply": "Thanks, I simplified the path and added coverage for the null case.",
+        "final_review_type": "APPROVE",
+        "final_review_comment": "Approved after the follow-up."
+      }
+    },
+    {
+      "number": 54,
+      "title": "feat(client): Make client search remember the last branch",
+      "body": "Refs #54.\n\nBranch users want micro_admin/forms.py to remember the last branch they were working in. It would save them from reselecting the same branch dozens of times a day.\n\n**Request**\nPersist the branch choice per user session.",
+      "branch_name": "feature/client-54",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_B",
+      "author_token_env": "GITHUB_TOKEN_2",
+      "reviewer_developer": "DEV_A",
+      "reviewer_token_env": "GITHUB_TOKEN_1",
+      "files_changed": [
+        "micro_admin/forms.py",
+        "micro_admin/views.py"
+      ],
+      "created_date": "2022-08-29T15:15:00",
+      "merged_date": "2022-09-06T15:15:00",
+      "linked_issue_number": 54,
+      "milestone": "v1.2",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "Thanks for addressing the edge case. Approving after the follow-up commit.",
+        "review_comment_file": "micro_admin/forms.py",
+        "review_comment_line": 58,
+        "author_reply": "Done. I also tightened the error message so support can spot it faster.",
+        "final_review_type": "APPROVE",
+        "final_review_comment": "Approved."
+      }
+    },
+    {
+      "number": 55,
+      "title": "docs(docs): Should we document the branch approval flow?",
+      "body": "Discussion for #55.\n\nWe keep answering the same support question about who can approve a loan and where the approval history lives. Should we add a short section to README.rst before the next rollout?\n\n**Context**\nThe answer seems obvious to the team, but not to the branch office.",
+      "branch_name": "docs/docs-55",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_C",
+      "author_token_env": "GITHUB_TOKEN_3",
+      "reviewer_developer": "DEV_D",
+      "reviewer_token_env": "GITHUB_TOKEN_4",
+      "files_changed": [
+        "README.rst",
+        "docs/source/index.rst"
+      ],
+      "created_date": "2022-09-05T09:30:00",
+      "merged_date": "2022-09-08T09:30:00",
+      "linked_issue_number": 55,
+      "milestone": "backlog",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "One more pass on the error message would help support a lot.",
+        "review_comment_file": "README.rst",
+        "review_comment_line": 59,
+        "author_reply": "Addressed in the follow-up commit and pushed the docs update.",
+        "final_review_type": "APPROVE",
+        "final_review_comment": "Approved."
+      }
+    },
+    {
+      "number": 56,
+      "title": "docs(docs): Docs: add setup notes for local branch testing",
+      "body": "Refs #56.\n\nThe onboarding notes in README.rst are missing the steps for local branch testing. This keeps coming up when someone clones the app and tries to run it against a test database.\n\n**Scope**\nAdd the missing steps and a short troubleshooting section.",
+      "branch_name": "docs/docs-56",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_D",
+      "author_token_env": "GITHUB_TOKEN_4",
+      "reviewer_developer": "DEV_C",
+      "reviewer_token_env": "GITHUB_TOKEN_3",
+      "files_changed": [
+        "README.rst",
+        "docs/source/index.rst"
+      ],
+      "created_date": "2022-09-15T10:45:00",
+      "merged_date": "2022-09-19T10:45:00",
+      "linked_issue_number": 56,
+      "milestone": "v1.1",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "Could you keep the formatting consistent with the adjacent form handlers?",
+        "review_comment_file": "README.rst",
+        "review_comment_line": 60,
+        "author_reply": "Good catch. I have added the missing guard and a focused test.",
+        "final_review_type": "APPROVE",
+        "final_review_comment": "Approved."
+      }
+    },
+    {
+      "number": 57,
+      "title": "fix(loan): Guarantor validation crashes when guarantor list is empty",
+      "body": "Refs #57.\n\nWe are seeing a crash in micro_admin/models.py when a loan is saved without any guarantors. The record imports fine, but the edit form explodes on submit when the guarantor section is left blank.\n\n**Steps to reproduce**\n1. Open an existing loan\n2. Clear the guarantor list\n3. Save the form\n\n**Expected**\nThe form should validate and ask for a guarantor if the rule requires one.\n\n**Observed**\nThe page returns a 500 and the form does not recover gracefully.\n\n**Notes**\nThis started showing up after the latest repayment rule changes.",
+      "branch_name": "fix/loan-57",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_A",
+      "author_token_env": "GITHUB_TOKEN_1",
+      "reviewer_developer": "DEV_B",
+      "reviewer_token_env": "GITHUB_TOKEN_2",
+      "files_changed": [
+        "micro_admin/models.py",
+        "micro_admin/views.py"
+      ],
+      "created_date": "2022-09-25T11:00:00",
+      "merged_date": "2022-09-30T11:00:00",
+      "linked_issue_number": 57,
+      "milestone": "v1.1",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "Can you add a regression test for the empty path?",
+        "review_comment_file": "micro_admin/models.py",
+        "review_comment_line": 61,
+        "author_reply": "Yep, that was the missing branch. Fixed in the latest commit.",
+        "final_review_type": "APPROVE",
+        "final_review_comment": "Approved."
+      }
+    },
+    {
+      "number": 58,
+      "title": "fix(payment): Payment form accepts zero amount on retry",
+      "body": "Refs #58.\n\nA support user reported that micro_admin/forms.py allows a zero-value payment when the submit button is clicked twice in a row. The first submit succeeds, the second one should be rejected but currently slips through.\n\n**Expected**\nA duplicate submission should be blocked.\n\n**Observed**\nThe payment is recorded twice, once with amount and once with zero.\n\n**Context**\nThis is more visible on slower connections and after the form gets resubmitted from the browser back button.",
+      "branch_name": "fix/payment-58",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_B",
+      "author_token_env": "GITHUB_TOKEN_2",
+      "reviewer_developer": "DEV_A",
+      "reviewer_token_env": "GITHUB_TOKEN_1",
+      "files_changed": [
+        "micro_admin/forms.py",
+        "micro_admin/views.py"
+      ],
+      "created_date": "2022-10-02T13:15:00",
+      "merged_date": "2022-10-08T13:15:00",
+      "linked_issue_number": 58,
+      "milestone": "v1.0",
+      "review": {
+        "review_type": "REQUEST_CHANGES",
+        "reviewer_comment": "This looks good structurally, but I would split the validation from the save logic.",
+        "review_comment_file": "micro_admin/forms.py",
+        "review_comment_line": 62,
+        "author_reply": "Thanks, I simplified the path and added coverage for the null case.",
+        "final_review_type": "APPROVE",
+        "final_review_comment": "Approved after the follow-up."
+      }
+    },
+    {
+      "number": 59,
+      "title": "fix(ledger): Ledger totals drift after deleting a stale receipt",
+      "body": "Refs #59.\n\nUsers noticed that totals shown by micro_admin/views.py no longer match the receipt summary after a stale receipt is removed. The mismatch only appears in branches with several backdated entries.\n\n**Expected**\nSummary and detail rows should agree.\n\n**Observed**\nThe total drops by one entry even though the item was only marked inactive.\n\n**Additional detail**\nThe issue is reproducible in the month-end report for branch NAGPUR-02.",
+      "branch_name": "fix/ledger-59",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_C",
+      "author_token_env": "GITHUB_TOKEN_3",
+      "reviewer_developer": "DEV_D",
+      "reviewer_token_env": "GITHUB_TOKEN_4",
+      "files_changed": [
+        "micro_admin/views.py",
+        "templates/generalledger.html"
+      ],
+      "created_date": "2022-10-12T14:30:00",
+      "merged_date": "2022-10-19T14:30:00",
+      "linked_issue_number": 59,
+      "milestone": "v1.1",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "Small nit: please name the helper a little more clearly.",
+        "review_comment_file": "micro_admin/views.py",
+        "review_comment_line": 63,
+        "author_reply": "Done. I also tightened the error message so support can spot it faster.",
+        "final_review_type": "APPROVE",
+        "final_review_comment": "Approved."
+      }
+    },
+    {
+      "number": 60,
+      "title": "fix(receipt): Receipt list duplicates row after retry flow",
+      "body": "Refs #60.\n\nWhile testing the retry flow in micro_admin/forms.py, the same receipt appears twice after a failed print attempt. The duplicate is not visible in the database, only in the rendered page.\n\n**Expected**\nOne row per receipt.\n\n**Observed**\nThe render shows the receipt twice if the page is refreshed immediately after submit.",
+      "branch_name": "fix/receipt-60",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_D",
+      "author_token_env": "GITHUB_TOKEN_4",
+      "reviewer_developer": "DEV_C",
+      "reviewer_token_env": "GITHUB_TOKEN_3",
+      "files_changed": [
+        "micro_admin/forms.py",
+        "micro_admin/views.py"
+      ],
+      "created_date": "2022-10-22T15:45:00",
+      "merged_date": "2022-10-30T15:45:00",
+      "linked_issue_number": 60,
+      "milestone": "v1.0",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "I verified the main branch, but can you confirm what happens when the queryset is empty?",
+        "review_comment_file": "micro_admin/forms.py",
+        "review_comment_line": 64,
+        "author_reply": "Addressed in the follow-up commit and pushed the docs update.",
+        "final_review_type": "APPROVE",
+        "final_review_comment": "Approved."
+      }
+    },
+    {
+      "number": 61,
+      "title": "fix(client): Client update loses branch selection after save",
+      "body": "Refs #61.\n\nUpdating client details in micro_admin/forms.py resets the branch dropdown if the user edits an address field first. The change is subtle but a few branch admins spotted it during daily use.\n\n**Steps**\nOpen a client, change address, switch branch, save, then reopen.\n\n**Expected**\nThe selected branch should stay attached to the record.\n\n**Observed**\nThe branch falls back to the default one.",
+      "branch_name": "fix/client-61",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_A",
+      "author_token_env": "GITHUB_TOKEN_1",
+      "reviewer_developer": "DEV_B",
+      "reviewer_token_env": "GITHUB_TOKEN_2",
+      "files_changed": [
+        "micro_admin/forms.py",
+        "micro_admin/views.py"
+      ],
+      "created_date": "2022-10-29T09:00:00",
+      "merged_date": "2022-11-01T09:00:00",
+      "linked_issue_number": 61,
+      "milestone": "v1.0",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "Thanks for addressing the edge case. Approving after the follow-up commit.",
+        "review_comment_file": "micro_admin/forms.py",
+        "review_comment_line": 65,
+        "author_reply": "Good catch. I have added the missing guard and a focused test.",
+        "final_review_type": "APPROVE",
+        "final_review_comment": "Approved."
+      }
+    },
+    {
+      "number": 62,
+      "title": "fix(savings): Savings withdrawal can go negative on partial edit",
+      "body": "Refs #62.\n\nAn edit path in savings/views.py does not re-check the account balance before saving a withdrawal. This is only visible when an existing transaction is reopened and changed from the list view.\n\n**Expected**\nThe balance should never fall below zero.\n\n**Observed**\nA negative amount is accepted and the ledger is off by one transaction.",
+      "branch_name": "fix/savings-62",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_B",
+      "author_token_env": "GITHUB_TOKEN_2",
+      "reviewer_developer": "DEV_A",
+      "reviewer_token_env": "GITHUB_TOKEN_1",
+      "files_changed": [
+        "savings/views.py",
+        "templates/deposits.html"
+      ],
+      "created_date": "2022-11-08T10:15:00",
+      "merged_date": "2022-11-12T10:15:00",
+      "linked_issue_number": 62,
+      "milestone": "v1.0",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "One more pass on the error message would help support a lot.",
+        "review_comment_file": "savings/views.py",
+        "review_comment_line": 66,
+        "author_reply": "Yep, that was the missing branch. Fixed in the latest commit.",
+        "final_review_type": "APPROVE",
+        "final_review_comment": "Approved."
+      }
+    },
+    {
+      "number": 63,
+      "title": "fix(group): Group interest calc uses old rate after approval",
+      "body": "Refs #63.\n\nWhen a group loan moves from pending to approved, micro_admin/models.py keeps the previous rate until the page is reloaded. That makes the first preview misleading and the branch manager has to refresh manually.\n\n**Expected**\nThe new rate should be reflected immediately.\n\n**Observed**\nThe old percentage remains in the preview pane.",
+      "branch_name": "fix/group-63",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_C",
+      "author_token_env": "GITHUB_TOKEN_3",
+      "reviewer_developer": "DEV_D",
+      "reviewer_token_env": "GITHUB_TOKEN_4",
+      "files_changed": [
+        "micro_admin/models.py",
+        "micro_admin/views.py"
+      ],
+      "created_date": "2022-11-18T11:30:00",
+      "merged_date": "2022-11-23T11:30:00",
+      "linked_issue_number": 63,
+      "milestone": "v1.1",
+      "review": {
+        "review_type": "REQUEST_CHANGES",
+        "reviewer_comment": "Could you keep the formatting consistent with the adjacent form handlers?",
+        "review_comment_file": "micro_admin/models.py",
+        "review_comment_line": 67,
+        "author_reply": "Thanks, I simplified the path and added coverage for the null case.",
+        "final_review_type": "APPROVE",
+        "final_review_comment": "Approved after the follow-up."
+      }
+    },
+    {
+      "number": 64,
+      "title": "feat(loan): Add installment preview to loan workflow",
+      "body": "Refs #64.\n\nIt would help the field team if micro_admin/models.py showed a lightweight installment preview before the final save. This is mostly about avoiding a second call back to the office when the calculation looks off.\n\n**Desired behavior**\nShow a preview block with amount, tenure, and the next due date.\n\n**Why now**\nSeveral branches are asking for this while training new staff.",
+      "branch_name": "feature/loan-64",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_D",
+      "author_token_env": "GITHUB_TOKEN_4",
+      "reviewer_developer": "DEV_C",
+      "reviewer_token_env": "GITHUB_TOKEN_3",
+      "files_changed": [
+        "micro_admin/models.py",
+        "micro_admin/views.py"
+      ],
+      "created_date": "2022-11-25T13:45:00",
+      "merged_date": "2022-12-01T13:45:00",
+      "linked_issue_number": 64,
+      "milestone": "v1.2",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "Can you add a regression test for the empty path?",
+        "review_comment_file": "micro_admin/models.py",
+        "review_comment_line": 68,
+        "author_reply": "Done. I also tightened the error message so support can spot it faster.",
+        "final_review_type": "APPROVE",
+        "final_review_comment": "Approved."
+      }
+    },
+    {
+      "number": 65,
+      "title": "feat(ledger): Export ledger with optional branch filter",
+      "body": "Refs #65.\n\nUsers running monthly reports asked for a branch filter in micro_admin/views.py. Right now they have to export the full ledger and filter it manually in a spreadsheet.\n\n**Acceptance criteria**\n- branch filter is optional\n- existing export stays unchanged when the filter is empty\n- the output still matches the current PDF layout",
+      "branch_name": "feature/ledger-65",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_A",
+      "author_token_env": "GITHUB_TOKEN_1",
+      "reviewer_developer": "DEV_B",
+      "reviewer_token_env": "GITHUB_TOKEN_2",
+      "files_changed": [
+        "micro_admin/views.py",
+        "templates/generalledger.html"
+      ],
+      "created_date": "2022-12-05T14:00:00",
+      "merged_date": "2022-12-12T14:00:00",
+      "linked_issue_number": 65,
+      "milestone": "v1.2",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "This looks good structurally, but I would split the validation from the save logic.",
+        "review_comment_file": "micro_admin/views.py",
+        "review_comment_line": 69,
+        "author_reply": "Addressed in the follow-up commit and pushed the docs update.",
+        "final_review_type": "APPROVE",
+        "final_review_comment": "Approved."
+      }
+    },
+    {
+      "number": 66,
+      "title": "feat(payment): Improve payment form hints for first-time operators",
+      "body": "Refs #66.\n\nOperators asked for a clearer hint set in micro_admin/forms.py, especially around date entry and amount rounding. The form is usable today, but the warnings are easy to miss.\n\n**Desired outcome**\nAdd inline guidance without changing the underlying validation rules.",
+      "branch_name": "feature/payment-66",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_B",
+      "author_token_env": "GITHUB_TOKEN_2",
+      "reviewer_developer": "DEV_A",
+      "reviewer_token_env": "GITHUB_TOKEN_1",
+      "files_changed": [
+        "micro_admin/forms.py",
+        "micro_admin/views.py"
+      ],
+      "created_date": "2022-12-15T15:15:00",
+      "merged_date": "2022-12-23T15:15:00",
+      "linked_issue_number": 66,
+      "milestone": "v1.1",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "Small nit: please name the helper a little more clearly.",
+        "review_comment_file": "micro_admin/forms.py",
+        "review_comment_line": 70,
+        "author_reply": "Good catch. I have added the missing guard and a focused test.",
+        "final_review_type": "APPROVE",
+        "final_review_comment": "Approved."
+      }
+    },
+    {
+      "number": 67,
+      "title": "feat(receipt): Allow receipt reprint from the list page",
+      "body": "Refs #67.\n\nSupport asked for a quick reprint action in micro_admin/forms.py. The current flow forces users to open the receipt first, which is fine on desktop but annoying on smaller screens.\n\n**Requested behavior**\nAdd a reprint action to the row menu.",
+      "branch_name": "feature/receipt-67",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_C",
+      "author_token_env": "GITHUB_TOKEN_3",
+      "reviewer_developer": "DEV_D",
+      "reviewer_token_env": "GITHUB_TOKEN_4",
+      "files_changed": [
+        "micro_admin/forms.py",
+        "micro_admin/views.py"
+      ],
+      "created_date": "2022-12-22T09:30:00",
+      "merged_date": "2022-12-25T09:30:00",
+      "linked_issue_number": 67,
+      "milestone": "v1.2",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "I verified the main branch, but can you confirm what happens when the queryset is empty?",
+        "review_comment_file": "micro_admin/forms.py",
+        "review_comment_line": 71,
+        "author_reply": "Yep, that was the missing branch. Fixed in the latest commit.",
+        "final_review_type": "APPROVE",
+        "final_review_comment": "Approved."
+      }
+    },
+    {
+      "number": 68,
+      "title": "feat(client): Make client search remember the last branch",
+      "body": "Refs #68.\n\nBranch users want micro_admin/forms.py to remember the last branch they were working in. It would save them from reselecting the same branch dozens of times a day.\n\n**Request**\nPersist the branch choice per user session.",
+      "branch_name": "feature/client-68",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_D",
+      "author_token_env": "GITHUB_TOKEN_4",
+      "reviewer_developer": "DEV_C",
+      "reviewer_token_env": "GITHUB_TOKEN_3",
+      "files_changed": [
+        "micro_admin/forms.py",
+        "micro_admin/views.py"
+      ],
+      "created_date": "2023-01-01T10:45:00",
+      "merged_date": "2023-01-05T10:45:00",
+      "linked_issue_number": 68,
+      "milestone": "v1.2",
+      "review": {
+        "review_type": "REQUEST_CHANGES",
+        "reviewer_comment": "Thanks for addressing the edge case. Approving after the follow-up commit.",
+        "review_comment_file": "micro_admin/forms.py",
+        "review_comment_line": 72,
+        "author_reply": "Thanks, I simplified the path and added coverage for the null case.",
+        "final_review_type": "APPROVE",
+        "final_review_comment": "Approved after the follow-up."
+      }
+    },
+    {
+      "number": 69,
+      "title": "docs(docs): Should we document the branch approval flow?",
+      "body": "Discussion for #69.\n\nWe keep answering the same support question about who can approve a loan and where the approval history lives. Should we add a short section to README.rst before the next rollout?\n\n**Context**\nThe answer seems obvious to the team, but not to the branch office.",
+      "branch_name": "docs/docs-69",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_A",
+      "author_token_env": "GITHUB_TOKEN_1",
+      "reviewer_developer": "DEV_B",
+      "reviewer_token_env": "GITHUB_TOKEN_2",
+      "files_changed": [
+        "README.rst",
+        "docs/source/index.rst"
+      ],
+      "created_date": "2023-01-11T11:00:00",
+      "merged_date": "2023-01-16T11:00:00",
+      "linked_issue_number": 69,
+      "milestone": "backlog",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "One more pass on the error message would help support a lot.",
+        "review_comment_file": "README.rst",
+        "review_comment_line": 73,
+        "author_reply": "Done. I also tightened the error message so support can spot it faster.",
+        "final_review_type": "APPROVE",
+        "final_review_comment": "Approved."
+      }
+    },
+    {
+      "number": 70,
+      "title": "docs(docs): Docs: add setup notes for local branch testing",
+      "body": "Refs #70.\n\nThe onboarding notes in README.rst are missing the steps for local branch testing. This keeps coming up when someone clones the app and tries to run it against a test database.\n\n**Scope**\nAdd the missing steps and a short troubleshooting section.",
+      "branch_name": "docs/docs-70",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_B",
+      "author_token_env": "GITHUB_TOKEN_2",
+      "reviewer_developer": "DEV_A",
+      "reviewer_token_env": "GITHUB_TOKEN_1",
+      "files_changed": [
+        "README.rst",
+        "docs/source/index.rst"
+      ],
+      "created_date": "2023-01-18T13:15:00",
+      "merged_date": "2023-01-24T13:15:00",
+      "linked_issue_number": 70,
+      "milestone": "v1.1",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "Could you keep the formatting consistent with the adjacent form handlers?",
+        "review_comment_file": "README.rst",
+        "review_comment_line": 74,
+        "author_reply": "Addressed in the follow-up commit and pushed the docs update.",
+        "final_review_type": "APPROVE",
+        "final_review_comment": "Approved."
+      }
+    },
+    {
+      "number": 71,
+      "title": "docs: Refresh README onboarding for local setup",
+      "body": "Routine maintenance work with no linked issue. The change stays scoped to the requested files.",
+      "branch_name": "docs/1",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_A",
+      "author_token_env": "GITHUB_TOKEN_1",
+      "reviewer_developer": "DEV_B",
+      "reviewer_token_env": "GITHUB_TOKEN_2",
+      "files_changed": [
+        "README.rst",
+        "docs/source/index.rst"
+      ],
+      "created_date": "2023-01-28T14:30:00",
+      "merged_date": "2023-01-30T14:30:00",
+      "linked_issue_number": null,
+      "milestone": "v1.2",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "I verified the main branch, but can you confirm what happens when the queryset is empty?",
+        "review_comment_file": "README.rst",
+        "review_comment_line": 30,
+        "author_reply": "Yep, that was the missing branch. Fixed in the latest commit.",
+        "final_review_type": "APPROVE",
+        "final_review_comment": "Approved."
+      }
+    },
+    {
+      "number": 72,
+      "title": "chore: Pin development dependencies for reproducible installs",
+      "body": "Routine maintenance work with no linked issue. The change stays scoped to the requested files.",
+      "branch_name": "chore/2",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_B",
+      "author_token_env": "GITHUB_TOKEN_2",
+      "reviewer_developer": "DEV_A",
+      "reviewer_token_env": "GITHUB_TOKEN_1",
+      "files_changed": [
+        "requirements.txt"
+      ],
+      "created_date": "2023-02-07T15:45:00",
+      "merged_date": "2023-02-10T15:45:00",
+      "linked_issue_number": null,
+      "milestone": "v1.2",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "Thanks for addressing the edge case. Approving after the follow-up commit.",
+        "review_comment_file": "requirements.txt",
+        "review_comment_line": 31,
+        "author_reply": "Thanks, I simplified the path and added coverage for the null case.",
+        "final_review_type": "APPROVE",
+        "final_review_comment": "Approved."
+      }
+    },
+    {
+      "number": 73,
+      "title": "refactor: Split invoice helper logic into smaller functions",
+      "body": "Routine maintenance work with no linked issue. The change stays scoped to the requested files.",
+      "branch_name": "refactor/3",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_C",
+      "author_token_env": "GITHUB_TOKEN_3",
+      "reviewer_developer": "DEV_D",
+      "reviewer_token_env": "GITHUB_TOKEN_4",
+      "files_changed": [
+        "core/utils.py",
+        "micro_admin/views.py"
+      ],
+      "created_date": "2023-02-14T09:00:00",
+      "merged_date": "2023-02-18T09:00:00",
+      "linked_issue_number": null,
+      "milestone": "v1.2",
+      "review": {
+        "review_type": "REQUEST_CHANGES",
+        "reviewer_comment": "One more pass on the error message would help support a lot.",
+        "review_comment_file": "core/utils.py",
+        "review_comment_line": 32,
+        "author_reply": "Done. I also tightened the error message so support can spot it faster.",
+        "final_review_type": "APPROVE",
+        "final_review_comment": "Approved after follow-up."
+      }
+    },
+    {
+      "number": 74,
+      "title": "test: Add coverage for branch lookup permission checks",
+      "body": "Routine maintenance work with no linked issue. The change stays scoped to the requested files.",
+      "branch_name": "test/4",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_D",
+      "author_token_env": "GITHUB_TOKEN_4",
+      "reviewer_developer": "DEV_C",
+      "reviewer_token_env": "GITHUB_TOKEN_3",
+      "files_changed": [
+        "core/tests.py",
+        "micro_admin/tests.py"
+      ],
+      "created_date": "2023-02-24T10:15:00",
+      "merged_date": "2023-03-01T10:15:00",
+      "linked_issue_number": null,
+      "milestone": "v1.2",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "Could you keep the formatting consistent with the adjacent form handlers?",
+        "review_comment_file": "core/tests.py",
+        "review_comment_line": 33,
+        "author_reply": "Addressed in the follow-up commit and pushed the docs update.",
+        "final_review_type": "APPROVE",
+        "final_review_comment": "Approved."
+      }
+    },
+    {
+      "number": 75,
+      "title": "perf: Cache ledger summary calculations",
+      "body": "Routine maintenance work with no linked issue. The change stays scoped to the requested files.",
+      "branch_name": "perf/5",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_A",
+      "author_token_env": "GITHUB_TOKEN_1",
+      "reviewer_developer": "DEV_B",
+      "reviewer_token_env": "GITHUB_TOKEN_2",
+      "files_changed": [
+        "micro_admin/views.py",
+        "core/mixins.py"
+      ],
+      "created_date": "2023-03-06T11:30:00",
+      "merged_date": "2023-03-08T11:30:00",
+      "linked_issue_number": null,
+      "milestone": "v1.2",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "Can you add a regression test for the empty path?",
+        "review_comment_file": "micro_admin/views.py",
+        "review_comment_line": 34,
+        "author_reply": "Good catch. I have added the missing guard and a focused test.",
+        "final_review_type": "APPROVE",
+        "final_review_comment": "Approved."
+      }
+    },
+    {
+      "number": 76,
+      "title": "ci: Tighten branch protection notes and deployment checks",
+      "body": "Routine maintenance work with no linked issue. The change stays scoped to the requested files.",
+      "branch_name": "ci/6",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_B",
+      "author_token_env": "GITHUB_TOKEN_2",
+      "reviewer_developer": "DEV_A",
+      "reviewer_token_env": "GITHUB_TOKEN_1",
+      "files_changed": [
+        "microfinance/settings.py",
+        "docs/source/conf.py"
+      ],
+      "created_date": "2023-03-13T13:45:00",
+      "merged_date": "2023-03-16T13:45:00",
+      "linked_issue_number": null,
+      "milestone": "v1.2",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "This looks good structurally, but I would split the validation from the save logic.",
+        "review_comment_file": "microfinance/settings.py",
+        "review_comment_line": 35,
+        "author_reply": "Yep, that was the missing branch. Fixed in the latest commit.",
+        "final_review_type": "APPROVE",
+        "final_review_comment": "Approved."
+      }
+    },
+    {
+      "number": 77,
+      "title": "docs: Add FAQ entry for receipt reprint flow",
+      "body": "Routine maintenance work with no linked issue. The change stays scoped to the requested files.",
+      "branch_name": "docs/7",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_C",
+      "author_token_env": "GITHUB_TOKEN_3",
+      "reviewer_developer": "DEV_D",
+      "reviewer_token_env": "GITHUB_TOKEN_4",
+      "files_changed": [
+        "docs/source/index.rst"
+      ],
+      "created_date": "2023-03-23T14:00:00",
+      "merged_date": "2023-03-27T14:00:00",
+      "linked_issue_number": null,
+      "milestone": "v1.2",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "Small nit: please name the helper a little more clearly.",
+        "review_comment_file": "docs/source/index.rst",
+        "review_comment_line": 36,
+        "author_reply": "Thanks, I simplified the path and added coverage for the null case.",
+        "final_review_type": "APPROVE",
+        "final_review_comment": "Approved."
+      }
+    },
+    {
+      "number": 78,
+      "title": "refactor: Clean up repeated validation branches",
+      "body": "Routine maintenance work with no linked issue. The change stays scoped to the requested files.",
+      "branch_name": "refactor/8",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_D",
+      "author_token_env": "GITHUB_TOKEN_4",
+      "reviewer_developer": "DEV_C",
+      "reviewer_token_env": "GITHUB_TOKEN_3",
+      "files_changed": [
+        "micro_admin/forms.py",
+        "core/forms.py"
+      ],
+      "created_date": "2023-04-02T15:15:00",
+      "merged_date": "2023-04-07T15:15:00",
+      "linked_issue_number": null,
+      "milestone": "v1.2",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "I verified the main branch, but can you confirm what happens when the queryset is empty?",
+        "review_comment_file": "micro_admin/forms.py",
+        "review_comment_line": 37,
+        "author_reply": "Done. I also tightened the error message so support can spot it faster.",
+        "final_review_type": "APPROVE",
+        "final_review_comment": "Approved."
+      }
+    },
+    {
+      "number": 79,
+      "title": "test: Refresh fixtures for payment retry tests",
+      "body": "Routine maintenance work with no linked issue. The change stays scoped to the requested files.",
+      "branch_name": "test/9",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_A",
+      "author_token_env": "GITHUB_TOKEN_1",
+      "reviewer_developer": "DEV_B",
+      "reviewer_token_env": "GITHUB_TOKEN_2",
+      "files_changed": [
+        "micro_admin/tests.py"
+      ],
+      "created_date": "2023-04-09T09:30:00",
+      "merged_date": "2023-04-11T09:30:00",
+      "linked_issue_number": null,
+      "milestone": "v1.2",
+      "review": {
+        "review_type": "REQUEST_CHANGES",
+        "reviewer_comment": "Thanks for addressing the edge case. Approving after the follow-up commit.",
+        "review_comment_file": "micro_admin/tests.py",
+        "review_comment_line": 38,
+        "author_reply": "Addressed in the follow-up commit and pushed the docs update.",
+        "final_review_type": "APPROVE",
+        "final_review_comment": "Approved after follow-up."
+      }
+    },
+    {
+      "number": 80,
+      "title": "docs: Document admin-only report pages",
+      "body": "Routine maintenance work with no linked issue. The change stays scoped to the requested files.",
+      "branch_name": "docs/10",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_B",
+      "author_token_env": "GITHUB_TOKEN_2",
+      "reviewer_developer": "DEV_A",
+      "reviewer_token_env": "GITHUB_TOKEN_1",
+      "files_changed": [
+        "README.rst",
+        "templates/reports.html"
+      ],
+      "created_date": "2023-04-19T10:45:00",
+      "merged_date": "2023-04-22T10:45:00",
+      "linked_issue_number": null,
+      "milestone": "v1.2",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "One more pass on the error message would help support a lot.",
+        "review_comment_file": "README.rst",
+        "review_comment_line": 39,
+        "author_reply": "Good catch. I have added the missing guard and a focused test.",
+        "final_review_type": "APPROVE",
+        "final_review_comment": "Approved."
+      }
+    },
+    {
+      "number": 81,
+      "title": "chore: Update template comments and fixture data",
+      "body": "Routine maintenance work with no linked issue. The change stays scoped to the requested files.",
+      "branch_name": "chore/11",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_C",
+      "author_token_env": "GITHUB_TOKEN_3",
+      "reviewer_developer": "DEV_D",
+      "reviewer_token_env": "GITHUB_TOKEN_4",
+      "files_changed": [
+        "templates/base.html",
+        "static/css/mf.css"
+      ],
+      "created_date": "2023-04-29T11:00:00",
+      "merged_date": "2023-05-03T11:00:00",
+      "linked_issue_number": null,
+      "milestone": "v2.0",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "Could you keep the formatting consistent with the adjacent form handlers?",
+        "review_comment_file": "templates/base.html",
+        "review_comment_line": 40,
+        "author_reply": "Yep, that was the missing branch. Fixed in the latest commit.",
+        "final_review_type": "APPROVE",
+        "final_review_comment": "Approved."
+      }
+    },
+    {
+      "number": 82,
+      "title": "perf: Reduce repeated queryset work in dashboard load",
+      "body": "Routine maintenance work with no linked issue. The change stays scoped to the requested files.",
+      "branch_name": "perf/12",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_D",
+      "author_token_env": "GITHUB_TOKEN_4",
+      "reviewer_developer": "DEV_C",
+      "reviewer_token_env": "GITHUB_TOKEN_3",
+      "files_changed": [
+        "micro_admin/views.py",
+        "core/views.py"
+      ],
+      "created_date": "2023-05-06T13:15:00",
+      "merged_date": "2023-05-11T13:15:00",
+      "linked_issue_number": null,
+      "milestone": "v2.0",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "Can you add a regression test for the empty path?",
+        "review_comment_file": "micro_admin/views.py",
+        "review_comment_line": 41,
+        "author_reply": "Thanks, I simplified the path and added coverage for the null case.",
+        "final_review_type": "APPROVE",
+        "final_review_comment": "Approved."
+      }
+    },
+    {
+      "number": 83,
+      "title": "refactor: Simplify task scheduling helper",
+      "body": "Routine maintenance work with no linked issue. The change stays scoped to the requested files.",
+      "branch_name": "refactor/13",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_A",
+      "author_token_env": "GITHUB_TOKEN_1",
+      "reviewer_developer": "DEV_B",
+      "reviewer_token_env": "GITHUB_TOKEN_2",
+      "files_changed": [
+        "micro_admin/tasks.py"
+      ],
+      "created_date": "2023-05-16T14:30:00",
+      "merged_date": "2023-05-18T14:30:00",
+      "linked_issue_number": null,
+      "milestone": "v2.0",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "This looks good structurally, but I would split the validation from the save logic.",
+        "review_comment_file": "micro_admin/tasks.py",
+        "review_comment_line": 42,
+        "author_reply": "Done. I also tightened the error message so support can spot it faster.",
+        "final_review_type": "APPROVE",
+        "final_review_comment": "Approved."
+      }
+    },
+    {
+      "number": 84,
+      "title": "docs: Clarify the ledger export format",
+      "body": "Routine maintenance work with no linked issue. The change stays scoped to the requested files.",
+      "branch_name": "docs/14",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_B",
+      "author_token_env": "GITHUB_TOKEN_2",
+      "reviewer_developer": "DEV_A",
+      "reviewer_token_env": "GITHUB_TOKEN_1",
+      "files_changed": [
+        "templates/generalledger.html",
+        "docs/source/index.rst"
+      ],
+      "created_date": "2023-05-26T15:45:00",
+      "merged_date": "2023-05-29T15:45:00",
+      "linked_issue_number": null,
+      "milestone": "v2.0",
+      "review": {
+        "review_type": "REQUEST_CHANGES",
+        "reviewer_comment": "Small nit: please name the helper a little more clearly.",
+        "review_comment_file": "templates/generalledger.html",
+        "review_comment_line": 43,
+        "author_reply": "Addressed in the follow-up commit and pushed the docs update.",
+        "final_review_type": "APPROVE",
+        "final_review_comment": "Approved after follow-up."
+      }
+    },
+    {
+      "number": 85,
+      "title": "test: Add regression test for null branch assignment",
+      "body": "Routine maintenance work with no linked issue. The change stays scoped to the requested files.",
+      "branch_name": "test/15",
+      "base_branch": "main",
+      "state": "merged",
+      "author_developer": "DEV_C",
+      "author_token_env": "GITHUB_TOKEN_3",
+      "reviewer_developer": "DEV_D",
+      "reviewer_token_env": "GITHUB_TOKEN_4",
+      "files_changed": [
+        "micro_admin/tests.py",
+        "core/tests.py"
+      ],
+      "created_date": "2023-06-02T09:00:00",
+      "merged_date": "2023-06-06T09:00:00",
+      "linked_issue_number": null,
+      "milestone": "v2.0",
+      "review": {
+        "review_type": "APPROVE",
+        "reviewer_comment": "I verified the main branch, but can you confirm what happens when the queryset is empty?",
+        "review_comment_file": "micro_admin/tests.py",
+        "review_comment_line": 44,
+        "author_reply": "Good catch. I have added the missing guard and a focused test.",
+        "final_review_type": "APPROVE",
+        "final_review_comment": "Approved."
+      }
+    }
+  ]
+}

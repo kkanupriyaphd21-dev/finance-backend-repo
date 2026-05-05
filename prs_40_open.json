@@ -1,0 +1,644 @@
+{
+  "prs": [
+    {
+      "title": "fix: prevent duplicate webhook delivery (batch 1)",
+      "body": "This PR addresses: fix: prevent duplicate webhook delivery (batch 1). Includes small changes and tests.",
+      "branch_name": "auto/feature/pr-300",
+      "base_branch": "main",
+      "author_developer": "DEV_C",
+      "files_changed": [
+        "requirements.txt"
+      ],
+      "linked_issue_number": null,
+      "review": {
+        "reviewer_comment": "Looks good overall; please add one minor test.",
+        "review_type": "COMMENT"
+      },
+      "merge": false
+    },
+    {
+      "title": "test: add integration test for reconciliation flow (batch 2)",
+      "body": "This PR addresses: test: add integration test for reconciliation flow (batch 2). Includes small changes and tests.",
+      "branch_name": "auto/feature/pr-301",
+      "base_branch": "main",
+      "author_developer": "DEV_C",
+      "files_changed": [
+        "src/export/runner.py"
+      ],
+      "linked_issue_number": 105,
+      "review": {
+        "reviewer_comment": "Looks good overall; please add one minor test.",
+        "review_type": "COMMENT"
+      },
+      "merge": false
+    },
+    {
+      "title": "docs: add API examples for webhooks (batch 3)",
+      "body": "This PR addresses: docs: add API examples for webhooks (batch 3). Includes small changes and tests.",
+      "branch_name": "auto/feature/pr-302",
+      "base_branch": "main",
+      "author_developer": "DEV_A",
+      "files_changed": [
+        "docs/README.md"
+      ],
+      "linked_issue_number": null,
+      "review": {
+        "reviewer_comment": "Looks good overall; please add one minor test.",
+        "review_type": "COMMENT"
+      },
+      "merge": false
+    },
+    {
+      "title": "perf: reduce memory usage during CSV import (batch 4)",
+      "body": "This PR addresses: perf: reduce memory usage during CSV import (batch 4). Includes small changes and tests.",
+      "branch_name": "auto/feature/pr-303",
+      "base_branch": "main",
+      "author_developer": "DEV_A",
+      "files_changed": [
+        "requirements.txt"
+      ],
+      "linked_issue_number": 135,
+      "review": {
+        "reviewer_comment": "Looks good overall; please add one minor test.",
+        "review_type": "COMMENT"
+      },
+      "merge": false
+    },
+    {
+      "title": "test: add integration test for reconciliation flow (batch 5)",
+      "body": "This PR addresses: test: add integration test for reconciliation flow (batch 5). Includes small changes and tests.",
+      "branch_name": "auto/feature/pr-304",
+      "base_branch": "main",
+      "author_developer": "DEV_B",
+      "files_changed": [
+        "src/api/client.py"
+      ],
+      "linked_issue_number": 102,
+      "review": {
+        "reviewer_comment": "Looks good overall; please add one minor test.",
+        "review_type": "COMMENT"
+      },
+      "merge": false
+    },
+    {
+      "title": "docs: add API examples for webhooks (batch 6)",
+      "body": "This PR addresses: docs: add API examples for webhooks (batch 6). Includes small changes and tests.",
+      "branch_name": "auto/feature/pr-305",
+      "base_branch": "main",
+      "author_developer": "DEV_C",
+      "files_changed": [
+        "src/ledger/service.py"
+      ],
+      "linked_issue_number": null,
+      "review": {
+        "reviewer_comment": "Looks good overall; please add one minor test.",
+        "review_type": "COMMENT"
+      },
+      "merge": false
+    },
+    {
+      "title": "perf: optimize posting worker batch size (batch 7)",
+      "body": "This PR addresses: perf: optimize posting worker batch size (batch 7). Includes small changes and tests.",
+      "branch_name": "auto/feature/pr-306",
+      "base_branch": "main",
+      "author_developer": "DEV_A",
+      "files_changed": [
+        "tests/integration/test_reconciliation.py"
+      ],
+      "linked_issue_number": 138,
+      "review": {
+        "reviewer_comment": "Looks good overall; please add one minor test.",
+        "review_type": "COMMENT"
+      },
+      "merge": false
+    },
+    {
+      "title": "chore: pin dependency versions for reproducible builds (batch 8)",
+      "body": "This PR addresses: chore: pin dependency versions for reproducible builds (batch 8). Includes small changes and tests.",
+      "branch_name": "auto/feature/pr-307",
+      "base_branch": "main",
+      "author_developer": "DEV_B",
+      "files_changed": [
+        "requirements.txt"
+      ],
+      "linked_issue_number": 113,
+      "review": {
+        "reviewer_comment": "Looks good overall; please add one minor test.",
+        "review_type": "COMMENT"
+      },
+      "merge": false
+    },
+    {
+      "title": "docs: add API examples for webhooks (batch 9)",
+      "body": "This PR addresses: docs: add API examples for webhooks (batch 9). Includes small changes and tests.",
+      "branch_name": "auto/feature/pr-308",
+      "base_branch": "main",
+      "author_developer": "DEV_C",
+      "files_changed": [
+        "requirements.txt"
+      ],
+      "linked_issue_number": 120,
+      "review": {
+        "reviewer_comment": "Looks good overall; please add one minor test.",
+        "review_type": "COMMENT"
+      },
+      "merge": false
+    },
+    {
+      "title": "fix: prevent duplicate webhook delivery (batch 10)",
+      "body": "This PR addresses: fix: prevent duplicate webhook delivery (batch 10). Includes small changes and tests.",
+      "branch_name": "auto/feature/pr-309",
+      "base_branch": "main",
+      "author_developer": "DEV_D",
+      "files_changed": [
+        "src/ledger/service.py"
+      ],
+      "linked_issue_number": 107,
+      "review": {
+        "reviewer_comment": "Looks good overall; please add one minor test.",
+        "review_type": "COMMENT"
+      },
+      "merge": false
+    },
+    {
+      "title": "fix: prevent duplicate webhook delivery (batch 11)",
+      "body": "This PR addresses: fix: prevent duplicate webhook delivery (batch 11). Includes small changes and tests.",
+      "branch_name": "auto/feature/pr-310",
+      "base_branch": "main",
+      "author_developer": "DEV_D",
+      "files_changed": [
+        "src/import/csv_parser.py"
+      ],
+      "linked_issue_number": 129,
+      "review": {
+        "reviewer_comment": "Looks good overall; please add one minor test.",
+        "review_type": "COMMENT"
+      },
+      "merge": false
+    },
+    {
+      "title": "perf: reduce memory usage during CSV import (batch 12)",
+      "body": "This PR addresses: perf: reduce memory usage during CSV import (batch 12). Includes small changes and tests.",
+      "branch_name": "auto/feature/pr-311",
+      "base_branch": "main",
+      "author_developer": "DEV_C",
+      "files_changed": [
+        "src/import/csv_parser.py"
+      ],
+      "linked_issue_number": 123,
+      "review": {
+        "reviewer_comment": "Looks good overall; please add one minor test.",
+        "review_type": "COMMENT"
+      },
+      "merge": false
+    },
+    {
+      "title": "feat: add pagination to client listing (batch 13)",
+      "body": "This PR addresses: feat: add pagination to client listing (batch 13). Includes small changes and tests.",
+      "branch_name": "auto/feature/pr-312",
+      "base_branch": "main",
+      "author_developer": "DEV_B",
+      "files_changed": [
+        "requirements.txt"
+      ],
+      "linked_issue_number": 130,
+      "review": {
+        "reviewer_comment": "Looks good overall; please add one minor test.",
+        "review_type": "COMMENT"
+      },
+      "merge": false
+    },
+    {
+      "title": "fix: handle nil pointer in ledger summary (batch 14)",
+      "body": "This PR addresses: fix: handle nil pointer in ledger summary (batch 14). Includes small changes and tests.",
+      "branch_name": "auto/feature/pr-313",
+      "base_branch": "main",
+      "author_developer": "DEV_C",
+      "files_changed": [
+        "src/webhooks/handler.py"
+      ],
+      "linked_issue_number": 109,
+      "review": {
+        "reviewer_comment": "Looks good overall; please add one minor test.",
+        "review_type": "COMMENT"
+      },
+      "merge": false
+    },
+    {
+      "title": "test: add integration test for reconciliation flow (batch 15)",
+      "body": "This PR addresses: test: add integration test for reconciliation flow (batch 15). Includes small changes and tests.",
+      "branch_name": "auto/feature/pr-314",
+      "base_branch": "main",
+      "author_developer": "DEV_B",
+      "files_changed": [
+        "src/ledger/service.py"
+      ],
+      "linked_issue_number": null,
+      "review": {
+        "reviewer_comment": "Looks good overall; please add one minor test.",
+        "review_type": "COMMENT"
+      },
+      "merge": false
+    },
+    {
+      "title": "perf: reduce memory usage during CSV import (batch 16)",
+      "body": "This PR addresses: perf: reduce memory usage during CSV import (batch 16). Includes small changes and tests.",
+      "branch_name": "auto/feature/pr-315",
+      "base_branch": "main",
+      "author_developer": "DEV_C",
+      "files_changed": [
+        "requirements.txt"
+      ],
+      "linked_issue_number": null,
+      "review": {
+        "reviewer_comment": "Looks good overall; please add one minor test.",
+        "review_type": "COMMENT"
+      },
+      "merge": false
+    },
+    {
+      "title": "perf: reduce memory usage during CSV import (batch 17)",
+      "body": "This PR addresses: perf: reduce memory usage during CSV import (batch 17). Includes small changes and tests.",
+      "branch_name": "auto/feature/pr-316",
+      "base_branch": "main",
+      "author_developer": "DEV_D",
+      "files_changed": [
+        "docs/README.md"
+      ],
+      "linked_issue_number": 111,
+      "review": {
+        "reviewer_comment": "Looks good overall; please add one minor test.",
+        "review_type": "COMMENT"
+      },
+      "merge": false
+    },
+    {
+      "title": "test: add integration test for reconciliation flow (batch 18)",
+      "body": "This PR addresses: test: add integration test for reconciliation flow (batch 18). Includes small changes and tests.",
+      "branch_name": "auto/feature/pr-317",
+      "base_branch": "main",
+      "author_developer": "DEV_B",
+      "files_changed": [
+        "src/utils/cache.py"
+      ],
+      "linked_issue_number": 121,
+      "review": {
+        "reviewer_comment": "Looks good overall; please add one minor test.",
+        "review_type": "COMMENT"
+      },
+      "merge": false
+    },
+    {
+      "title": "refactor: split large service into smaller modules (batch 19)",
+      "body": "This PR addresses: refactor: split large service into smaller modules (batch 19). Includes small changes and tests.",
+      "branch_name": "auto/feature/pr-318",
+      "base_branch": "main",
+      "author_developer": "DEV_B",
+      "files_changed": [
+        "requirements.txt"
+      ],
+      "linked_issue_number": 132,
+      "review": {
+        "reviewer_comment": "Looks good overall; please add one minor test.",
+        "review_type": "COMMENT"
+      },
+      "merge": false
+    },
+    {
+      "title": "refactor: split large service into smaller modules (batch 20)",
+      "body": "This PR addresses: refactor: split large service into smaller modules (batch 20). Includes small changes and tests.",
+      "branch_name": "auto/feature/pr-319",
+      "base_branch": "main",
+      "author_developer": "DEV_D",
+      "files_changed": [
+        "src/api/client.py"
+      ],
+      "linked_issue_number": 111,
+      "review": {
+        "reviewer_comment": "Looks good overall; please add one minor test.",
+        "review_type": "COMMENT"
+      },
+      "merge": false
+    },
+    {
+      "title": "refactor: split large service into smaller modules (batch 21)",
+      "body": "This PR addresses: refactor: split large service into smaller modules (batch 21). Includes small changes and tests.",
+      "branch_name": "auto/feature/pr-320",
+      "base_branch": "main",
+      "author_developer": "DEV_B",
+      "files_changed": [
+        "src/webhooks/handler.py"
+      ],
+      "linked_issue_number": null,
+      "review": {
+        "reviewer_comment": "Looks good overall; please add one minor test.",
+        "review_type": "COMMENT"
+      },
+      "merge": false
+    },
+    {
+      "title": "perf: optimize posting worker batch size (batch 22)",
+      "body": "This PR addresses: perf: optimize posting worker batch size (batch 22). Includes small changes and tests.",
+      "branch_name": "auto/feature/pr-321",
+      "base_branch": "main",
+      "author_developer": "DEV_B",
+      "files_changed": [
+        "src/ledger/service.py"
+      ],
+      "linked_issue_number": 129,
+      "review": {
+        "reviewer_comment": "Looks good overall; please add one minor test.",
+        "review_type": "COMMENT"
+      },
+      "merge": false
+    },
+    {
+      "title": "refactor: split large service into smaller modules (batch 23)",
+      "body": "This PR addresses: refactor: split large service into smaller modules (batch 23). Includes small changes and tests.",
+      "branch_name": "auto/feature/pr-322",
+      "base_branch": "main",
+      "author_developer": "DEV_D",
+      "files_changed": [
+        "src/utils/cache.py"
+      ],
+      "linked_issue_number": 139,
+      "review": {
+        "reviewer_comment": "Looks good overall; please add one minor test.",
+        "review_type": "COMMENT"
+      },
+      "merge": false
+    },
+    {
+      "title": "feat: add audit logging for export jobs (batch 24)",
+      "body": "This PR addresses: feat: add audit logging for export jobs (batch 24). Includes small changes and tests.",
+      "branch_name": "auto/feature/pr-323",
+      "base_branch": "main",
+      "author_developer": "DEV_C",
+      "files_changed": [
+        "requirements.txt"
+      ],
+      "linked_issue_number": 103,
+      "review": {
+        "reviewer_comment": "Looks good overall; please add one minor test.",
+        "review_type": "COMMENT"
+      },
+      "merge": false
+    },
+    {
+      "title": "docs: add API examples for webhooks (batch 25)",
+      "body": "This PR addresses: docs: add API examples for webhooks (batch 25). Includes small changes and tests.",
+      "branch_name": "auto/feature/pr-324",
+      "base_branch": "main",
+      "author_developer": "DEV_A",
+      "files_changed": [
+        "docs/README.md"
+      ],
+      "linked_issue_number": null,
+      "review": {
+        "reviewer_comment": "Looks good overall; please add one minor test.",
+        "review_type": "COMMENT"
+      },
+      "merge": false
+    },
+    {
+      "title": "docs: add API examples for webhooks (batch 26)",
+      "body": "This PR addresses: docs: add API examples for webhooks (batch 26). Includes small changes and tests.",
+      "branch_name": "auto/feature/pr-325",
+      "base_branch": "main",
+      "author_developer": "DEV_C",
+      "files_changed": [
+        "src/webhooks/handler.py"
+      ],
+      "linked_issue_number": 110,
+      "review": {
+        "reviewer_comment": "Looks good overall; please add one minor test.",
+        "review_type": "COMMENT"
+      },
+      "merge": false
+    },
+    {
+      "title": "chore: pin dependency versions for reproducible builds (batch 27)",
+      "body": "This PR addresses: chore: pin dependency versions for reproducible builds (batch 27). Includes small changes and tests.",
+      "branch_name": "auto/feature/pr-326",
+      "base_branch": "main",
+      "author_developer": "DEV_C",
+      "files_changed": [
+        "src/utils/cache.py"
+      ],
+      "linked_issue_number": 113,
+      "review": {
+        "reviewer_comment": "Looks good overall; please add one minor test.",
+        "review_type": "COMMENT"
+      },
+      "merge": false
+    },
+    {
+      "title": "refactor: split large service into smaller modules (batch 28)",
+      "body": "This PR addresses: refactor: split large service into smaller modules (batch 28). Includes small changes and tests.",
+      "branch_name": "auto/feature/pr-327",
+      "base_branch": "main",
+      "author_developer": "DEV_D",
+      "files_changed": [
+        "src/ledger/service.py"
+      ],
+      "linked_issue_number": 101,
+      "review": {
+        "reviewer_comment": "Looks good overall; please add one minor test.",
+        "review_type": "COMMENT"
+      },
+      "merge": false
+    },
+    {
+      "title": "feat: add pagination to client listing (batch 29)",
+      "body": "This PR addresses: feat: add pagination to client listing (batch 29). Includes small changes and tests.",
+      "branch_name": "auto/feature/pr-328",
+      "base_branch": "main",
+      "author_developer": "DEV_D",
+      "files_changed": [
+        "docs/README.md"
+      ],
+      "linked_issue_number": 113,
+      "review": {
+        "reviewer_comment": "Looks good overall; please add one minor test.",
+        "review_type": "COMMENT"
+      },
+      "merge": false
+    },
+    {
+      "title": "perf: optimize posting worker batch size (batch 30)",
+      "body": "This PR addresses: perf: optimize posting worker batch size (batch 30). Includes small changes and tests.",
+      "branch_name": "auto/feature/pr-329",
+      "base_branch": "main",
+      "author_developer": "DEV_A",
+      "files_changed": [
+        "docs/README.md"
+      ],
+      "linked_issue_number": 121,
+      "review": {
+        "reviewer_comment": "Looks good overall; please add one minor test.",
+        "review_type": "COMMENT"
+      },
+      "merge": false
+    },
+    {
+      "title": "feat: add audit logging for export jobs (batch 31)",
+      "body": "This PR addresses: feat: add audit logging for export jobs (batch 31). Includes small changes and tests.",
+      "branch_name": "auto/feature/pr-330",
+      "base_branch": "main",
+      "author_developer": "DEV_A",
+      "files_changed": [
+        "src/ledger/service.py"
+      ],
+      "linked_issue_number": 119,
+      "review": {
+        "reviewer_comment": "Looks good overall; please add one minor test.",
+        "review_type": "COMMENT"
+      },
+      "merge": false
+    },
+    {
+      "title": "perf: optimize posting worker batch size (batch 32)",
+      "body": "This PR addresses: perf: optimize posting worker batch size (batch 32). Includes small changes and tests.",
+      "branch_name": "auto/feature/pr-331",
+      "base_branch": "main",
+      "author_developer": "DEV_D",
+      "files_changed": [
+        "src/ledger/service.py"
+      ],
+      "linked_issue_number": 119,
+      "review": {
+        "reviewer_comment": "Looks good overall; please add one minor test.",
+        "review_type": "COMMENT"
+      },
+      "merge": false
+    },
+    {
+      "title": "fix: prevent duplicate webhook delivery (batch 33)",
+      "body": "This PR addresses: fix: prevent duplicate webhook delivery (batch 33). Includes small changes and tests.",
+      "branch_name": "auto/feature/pr-332",
+      "base_branch": "main",
+      "author_developer": "DEV_B",
+      "files_changed": [
+        "src/ledger/service.py"
+      ],
+      "linked_issue_number": null,
+      "review": {
+        "reviewer_comment": "Looks good overall; please add one minor test.",
+        "review_type": "COMMENT"
+      },
+      "merge": false
+    },
+    {
+      "title": "feat: add audit logging for export jobs (batch 34)",
+      "body": "This PR addresses: feat: add audit logging for export jobs (batch 34). Includes small changes and tests.",
+      "branch_name": "auto/feature/pr-333",
+      "base_branch": "main",
+      "author_developer": "DEV_D",
+      "files_changed": [
+        "src/export/runner.py"
+      ],
+      "linked_issue_number": null,
+      "review": {
+        "reviewer_comment": "Looks good overall; please add one minor test.",
+        "review_type": "COMMENT"
+      },
+      "merge": false
+    },
+    {
+      "title": "perf: reduce memory usage during CSV import (batch 35)",
+      "body": "This PR addresses: perf: reduce memory usage during CSV import (batch 35). Includes small changes and tests.",
+      "branch_name": "auto/feature/pr-334",
+      "base_branch": "main",
+      "author_developer": "DEV_C",
+      "files_changed": [
+        "src/utils/cache.py"
+      ],
+      "linked_issue_number": null,
+      "review": {
+        "reviewer_comment": "Looks good overall; please add one minor test.",
+        "review_type": "COMMENT"
+      },
+      "merge": false
+    },
+    {
+      "title": "perf: reduce memory usage during CSV import (batch 36)",
+      "body": "This PR addresses: perf: reduce memory usage during CSV import (batch 36). Includes small changes and tests.",
+      "branch_name": "auto/feature/pr-335",
+      "base_branch": "main",
+      "author_developer": "DEV_C",
+      "files_changed": [
+        "src/utils/cache.py"
+      ],
+      "linked_issue_number": null,
+      "review": {
+        "reviewer_comment": "Looks good overall; please add one minor test.",
+        "review_type": "COMMENT"
+      },
+      "merge": false
+    },
+    {
+      "title": "refactor: split large service into smaller modules (batch 37)",
+      "body": "This PR addresses: refactor: split large service into smaller modules (batch 37). Includes small changes and tests.",
+      "branch_name": "auto/feature/pr-336",
+      "base_branch": "main",
+      "author_developer": "DEV_C",
+      "files_changed": [
+        "tests/integration/test_reconciliation.py"
+      ],
+      "linked_issue_number": 116,
+      "review": {
+        "reviewer_comment": "Looks good overall; please add one minor test.",
+        "review_type": "COMMENT"
+      },
+      "merge": false
+    },
+    {
+      "title": "feat: add audit logging for export jobs (batch 38)",
+      "body": "This PR addresses: feat: add audit logging for export jobs (batch 38). Includes small changes and tests.",
+      "branch_name": "auto/feature/pr-337",
+      "base_branch": "main",
+      "author_developer": "DEV_B",
+      "files_changed": [
+        "src/worker/posting.py"
+      ],
+      "linked_issue_number": 113,
+      "review": {
+        "reviewer_comment": "Looks good overall; please add one minor test.",
+        "review_type": "COMMENT"
+      },
+      "merge": false
+    },
+    {
+      "title": "perf: optimize posting worker batch size (batch 39)",
+      "body": "This PR addresses: perf: optimize posting worker batch size (batch 39). Includes small changes and tests.",
+      "branch_name": "auto/feature/pr-338",
+      "base_branch": "main",
+      "author_developer": "DEV_A",
+      "files_changed": [
+        "tests/integration/test_reconciliation.py"
+      ],
+      "linked_issue_number": 122,
+      "review": {
+        "reviewer_comment": "Looks good overall; please add one minor test.",
+        "review_type": "COMMENT"
+      },
+      "merge": false
+    },
+    {
+      "title": "fix: handle nil pointer in ledger summary (batch 40)",
+      "body": "This PR addresses: fix: handle nil pointer in ledger summary (batch 40). Includes small changes and tests.",
+      "branch_name": "auto/feature/pr-339",
+      "base_branch": "main",
+      "author_developer": "DEV_B",
+      "files_changed": [
+        "src/utils/cache.py"
+      ],
+      "linked_issue_number": null,
+      "review": {
+        "reviewer_comment": "Looks good overall; please add one minor test.",
+        "review_type": "COMMENT"
+      },
+      "merge": false
+    }
+  ]
+}

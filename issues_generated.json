@@ -1,0 +1,3209 @@
+{
+  "metadata": {
+    "generated": true,
+    "count": 100,
+    "span": [
+      "2021-01-01T00:00:00",
+      "2023-12-31T00:00:00"
+    ]
+  },
+  "issues": [
+    {
+      "number": 1,
+      "title": "Idempotency eviction race causes duplicate transaction events",
+      "body": "Detailed report and analysis for issue 1.\n\nSteps to reproduce:\n1. Run the nightly batch\n2. Observe the failure\n\nExpected: stable behavior\nObserved: intermittent failure under load\n",
+      "labels": [
+        "docs",
+        "backend",
+        "postgresql",
+        "bug"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_2",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "created_date": "2021-08-01T12:15:00",
+      "closed_date": "2021-08-08T12:15:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 1,
+      "milestone": "v1.1",
+      "comments": [
+        {
+          "by": "TOKEN_2",
+          "body": "Initial report: observed during weekly run, reproduces reliably on branch data."
+        },
+        {
+          "by": "TOKEN_4",
+          "body": "I can reproduce locally; adding traces and a temporary mitigation for investigation."
+        },
+        {
+          "by": "TOKEN_1",
+          "body": "Agree with the mitigation. Recommend a test-case and a follow-up PR to harden."
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "title": "Idempotency eviction race causes duplicate receipt events",
+      "body": "Detailed report and analysis for issue 2.\n\nSteps to reproduce:\n1. Run the nightly batch\n2. Observe the failure\n\nExpected: stable behavior\nObserved: intermittent failure under load\n",
+      "labels": [
+        "backend",
+        "postgresql"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_3",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "created_date": "2021-11-23T14:21:00",
+      "closed_date": "2021-12-05T14:21:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 2,
+      "milestone": "v1.2",
+      "comments": [
+        {
+          "by": "TOKEN_3",
+          "body": "Initial report: observed during weekly run, reproduces reliably on branch data."
+        },
+        {
+          "by": "TOKEN_1",
+          "body": "I can reproduce locally; adding traces and a temporary mitigation for investigation."
+        },
+        {
+          "by": "TOKEN_4",
+          "body": "Agree with the mitigation. Recommend a test-case and a follow-up PR to harden."
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "title": "Ledger export misses timezone normalization for DST zones",
+      "body": "Detailed report and analysis for issue 3.\n\nSteps to reproduce:\n1. Run the nightly batch\n2. Observe the failure\n\nExpected: stable behavior\nObserved: intermittent failure under load\n",
+      "labels": [
+        "postgresql",
+        "data-integrity"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_2",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "created_date": "2022-01-23T09:02:00",
+      "closed_date": "2022-02-04T09:02:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 3,
+      "milestone": "v1.1",
+      "comments": [
+        {
+          "by": "TOKEN_2",
+          "body": "Initial report: observed during weekly run, reproduces reliably on branch data."
+        },
+        {
+          "by": "TOKEN_3",
+          "body": "I can reproduce locally; adding traces and a temporary mitigation for investigation."
+        },
+        {
+          "by": "TOKEN_4",
+          "body": "Agree with the mitigation. Recommend a test-case and a follow-up PR to harden."
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "title": "Receipt reprint flow shows duplicate row when print fails",
+      "body": "Detailed report and analysis for issue 4.\n\nSteps to reproduce:\n1. Run the nightly batch\n2. Observe the failure\n\nExpected: stable behavior\nObserved: intermittent failure under load\n",
+      "labels": [
+        "bug",
+        "performance",
+        "priority:high"
+      ],
+      "state": "open",
+      "filed_by_developer": "DEV_3",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "created_date": "2022-04-06T15:24:00",
+      "closed_date": null,
+      "closed_reason": null,
+      "linked_pr_number": null,
+      "milestone": "backlog",
+      "comments": [
+        {
+          "by": "TOKEN_3",
+          "body": "Initial report: observed during weekly run, reproduces reliably on branch data."
+        },
+        {
+          "by": "TOKEN_2",
+          "body": "I can reproduce locally; adding traces and a temporary mitigation for investigation."
+        },
+        {
+          "by": "TOKEN_1",
+          "body": "Agree with the mitigation. Recommend a test-case and a follow-up PR to harden."
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "title": "Search endpoint returns stale results after cache warmup",
+      "body": "Detailed report and analysis for issue 5.\n\nSteps to reproduce:\n1. Run the nightly batch\n2. Observe the failure\n\nExpected: stable behavior\nObserved: intermittent failure under load\n",
+      "labels": [
+        "api",
+        "performance",
+        "data-integrity"
+      ],
+      "state": "open",
+      "filed_by_developer": "DEV_4",
+      "github_token_env": "GITHUB_TOKEN_4",
+      "created_date": "2022-02-19T13:13:00",
+      "closed_date": null,
+      "closed_reason": null,
+      "linked_pr_number": null,
+      "milestone": "backlog",
+      "comments": [
+        {
+          "by": "TOKEN_4",
+          "body": "Initial report: observed during weekly run, reproduces reliably on branch data."
+        },
+        {
+          "by": "TOKEN_3",
+          "body": "I can reproduce locally; adding traces and a temporary mitigation for investigation."
+        },
+        {
+          "by": "TOKEN_2",
+          "body": "Agree with the mitigation. Recommend a test-case and a follow-up PR to harden."
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "title": "Ledger advisory lock collisions across partitions",
+      "body": "Detailed report and analysis for issue 6.\n\nSteps to reproduce:\n1. Run the nightly batch\n2. Observe the failure\n\nExpected: stable behavior\nObserved: intermittent failure under load\n",
+      "labels": [
+        "api",
+        "postgresql"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_4",
+      "github_token_env": "GITHUB_TOKEN_4",
+      "created_date": "2022-12-08T10:32:00",
+      "closed_date": "2022-12-21T10:32:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 4,
+      "milestone": "backlog",
+      "comments": [
+        {
+          "by": "TOKEN_4",
+          "body": "Initial report: observed during weekly run, reproduces reliably on branch data."
+        },
+        {
+          "by": "TOKEN_3",
+          "body": "I can reproduce locally; adding traces and a temporary mitigation for investigation."
+        },
+        {
+          "by": "TOKEN_2",
+          "body": "Agree with the mitigation. Recommend a test-case and a follow-up PR to harden."
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "title": "Posting worker memory amplification under skewed distribution",
+      "body": "Detailed report and analysis for issue 7.\n\nSteps to reproduce:\n1. Run the nightly batch\n2. Observe the failure\n\nExpected: stable behavior\nObserved: intermittent failure under load\n",
+      "labels": [
+        "docs",
+        "backend"
+      ],
+      "state": "open",
+      "filed_by_developer": "DEV_4",
+      "github_token_env": "GITHUB_TOKEN_4",
+      "created_date": "2021-08-10T14:10:00",
+      "closed_date": null,
+      "closed_reason": null,
+      "linked_pr_number": null,
+      "milestone": "v1.2",
+      "comments": [
+        {
+          "by": "TOKEN_4",
+          "body": "Initial report: observed during weekly run, reproduces reliably on branch data."
+        },
+        {
+          "by": "TOKEN_3",
+          "body": "I can reproduce locally; adding traces and a temporary mitigation for investigation."
+        },
+        {
+          "by": "TOKEN_1",
+          "body": "Agree with the mitigation. Recommend a test-case and a follow-up PR to harden."
+        }
+      ]
+    },
+    {
+      "number": 8,
+      "title": "Payment retry flow accepts zero amount on duplicate submit",
+      "body": "Detailed report and analysis for issue 8.\n\nSteps to reproduce:\n1. Run the nightly batch\n2. Observe the failure\n\nExpected: stable behavior\nObserved: intermittent failure under load\n",
+      "labels": [
+        "backend",
+        "reliability"
+      ],
+      "state": "open",
+      "filed_by_developer": "DEV_1",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "created_date": "2021-10-12T10:34:00",
+      "closed_date": null,
+      "closed_reason": null,
+      "linked_pr_number": null,
+      "milestone": "v1.2",
+      "comments": [
+        {
+          "by": "TOKEN_1",
+          "body": "Initial report: observed during weekly run, reproduces reliably on branch data."
+        },
+        {
+          "by": "TOKEN_2",
+          "body": "I can reproduce locally; adding traces and a temporary mitigation for investigation."
+        },
+        {
+          "by": "TOKEN_3",
+          "body": "Agree with the mitigation. Recommend a test-case and a follow-up PR to harden."
+        }
+      ]
+    },
+    {
+      "number": 9,
+      "title": "Export advisory lock collisions across partitions",
+      "body": "Detailed report and analysis for issue 9.\n\nSteps to reproduce:\n1. Run the nightly batch\n2. Observe the failure\n\nExpected: stable behavior\nObserved: intermittent failure under load\n",
+      "labels": [
+        "ui",
+        "docs"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_4",
+      "github_token_env": "GITHUB_TOKEN_4",
+      "created_date": "2022-04-19T09:05:00",
+      "closed_date": "2022-05-06T09:05:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 5,
+      "milestone": "backlog",
+      "comments": [
+        {
+          "by": "TOKEN_4",
+          "body": "Initial report: observed during weekly run, reproduces reliably on branch data."
+        },
+        {
+          "by": "TOKEN_1",
+          "body": "I can reproduce locally; adding traces and a temporary mitigation for investigation."
+        },
+        {
+          "by": "TOKEN_2",
+          "body": "Agree with the mitigation. Recommend a test-case and a follow-up PR to harden."
+        }
+      ]
+    },
+    {
+      "number": 10,
+      "title": "Payment retry flow accepts zero amount on duplicate submit",
+      "body": "Detailed report and analysis for issue 10.\n\nSteps to reproduce:\n1. Run the nightly batch\n2. Observe the failure\n\nExpected: stable behavior\nObserved: intermittent failure under load\n",
+      "labels": [
+        "bug",
+        "performance"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_2",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "created_date": "2022-03-03T13:01:00",
+      "closed_date": "2022-03-05T13:01:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 6,
+      "milestone": "v1.2",
+      "comments": [
+        {
+          "by": "TOKEN_2",
+          "body": "Initial report: observed during weekly run, reproduces reliably on branch data."
+        },
+        {
+          "by": "TOKEN_1",
+          "body": "I can reproduce locally; adding traces and a temporary mitigation for investigation."
+        },
+        {
+          "by": "TOKEN_3",
+          "body": "Agree with the mitigation. Recommend a test-case and a follow-up PR to harden."
+        }
+      ]
+    },
+    {
+      "number": 11,
+      "title": "Reconciliation API non-deterministic ordering breaks checksum",
+      "body": "Detailed report and analysis for issue 11.\n\nSteps to reproduce:\n1. Run the nightly batch\n2. Observe the failure\n\nExpected: stable behavior\nObserved: intermittent failure under load\n",
+      "labels": [
+        "postgresql",
+        "reliability",
+        "priority:high",
+        "performance"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_4",
+      "github_token_env": "GITHUB_TOKEN_4",
+      "created_date": "2023-07-08T15:51:00",
+      "closed_date": "2023-07-10T15:51:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 7,
+      "milestone": "v1.0",
+      "comments": [
+        {
+          "by": "TOKEN_4",
+          "body": "Initial report: observed during weekly run, reproduces reliably on branch data."
+        },
+        {
+          "by": "TOKEN_1",
+          "body": "I can reproduce locally; adding traces and a temporary mitigation for investigation."
+        },
+        {
+          "by": "TOKEN_3",
+          "body": "Agree with the mitigation. Recommend a test-case and a follow-up PR to harden."
+        }
+      ]
+    },
+    {
+      "number": 12,
+      "title": "Reconciliation advisory lock collisions across partitions",
+      "body": "Detailed report and analysis for issue 12.\n\nSteps to reproduce:\n1. Run the nightly batch\n2. Observe the failure\n\nExpected: stable behavior\nObserved: intermittent failure under load\n",
+      "labels": [
+        "bug",
+        "docs"
+      ],
+      "state": "open",
+      "filed_by_developer": "DEV_2",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "created_date": "2023-04-06T12:29:00",
+      "closed_date": null,
+      "closed_reason": null,
+      "linked_pr_number": null,
+      "milestone": "v1.0",
+      "comments": [
+        {
+          "by": "TOKEN_2",
+          "body": "Initial report: observed during weekly run, reproduces reliably on branch data."
+        },
+        {
+          "by": "TOKEN_1",
+          "body": "I can reproduce locally; adding traces and a temporary mitigation for investigation."
+        },
+        {
+          "by": "TOKEN_3",
+          "body": "Agree with the mitigation. Recommend a test-case and a follow-up PR to harden."
+        }
+      ]
+    },
+    {
+      "number": 13,
+      "title": "Risk aggregation memory amplification under skewed distribution",
+      "body": "Detailed report and analysis for issue 13.\n\nSteps to reproduce:\n1. Run the nightly batch\n2. Observe the failure\n\nExpected: stable behavior\nObserved: intermittent failure under load\n",
+      "labels": [
+        "postgresql",
+        "data-integrity"
+      ],
+      "state": "open",
+      "filed_by_developer": "DEV_4",
+      "github_token_env": "GITHUB_TOKEN_4",
+      "created_date": "2023-03-16T15:13:00",
+      "closed_date": null,
+      "closed_reason": null,
+      "linked_pr_number": null,
+      "milestone": "backlog",
+      "comments": [
+        {
+          "by": "TOKEN_4",
+          "body": "Initial report: observed during weekly run, reproduces reliably on branch data."
+        },
+        {
+          "by": "TOKEN_2",
+          "body": "I can reproduce locally; adding traces and a temporary mitigation for investigation."
+        },
+        {
+          "by": "TOKEN_3",
+          "body": "Agree with the mitigation. Recommend a test-case and a follow-up PR to harden."
+        }
+      ]
+    },
+    {
+      "number": 14,
+      "title": "Risk aggregation export misses timezone normalization for DST zones",
+      "body": "Detailed report and analysis for issue 14.\n\nSteps to reproduce:\n1. Run the nightly batch\n2. Observe the failure\n\nExpected: stable behavior\nObserved: intermittent failure under load\n",
+      "labels": [
+        "docs",
+        "bug",
+        "reliability",
+        "priority:high"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_2",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "created_date": "2023-12-22T15:09:00",
+      "closed_date": "2024-01-07T15:09:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 8,
+      "milestone": "v1.1",
+      "comments": [
+        {
+          "by": "TOKEN_2",
+          "body": "Initial report: observed during weekly run, reproduces reliably on branch data."
+        },
+        {
+          "by": "TOKEN_1",
+          "body": "I can reproduce locally; adding traces and a temporary mitigation for investigation."
+        },
+        {
+          "by": "TOKEN_3",
+          "body": "Agree with the mitigation. Recommend a test-case and a follow-up PR to harden."
+        }
+      ]
+    },
+    {
+      "number": 15,
+      "title": "Payment retry flow accepts zero amount on duplicate submit",
+      "body": "Detailed report and analysis for issue 15.\n\nSteps to reproduce:\n1. Run the nightly batch\n2. Observe the failure\n\nExpected: stable behavior\nObserved: intermittent failure under load\n",
+      "labels": [
+        "priority:high",
+        "docs",
+        "reliability",
+        "api"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_1",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "created_date": "2021-08-19T11:37:00",
+      "closed_date": "2021-08-30T11:37:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 9,
+      "milestone": "v1.1",
+      "comments": [
+        {
+          "by": "TOKEN_1",
+          "body": "Initial report: observed during weekly run, reproduces reliably on branch data."
+        },
+        {
+          "by": "TOKEN_3",
+          "body": "I can reproduce locally; adding traces and a temporary mitigation for investigation."
+        },
+        {
+          "by": "TOKEN_4",
+          "body": "Agree with the mitigation. Recommend a test-case and a follow-up PR to harden."
+        }
+      ]
+    },
+    {
+      "number": 16,
+      "title": "Idempotency eviction race causes duplicate disbursement events",
+      "body": "Detailed report and analysis for issue 16.\n\nSteps to reproduce:\n1. Run the nightly batch\n2. Observe the failure\n\nExpected: stable behavior\nObserved: intermittent failure under load\n",
+      "labels": [
+        "reliability",
+        "data-integrity"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_3",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "created_date": "2021-07-03T16:13:00",
+      "closed_date": "2021-07-21T16:13:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 10,
+      "milestone": "v1.2",
+      "comments": [
+        {
+          "by": "TOKEN_3",
+          "body": "Initial report: observed during weekly run, reproduces reliably on branch data."
+        },
+        {
+          "by": "TOKEN_4",
+          "body": "I can reproduce locally; adding traces and a temporary mitigation for investigation."
+        },
+        {
+          "by": "TOKEN_1",
+          "body": "Agree with the mitigation. Recommend a test-case and a follow-up PR to harden."
+        }
+      ]
+    },
+    {
+      "number": 17,
+      "title": "Batch job OOM when group cardinality spikes",
+      "body": "Detailed report and analysis for issue 17.\n\nSteps to reproduce:\n1. Run the nightly batch\n2. Observe the failure\n\nExpected: stable behavior\nObserved: intermittent failure under load\n",
+      "labels": [
+        "data-integrity",
+        "docs",
+        "ui",
+        "api"
+      ],
+      "state": "open",
+      "filed_by_developer": "DEV_2",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "created_date": "2023-12-05T12:18:00",
+      "closed_date": null,
+      "closed_reason": null,
+      "linked_pr_number": null,
+      "milestone": "v1.0",
+      "comments": [
+        {
+          "by": "TOKEN_2",
+          "body": "Initial report: observed during weekly run, reproduces reliably on branch data."
+        },
+        {
+          "by": "TOKEN_1",
+          "body": "I can reproduce locally; adding traces and a temporary mitigation for investigation."
+        },
+        {
+          "by": "TOKEN_4",
+          "body": "Agree with the mitigation. Recommend a test-case and a follow-up PR to harden."
+        }
+      ]
+    },
+    {
+      "number": 18,
+      "title": "Risk aggregation export misses timezone normalization for DST zones",
+      "body": "Detailed report and analysis for issue 18.\n\nSteps to reproduce:\n1. Run the nightly batch\n2. Observe the failure\n\nExpected: stable behavior\nObserved: intermittent failure under load\n",
+      "labels": [
+        "docs",
+        "postgresql",
+        "bug"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_2",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "created_date": "2022-06-02T08:21:00",
+      "closed_date": "2022-06-07T08:21:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 11,
+      "milestone": "v1.0",
+      "comments": [
+        {
+          "by": "TOKEN_2",
+          "body": "Initial report: observed during weekly run, reproduces reliably on branch data."
+        },
+        {
+          "by": "TOKEN_3",
+          "body": "I can reproduce locally; adding traces and a temporary mitigation for investigation."
+        },
+        {
+          "by": "TOKEN_1",
+          "body": "Agree with the mitigation. Recommend a test-case and a follow-up PR to harden."
+        }
+      ]
+    },
+    {
+      "number": 19,
+      "title": "Payment retry flow accepts zero amount on duplicate submit",
+      "body": "Detailed report and analysis for issue 19.\n\nSteps to reproduce:\n1. Run the nightly batch\n2. Observe the failure\n\nExpected: stable behavior\nObserved: intermittent failure under load\n",
+      "labels": [
+        "api",
+        "postgresql"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_4",
+      "github_token_env": "GITHUB_TOKEN_4",
+      "created_date": "2022-04-22T09:22:00",
+      "closed_date": "2022-05-03T09:22:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 12,
+      "milestone": "backlog",
+      "comments": [
+        {
+          "by": "TOKEN_4",
+          "body": "Initial report: observed during weekly run, reproduces reliably on branch data."
+        },
+        {
+          "by": "TOKEN_3",
+          "body": "I can reproduce locally; adding traces and a temporary mitigation for investigation."
+        },
+        {
+          "by": "TOKEN_1",
+          "body": "Agree with the mitigation. Recommend a test-case and a follow-up PR to harden."
+        }
+      ]
+    },
+    {
+      "number": 20,
+      "title": "Reconciliation API non-deterministic ordering breaks checksum",
+      "body": "Detailed report and analysis for issue 20.\n\nSteps to reproduce:\n1. Run the nightly batch\n2. Observe the failure\n\nExpected: stable behavior\nObserved: intermittent failure under load\n",
+      "labels": [
+        "postgresql",
+        "reliability"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_2",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "created_date": "2023-06-12T12:52:00",
+      "closed_date": "2023-06-15T12:52:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 13,
+      "milestone": "v1.2",
+      "comments": [
+        {
+          "by": "TOKEN_2",
+          "body": "Initial report: observed during weekly run, reproduces reliably on branch data."
+        },
+        {
+          "by": "TOKEN_3",
+          "body": "I can reproduce locally; adding traces and a temporary mitigation for investigation."
+        },
+        {
+          "by": "TOKEN_4",
+          "body": "Agree with the mitigation. Recommend a test-case and a follow-up PR to harden."
+        }
+      ]
+    },
+    {
+      "number": 21,
+      "title": "Batch job OOM when group cardinality spikes",
+      "body": "Detailed report and analysis for issue 21.\n\nSteps to reproduce:\n1. Run the nightly batch\n2. Observe the failure\n\nExpected: stable behavior\nObserved: intermittent failure under load\n",
+      "labels": [
+        "backend",
+        "postgresql",
+        "performance",
+        "api"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_3",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "created_date": "2021-03-04T17:27:00",
+      "closed_date": "2021-03-18T17:27:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 14,
+      "milestone": "v1.0",
+      "comments": [
+        {
+          "by": "TOKEN_3",
+          "body": "Initial report: observed during weekly run, reproduces reliably on branch data."
+        },
+        {
+          "by": "TOKEN_4",
+          "body": "I can reproduce locally; adding traces and a temporary mitigation for investigation."
+        },
+        {
+          "by": "TOKEN_1",
+          "body": "Agree with the mitigation. Recommend a test-case and a follow-up PR to harden."
+        }
+      ]
+    },
+    {
+      "number": 22,
+      "title": "Batch job OOM when group cardinality spikes",
+      "body": "Detailed report and analysis for issue 22.\n\nSteps to reproduce:\n1. Run the nightly batch\n2. Observe the failure\n\nExpected: stable behavior\nObserved: intermittent failure under load\n",
+      "labels": [
+        "docs",
+        "api",
+        "performance"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_4",
+      "github_token_env": "GITHUB_TOKEN_4",
+      "created_date": "2022-08-17T12:42:00",
+      "closed_date": "2022-08-30T12:42:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 15,
+      "milestone": "v1.1",
+      "comments": [
+        {
+          "by": "TOKEN_4",
+          "body": "Initial report: observed during weekly run, reproduces reliably on branch data."
+        },
+        {
+          "by": "TOKEN_3",
+          "body": "I can reproduce locally; adding traces and a temporary mitigation for investigation."
+        },
+        {
+          "by": "TOKEN_2",
+          "body": "Agree with the mitigation. Recommend a test-case and a follow-up PR to harden."
+        }
+      ]
+    },
+    {
+      "number": 23,
+      "title": "Receipt reprint flow shows duplicate row when print fails",
+      "body": "Detailed report and analysis for issue 23.\n\nSteps to reproduce:\n1. Run the nightly batch\n2. Observe the failure\n\nExpected: stable behavior\nObserved: intermittent failure under load\n",
+      "labels": [
+        "backend",
+        "data-integrity"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_2",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "created_date": "2022-09-15T15:28:00",
+      "closed_date": "2022-10-06T15:28:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 16,
+      "milestone": "v1.2",
+      "comments": [
+        {
+          "by": "TOKEN_2",
+          "body": "Initial report: observed during weekly run, reproduces reliably on branch data."
+        },
+        {
+          "by": "TOKEN_1",
+          "body": "I can reproduce locally; adding traces and a temporary mitigation for investigation."
+        },
+        {
+          "by": "TOKEN_3",
+          "body": "Agree with the mitigation. Recommend a test-case and a follow-up PR to harden."
+        }
+      ]
+    },
+    {
+      "number": 24,
+      "title": "Search endpoint returns stale results after cache warmup",
+      "body": "Detailed report and analysis for issue 24.\n\nSteps to reproduce:\n1. Run the nightly batch\n2. Observe the failure\n\nExpected: stable behavior\nObserved: intermittent failure under load\n",
+      "labels": [
+        "api",
+        "bug"
+      ],
+      "state": "open",
+      "filed_by_developer": "DEV_2",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "created_date": "2021-05-15T14:56:00",
+      "closed_date": null,
+      "closed_reason": null,
+      "linked_pr_number": null,
+      "milestone": "v1.0",
+      "comments": [
+        {
+          "by": "TOKEN_2",
+          "body": "Initial report: observed during weekly run, reproduces reliably on branch data."
+        },
+        {
+          "by": "TOKEN_3",
+          "body": "I can reproduce locally; adding traces and a temporary mitigation for investigation."
+        },
+        {
+          "by": "TOKEN_1",
+          "body": "Agree with the mitigation. Recommend a test-case and a follow-up PR to harden."
+        }
+      ]
+    },
+    {
+      "number": 25,
+      "title": "Receipt reprint flow shows duplicate row when print fails",
+      "body": "Detailed report and analysis for issue 25.\n\nSteps to reproduce:\n1. Run the nightly batch\n2. Observe the failure\n\nExpected: stable behavior\nObserved: intermittent failure under load\n",
+      "labels": [
+        "api",
+        "ui",
+        "reliability"
+      ],
+      "state": "open",
+      "filed_by_developer": "DEV_1",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "created_date": "2021-12-26T16:29:00",
+      "closed_date": null,
+      "closed_reason": null,
+      "linked_pr_number": null,
+      "milestone": "backlog",
+      "comments": [
+        {
+          "by": "TOKEN_1",
+          "body": "Initial report: observed during weekly run, reproduces reliably on branch data."
+        },
+        {
+          "by": "TOKEN_4",
+          "body": "I can reproduce locally; adding traces and a temporary mitigation for investigation."
+        },
+        {
+          "by": "TOKEN_3",
+          "body": "Agree with the mitigation. Recommend a test-case and a follow-up PR to harden."
+        }
+      ]
+    },
+    {
+      "number": 26,
+      "title": "Mobile: client update loses branch selection on slow network",
+      "body": "Detailed report and analysis for issue 26.\n\nSteps to reproduce:\n1. Run the nightly batch\n2. Observe the failure\n\nExpected: stable behavior\nObserved: intermittent failure under load\n",
+      "labels": [
+        "data-integrity",
+        "docs",
+        "ui",
+        "reliability"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_4",
+      "github_token_env": "GITHUB_TOKEN_4",
+      "created_date": "2023-12-15T10:47:00",
+      "closed_date": "2023-12-30T10:47:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 17,
+      "milestone": "v1.0",
+      "comments": [
+        {
+          "by": "TOKEN_4",
+          "body": "Initial report: observed during weekly run, reproduces reliably on branch data."
+        },
+        {
+          "by": "TOKEN_3",
+          "body": "I can reproduce locally; adding traces and a temporary mitigation for investigation."
+        },
+        {
+          "by": "TOKEN_2",
+          "body": "Agree with the mitigation. Recommend a test-case and a follow-up PR to harden."
+        }
+      ]
+    },
+    {
+      "number": 27,
+      "title": "Reconciliation API non-deterministic ordering breaks checksum",
+      "body": "Detailed report and analysis for issue 27.\n\nSteps to reproduce:\n1. Run the nightly batch\n2. Observe the failure\n\nExpected: stable behavior\nObserved: intermittent failure under load\n",
+      "labels": [
+        "reliability",
+        "docs",
+        "ui"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_2",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "created_date": "2021-10-08T14:44:00",
+      "closed_date": "2021-10-15T14:44:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 18,
+      "milestone": "backlog",
+      "comments": [
+        {
+          "by": "TOKEN_2",
+          "body": "Initial report: observed during weekly run, reproduces reliably on branch data."
+        },
+        {
+          "by": "TOKEN_3",
+          "body": "I can reproduce locally; adding traces and a temporary mitigation for investigation."
+        },
+        {
+          "by": "TOKEN_1",
+          "body": "Agree with the mitigation. Recommend a test-case and a follow-up PR to harden."
+        }
+      ]
+    },
+    {
+      "number": 28,
+      "title": "Mobile: client update loses branch selection on slow network",
+      "body": "Detailed report and analysis for issue 28.\n\nSteps to reproduce:\n1. Run the nightly batch\n2. Observe the failure\n\nExpected: stable behavior\nObserved: intermittent failure under load\n",
+      "labels": [
+        "ui",
+        "bug",
+        "postgresql"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_2",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "created_date": "2023-11-26T17:57:00",
+      "closed_date": "2023-12-09T17:57:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 19,
+      "milestone": "v1.1",
+      "comments": [
+        {
+          "by": "TOKEN_2",
+          "body": "Initial report: observed during weekly run, reproduces reliably on branch data."
+        },
+        {
+          "by": "TOKEN_3",
+          "body": "I can reproduce locally; adding traces and a temporary mitigation for investigation."
+        },
+        {
+          "by": "TOKEN_1",
+          "body": "Agree with the mitigation. Recommend a test-case and a follow-up PR to harden."
+        }
+      ]
+    },
+    {
+      "number": 29,
+      "title": "Reconciliation export misses timezone normalization for DST zones",
+      "body": "Detailed report and analysis for issue 29.\n\nSteps to reproduce:\n1. Run the nightly batch\n2. Observe the failure\n\nExpected: stable behavior\nObserved: intermittent failure under load\n",
+      "labels": [
+        "ui",
+        "reliability"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_1",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "created_date": "2023-04-05T15:11:00",
+      "closed_date": "2023-04-18T15:11:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 20,
+      "milestone": "v1.2",
+      "comments": [
+        {
+          "by": "TOKEN_1",
+          "body": "Initial report: observed during weekly run, reproduces reliably on branch data."
+        },
+        {
+          "by": "TOKEN_3",
+          "body": "I can reproduce locally; adding traces and a temporary mitigation for investigation."
+        },
+        {
+          "by": "TOKEN_4",
+          "body": "Agree with the mitigation. Recommend a test-case and a follow-up PR to harden."
+        }
+      ]
+    },
+    {
+      "number": 30,
+      "title": "Reconciliation API non-deterministic ordering breaks checksum",
+      "body": "Detailed report and analysis for issue 30.\n\nSteps to reproduce:\n1. Run the nightly batch\n2. Observe the failure\n\nExpected: stable behavior\nObserved: intermittent failure under load\n",
+      "labels": [
+        "api",
+        "performance",
+        "priority:high",
+        "docs"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_1",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "created_date": "2021-05-25T08:48:00",
+      "closed_date": "2021-06-13T08:48:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 21,
+      "milestone": "v1.1",
+      "comments": [
+        {
+          "by": "TOKEN_1",
+          "body": "Initial report: observed during weekly run, reproduces reliably on branch data."
+        },
+        {
+          "by": "TOKEN_3",
+          "body": "I can reproduce locally; adding traces and a temporary mitigation for investigation."
+        },
+        {
+          "by": "TOKEN_4",
+          "body": "Agree with the mitigation. Recommend a test-case and a follow-up PR to harden."
+        }
+      ]
+    },
+    {
+      "number": 31,
+      "title": "Export advisory lock collisions across partitions",
+      "body": "Detailed report and analysis for issue 31.\n\nSteps to reproduce:\n1. Run the nightly batch\n2. Observe the failure\n\nExpected: stable behavior\nObserved: intermittent failure under load\n",
+      "labels": [
+        "performance",
+        "backend",
+        "data-integrity",
+        "postgresql"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_2",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "created_date": "2022-08-19T14:25:00",
+      "closed_date": "2022-08-23T14:25:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 22,
+      "milestone": "v1.0",
+      "comments": [
+        {
+          "by": "TOKEN_2",
+          "body": "Initial report: observed during weekly run, reproduces reliably on branch data."
+        },
+        {
+          "by": "TOKEN_3",
+          "body": "I can reproduce locally; adding traces and a temporary mitigation for investigation."
+        },
+        {
+          "by": "TOKEN_4",
+          "body": "Agree with the mitigation. Recommend a test-case and a follow-up PR to harden."
+        }
+      ]
+    },
+    {
+      "number": 32,
+      "title": "Search endpoint returns stale results after cache warmup",
+      "body": "Detailed report and analysis for issue 32.\n\nSteps to reproduce:\n1. Run the nightly batch\n2. Observe the failure\n\nExpected: stable behavior\nObserved: intermittent failure under load\n",
+      "labels": [
+        "data-integrity",
+        "docs",
+        "ui",
+        "performance"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_2",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "created_date": "2022-12-21T15:45:00",
+      "closed_date": "2023-01-09T15:45:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 23,
+      "milestone": "v1.2",
+      "comments": [
+        {
+          "by": "TOKEN_2",
+          "body": "Initial report: observed during weekly run, reproduces reliably on branch data."
+        },
+        {
+          "by": "TOKEN_3",
+          "body": "I can reproduce locally; adding traces and a temporary mitigation for investigation."
+        },
+        {
+          "by": "TOKEN_1",
+          "body": "Agree with the mitigation. Recommend a test-case and a follow-up PR to harden."
+        }
+      ]
+    },
+    {
+      "number": 33,
+      "title": "Idempotency eviction race causes duplicate disbursement events",
+      "body": "Detailed report and analysis for issue 33.\n\nSteps to reproduce:\n1. Run the nightly batch\n2. Observe the failure\n\nExpected: stable behavior\nObserved: intermittent failure under load\n",
+      "labels": [
+        "data-integrity",
+        "reliability",
+        "priority:high"
+      ],
+      "state": "open",
+      "filed_by_developer": "DEV_3",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "created_date": "2023-01-11T08:31:00",
+      "closed_date": null,
+      "closed_reason": null,
+      "linked_pr_number": null,
+      "milestone": "v1.2",
+      "comments": [
+        {
+          "by": "TOKEN_3",
+          "body": "Initial report: observed during weekly run, reproduces reliably on branch data."
+        },
+        {
+          "by": "TOKEN_4",
+          "body": "I can reproduce locally; adding traces and a temporary mitigation for investigation."
+        },
+        {
+          "by": "TOKEN_1",
+          "body": "Agree with the mitigation. Recommend a test-case and a follow-up PR to harden."
+        }
+      ]
+    },
+    {
+      "number": 34,
+      "title": "Mobile: client update loses branch selection on slow network",
+      "body": "Detailed report and analysis for issue 34.\n\nSteps to reproduce:\n1. Run the nightly batch\n2. Observe the failure\n\nExpected: stable behavior\nObserved: intermittent failure under load\n",
+      "labels": [
+        "ui",
+        "priority:high",
+        "docs",
+        "postgresql"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_4",
+      "github_token_env": "GITHUB_TOKEN_4",
+      "created_date": "2023-10-07T09:15:00",
+      "closed_date": "2023-10-17T09:15:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 24,
+      "milestone": "v1.1",
+      "comments": [
+        {
+          "by": "TOKEN_4",
+          "body": "Initial report: observed during weekly run, reproduces reliably on branch data."
+        },
+        {
+          "by": "TOKEN_2",
+          "body": "I can reproduce locally; adding traces and a temporary mitigation for investigation."
+        },
+        {
+          "by": "TOKEN_1",
+          "body": "Agree with the mitigation. Recommend a test-case and a follow-up PR to harden."
+        }
+      ]
+    },
+    {
+      "number": 35,
+      "title": "Posting worker export misses timezone normalization for DST zones",
+      "body": "Detailed report and analysis for issue 35.\n\nSteps to reproduce:\n1. Run the nightly batch\n2. Observe the failure\n\nExpected: stable behavior\nObserved: intermittent failure under load\n",
+      "labels": [
+        "backend",
+        "performance"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_4",
+      "github_token_env": "GITHUB_TOKEN_4",
+      "created_date": "2023-12-11T13:44:00",
+      "closed_date": "2023-12-29T13:44:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 25,
+      "milestone": "v1.1",
+      "comments": [
+        {
+          "by": "TOKEN_4",
+          "body": "Initial report: observed during weekly run, reproduces reliably on branch data."
+        },
+        {
+          "by": "TOKEN_1",
+          "body": "I can reproduce locally; adding traces and a temporary mitigation for investigation."
+        },
+        {
+          "by": "TOKEN_2",
+          "body": "Agree with the mitigation. Recommend a test-case and a follow-up PR to harden."
+        }
+      ]
+    },
+    {
+      "number": 36,
+      "title": "Ledger export misses timezone normalization for DST zones",
+      "body": "Detailed report and analysis for issue 36.\n\nSteps to reproduce:\n1. Run the nightly batch\n2. Observe the failure\n\nExpected: stable behavior\nObserved: intermittent failure under load\n",
+      "labels": [
+        "data-integrity",
+        "api",
+        "ui",
+        "bug"
+      ],
+      "state": "open",
+      "filed_by_developer": "DEV_2",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "created_date": "2021-12-10T08:45:00",
+      "closed_date": null,
+      "closed_reason": null,
+      "linked_pr_number": null,
+      "milestone": "v1.2",
+      "comments": [
+        {
+          "by": "TOKEN_2",
+          "body": "Initial report: observed during weekly run, reproduces reliably on branch data."
+        },
+        {
+          "by": "TOKEN_3",
+          "body": "I can reproduce locally; adding traces and a temporary mitigation for investigation."
+        },
+        {
+          "by": "TOKEN_4",
+          "body": "Agree with the mitigation. Recommend a test-case and a follow-up PR to harden."
+        }
+      ]
+    },
+    {
+      "number": 37,
+      "title": "Mobile: client update loses branch selection on slow network",
+      "body": "Detailed report and analysis for issue 37.\n\nSteps to reproduce:\n1. Run the nightly batch\n2. Observe the failure\n\nExpected: stable behavior\nObserved: intermittent failure under load\n",
+      "labels": [
+        "ui",
+        "backend",
+        "bug"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_3",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "created_date": "2023-05-11T10:03:00",
+      "closed_date": "2023-05-30T10:03:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 26,
+      "milestone": "v1.2",
+      "comments": [
+        {
+          "by": "TOKEN_3",
+          "body": "Initial report: observed during weekly run, reproduces reliably on branch data."
+        },
+        {
+          "by": "TOKEN_1",
+          "body": "I can reproduce locally; adding traces and a temporary mitigation for investigation."
+        },
+        {
+          "by": "TOKEN_2",
+          "body": "Agree with the mitigation. Recommend a test-case and a follow-up PR to harden."
+        }
+      ]
+    },
+    {
+      "number": 38,
+      "title": "Export export misses timezone normalization for DST zones",
+      "body": "Detailed report and analysis for issue 38.\n\nSteps to reproduce:\n1. Run the nightly batch\n2. Observe the failure\n\nExpected: stable behavior\nObserved: intermittent failure under load\n",
+      "labels": [
+        "priority:high",
+        "bug",
+        "backend"
+      ],
+      "state": "open",
+      "filed_by_developer": "DEV_4",
+      "github_token_env": "GITHUB_TOKEN_4",
+      "created_date": "2023-10-13T15:58:00",
+      "closed_date": null,
+      "closed_reason": null,
+      "linked_pr_number": null,
+      "milestone": "v1.1",
+      "comments": [
+        {
+          "by": "TOKEN_4",
+          "body": "Initial report: observed during weekly run, reproduces reliably on branch data."
+        },
+        {
+          "by": "TOKEN_3",
+          "body": "I can reproduce locally; adding traces and a temporary mitigation for investigation."
+        },
+        {
+          "by": "TOKEN_1",
+          "body": "Agree with the mitigation. Recommend a test-case and a follow-up PR to harden."
+        }
+      ]
+    },
+    {
+      "number": 39,
+      "title": "Idempotency eviction race causes duplicate disbursement events",
+      "body": "Detailed report and analysis for issue 39.\n\nSteps to reproduce:\n1. Run the nightly batch\n2. Observe the failure\n\nExpected: stable behavior\nObserved: intermittent failure under load\n",
+      "labels": [
+        "bug",
+        "postgresql"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_2",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "created_date": "2022-05-22T09:10:00",
+      "closed_date": "2022-06-11T09:10:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 27,
+      "milestone": "backlog",
+      "comments": [
+        {
+          "by": "TOKEN_2",
+          "body": "Initial report: observed during weekly run, reproduces reliably on branch data."
+        },
+        {
+          "by": "TOKEN_3",
+          "body": "I can reproduce locally; adding traces and a temporary mitigation for investigation."
+        },
+        {
+          "by": "TOKEN_1",
+          "body": "Agree with the mitigation. Recommend a test-case and a follow-up PR to harden."
+        }
+      ]
+    },
+    {
+      "number": 40,
+      "title": "Search endpoint returns stale results after cache warmup",
+      "body": "Detailed report and analysis for issue 40.\n\nSteps to reproduce:\n1. Run the nightly batch\n2. Observe the failure\n\nExpected: stable behavior\nObserved: intermittent failure under load\n",
+      "labels": [
+        "api",
+        "data-integrity"
+      ],
+      "state": "open",
+      "filed_by_developer": "DEV_2",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "created_date": "2022-05-26T17:42:00",
+      "closed_date": null,
+      "closed_reason": null,
+      "linked_pr_number": null,
+      "milestone": "v1.0",
+      "comments": [
+        {
+          "by": "TOKEN_2",
+          "body": "Initial report: observed during weekly run, reproduces reliably on branch data."
+        },
+        {
+          "by": "TOKEN_1",
+          "body": "I can reproduce locally; adding traces and a temporary mitigation for investigation."
+        },
+        {
+          "by": "TOKEN_3",
+          "body": "Agree with the mitigation. Recommend a test-case and a follow-up PR to harden."
+        }
+      ]
+    },
+    {
+      "number": 41,
+      "title": "Mobile: client update loses branch selection on slow network",
+      "body": "Detailed report and analysis for issue 41.\n\nSteps to reproduce:\n1. Run the nightly batch\n2. Observe the failure\n\nExpected: stable behavior\nObserved: intermittent failure under load\n",
+      "labels": [
+        "data-integrity",
+        "postgresql",
+        "priority:high",
+        "ui"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_3",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "created_date": "2022-08-20T17:58:00",
+      "closed_date": "2022-09-04T17:58:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 28,
+      "milestone": "v1.0",
+      "comments": [
+        {
+          "by": "TOKEN_3",
+          "body": "Initial report: observed during weekly run, reproduces reliably on branch data."
+        },
+        {
+          "by": "TOKEN_4",
+          "body": "I can reproduce locally; adding traces and a temporary mitigation for investigation."
+        },
+        {
+          "by": "TOKEN_1",
+          "body": "Agree with the mitigation. Recommend a test-case and a follow-up PR to harden."
+        }
+      ]
+    },
+    {
+      "number": 42,
+      "title": "Idempotency eviction race causes duplicate transaction events",
+      "body": "Detailed report and analysis for issue 42.\n\nSteps to reproduce:\n1. Run the nightly batch\n2. Observe the failure\n\nExpected: stable behavior\nObserved: intermittent failure under load\n",
+      "labels": [
+        "ui",
+        "data-integrity",
+        "api",
+        "docs"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_1",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "created_date": "2021-02-25T12:36:00",
+      "closed_date": "2021-03-13T12:36:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 29,
+      "milestone": "v1.0",
+      "comments": [
+        {
+          "by": "TOKEN_1",
+          "body": "Initial report: observed during weekly run, reproduces reliably on branch data."
+        },
+        {
+          "by": "TOKEN_3",
+          "body": "I can reproduce locally; adding traces and a temporary mitigation for investigation."
+        },
+        {
+          "by": "TOKEN_4",
+          "body": "Agree with the mitigation. Recommend a test-case and a follow-up PR to harden."
+        }
+      ]
+    },
+    {
+      "number": 43,
+      "title": "Mobile: client update loses branch selection on slow network",
+      "body": "Detailed report and analysis for issue 43.\n\nSteps to reproduce:\n1. Run the nightly batch\n2. Observe the failure\n\nExpected: stable behavior\nObserved: intermittent failure under load\n",
+      "labels": [
+        "reliability",
+        "backend",
+        "postgresql"
+      ],
+      "state": "open",
+      "filed_by_developer": "DEV_1",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "created_date": "2023-08-10T14:52:00",
+      "closed_date": null,
+      "closed_reason": null,
+      "linked_pr_number": null,
+      "milestone": "v1.0",
+      "comments": [
+        {
+          "by": "TOKEN_1",
+          "body": "Initial report: observed during weekly run, reproduces reliably on branch data."
+        },
+        {
+          "by": "TOKEN_4",
+          "body": "I can reproduce locally; adding traces and a temporary mitigation for investigation."
+        },
+        {
+          "by": "TOKEN_3",
+          "body": "Agree with the mitigation. Recommend a test-case and a follow-up PR to harden."
+        }
+      ]
+    },
+    {
+      "number": 44,
+      "title": "Payment retry flow accepts zero amount on duplicate submit",
+      "body": "Detailed report and analysis for issue 44.\n\nSteps to reproduce:\n1. Run the nightly batch\n2. Observe the failure\n\nExpected: stable behavior\nObserved: intermittent failure under load\n",
+      "labels": [
+        "bug",
+        "performance",
+        "data-integrity"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_3",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "created_date": "2023-03-02T11:33:00",
+      "closed_date": "2023-03-12T11:33:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 30,
+      "milestone": "backlog",
+      "comments": [
+        {
+          "by": "TOKEN_3",
+          "body": "Initial report: observed during weekly run, reproduces reliably on branch data."
+        },
+        {
+          "by": "TOKEN_4",
+          "body": "I can reproduce locally; adding traces and a temporary mitigation for investigation."
+        },
+        {
+          "by": "TOKEN_2",
+          "body": "Agree with the mitigation. Recommend a test-case and a follow-up PR to harden."
+        }
+      ]
+    },
+    {
+      "number": 45,
+      "title": "Reconciliation API non-deterministic ordering breaks checksum",
+      "body": "Detailed report and analysis for issue 45.\n\nSteps to reproduce:\n1. Run the nightly batch\n2. Observe the failure\n\nExpected: stable behavior\nObserved: intermittent failure under load\n",
+      "labels": [
+        "api",
+        "ui"
+      ],
+      "state": "open",
+      "filed_by_developer": "DEV_1",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "created_date": "2023-12-01T16:26:00",
+      "closed_date": null,
+      "closed_reason": null,
+      "linked_pr_number": null,
+      "milestone": "v1.2",
+      "comments": [
+        {
+          "by": "TOKEN_1",
+          "body": "Initial report: observed during weekly run, reproduces reliably on branch data."
+        },
+        {
+          "by": "TOKEN_4",
+          "body": "I can reproduce locally; adding traces and a temporary mitigation for investigation."
+        },
+        {
+          "by": "TOKEN_3",
+          "body": "Agree with the mitigation. Recommend a test-case and a follow-up PR to harden."
+        }
+      ]
+    },
+    {
+      "number": 46,
+      "title": "Mobile: client update loses branch selection on slow network",
+      "body": "Detailed report and analysis for issue 46.\n\nSteps to reproduce:\n1. Run the nightly batch\n2. Observe the failure\n\nExpected: stable behavior\nObserved: intermittent failure under load\n",
+      "labels": [
+        "performance",
+        "docs",
+        "api"
+      ],
+      "state": "open",
+      "filed_by_developer": "DEV_2",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "created_date": "2023-03-27T15:30:00",
+      "closed_date": null,
+      "closed_reason": null,
+      "linked_pr_number": null,
+      "milestone": "v1.2",
+      "comments": [
+        {
+          "by": "TOKEN_2",
+          "body": "Initial report: observed during weekly run, reproduces reliably on branch data."
+        },
+        {
+          "by": "TOKEN_3",
+          "body": "I can reproduce locally; adding traces and a temporary mitigation for investigation."
+        },
+        {
+          "by": "TOKEN_4",
+          "body": "Agree with the mitigation. Recommend a test-case and a follow-up PR to harden."
+        }
+      ]
+    },
+    {
+      "number": 47,
+      "title": "Payment retry flow accepts zero amount on duplicate submit",
+      "body": "Detailed report and analysis for issue 47.\n\nSteps to reproduce:\n1. Run the nightly batch\n2. Observe the failure\n\nExpected: stable behavior\nObserved: intermittent failure under load\n",
+      "labels": [
+        "api",
+        "ui",
+        "docs"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_3",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "created_date": "2023-09-09T08:18:00",
+      "closed_date": "2023-09-27T08:18:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 31,
+      "milestone": "backlog",
+      "comments": [
+        {
+          "by": "TOKEN_3",
+          "body": "Initial report: observed during weekly run, reproduces reliably on branch data."
+        },
+        {
+          "by": "TOKEN_2",
+          "body": "I can reproduce locally; adding traces and a temporary mitigation for investigation."
+        },
+        {
+          "by": "TOKEN_4",
+          "body": "Agree with the mitigation. Recommend a test-case and a follow-up PR to harden."
+        }
+      ]
+    },
+    {
+      "number": 48,
+      "title": "Search endpoint returns stale results after cache warmup",
+      "body": "Detailed report and analysis for issue 48.\n\nSteps to reproduce:\n1. Run the nightly batch\n2. Observe the failure\n\nExpected: stable behavior\nObserved: intermittent failure under load\n",
+      "labels": [
+        "api",
+        "docs"
+      ],
+      "state": "open",
+      "filed_by_developer": "DEV_4",
+      "github_token_env": "GITHUB_TOKEN_4",
+      "created_date": "2022-09-24T15:45:00",
+      "closed_date": null,
+      "closed_reason": null,
+      "linked_pr_number": null,
+      "milestone": "v1.2",
+      "comments": [
+        {
+          "by": "TOKEN_4",
+          "body": "Initial report: observed during weekly run, reproduces reliably on branch data."
+        },
+        {
+          "by": "TOKEN_1",
+          "body": "I can reproduce locally; adding traces and a temporary mitigation for investigation."
+        },
+        {
+          "by": "TOKEN_3",
+          "body": "Agree with the mitigation. Recommend a test-case and a follow-up PR to harden."
+        }
+      ]
+    },
+    {
+      "number": 49,
+      "title": "Search endpoint returns stale results after cache warmup",
+      "body": "Detailed report and analysis for issue 49.\n\nSteps to reproduce:\n1. Run the nightly batch\n2. Observe the failure\n\nExpected: stable behavior\nObserved: intermittent failure under load\n",
+      "labels": [
+        "data-integrity",
+        "reliability",
+        "postgresql"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_2",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "created_date": "2021-07-17T15:00:00",
+      "closed_date": "2021-07-28T15:00:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 32,
+      "milestone": "backlog",
+      "comments": [
+        {
+          "by": "TOKEN_2",
+          "body": "Initial report: observed during weekly run, reproduces reliably on branch data."
+        },
+        {
+          "by": "TOKEN_3",
+          "body": "I can reproduce locally; adding traces and a temporary mitigation for investigation."
+        },
+        {
+          "by": "TOKEN_4",
+          "body": "Agree with the mitigation. Recommend a test-case and a follow-up PR to harden."
+        }
+      ]
+    },
+    {
+      "number": 50,
+      "title": "Ledger export misses timezone normalization for DST zones",
+      "body": "Detailed report and analysis for issue 50.\n\nSteps to reproduce:\n1. Run the nightly batch\n2. Observe the failure\n\nExpected: stable behavior\nObserved: intermittent failure under load\n",
+      "labels": [
+        "bug",
+        "data-integrity",
+        "reliability"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_2",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "created_date": "2021-07-25T09:28:00",
+      "closed_date": "2021-07-30T09:28:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 33,
+      "milestone": "v1.1",
+      "comments": [
+        {
+          "by": "TOKEN_2",
+          "body": "Initial report: observed during weekly run, reproduces reliably on branch data."
+        },
+        {
+          "by": "TOKEN_4",
+          "body": "I can reproduce locally; adding traces and a temporary mitigation for investigation."
+        },
+        {
+          "by": "TOKEN_3",
+          "body": "Agree with the mitigation. Recommend a test-case and a follow-up PR to harden."
+        }
+      ]
+    },
+    {
+      "number": 51,
+      "title": "Mobile: client update loses branch selection on slow network",
+      "body": "Detailed report and analysis for issue 51.\n\nSteps to reproduce:\n1. Run the nightly batch\n2. Observe the failure\n\nExpected: stable behavior\nObserved: intermittent failure under load\n",
+      "labels": [
+        "bug",
+        "ui",
+        "data-integrity"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_2",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "created_date": "2022-04-16T17:09:00",
+      "closed_date": "2022-04-22T17:09:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 34,
+      "milestone": "v1.0",
+      "comments": [
+        {
+          "by": "TOKEN_2",
+          "body": "Initial report: observed during weekly run, reproduces reliably on branch data."
+        },
+        {
+          "by": "TOKEN_3",
+          "body": "I can reproduce locally; adding traces and a temporary mitigation for investigation."
+        },
+        {
+          "by": "TOKEN_4",
+          "body": "Agree with the mitigation. Recommend a test-case and a follow-up PR to harden."
+        }
+      ]
+    },
+    {
+      "number": 52,
+      "title": "Payment retry flow accepts zero amount on duplicate submit",
+      "body": "Detailed report and analysis for issue 52.\n\nSteps to reproduce:\n1. Run the nightly batch\n2. Observe the failure\n\nExpected: stable behavior\nObserved: intermittent failure under load\n",
+      "labels": [
+        "bug",
+        "postgresql",
+        "data-integrity"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_3",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "created_date": "2021-07-08T14:36:00",
+      "closed_date": "2021-07-10T14:36:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 35,
+      "milestone": "backlog",
+      "comments": [
+        {
+          "by": "TOKEN_3",
+          "body": "Initial report: observed during weekly run, reproduces reliably on branch data."
+        },
+        {
+          "by": "TOKEN_2",
+          "body": "I can reproduce locally; adding traces and a temporary mitigation for investigation."
+        },
+        {
+          "by": "TOKEN_1",
+          "body": "Agree with the mitigation. Recommend a test-case and a follow-up PR to harden."
+        }
+      ]
+    },
+    {
+      "number": 53,
+      "title": "Reconciliation export misses timezone normalization for DST zones",
+      "body": "Detailed report and analysis for issue 53.\n\nSteps to reproduce:\n1. Run the nightly batch\n2. Observe the failure\n\nExpected: stable behavior\nObserved: intermittent failure under load\n",
+      "labels": [
+        "reliability",
+        "api",
+        "backend",
+        "docs"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_1",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "created_date": "2021-09-21T09:57:00",
+      "closed_date": "2021-10-05T09:57:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 36,
+      "milestone": "v1.1",
+      "comments": [
+        {
+          "by": "TOKEN_1",
+          "body": "Initial report: observed during weekly run, reproduces reliably on branch data."
+        },
+        {
+          "by": "TOKEN_2",
+          "body": "I can reproduce locally; adding traces and a temporary mitigation for investigation."
+        },
+        {
+          "by": "TOKEN_3",
+          "body": "Agree with the mitigation. Recommend a test-case and a follow-up PR to harden."
+        }
+      ]
+    },
+    {
+      "number": 54,
+      "title": "Idempotency eviction race causes duplicate transaction events",
+      "body": "Detailed report and analysis for issue 54.\n\nSteps to reproduce:\n1. Run the nightly batch\n2. Observe the failure\n\nExpected: stable behavior\nObserved: intermittent failure under load\n",
+      "labels": [
+        "postgresql",
+        "docs",
+        "reliability",
+        "bug"
+      ],
+      "state": "open",
+      "filed_by_developer": "DEV_1",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "created_date": "2022-10-26T09:29:00",
+      "closed_date": null,
+      "closed_reason": null,
+      "linked_pr_number": null,
+      "milestone": "v1.0",
+      "comments": [
+        {
+          "by": "TOKEN_1",
+          "body": "Initial report: observed during weekly run, reproduces reliably on branch data."
+        },
+        {
+          "by": "TOKEN_3",
+          "body": "I can reproduce locally; adding traces and a temporary mitigation for investigation."
+        },
+        {
+          "by": "TOKEN_2",
+          "body": "Agree with the mitigation. Recommend a test-case and a follow-up PR to harden."
+        }
+      ]
+    },
+    {
+      "number": 55,
+      "title": "Batch job OOM when group cardinality spikes",
+      "body": "Detailed report and analysis for issue 55.\n\nSteps to reproduce:\n1. Run the nightly batch\n2. Observe the failure\n\nExpected: stable behavior\nObserved: intermittent failure under load\n",
+      "labels": [
+        "ui",
+        "bug"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_4",
+      "github_token_env": "GITHUB_TOKEN_4",
+      "created_date": "2023-06-12T12:37:00",
+      "closed_date": "2023-06-30T12:37:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 37,
+      "milestone": "v1.2",
+      "comments": [
+        {
+          "by": "TOKEN_4",
+          "body": "Initial report: observed during weekly run, reproduces reliably on branch data."
+        },
+        {
+          "by": "TOKEN_3",
+          "body": "I can reproduce locally; adding traces and a temporary mitigation for investigation."
+        },
+        {
+          "by": "TOKEN_1",
+          "body": "Agree with the mitigation. Recommend a test-case and a follow-up PR to harden."
+        }
+      ]
+    },
+    {
+      "number": 56,
+      "title": "Receipt reprint flow shows duplicate row when print fails",
+      "body": "Detailed report and analysis for issue 56.\n\nSteps to reproduce:\n1. Run the nightly batch\n2. Observe the failure\n\nExpected: stable behavior\nObserved: intermittent failure under load\n",
+      "labels": [
+        "reliability",
+        "docs",
+        "postgresql"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_2",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "created_date": "2022-08-16T09:06:00",
+      "closed_date": "2022-08-21T09:06:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 38,
+      "milestone": "backlog",
+      "comments": [
+        {
+          "by": "TOKEN_2",
+          "body": "Initial report: observed during weekly run, reproduces reliably on branch data."
+        },
+        {
+          "by": "TOKEN_4",
+          "body": "I can reproduce locally; adding traces and a temporary mitigation for investigation."
+        },
+        {
+          "by": "TOKEN_1",
+          "body": "Agree with the mitigation. Recommend a test-case and a follow-up PR to harden."
+        }
+      ]
+    },
+    {
+      "number": 57,
+      "title": "Posting worker advisory lock collisions across partitions",
+      "body": "Detailed report and analysis for issue 57.\n\nSteps to reproduce:\n1. Run the nightly batch\n2. Observe the failure\n\nExpected: stable behavior\nObserved: intermittent failure under load\n",
+      "labels": [
+        "reliability",
+        "bug",
+        "postgresql",
+        "api"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_3",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "created_date": "2023-05-15T11:54:00",
+      "closed_date": "2023-05-19T11:54:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 39,
+      "milestone": "backlog",
+      "comments": [
+        {
+          "by": "TOKEN_3",
+          "body": "Initial report: observed during weekly run, reproduces reliably on branch data."
+        },
+        {
+          "by": "TOKEN_1",
+          "body": "I can reproduce locally; adding traces and a temporary mitigation for investigation."
+        },
+        {
+          "by": "TOKEN_2",
+          "body": "Agree with the mitigation. Recommend a test-case and a follow-up PR to harden."
+        }
+      ]
+    },
+    {
+      "number": 58,
+      "title": "Reconciliation API non-deterministic ordering breaks checksum",
+      "body": "Detailed report and analysis for issue 58.\n\nSteps to reproduce:\n1. Run the nightly batch\n2. Observe the failure\n\nExpected: stable behavior\nObserved: intermittent failure under load\n",
+      "labels": [
+        "bug",
+        "data-integrity",
+        "api",
+        "backend"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_2",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "created_date": "2021-05-27T16:13:00",
+      "closed_date": "2021-06-02T16:13:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 40,
+      "milestone": "v1.0",
+      "comments": [
+        {
+          "by": "TOKEN_2",
+          "body": "Initial report: observed during weekly run, reproduces reliably on branch data."
+        },
+        {
+          "by": "TOKEN_4",
+          "body": "I can reproduce locally; adding traces and a temporary mitigation for investigation."
+        },
+        {
+          "by": "TOKEN_1",
+          "body": "Agree with the mitigation. Recommend a test-case and a follow-up PR to harden."
+        }
+      ]
+    },
+    {
+      "number": 59,
+      "title": "Receipt reprint flow shows duplicate row when print fails",
+      "body": "Detailed report and analysis for issue 59.\n\nSteps to reproduce:\n1. Run the nightly batch\n2. Observe the failure\n\nExpected: stable behavior\nObserved: intermittent failure under load\n",
+      "labels": [
+        "ui",
+        "priority:high"
+      ],
+      "state": "open",
+      "filed_by_developer": "DEV_4",
+      "github_token_env": "GITHUB_TOKEN_4",
+      "created_date": "2021-12-09T08:08:00",
+      "closed_date": null,
+      "closed_reason": null,
+      "linked_pr_number": null,
+      "milestone": "v1.0",
+      "comments": [
+        {
+          "by": "TOKEN_4",
+          "body": "Initial report: observed during weekly run, reproduces reliably on branch data."
+        },
+        {
+          "by": "TOKEN_2",
+          "body": "I can reproduce locally; adding traces and a temporary mitigation for investigation."
+        },
+        {
+          "by": "TOKEN_1",
+          "body": "Agree with the mitigation. Recommend a test-case and a follow-up PR to harden."
+        }
+      ]
+    },
+    {
+      "number": 60,
+      "title": "Ledger memory amplification under skewed distribution",
+      "body": "Detailed report and analysis for issue 60.\n\nSteps to reproduce:\n1. Run the nightly batch\n2. Observe the failure\n\nExpected: stable behavior\nObserved: intermittent failure under load\n",
+      "labels": [
+        "postgresql",
+        "backend",
+        "ui"
+      ],
+      "state": "open",
+      "filed_by_developer": "DEV_4",
+      "github_token_env": "GITHUB_TOKEN_4",
+      "created_date": "2021-03-24T16:19:00",
+      "closed_date": null,
+      "closed_reason": null,
+      "linked_pr_number": null,
+      "milestone": "backlog",
+      "comments": [
+        {
+          "by": "TOKEN_4",
+          "body": "Initial report: observed during weekly run, reproduces reliably on branch data."
+        },
+        {
+          "by": "TOKEN_1",
+          "body": "I can reproduce locally; adding traces and a temporary mitigation for investigation."
+        },
+        {
+          "by": "TOKEN_2",
+          "body": "Agree with the mitigation. Recommend a test-case and a follow-up PR to harden."
+        }
+      ]
+    },
+    {
+      "number": 61,
+      "title": "Export export misses timezone normalization for DST zones",
+      "body": "Detailed report and analysis for issue 61.\n\nSteps to reproduce:\n1. Run the nightly batch\n2. Observe the failure\n\nExpected: stable behavior\nObserved: intermittent failure under load\n",
+      "labels": [
+        "docs",
+        "reliability",
+        "postgresql",
+        "data-integrity"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_2",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "created_date": "2022-09-20T10:04:00",
+      "closed_date": "2022-10-05T10:04:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 41,
+      "milestone": "backlog",
+      "comments": [
+        {
+          "by": "TOKEN_2",
+          "body": "Initial report: observed during weekly run, reproduces reliably on branch data."
+        },
+        {
+          "by": "TOKEN_1",
+          "body": "I can reproduce locally; adding traces and a temporary mitigation for investigation."
+        },
+        {
+          "by": "TOKEN_3",
+          "body": "Agree with the mitigation. Recommend a test-case and a follow-up PR to harden."
+        }
+      ]
+    },
+    {
+      "number": 62,
+      "title": "Batch job OOM when group cardinality spikes",
+      "body": "Detailed report and analysis for issue 62.\n\nSteps to reproduce:\n1. Run the nightly batch\n2. Observe the failure\n\nExpected: stable behavior\nObserved: intermittent failure under load\n",
+      "labels": [
+        "ui",
+        "backend"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_4",
+      "github_token_env": "GITHUB_TOKEN_4",
+      "created_date": "2023-02-14T09:20:00",
+      "closed_date": "2023-02-17T09:20:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 42,
+      "milestone": "v1.0",
+      "comments": [
+        {
+          "by": "TOKEN_4",
+          "body": "Initial report: observed during weekly run, reproduces reliably on branch data."
+        },
+        {
+          "by": "TOKEN_2",
+          "body": "I can reproduce locally; adding traces and a temporary mitigation for investigation."
+        },
+        {
+          "by": "TOKEN_1",
+          "body": "Agree with the mitigation. Recommend a test-case and a follow-up PR to harden."
+        }
+      ]
+    },
+    {
+      "number": 63,
+      "title": "Posting worker memory amplification under skewed distribution",
+      "body": "Detailed report and analysis for issue 63.\n\nSteps to reproduce:\n1. Run the nightly batch\n2. Observe the failure\n\nExpected: stable behavior\nObserved: intermittent failure under load\n",
+      "labels": [
+        "reliability",
+        "backend",
+        "performance"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_4",
+      "github_token_env": "GITHUB_TOKEN_4",
+      "created_date": "2021-08-14T13:55:00",
+      "closed_date": "2021-08-30T13:55:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 43,
+      "milestone": "v1.1",
+      "comments": [
+        {
+          "by": "TOKEN_4",
+          "body": "Initial report: observed during weekly run, reproduces reliably on branch data."
+        },
+        {
+          "by": "TOKEN_1",
+          "body": "I can reproduce locally; adding traces and a temporary mitigation for investigation."
+        },
+        {
+          "by": "TOKEN_3",
+          "body": "Agree with the mitigation. Recommend a test-case and a follow-up PR to harden."
+        }
+      ]
+    },
+    {
+      "number": 64,
+      "title": "Risk aggregation memory amplification under skewed distribution",
+      "body": "Detailed report and analysis for issue 64.\n\nSteps to reproduce:\n1. Run the nightly batch\n2. Observe the failure\n\nExpected: stable behavior\nObserved: intermittent failure under load\n",
+      "labels": [
+        "data-integrity",
+        "reliability",
+        "docs",
+        "bug"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_3",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "created_date": "2023-12-01T17:59:00",
+      "closed_date": "2023-12-06T17:59:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 44,
+      "milestone": "backlog",
+      "comments": [
+        {
+          "by": "TOKEN_3",
+          "body": "Initial report: observed during weekly run, reproduces reliably on branch data."
+        },
+        {
+          "by": "TOKEN_1",
+          "body": "I can reproduce locally; adding traces and a temporary mitigation for investigation."
+        },
+        {
+          "by": "TOKEN_2",
+          "body": "Agree with the mitigation. Recommend a test-case and a follow-up PR to harden."
+        }
+      ]
+    },
+    {
+      "number": 65,
+      "title": "Risk aggregation memory amplification under skewed distribution",
+      "body": "Detailed report and analysis for issue 65.\n\nSteps to reproduce:\n1. Run the nightly batch\n2. Observe the failure\n\nExpected: stable behavior\nObserved: intermittent failure under load\n",
+      "labels": [
+        "bug",
+        "backend",
+        "data-integrity",
+        "performance"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_1",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "created_date": "2022-12-10T13:49:00",
+      "closed_date": "2022-12-26T13:49:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 45,
+      "milestone": "backlog",
+      "comments": [
+        {
+          "by": "TOKEN_1",
+          "body": "Initial report: observed during weekly run, reproduces reliably on branch data."
+        },
+        {
+          "by": "TOKEN_3",
+          "body": "I can reproduce locally; adding traces and a temporary mitigation for investigation."
+        },
+        {
+          "by": "TOKEN_4",
+          "body": "Agree with the mitigation. Recommend a test-case and a follow-up PR to harden."
+        }
+      ]
+    },
+    {
+      "number": 66,
+      "title": "Search endpoint returns stale results after cache warmup",
+      "body": "Detailed report and analysis for issue 66.\n\nSteps to reproduce:\n1. Run the nightly batch\n2. Observe the failure\n\nExpected: stable behavior\nObserved: intermittent failure under load\n",
+      "labels": [
+        "performance",
+        "data-integrity"
+      ],
+      "state": "open",
+      "filed_by_developer": "DEV_2",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "created_date": "2023-08-17T12:02:00",
+      "closed_date": null,
+      "closed_reason": null,
+      "linked_pr_number": null,
+      "milestone": "v1.1",
+      "comments": [
+        {
+          "by": "TOKEN_2",
+          "body": "Initial report: observed during weekly run, reproduces reliably on branch data."
+        },
+        {
+          "by": "TOKEN_3",
+          "body": "I can reproduce locally; adding traces and a temporary mitigation for investigation."
+        },
+        {
+          "by": "TOKEN_4",
+          "body": "Agree with the mitigation. Recommend a test-case and a follow-up PR to harden."
+        }
+      ]
+    },
+    {
+      "number": 67,
+      "title": "Idempotency eviction race causes duplicate receipt events",
+      "body": "Detailed report and analysis for issue 67.\n\nSteps to reproduce:\n1. Run the nightly batch\n2. Observe the failure\n\nExpected: stable behavior\nObserved: intermittent failure under load\n",
+      "labels": [
+        "performance",
+        "docs",
+        "reliability",
+        "bug"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_4",
+      "github_token_env": "GITHUB_TOKEN_4",
+      "created_date": "2022-09-04T08:31:00",
+      "closed_date": "2022-09-06T08:31:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 46,
+      "milestone": "backlog",
+      "comments": [
+        {
+          "by": "TOKEN_4",
+          "body": "Initial report: observed during weekly run, reproduces reliably on branch data."
+        },
+        {
+          "by": "TOKEN_1",
+          "body": "I can reproduce locally; adding traces and a temporary mitigation for investigation."
+        },
+        {
+          "by": "TOKEN_3",
+          "body": "Agree with the mitigation. Recommend a test-case and a follow-up PR to harden."
+        }
+      ]
+    },
+    {
+      "number": 68,
+      "title": "Batch job OOM when group cardinality spikes",
+      "body": "Detailed report and analysis for issue 68.\n\nSteps to reproduce:\n1. Run the nightly batch\n2. Observe the failure\n\nExpected: stable behavior\nObserved: intermittent failure under load\n",
+      "labels": [
+        "reliability",
+        "backend",
+        "postgresql"
+      ],
+      "state": "open",
+      "filed_by_developer": "DEV_1",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "created_date": "2023-03-10T09:25:00",
+      "closed_date": null,
+      "closed_reason": null,
+      "linked_pr_number": null,
+      "milestone": "v1.1",
+      "comments": [
+        {
+          "by": "TOKEN_1",
+          "body": "Initial report: observed during weekly run, reproduces reliably on branch data."
+        },
+        {
+          "by": "TOKEN_3",
+          "body": "I can reproduce locally; adding traces and a temporary mitigation for investigation."
+        },
+        {
+          "by": "TOKEN_4",
+          "body": "Agree with the mitigation. Recommend a test-case and a follow-up PR to harden."
+        }
+      ]
+    },
+    {
+      "number": 69,
+      "title": "Batch job OOM when group cardinality spikes",
+      "body": "Detailed report and analysis for issue 69.\n\nSteps to reproduce:\n1. Run the nightly batch\n2. Observe the failure\n\nExpected: stable behavior\nObserved: intermittent failure under load\n",
+      "labels": [
+        "backend",
+        "docs"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_3",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "created_date": "2023-10-03T14:55:00",
+      "closed_date": "2023-10-20T14:55:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 47,
+      "milestone": "v1.1",
+      "comments": [
+        {
+          "by": "TOKEN_3",
+          "body": "Initial report: observed during weekly run, reproduces reliably on branch data."
+        },
+        {
+          "by": "TOKEN_2",
+          "body": "I can reproduce locally; adding traces and a temporary mitigation for investigation."
+        },
+        {
+          "by": "TOKEN_4",
+          "body": "Agree with the mitigation. Recommend a test-case and a follow-up PR to harden."
+        }
+      ]
+    },
+    {
+      "number": 70,
+      "title": "Mobile: client update loses branch selection on slow network",
+      "body": "Detailed report and analysis for issue 70.\n\nSteps to reproduce:\n1. Run the nightly batch\n2. Observe the failure\n\nExpected: stable behavior\nObserved: intermittent failure under load\n",
+      "labels": [
+        "priority:high",
+        "reliability",
+        "docs"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_4",
+      "github_token_env": "GITHUB_TOKEN_4",
+      "created_date": "2021-10-25T09:11:00",
+      "closed_date": "2021-10-28T09:11:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 48,
+      "milestone": "backlog",
+      "comments": [
+        {
+          "by": "TOKEN_4",
+          "body": "Initial report: observed during weekly run, reproduces reliably on branch data."
+        },
+        {
+          "by": "TOKEN_2",
+          "body": "I can reproduce locally; adding traces and a temporary mitigation for investigation."
+        },
+        {
+          "by": "TOKEN_3",
+          "body": "Agree with the mitigation. Recommend a test-case and a follow-up PR to harden."
+        }
+      ]
+    },
+    {
+      "number": 71,
+      "title": "Ledger advisory lock collisions across partitions",
+      "body": "Detailed report and analysis for issue 71.\n\nSteps to reproduce:\n1. Run the nightly batch\n2. Observe the failure\n\nExpected: stable behavior\nObserved: intermittent failure under load\n",
+      "labels": [
+        "docs",
+        "postgresql",
+        "ui",
+        "data-integrity"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_3",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "created_date": "2023-05-02T08:23:00",
+      "closed_date": "2023-05-04T08:23:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 49,
+      "milestone": "backlog",
+      "comments": [
+        {
+          "by": "TOKEN_3",
+          "body": "Initial report: observed during weekly run, reproduces reliably on branch data."
+        },
+        {
+          "by": "TOKEN_4",
+          "body": "I can reproduce locally; adding traces and a temporary mitigation for investigation."
+        },
+        {
+          "by": "TOKEN_1",
+          "body": "Agree with the mitigation. Recommend a test-case and a follow-up PR to harden."
+        }
+      ]
+    },
+    {
+      "number": 72,
+      "title": "Risk aggregation memory amplification under skewed distribution",
+      "body": "Detailed report and analysis for issue 72.\n\nSteps to reproduce:\n1. Run the nightly batch\n2. Observe the failure\n\nExpected: stable behavior\nObserved: intermittent failure under load\n",
+      "labels": [
+        "ui",
+        "docs",
+        "api"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_2",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "created_date": "2022-10-23T09:32:00",
+      "closed_date": "2022-11-02T09:32:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 50,
+      "milestone": "backlog",
+      "comments": [
+        {
+          "by": "TOKEN_2",
+          "body": "Initial report: observed during weekly run, reproduces reliably on branch data."
+        },
+        {
+          "by": "TOKEN_3",
+          "body": "I can reproduce locally; adding traces and a temporary mitigation for investigation."
+        },
+        {
+          "by": "TOKEN_4",
+          "body": "Agree with the mitigation. Recommend a test-case and a follow-up PR to harden."
+        }
+      ]
+    },
+    {
+      "number": 73,
+      "title": "Batch job OOM when group cardinality spikes",
+      "body": "Detailed report and analysis for issue 73.\n\nSteps to reproduce:\n1. Run the nightly batch\n2. Observe the failure\n\nExpected: stable behavior\nObserved: intermittent failure under load\n",
+      "labels": [
+        "api",
+        "reliability",
+        "data-integrity",
+        "docs"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_2",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "created_date": "2023-01-10T12:46:00",
+      "closed_date": "2023-01-23T12:46:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 51,
+      "milestone": "v1.1",
+      "comments": [
+        {
+          "by": "TOKEN_2",
+          "body": "Initial report: observed during weekly run, reproduces reliably on branch data."
+        },
+        {
+          "by": "TOKEN_4",
+          "body": "I can reproduce locally; adding traces and a temporary mitigation for investigation."
+        },
+        {
+          "by": "TOKEN_1",
+          "body": "Agree with the mitigation. Recommend a test-case and a follow-up PR to harden."
+        }
+      ]
+    },
+    {
+      "number": 74,
+      "title": "Posting worker memory amplification under skewed distribution",
+      "body": "Detailed report and analysis for issue 74.\n\nSteps to reproduce:\n1. Run the nightly batch\n2. Observe the failure\n\nExpected: stable behavior\nObserved: intermittent failure under load\n",
+      "labels": [
+        "performance",
+        "reliability"
+      ],
+      "state": "open",
+      "filed_by_developer": "DEV_3",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "created_date": "2023-10-03T14:32:00",
+      "closed_date": null,
+      "closed_reason": null,
+      "linked_pr_number": null,
+      "milestone": "backlog",
+      "comments": [
+        {
+          "by": "TOKEN_3",
+          "body": "Initial report: observed during weekly run, reproduces reliably on branch data."
+        },
+        {
+          "by": "TOKEN_1",
+          "body": "I can reproduce locally; adding traces and a temporary mitigation for investigation."
+        },
+        {
+          "by": "TOKEN_2",
+          "body": "Agree with the mitigation. Recommend a test-case and a follow-up PR to harden."
+        }
+      ]
+    },
+    {
+      "number": 75,
+      "title": "Receipt reprint flow shows duplicate row when print fails",
+      "body": "Detailed report and analysis for issue 75.\n\nSteps to reproduce:\n1. Run the nightly batch\n2. Observe the failure\n\nExpected: stable behavior\nObserved: intermittent failure under load\n",
+      "labels": [
+        "bug",
+        "reliability",
+        "api",
+        "data-integrity"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_1",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "created_date": "2021-09-05T09:18:00",
+      "closed_date": "2021-09-11T09:18:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 52,
+      "milestone": "v1.1",
+      "comments": [
+        {
+          "by": "TOKEN_1",
+          "body": "Initial report: observed during weekly run, reproduces reliably on branch data."
+        },
+        {
+          "by": "TOKEN_4",
+          "body": "I can reproduce locally; adding traces and a temporary mitigation for investigation."
+        },
+        {
+          "by": "TOKEN_2",
+          "body": "Agree with the mitigation. Recommend a test-case and a follow-up PR to harden."
+        }
+      ]
+    },
+    {
+      "number": 76,
+      "title": "Mobile: client update loses branch selection on slow network",
+      "body": "Detailed report and analysis for issue 76.\n\nSteps to reproduce:\n1. Run the nightly batch\n2. Observe the failure\n\nExpected: stable behavior\nObserved: intermittent failure under load\n",
+      "labels": [
+        "priority:high",
+        "ui",
+        "docs",
+        "postgresql"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_3",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "created_date": "2023-05-08T16:15:00",
+      "closed_date": "2023-05-21T16:15:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 53,
+      "milestone": "backlog",
+      "comments": [
+        {
+          "by": "TOKEN_3",
+          "body": "Initial report: observed during weekly run, reproduces reliably on branch data."
+        },
+        {
+          "by": "TOKEN_1",
+          "body": "I can reproduce locally; adding traces and a temporary mitigation for investigation."
+        },
+        {
+          "by": "TOKEN_2",
+          "body": "Agree with the mitigation. Recommend a test-case and a follow-up PR to harden."
+        }
+      ]
+    },
+    {
+      "number": 77,
+      "title": "Idempotency eviction race causes duplicate receipt events",
+      "body": "Detailed report and analysis for issue 77.\n\nSteps to reproduce:\n1. Run the nightly batch\n2. Observe the failure\n\nExpected: stable behavior\nObserved: intermittent failure under load\n",
+      "labels": [
+        "api",
+        "postgresql",
+        "backend",
+        "ui"
+      ],
+      "state": "open",
+      "filed_by_developer": "DEV_1",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "created_date": "2023-10-28T09:18:00",
+      "closed_date": null,
+      "closed_reason": null,
+      "linked_pr_number": null,
+      "milestone": "v1.2",
+      "comments": [
+        {
+          "by": "TOKEN_1",
+          "body": "Initial report: observed during weekly run, reproduces reliably on branch data."
+        },
+        {
+          "by": "TOKEN_2",
+          "body": "I can reproduce locally; adding traces and a temporary mitigation for investigation."
+        },
+        {
+          "by": "TOKEN_4",
+          "body": "Agree with the mitigation. Recommend a test-case and a follow-up PR to harden."
+        }
+      ]
+    },
+    {
+      "number": 78,
+      "title": "Search endpoint returns stale results after cache warmup",
+      "body": "Detailed report and analysis for issue 78.\n\nSteps to reproduce:\n1. Run the nightly batch\n2. Observe the failure\n\nExpected: stable behavior\nObserved: intermittent failure under load\n",
+      "labels": [
+        "bug",
+        "reliability"
+      ],
+      "state": "open",
+      "filed_by_developer": "DEV_2",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "created_date": "2021-04-13T16:23:00",
+      "closed_date": null,
+      "closed_reason": null,
+      "linked_pr_number": null,
+      "milestone": "v1.2",
+      "comments": [
+        {
+          "by": "TOKEN_2",
+          "body": "Initial report: observed during weekly run, reproduces reliably on branch data."
+        },
+        {
+          "by": "TOKEN_1",
+          "body": "I can reproduce locally; adding traces and a temporary mitigation for investigation."
+        },
+        {
+          "by": "TOKEN_3",
+          "body": "Agree with the mitigation. Recommend a test-case and a follow-up PR to harden."
+        }
+      ]
+    },
+    {
+      "number": 79,
+      "title": "Mobile: client update loses branch selection on slow network",
+      "body": "Detailed report and analysis for issue 79.\n\nSteps to reproduce:\n1. Run the nightly batch\n2. Observe the failure\n\nExpected: stable behavior\nObserved: intermittent failure under load\n",
+      "labels": [
+        "backend",
+        "bug"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_2",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "created_date": "2021-03-10T15:44:00",
+      "closed_date": "2021-03-15T15:44:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 54,
+      "milestone": "backlog",
+      "comments": [
+        {
+          "by": "TOKEN_2",
+          "body": "Initial report: observed during weekly run, reproduces reliably on branch data."
+        },
+        {
+          "by": "TOKEN_1",
+          "body": "I can reproduce locally; adding traces and a temporary mitigation for investigation."
+        },
+        {
+          "by": "TOKEN_4",
+          "body": "Agree with the mitigation. Recommend a test-case and a follow-up PR to harden."
+        }
+      ]
+    },
+    {
+      "number": 80,
+      "title": "Payment retry flow accepts zero amount on duplicate submit",
+      "body": "Detailed report and analysis for issue 80.\n\nSteps to reproduce:\n1. Run the nightly batch\n2. Observe the failure\n\nExpected: stable behavior\nObserved: intermittent failure under load\n",
+      "labels": [
+        "docs",
+        "performance",
+        "api",
+        "ui"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_4",
+      "github_token_env": "GITHUB_TOKEN_4",
+      "created_date": "2023-06-03T09:53:00",
+      "closed_date": "2023-06-23T09:53:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 55,
+      "milestone": "v1.2",
+      "comments": [
+        {
+          "by": "TOKEN_4",
+          "body": "Initial report: observed during weekly run, reproduces reliably on branch data."
+        },
+        {
+          "by": "TOKEN_1",
+          "body": "I can reproduce locally; adding traces and a temporary mitigation for investigation."
+        },
+        {
+          "by": "TOKEN_3",
+          "body": "Agree with the mitigation. Recommend a test-case and a follow-up PR to harden."
+        }
+      ]
+    },
+    {
+      "number": 81,
+      "title": "Search endpoint returns stale results after cache warmup",
+      "body": "Detailed report and analysis for issue 81.\n\nSteps to reproduce:\n1. Run the nightly batch\n2. Observe the failure\n\nExpected: stable behavior\nObserved: intermittent failure under load\n",
+      "labels": [
+        "postgresql",
+        "reliability",
+        "data-integrity",
+        "docs"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_1",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "created_date": "2023-09-26T16:35:00",
+      "closed_date": "2023-09-29T16:35:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 56,
+      "milestone": "v1.2",
+      "comments": [
+        {
+          "by": "TOKEN_1",
+          "body": "Initial report: observed during weekly run, reproduces reliably on branch data."
+        },
+        {
+          "by": "TOKEN_2",
+          "body": "I can reproduce locally; adding traces and a temporary mitigation for investigation."
+        },
+        {
+          "by": "TOKEN_3",
+          "body": "Agree with the mitigation. Recommend a test-case and a follow-up PR to harden."
+        }
+      ]
+    },
+    {
+      "number": 82,
+      "title": "Idempotency eviction race causes duplicate transaction events",
+      "body": "Detailed report and analysis for issue 82.\n\nSteps to reproduce:\n1. Run the nightly batch\n2. Observe the failure\n\nExpected: stable behavior\nObserved: intermittent failure under load\n",
+      "labels": [
+        "bug",
+        "data-integrity",
+        "performance"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_2",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "created_date": "2023-06-23T15:40:00",
+      "closed_date": "2023-06-30T15:40:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 57,
+      "milestone": "v1.0",
+      "comments": [
+        {
+          "by": "TOKEN_2",
+          "body": "Initial report: observed during weekly run, reproduces reliably on branch data."
+        },
+        {
+          "by": "TOKEN_3",
+          "body": "I can reproduce locally; adding traces and a temporary mitigation for investigation."
+        },
+        {
+          "by": "TOKEN_4",
+          "body": "Agree with the mitigation. Recommend a test-case and a follow-up PR to harden."
+        }
+      ]
+    },
+    {
+      "number": 83,
+      "title": "Ledger export misses timezone normalization for DST zones",
+      "body": "Detailed report and analysis for issue 83.\n\nSteps to reproduce:\n1. Run the nightly batch\n2. Observe the failure\n\nExpected: stable behavior\nObserved: intermittent failure under load\n",
+      "labels": [
+        "postgresql",
+        "ui",
+        "priority:high"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_3",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "created_date": "2022-11-28T08:55:00",
+      "closed_date": "2022-12-04T08:55:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 58,
+      "milestone": "backlog",
+      "comments": [
+        {
+          "by": "TOKEN_3",
+          "body": "Initial report: observed during weekly run, reproduces reliably on branch data."
+        },
+        {
+          "by": "TOKEN_4",
+          "body": "I can reproduce locally; adding traces and a temporary mitigation for investigation."
+        },
+        {
+          "by": "TOKEN_2",
+          "body": "Agree with the mitigation. Recommend a test-case and a follow-up PR to harden."
+        }
+      ]
+    },
+    {
+      "number": 84,
+      "title": "Posting worker advisory lock collisions across partitions",
+      "body": "Detailed report and analysis for issue 84.\n\nSteps to reproduce:\n1. Run the nightly batch\n2. Observe the failure\n\nExpected: stable behavior\nObserved: intermittent failure under load\n",
+      "labels": [
+        "data-integrity",
+        "ui",
+        "postgresql"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_1",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "created_date": "2021-12-18T12:20:00",
+      "closed_date": "2022-01-02T12:20:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 59,
+      "milestone": "v1.2",
+      "comments": [
+        {
+          "by": "TOKEN_1",
+          "body": "Initial report: observed during weekly run, reproduces reliably on branch data."
+        },
+        {
+          "by": "TOKEN_3",
+          "body": "I can reproduce locally; adding traces and a temporary mitigation for investigation."
+        },
+        {
+          "by": "TOKEN_2",
+          "body": "Agree with the mitigation. Recommend a test-case and a follow-up PR to harden."
+        }
+      ]
+    },
+    {
+      "number": 85,
+      "title": "Payment retry flow accepts zero amount on duplicate submit",
+      "body": "Detailed report and analysis for issue 85.\n\nSteps to reproduce:\n1. Run the nightly batch\n2. Observe the failure\n\nExpected: stable behavior\nObserved: intermittent failure under load\n",
+      "labels": [
+        "backend",
+        "performance"
+      ],
+      "state": "open",
+      "filed_by_developer": "DEV_2",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "created_date": "2022-12-17T10:01:00",
+      "closed_date": null,
+      "closed_reason": null,
+      "linked_pr_number": null,
+      "milestone": "v1.2",
+      "comments": [
+        {
+          "by": "TOKEN_2",
+          "body": "Initial report: observed during weekly run, reproduces reliably on branch data."
+        },
+        {
+          "by": "TOKEN_3",
+          "body": "I can reproduce locally; adding traces and a temporary mitigation for investigation."
+        },
+        {
+          "by": "TOKEN_4",
+          "body": "Agree with the mitigation. Recommend a test-case and a follow-up PR to harden."
+        }
+      ]
+    },
+    {
+      "number": 86,
+      "title": "Batch job OOM when group cardinality spikes",
+      "body": "Detailed report and analysis for issue 86.\n\nSteps to reproduce:\n1. Run the nightly batch\n2. Observe the failure\n\nExpected: stable behavior\nObserved: intermittent failure under load\n",
+      "labels": [
+        "priority:high",
+        "api"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_4",
+      "github_token_env": "GITHUB_TOKEN_4",
+      "created_date": "2021-03-20T10:43:00",
+      "closed_date": "2021-04-02T10:43:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 60,
+      "milestone": "v1.2",
+      "comments": [
+        {
+          "by": "TOKEN_4",
+          "body": "Initial report: observed during weekly run, reproduces reliably on branch data."
+        },
+        {
+          "by": "TOKEN_3",
+          "body": "I can reproduce locally; adding traces and a temporary mitigation for investigation."
+        },
+        {
+          "by": "TOKEN_2",
+          "body": "Agree with the mitigation. Recommend a test-case and a follow-up PR to harden."
+        }
+      ]
+    },
+    {
+      "number": 87,
+      "title": "Mobile: client update loses branch selection on slow network",
+      "body": "Detailed report and analysis for issue 87.\n\nSteps to reproduce:\n1. Run the nightly batch\n2. Observe the failure\n\nExpected: stable behavior\nObserved: intermittent failure under load\n",
+      "labels": [
+        "ui",
+        "performance",
+        "backend"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_3",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "created_date": "2023-12-04T12:49:00",
+      "closed_date": "2023-12-07T12:49:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 61,
+      "milestone": "backlog",
+      "comments": [
+        {
+          "by": "TOKEN_3",
+          "body": "Initial report: observed during weekly run, reproduces reliably on branch data."
+        },
+        {
+          "by": "TOKEN_1",
+          "body": "I can reproduce locally; adding traces and a temporary mitigation for investigation."
+        },
+        {
+          "by": "TOKEN_4",
+          "body": "Agree with the mitigation. Recommend a test-case and a follow-up PR to harden."
+        }
+      ]
+    },
+    {
+      "number": 88,
+      "title": "Batch job OOM when group cardinality spikes",
+      "body": "Detailed report and analysis for issue 88.\n\nSteps to reproduce:\n1. Run the nightly batch\n2. Observe the failure\n\nExpected: stable behavior\nObserved: intermittent failure under load\n",
+      "labels": [
+        "performance",
+        "api"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_2",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "created_date": "2022-08-28T10:45:00",
+      "closed_date": "2022-09-13T10:45:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 62,
+      "milestone": "v1.0",
+      "comments": [
+        {
+          "by": "TOKEN_2",
+          "body": "Initial report: observed during weekly run, reproduces reliably on branch data."
+        },
+        {
+          "by": "TOKEN_3",
+          "body": "I can reproduce locally; adding traces and a temporary mitigation for investigation."
+        },
+        {
+          "by": "TOKEN_4",
+          "body": "Agree with the mitigation. Recommend a test-case and a follow-up PR to harden."
+        }
+      ]
+    },
+    {
+      "number": 89,
+      "title": "Payment retry flow accepts zero amount on duplicate submit",
+      "body": "Detailed report and analysis for issue 89.\n\nSteps to reproduce:\n1. Run the nightly batch\n2. Observe the failure\n\nExpected: stable behavior\nObserved: intermittent failure under load\n",
+      "labels": [
+        "backend",
+        "ui",
+        "docs"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_4",
+      "github_token_env": "GITHUB_TOKEN_4",
+      "created_date": "2023-07-17T14:49:00",
+      "closed_date": "2023-07-29T14:49:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 63,
+      "milestone": "v1.1",
+      "comments": [
+        {
+          "by": "TOKEN_4",
+          "body": "Initial report: observed during weekly run, reproduces reliably on branch data."
+        },
+        {
+          "by": "TOKEN_3",
+          "body": "I can reproduce locally; adding traces and a temporary mitigation for investigation."
+        },
+        {
+          "by": "TOKEN_1",
+          "body": "Agree with the mitigation. Recommend a test-case and a follow-up PR to harden."
+        }
+      ]
+    },
+    {
+      "number": 90,
+      "title": "Batch job OOM when group cardinality spikes",
+      "body": "Detailed report and analysis for issue 90.\n\nSteps to reproduce:\n1. Run the nightly batch\n2. Observe the failure\n\nExpected: stable behavior\nObserved: intermittent failure under load\n",
+      "labels": [
+        "data-integrity",
+        "performance"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_2",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "created_date": "2022-08-06T10:20:00",
+      "closed_date": "2022-08-24T10:20:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 64,
+      "milestone": "v1.2",
+      "comments": [
+        {
+          "by": "TOKEN_2",
+          "body": "Initial report: observed during weekly run, reproduces reliably on branch data."
+        },
+        {
+          "by": "TOKEN_1",
+          "body": "I can reproduce locally; adding traces and a temporary mitigation for investigation."
+        },
+        {
+          "by": "TOKEN_4",
+          "body": "Agree with the mitigation. Recommend a test-case and a follow-up PR to harden."
+        }
+      ]
+    },
+    {
+      "number": 91,
+      "title": "Ledger advisory lock collisions across partitions",
+      "body": "Detailed report and analysis for issue 91.\n\nSteps to reproduce:\n1. Run the nightly batch\n2. Observe the failure\n\nExpected: stable behavior\nObserved: intermittent failure under load\n",
+      "labels": [
+        "data-integrity",
+        "performance",
+        "postgresql",
+        "priority:high"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_1",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "created_date": "2022-10-27T17:02:00",
+      "closed_date": "2022-11-12T17:02:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 65,
+      "milestone": "v1.2",
+      "comments": [
+        {
+          "by": "TOKEN_1",
+          "body": "Initial report: observed during weekly run, reproduces reliably on branch data."
+        },
+        {
+          "by": "TOKEN_4",
+          "body": "I can reproduce locally; adding traces and a temporary mitigation for investigation."
+        },
+        {
+          "by": "TOKEN_3",
+          "body": "Agree with the mitigation. Recommend a test-case and a follow-up PR to harden."
+        }
+      ]
+    },
+    {
+      "number": 92,
+      "title": "Reconciliation API non-deterministic ordering breaks checksum",
+      "body": "Detailed report and analysis for issue 92.\n\nSteps to reproduce:\n1. Run the nightly batch\n2. Observe the failure\n\nExpected: stable behavior\nObserved: intermittent failure under load\n",
+      "labels": [
+        "reliability",
+        "priority:high"
+      ],
+      "state": "open",
+      "filed_by_developer": "DEV_4",
+      "github_token_env": "GITHUB_TOKEN_4",
+      "created_date": "2021-11-15T14:30:00",
+      "closed_date": null,
+      "closed_reason": null,
+      "linked_pr_number": null,
+      "milestone": "v1.2",
+      "comments": [
+        {
+          "by": "TOKEN_4",
+          "body": "Initial report: observed during weekly run, reproduces reliably on branch data."
+        },
+        {
+          "by": "TOKEN_2",
+          "body": "I can reproduce locally; adding traces and a temporary mitigation for investigation."
+        },
+        {
+          "by": "TOKEN_1",
+          "body": "Agree with the mitigation. Recommend a test-case and a follow-up PR to harden."
+        }
+      ]
+    },
+    {
+      "number": 93,
+      "title": "Reconciliation API non-deterministic ordering breaks checksum",
+      "body": "Detailed report and analysis for issue 93.\n\nSteps to reproduce:\n1. Run the nightly batch\n2. Observe the failure\n\nExpected: stable behavior\nObserved: intermittent failure under load\n",
+      "labels": [
+        "ui",
+        "performance",
+        "api"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_3",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "created_date": "2022-12-17T16:06:00",
+      "closed_date": "2022-12-27T16:06:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 66,
+      "milestone": "backlog",
+      "comments": [
+        {
+          "by": "TOKEN_3",
+          "body": "Initial report: observed during weekly run, reproduces reliably on branch data."
+        },
+        {
+          "by": "TOKEN_4",
+          "body": "I can reproduce locally; adding traces and a temporary mitigation for investigation."
+        },
+        {
+          "by": "TOKEN_2",
+          "body": "Agree with the mitigation. Recommend a test-case and a follow-up PR to harden."
+        }
+      ]
+    },
+    {
+      "number": 94,
+      "title": "Reconciliation export misses timezone normalization for DST zones",
+      "body": "Detailed report and analysis for issue 94.\n\nSteps to reproduce:\n1. Run the nightly batch\n2. Observe the failure\n\nExpected: stable behavior\nObserved: intermittent failure under load\n",
+      "labels": [
+        "postgresql",
+        "docs"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_4",
+      "github_token_env": "GITHUB_TOKEN_4",
+      "created_date": "2021-11-16T16:29:00",
+      "closed_date": "2021-11-24T16:29:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 67,
+      "milestone": "v1.1",
+      "comments": [
+        {
+          "by": "TOKEN_4",
+          "body": "Initial report: observed during weekly run, reproduces reliably on branch data."
+        },
+        {
+          "by": "TOKEN_3",
+          "body": "I can reproduce locally; adding traces and a temporary mitigation for investigation."
+        },
+        {
+          "by": "TOKEN_2",
+          "body": "Agree with the mitigation. Recommend a test-case and a follow-up PR to harden."
+        }
+      ]
+    },
+    {
+      "number": 95,
+      "title": "Search endpoint returns stale results after cache warmup",
+      "body": "Detailed report and analysis for issue 95.\n\nSteps to reproduce:\n1. Run the nightly batch\n2. Observe the failure\n\nExpected: stable behavior\nObserved: intermittent failure under load\n",
+      "labels": [
+        "reliability",
+        "postgresql",
+        "priority:high",
+        "bug"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_1",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "created_date": "2023-07-10T16:00:00",
+      "closed_date": "2023-07-29T16:00:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 68,
+      "milestone": "v1.1",
+      "comments": [
+        {
+          "by": "TOKEN_1",
+          "body": "Initial report: observed during weekly run, reproduces reliably on branch data."
+        },
+        {
+          "by": "TOKEN_3",
+          "body": "I can reproduce locally; adding traces and a temporary mitigation for investigation."
+        },
+        {
+          "by": "TOKEN_4",
+          "body": "Agree with the mitigation. Recommend a test-case and a follow-up PR to harden."
+        }
+      ]
+    },
+    {
+      "number": 96,
+      "title": "Batch job OOM when group cardinality spikes",
+      "body": "Detailed report and analysis for issue 96.\n\nSteps to reproduce:\n1. Run the nightly batch\n2. Observe the failure\n\nExpected: stable behavior\nObserved: intermittent failure under load\n",
+      "labels": [
+        "performance",
+        "docs"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_3",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "created_date": "2021-08-05T09:25:00",
+      "closed_date": "2021-08-07T09:25:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 69,
+      "milestone": "v1.0",
+      "comments": [
+        {
+          "by": "TOKEN_3",
+          "body": "Initial report: observed during weekly run, reproduces reliably on branch data."
+        },
+        {
+          "by": "TOKEN_1",
+          "body": "I can reproduce locally; adding traces and a temporary mitigation for investigation."
+        },
+        {
+          "by": "TOKEN_2",
+          "body": "Agree with the mitigation. Recommend a test-case and a follow-up PR to harden."
+        }
+      ]
+    },
+    {
+      "number": 97,
+      "title": "Payment retry flow accepts zero amount on duplicate submit",
+      "body": "Detailed report and analysis for issue 97.\n\nSteps to reproduce:\n1. Run the nightly batch\n2. Observe the failure\n\nExpected: stable behavior\nObserved: intermittent failure under load\n",
+      "labels": [
+        "docs",
+        "ui",
+        "data-integrity",
+        "performance"
+      ],
+      "state": "open",
+      "filed_by_developer": "DEV_3",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "created_date": "2022-09-06T14:39:00",
+      "closed_date": null,
+      "closed_reason": null,
+      "linked_pr_number": null,
+      "milestone": "v1.2",
+      "comments": [
+        {
+          "by": "TOKEN_3",
+          "body": "Initial report: observed during weekly run, reproduces reliably on branch data."
+        },
+        {
+          "by": "TOKEN_2",
+          "body": "I can reproduce locally; adding traces and a temporary mitigation for investigation."
+        },
+        {
+          "by": "TOKEN_1",
+          "body": "Agree with the mitigation. Recommend a test-case and a follow-up PR to harden."
+        }
+      ]
+    },
+    {
+      "number": 98,
+      "title": "Payment retry flow accepts zero amount on duplicate submit",
+      "body": "Detailed report and analysis for issue 98.\n\nSteps to reproduce:\n1. Run the nightly batch\n2. Observe the failure\n\nExpected: stable behavior\nObserved: intermittent failure under load\n",
+      "labels": [
+        "priority:high",
+        "performance",
+        "bug",
+        "data-integrity"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_1",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "created_date": "2023-03-19T12:50:00",
+      "closed_date": "2023-04-05T12:50:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 70,
+      "milestone": "backlog",
+      "comments": [
+        {
+          "by": "TOKEN_1",
+          "body": "Initial report: observed during weekly run, reproduces reliably on branch data."
+        },
+        {
+          "by": "TOKEN_2",
+          "body": "I can reproduce locally; adding traces and a temporary mitigation for investigation."
+        },
+        {
+          "by": "TOKEN_3",
+          "body": "Agree with the mitigation. Recommend a test-case and a follow-up PR to harden."
+        }
+      ]
+    },
+    {
+      "number": 99,
+      "title": "Search endpoint returns stale results after cache warmup",
+      "body": "Detailed report and analysis for issue 99.\n\nSteps to reproduce:\n1. Run the nightly batch\n2. Observe the failure\n\nExpected: stable behavior\nObserved: intermittent failure under load\n",
+      "labels": [
+        "bug",
+        "api",
+        "performance"
+      ],
+      "state": "closed",
+      "filed_by_developer": "DEV_2",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "created_date": "2023-03-05T14:44:00",
+      "closed_date": "2023-03-21T14:44:00",
+      "closed_reason": "fixed",
+      "linked_pr_number": 71,
+      "milestone": "backlog",
+      "comments": [
+        {
+          "by": "TOKEN_2",
+          "body": "Initial report: observed during weekly run, reproduces reliably on branch data."
+        },
+        {
+          "by": "TOKEN_3",
+          "body": "I can reproduce locally; adding traces and a temporary mitigation for investigation."
+        },
+        {
+          "by": "TOKEN_1",
+          "body": "Agree with the mitigation. Recommend a test-case and a follow-up PR to harden."
+        }
+      ]
+    },
+    {
+      "number": 100,
+      "title": "Export export misses timezone normalization for DST zones",
+      "body": "Detailed report and analysis for issue 100.\n\nSteps to reproduce:\n1. Run the nightly batch\n2. Observe the failure\n\nExpected: stable behavior\nObserved: intermittent failure under load\n",
+      "labels": [
+        "data-integrity",
+        "priority:high"
+      ],
+      "state": "open",
+      "filed_by_developer": "DEV_2",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "created_date": "2022-05-20T15:12:00",
+      "closed_date": null,
+      "closed_reason": null,
+      "linked_pr_number": null,
+      "milestone": "backlog",
+      "comments": [
+        {
+          "by": "TOKEN_2",
+          "body": "Initial report: observed during weekly run, reproduces reliably on branch data."
+        },
+        {
+          "by": "TOKEN_3",
+          "body": "I can reproduce locally; adding traces and a temporary mitigation for investigation."
+        },
+        {
+          "by": "TOKEN_4",
+          "body": "Agree with the mitigation. Recommend a test-case and a follow-up PR to harden."
+        }
+      ]
+    }
+  ]
+}

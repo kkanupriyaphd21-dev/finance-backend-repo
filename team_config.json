@@ -1,0 +1,124 @@
+{
+  "TEAM": [
+    {
+      "id": "DEV_A",
+      "name": "Arjun Mehta",
+      "email": "arjun.mehta@example.com",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "role": "Tech Lead / Senior Backend",
+      "personality": {
+        "commit_style": "terse, lowercase, minimal punctuation",
+        "commit_examples": [
+          "add null guard to loan validation",
+          "fix off-by-one in installment calc",
+          "refactor payment processor helper"
+        ],
+        "pr_style": "direct, focused on root cause",
+        "review_style": "blunt but constructive, asks hard questions about edge cases",
+        "issue_style": "technical, concise, includes a hypothesis",
+        "works_on": [
+          "LAYER_4",
+          "LAYER_3",
+          "LAYER_8"
+        ],
+        "active_days": "Monday-Friday, occasional Saturday",
+        "commit_hours": "10:00-13:00, 16:00-19:00",
+        "quirks": [
+          "Sometimes writes multi-line commit bodies explaining why",
+          "Adds TODO comments before filing an issue",
+          "Reviews are thorough and usually request one change"
+        ]
+      }
+    },
+    {
+      "id": "DEV_B",
+      "name": "Priya Nair",
+      "email": "priya.nair@example.com",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "role": "Mid-level Backend Developer",
+      "personality": {
+        "commit_style": "conventional commits, proper casing, consistent",
+        "commit_examples": [
+          "feat(loan): implement EMI calculation service",
+          "fix(payment): handle null customer address",
+          "test(payment): add edge case tests for zero amount"
+        ],
+        "pr_style": "thorough descriptions, formal, always fills every section",
+        "review_style": "asks for tests, flags naming issues, approves with comments",
+        "issue_style": "detailed bug reports with reproduction steps",
+        "works_on": [
+          "LAYER_4",
+          "LAYER_5",
+          "LAYER_6"
+        ],
+        "active_days": "Monday-Friday only",
+        "commit_hours": "09:30-12:30, 14:00-17:30",
+        "quirks": [
+          "Always links related issues in PR descriptions",
+          "Adds checklists to every PR",
+          "Never pushes directly to main"
+        ]
+      }
+    },
+    {
+      "id": "DEV_C",
+      "name": "Rohan Das",
+      "email": "rohan.das@example.com",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "role": "Junior-Mid Developer",
+      "personality": {
+        "commit_style": "sometimes informal, occasional grammar slip, enthusiastic",
+        "commit_examples": [
+          "added account summary endpoint",
+          "fix the date format issue in statement report",
+          "WIP: working on notification service",
+          "finally fixed the timezone bug"
+        ],
+        "pr_style": "shorter descriptions, asks for feedback",
+        "review_style": "mostly approves, occasionally asks clarifying questions",
+        "issue_style": "sometimes vague on reproduction steps, apologetic tone",
+        "works_on": [
+          "LAYER_5",
+          "LAYER_7",
+          "LAYER_6"
+        ],
+        "active_days": "Monday-Saturday",
+        "commit_hours": "10:00-20:00",
+        "quirks": [
+          "Occasional late night commits",
+          "Sometimes pushes a fix commit right after a mistake commit",
+          "PR descriptions improve over time"
+        ]
+      }
+    },
+    {
+      "id": "DEV_D",
+      "name": "Sneha Kulkarni",
+      "email": "sneha.kulkarni@example.com",
+      "github_token_env": "GITHUB_TOKEN_4",
+      "role": "QA Engineer / Test Developer",
+      "personality": {
+        "commit_style": "always prefixed with test: or chore:, very systematic",
+        "commit_examples": [
+          "test(loan-service): add unit tests for prepayment calculation",
+          "test(integration): add end-to-end test for loan disbursement flow",
+          "chore: update test fixtures with new account schema"
+        ],
+        "pr_style": "focuses on test coverage, mentions what was not tested and why",
+        "review_style": "always asks 'what happens if X is null/empty/zero'",
+        "issue_style": "extremely systematic, exact steps, screenshots mentioned",
+        "works_on": [
+          "LAYER_6",
+          "LAYER_0"
+        ],
+        "active_days": "Monday-Friday",
+        "commit_hours": "09:00-17:00",
+        "quirks": [
+          "Files most of the bug issues",
+          "Comments on PRs to confirm tests were run",
+          "Adds labels consistently"
+        ]
+      }
+    }
+  ]
+}

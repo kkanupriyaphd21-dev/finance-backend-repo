@@ -1,0 +1,22 @@
+# requirements.txt
+# Working file
+
+# c007 2021-01-18T10:06:42 refactor initial project files
+
+# c012 2021-01-29T16:01:17 polish the deployment entrypoint
+
+# c017 2021-02-09T09:56:52 feat(bootstrap): bootstrap config
+
+# c022 2021-02-21T10:51:27 fix startup settings
+
+# c025 2021-02-27T10:24:48 tighten bootstrap config
+
+# c027 2021-03-04T13:46:02 wire the initial project files
+
+# c032 2021-03-15T12:41:37 adjust(bootstrap): deployment entrypoint
+
+# c034 2021-03-20T10:03:51 fix startup settings
+
+# c037 2021-03-27T10:36:12 tighten bootstrap config
+
+# c042 2021-04-07T16:31:47 fix the startup settings

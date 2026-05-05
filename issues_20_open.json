@@ -1,0 +1,533 @@
+{
+  "metadata": {
+    "generated": true,
+    "count": 20,
+    "state": "open",
+    "span": [
+      "2024-01-01T00:00:00",
+      "2026-05-05T00:00:00"
+    ]
+  },
+  "issues": [
+    {
+      "number": 101,
+      "title": "API endpoint PATCH /profile returns 500 error under concurrent load",
+      "body": "## Summary\nAPI endpoint PATCH /profile returns 500 error under concurrent load\n\n## Description\nThis is an open issue that needs investigation and resolution.\n\n## Steps to reproduce\n1. Identify the scenario\n2. Observe the behavior\n3. Compare to expected result\n\n## Expected behavior\nThe system should handle this case gracefully.\n\n## Actual behavior\nCurrently experiencing unexpected behavior as described.\n\n## Environment\n- Date discovered: 2024-02-23T00:00:00\n- Status: Open for investigation\n",
+      "labels": [
+        "enhancement",
+        "bug"
+      ],
+      "state": "open",
+      "filed_by_developer": "DEV_3",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "created_date": "2024-02-23T00:00:00",
+      "closed_date": null,
+      "closed_reason": null,
+      "milestone": "future",
+      "comments": [
+        {
+          "by": "TOKEN_3",
+          "body": "Initial report. Needs triage and prioritization."
+        },
+        {
+          "by": "TOKEN_4",
+          "body": "Confirmed. This needs investigation in the next sprint."
+        }
+      ]
+    },
+    {
+      "number": 102,
+      "title": "Ledger posting memory leak when processing large CSV imports",
+      "body": "## Summary\nLedger posting memory leak when processing large CSV imports\n\n## Description\nThis is an open issue that needs investigation and resolution.\n\n## Steps to reproduce\n1. Identify the scenario\n2. Observe the behavior\n3. Compare to expected result\n\n## Expected behavior\nThe system should handle this case gracefully.\n\n## Actual behavior\nCurrently experiencing unexpected behavior as described.\n\n## Environment\n- Date discovered: 2025-07-29T00:00:00\n- Status: Open for investigation\n",
+      "labels": [
+        "help wanted"
+      ],
+      "state": "open",
+      "filed_by_developer": "DEV_3",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "created_date": "2025-07-29T00:00:00",
+      "closed_date": null,
+      "closed_reason": null,
+      "milestone": "backlog",
+      "comments": [
+        {
+          "by": "TOKEN_3",
+          "body": "Initial report. Needs triage and prioritization."
+        },
+        {
+          "by": "TOKEN_4",
+          "body": "Confirmed. This needs investigation in the next sprint."
+        }
+      ]
+    },
+    {
+      "number": 103,
+      "title": "Group management shows incorrect calculation with decimal precision",
+      "body": "## Summary\nGroup management shows incorrect calculation with decimal precision\n\n## Description\nThis is an open issue that needs investigation and resolution.\n\n## Steps to reproduce\n1. Identify the scenario\n2. Observe the behavior\n3. Compare to expected result\n\n## Expected behavior\nThe system should handle this case gracefully.\n\n## Actual behavior\nCurrently experiencing unexpected behavior as described.\n\n## Environment\n- Date discovered: 2024-09-08T00:00:00\n- Status: Open for investigation\n",
+      "labels": [
+        "frontend"
+      ],
+      "state": "open",
+      "filed_by_developer": "DEV_2",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "created_date": "2024-09-08T00:00:00",
+      "closed_date": null,
+      "closed_reason": null,
+      "milestone": "future",
+      "comments": [
+        {
+          "by": "TOKEN_2",
+          "body": "Initial report. Needs triage and prioritization."
+        },
+        {
+          "by": "TOKEN_1",
+          "body": "Confirmed. This needs investigation in the next sprint."
+        }
+      ]
+    },
+    {
+      "number": 104,
+      "title": "Documentation setup guide is outdated and needs refresh",
+      "body": "## Summary\nDocumentation setup guide is outdated and needs refresh\n\n## Description\nThis is an open issue that needs investigation and resolution.\n\n## Steps to reproduce\n1. Identify the scenario\n2. Observe the behavior\n3. Compare to expected result\n\n## Expected behavior\nThe system should handle this case gracefully.\n\n## Actual behavior\nCurrently experiencing unexpected behavior as described.\n\n## Environment\n- Date discovered: 2024-01-07T00:00:00\n- Status: Open for investigation\n",
+      "labels": [
+        "enhancement"
+      ],
+      "state": "open",
+      "filed_by_developer": "DEV_3",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "created_date": "2024-01-07T00:00:00",
+      "closed_date": null,
+      "closed_reason": null,
+      "milestone": "v2.1",
+      "comments": [
+        {
+          "by": "TOKEN_3",
+          "body": "Initial report. Needs triage and prioritization."
+        },
+        {
+          "by": "TOKEN_1",
+          "body": "Confirmed. This needs investigation in the next sprint."
+        }
+      ]
+    },
+    {
+      "number": 105,
+      "title": "UI component Group management not responsive on mobile devices",
+      "body": "## Summary\nUI component Group management not responsive on mobile devices\n\n## Description\nThis is an open issue that needs investigation and resolution.\n\n## Steps to reproduce\n1. Identify the scenario\n2. Observe the behavior\n3. Compare to expected result\n\n## Expected behavior\nThe system should handle this case gracefully.\n\n## Actual behavior\nCurrently experiencing unexpected behavior as described.\n\n## Environment\n- Date discovered: 2026-03-20T00:00:00\n- Status: Open for investigation\n",
+      "labels": [
+        "critical",
+        "good first issue",
+        "database"
+      ],
+      "state": "open",
+      "filed_by_developer": "DEV_1",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "created_date": "2026-03-20T00:00:00",
+      "closed_date": null,
+      "closed_reason": null,
+      "milestone": "v2.0",
+      "comments": [
+        {
+          "by": "TOKEN_1",
+          "body": "Initial report. Needs triage and prioritization."
+        },
+        {
+          "by": "TOKEN_3",
+          "body": "Confirmed. This needs investigation in the next sprint."
+        }
+      ]
+    },
+    {
+      "number": 106,
+      "title": "Database query group member listing takes 800ms instead of target 100ms",
+      "body": "## Summary\nDatabase query group member listing takes 800ms instead of target 100ms\n\n## Description\nThis is an open issue that needs investigation and resolution.\n\n## Steps to reproduce\n1. Identify the scenario\n2. Observe the behavior\n3. Compare to expected result\n\n## Expected behavior\nThe system should handle this case gracefully.\n\n## Actual behavior\nCurrently experiencing unexpected behavior as described.\n\n## Environment\n- Date discovered: 2024-12-17T00:00:00\n- Status: Open for investigation\n",
+      "labels": [
+        "database",
+        "backend"
+      ],
+      "state": "open",
+      "filed_by_developer": "DEV_4",
+      "github_token_env": "GITHUB_TOKEN_4",
+      "created_date": "2024-12-17T00:00:00",
+      "closed_date": null,
+      "closed_reason": null,
+      "milestone": "future",
+      "comments": [
+        {
+          "by": "TOKEN_4",
+          "body": "Initial report. Needs triage and prioritization."
+        },
+        {
+          "by": "TOKEN_3",
+          "body": "Confirmed. This needs investigation in the next sprint."
+        }
+      ]
+    },
+    {
+      "number": 107,
+      "title": "API rate limiting should support custom filters",
+      "body": "## Summary\nAPI rate limiting should support custom filters\n\n## Description\nThis is an open issue that needs investigation and resolution.\n\n## Steps to reproduce\n1. Identify the scenario\n2. Observe the behavior\n3. Compare to expected result\n\n## Expected behavior\nThe system should handle this case gracefully.\n\n## Actual behavior\nCurrently experiencing unexpected behavior as described.\n\n## Environment\n- Date discovered: 2025-07-05T00:00:00\n- Status: Open for investigation\n",
+      "labels": [
+        "bug",
+        "performance",
+        "enhancement"
+      ],
+      "state": "open",
+      "filed_by_developer": "DEV_4",
+      "github_token_env": "GITHUB_TOKEN_4",
+      "created_date": "2025-07-05T00:00:00",
+      "closed_date": null,
+      "closed_reason": null,
+      "milestone": "future",
+      "comments": [
+        {
+          "by": "TOKEN_4",
+          "body": "Initial report. Needs triage and prioritization."
+        },
+        {
+          "by": "TOKEN_3",
+          "body": "Confirmed. This needs investigation in the next sprint."
+        }
+      ]
+    },
+    {
+      "number": 108,
+      "title": "Loan approval memory leak when processing long-running reports",
+      "body": "## Summary\nLoan approval memory leak when processing long-running reports\n\n## Description\nThis is an open issue that needs investigation and resolution.\n\n## Steps to reproduce\n1. Identify the scenario\n2. Observe the behavior\n3. Compare to expected result\n\n## Expected behavior\nThe system should handle this case gracefully.\n\n## Actual behavior\nCurrently experiencing unexpected behavior as described.\n\n## Environment\n- Date discovered: 2024-09-25T00:00:00\n- Status: Open for investigation\n",
+      "labels": [
+        "enhancement",
+        "critical"
+      ],
+      "state": "open",
+      "filed_by_developer": "DEV_2",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "created_date": "2024-09-25T00:00:00",
+      "closed_date": null,
+      "closed_reason": null,
+      "milestone": "future",
+      "comments": [
+        {
+          "by": "TOKEN_2",
+          "body": "Initial report. Needs triage and prioritization."
+        },
+        {
+          "by": "TOKEN_4",
+          "body": "Confirmed. This needs investigation in the next sprint."
+        }
+      ]
+    },
+    {
+      "number": 109,
+      "title": "Client onboarding shows incorrect calculation with decimal precision",
+      "body": "## Summary\nClient onboarding shows incorrect calculation with decimal precision\n\n## Description\nThis is an open issue that needs investigation and resolution.\n\n## Steps to reproduce\n1. Identify the scenario\n2. Observe the behavior\n3. Compare to expected result\n\n## Expected behavior\nThe system should handle this case gracefully.\n\n## Actual behavior\nCurrently experiencing unexpected behavior as described.\n\n## Environment\n- Date discovered: 2026-03-08T00:00:00\n- Status: Open for investigation\n",
+      "labels": [
+        "enhancement",
+        "help wanted",
+        "bug"
+      ],
+      "state": "open",
+      "filed_by_developer": "DEV_3",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "created_date": "2026-03-08T00:00:00",
+      "closed_date": null,
+      "closed_reason": null,
+      "milestone": "backlog",
+      "comments": [
+        {
+          "by": "TOKEN_3",
+          "body": "Initial report. Needs triage and prioritization."
+        },
+        {
+          "by": "TOKEN_1",
+          "body": "Confirmed. This needs investigation in the next sprint."
+        }
+      ]
+    },
+    {
+      "number": 110,
+      "title": "UI component Reconciliation engine not responsive on mobile devices",
+      "body": "## Summary\nUI component Reconciliation engine not responsive on mobile devices\n\n## Description\nThis is an open issue that needs investigation and resolution.\n\n## Steps to reproduce\n1. Identify the scenario\n2. Observe the behavior\n3. Compare to expected result\n\n## Expected behavior\nThe system should handle this case gracefully.\n\n## Actual behavior\nCurrently experiencing unexpected behavior as described.\n\n## Environment\n- Date discovered: 2025-02-19T00:00:00\n- Status: Open for investigation\n",
+      "labels": [
+        "documentation",
+        "backend",
+        "critical"
+      ],
+      "state": "open",
+      "filed_by_developer": "DEV_1",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "created_date": "2025-02-19T00:00:00",
+      "closed_date": null,
+      "closed_reason": null,
+      "milestone": "v2.1",
+      "comments": [
+        {
+          "by": "TOKEN_1",
+          "body": "Initial report. Needs triage and prioritization."
+        },
+        {
+          "by": "TOKEN_2",
+          "body": "Confirmed. This needs investigation in the next sprint."
+        }
+      ]
+    },
+    {
+      "number": 111,
+      "title": "Authentication fails when MFA is enabled",
+      "body": "## Summary\nAuthentication fails when MFA is enabled\n\n## Description\nThis is an open issue that needs investigation and resolution.\n\n## Steps to reproduce\n1. Identify the scenario\n2. Observe the behavior\n3. Compare to expected result\n\n## Expected behavior\nThe system should handle this case gracefully.\n\n## Actual behavior\nCurrently experiencing unexpected behavior as described.\n\n## Environment\n- Date discovered: 2025-07-03T00:00:00\n- Status: Open for investigation\n",
+      "labels": [
+        "bug"
+      ],
+      "state": "open",
+      "filed_by_developer": "DEV_4",
+      "github_token_env": "GITHUB_TOKEN_4",
+      "created_date": "2025-07-03T00:00:00",
+      "closed_date": null,
+      "closed_reason": null,
+      "milestone": "v2.1",
+      "comments": [
+        {
+          "by": "TOKEN_4",
+          "body": "Initial report. Needs triage and prioritization."
+        },
+        {
+          "by": "TOKEN_2",
+          "body": "Confirmed. This needs investigation in the next sprint."
+        }
+      ]
+    },
+    {
+      "number": 112,
+      "title": "UI component Loan approval not responsive on mobile devices",
+      "body": "## Summary\nUI component Loan approval not responsive on mobile devices\n\n## Description\nThis is an open issue that needs investigation and resolution.\n\n## Steps to reproduce\n1. Identify the scenario\n2. Observe the behavior\n3. Compare to expected result\n\n## Expected behavior\nThe system should handle this case gracefully.\n\n## Actual behavior\nCurrently experiencing unexpected behavior as described.\n\n## Environment\n- Date discovered: 2024-07-16T00:00:00\n- Status: Open for investigation\n",
+      "labels": [
+        "good first issue",
+        "question",
+        "frontend"
+      ],
+      "state": "open",
+      "filed_by_developer": "DEV_1",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "created_date": "2024-07-16T00:00:00",
+      "closed_date": null,
+      "closed_reason": null,
+      "milestone": "v2.0",
+      "comments": [
+        {
+          "by": "TOKEN_1",
+          "body": "Initial report. Needs triage and prioritization."
+        },
+        {
+          "by": "TOKEN_2",
+          "body": "Confirmed. This needs investigation in the next sprint."
+        }
+      ]
+    },
+    {
+      "number": 113,
+      "title": "webhooks should support webhooks",
+      "body": "## Summary\nwebhooks should support webhooks\n\n## Description\nThis is an open issue that needs investigation and resolution.\n\n## Steps to reproduce\n1. Identify the scenario\n2. Observe the behavior\n3. Compare to expected result\n\n## Expected behavior\nThe system should handle this case gracefully.\n\n## Actual behavior\nCurrently experiencing unexpected behavior as described.\n\n## Environment\n- Date discovered: 2025-09-24T00:00:00\n- Status: Open for investigation\n",
+      "labels": [
+        "question"
+      ],
+      "state": "open",
+      "filed_by_developer": "DEV_1",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "created_date": "2025-09-24T00:00:00",
+      "closed_date": null,
+      "closed_reason": null,
+      "milestone": "v2.0",
+      "comments": [
+        {
+          "by": "TOKEN_1",
+          "body": "Initial report. Needs triage and prioritization."
+        },
+        {
+          "by": "TOKEN_4",
+          "body": "Confirmed. This needs investigation in the next sprint."
+        }
+      ]
+    },
+    {
+      "number": 114,
+      "title": "API rate limiting should support webhooks",
+      "body": "## Summary\nAPI rate limiting should support webhooks\n\n## Description\nThis is an open issue that needs investigation and resolution.\n\n## Steps to reproduce\n1. Identify the scenario\n2. Observe the behavior\n3. Compare to expected result\n\n## Expected behavior\nThe system should handle this case gracefully.\n\n## Actual behavior\nCurrently experiencing unexpected behavior as described.\n\n## Environment\n- Date discovered: 2025-01-21T00:00:00\n- Status: Open for investigation\n",
+      "labels": [
+        "good first issue",
+        "critical"
+      ],
+      "state": "open",
+      "filed_by_developer": "DEV_1",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "created_date": "2025-01-21T00:00:00",
+      "closed_date": null,
+      "closed_reason": null,
+      "milestone": "v2.0",
+      "comments": [
+        {
+          "by": "TOKEN_1",
+          "body": "Initial report. Needs triage and prioritization."
+        },
+        {
+          "by": "TOKEN_4",
+          "body": "Confirmed. This needs investigation in the next sprint."
+        }
+      ]
+    },
+    {
+      "number": 115,
+      "title": "Ledger posting memory leak when processing large CSV imports",
+      "body": "## Summary\nLedger posting memory leak when processing large CSV imports\n\n## Description\nThis is an open issue that needs investigation and resolution.\n\n## Steps to reproduce\n1. Identify the scenario\n2. Observe the behavior\n3. Compare to expected result\n\n## Expected behavior\nThe system should handle this case gracefully.\n\n## Actual behavior\nCurrently experiencing unexpected behavior as described.\n\n## Environment\n- Date discovered: 2024-12-08T00:00:00\n- Status: Open for investigation\n",
+      "labels": [
+        "enhancement",
+        "performance"
+      ],
+      "state": "open",
+      "filed_by_developer": "DEV_4",
+      "github_token_env": "GITHUB_TOKEN_4",
+      "created_date": "2024-12-08T00:00:00",
+      "closed_date": null,
+      "closed_reason": null,
+      "milestone": "backlog",
+      "comments": [
+        {
+          "by": "TOKEN_4",
+          "body": "Initial report. Needs triage and prioritization."
+        },
+        {
+          "by": "TOKEN_3",
+          "body": "Confirmed. This needs investigation in the next sprint."
+        }
+      ]
+    },
+    {
+      "number": 116,
+      "title": "Export utility shows incorrect calculation with decimal precision",
+      "body": "## Summary\nExport utility shows incorrect calculation with decimal precision\n\n## Description\nThis is an open issue that needs investigation and resolution.\n\n## Steps to reproduce\n1. Identify the scenario\n2. Observe the behavior\n3. Compare to expected result\n\n## Expected behavior\nThe system should handle this case gracefully.\n\n## Actual behavior\nCurrently experiencing unexpected behavior as described.\n\n## Environment\n- Date discovered: 2024-08-28T00:00:00\n- Status: Open for investigation\n",
+      "labels": [
+        "backend",
+        "good first issue"
+      ],
+      "state": "open",
+      "filed_by_developer": "DEV_1",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "created_date": "2024-08-28T00:00:00",
+      "closed_date": null,
+      "closed_reason": null,
+      "milestone": "v2.1",
+      "comments": [
+        {
+          "by": "TOKEN_1",
+          "body": "Initial report. Needs triage and prioritization."
+        },
+        {
+          "by": "TOKEN_4",
+          "body": "Confirmed. This needs investigation in the next sprint."
+        }
+      ]
+    },
+    {
+      "number": 117,
+      "title": "Authentication fails when email domain is delegated",
+      "body": "## Summary\nAuthentication fails when email domain is delegated\n\n## Description\nThis is an open issue that needs investigation and resolution.\n\n## Steps to reproduce\n1. Identify the scenario\n2. Observe the behavior\n3. Compare to expected result\n\n## Expected behavior\nThe system should handle this case gracefully.\n\n## Actual behavior\nCurrently experiencing unexpected behavior as described.\n\n## Environment\n- Date discovered: 2026-03-01T00:00:00\n- Status: Open for investigation\n",
+      "labels": [
+        "backend"
+      ],
+      "state": "open",
+      "filed_by_developer": "DEV_3",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "created_date": "2026-03-01T00:00:00",
+      "closed_date": null,
+      "closed_reason": null,
+      "milestone": "backlog",
+      "comments": [
+        {
+          "by": "TOKEN_3",
+          "body": "Initial report. Needs triage and prioritization."
+        },
+        {
+          "by": "TOKEN_4",
+          "body": "Confirmed. This needs investigation in the next sprint."
+        }
+      ]
+    },
+    {
+      "number": 118,
+      "title": "Test coverage for services.reconciliation is below 80%",
+      "body": "## Summary\nTest coverage for services.reconciliation is below 80%\n\n## Description\nThis is an open issue that needs investigation and resolution.\n\n## Steps to reproduce\n1. Identify the scenario\n2. Observe the behavior\n3. Compare to expected result\n\n## Expected behavior\nThe system should handle this case gracefully.\n\n## Actual behavior\nCurrently experiencing unexpected behavior as described.\n\n## Environment\n- Date discovered: 2024-05-02T00:00:00\n- Status: Open for investigation\n",
+      "labels": [
+        "bug",
+        "performance"
+      ],
+      "state": "open",
+      "filed_by_developer": "DEV_2",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "created_date": "2024-05-02T00:00:00",
+      "closed_date": null,
+      "closed_reason": null,
+      "milestone": "future",
+      "comments": [
+        {
+          "by": "TOKEN_2",
+          "body": "Initial report. Needs triage and prioritization."
+        },
+        {
+          "by": "TOKEN_4",
+          "body": "Confirmed. This needs investigation in the next sprint."
+        }
+      ]
+    },
+    {
+      "number": 119,
+      "title": "Documentation troubleshooting FAQ is outdated and needs refresh",
+      "body": "## Summary\nDocumentation troubleshooting FAQ is outdated and needs refresh\n\n## Description\nThis is an open issue that needs investigation and resolution.\n\n## Steps to reproduce\n1. Identify the scenario\n2. Observe the behavior\n3. Compare to expected result\n\n## Expected behavior\nThe system should handle this case gracefully.\n\n## Actual behavior\nCurrently experiencing unexpected behavior as described.\n\n## Environment\n- Date discovered: 2024-01-22T00:00:00\n- Status: Open for investigation\n",
+      "labels": [
+        "question",
+        "bug"
+      ],
+      "state": "open",
+      "filed_by_developer": "DEV_3",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "created_date": "2024-01-22T00:00:00",
+      "closed_date": null,
+      "closed_reason": null,
+      "milestone": "v2.1",
+      "comments": [
+        {
+          "by": "TOKEN_3",
+          "body": "Initial report. Needs triage and prioritization."
+        },
+        {
+          "by": "TOKEN_4",
+          "body": "Confirmed. This needs investigation in the next sprint."
+        }
+      ]
+    },
+    {
+      "number": 120,
+      "title": "Export utility memory leak when processing high transaction volume",
+      "body": "## Summary\nExport utility memory leak when processing high transaction volume\n\n## Description\nThis is an open issue that needs investigation and resolution.\n\n## Steps to reproduce\n1. Identify the scenario\n2. Observe the behavior\n3. Compare to expected result\n\n## Expected behavior\nThe system should handle this case gracefully.\n\n## Actual behavior\nCurrently experiencing unexpected behavior as described.\n\n## Environment\n- Date discovered: 2024-11-28T00:00:00\n- Status: Open for investigation\n",
+      "labels": [
+        "help wanted",
+        "documentation",
+        "database"
+      ],
+      "state": "open",
+      "filed_by_developer": "DEV_2",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "created_date": "2024-11-28T00:00:00",
+      "closed_date": null,
+      "closed_reason": null,
+      "milestone": "v2.0",
+      "comments": [
+        {
+          "by": "TOKEN_2",
+          "body": "Initial report. Needs triage and prioritization."
+        },
+        {
+          "by": "TOKEN_3",
+          "body": "Confirmed. This needs investigation in the next sprint."
+        }
+      ]
+    }
+  ]
+}

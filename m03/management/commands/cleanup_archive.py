@@ -1,0 +1,24 @@
+# micro_admin/management/commands/cleanup_archive.py
+# Working file
+
+# c281 2022-10-03T11:20:40 tighten release prep
+
+# c286 2022-10-14T10:15:15 fix(hardening): compliance note
+
+# c289 2022-10-21T10:48:36 tighten release prep
+
+# c291 2022-10-25T09:10:50 regression: performance pass
+
+# c296 2022-11-06T12:05:25 polish the final cleanup
+
+# c298 2022-11-10T10:27:39 fix(hardening): compliance note
+
+# c301 2022-11-17T10:00:00 tighten release prep
+
+# c306 2022-11-28T10:55:35 fix(hardening): compliance note
+
+# c311 2022-12-10T09:50:10 regression: performance pass
+
+# c316 2022-12-21T14:45:45 polish the final cleanup
+
+# c319 2022-12-28T12:18:06 regression: performance pass

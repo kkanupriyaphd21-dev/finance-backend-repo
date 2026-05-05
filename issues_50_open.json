@@ -1,0 +1,1004 @@
+{
+  "issues": [
+    {
+      "number": 200,
+      "title": "feat: Auth issue 1 - edge-case failure",
+      "body": "Observed a problem in Auth. Steps to reproduce:\n1) Prepare dataset\n2) Run the auth flow\n3) Observe failure.\n\nExpected: Auth should handle this gracefully.\n\nNotes: This was seen in Dec 2023 testing and reproduced in staging.",
+      "labels": [
+        "critical",
+        "documentation"
+      ],
+      "assignees": [],
+      "state": "open",
+      "created_date": "2023-12-20T10:00:00Z",
+      "comments": [
+        {
+          "body": "I can reproduce this locally; collecting logs."
+        },
+        {
+          "body": "Assigning to backend to investigate index and query plans."
+        }
+      ]
+    },
+    {
+      "number": 201,
+      "title": "chore: Import issue 2 - incorrect calculation",
+      "body": "Observed a problem in Import. Steps to reproduce:\n1) Prepare dataset\n2) Run the import flow\n3) Observe failure.\n\nExpected: Import should handle this gracefully.\n\nNotes: This was seen in Dec 2023 testing and reproduced in staging.",
+      "labels": [
+        "critical",
+        "enhancement"
+      ],
+      "assignees": [],
+      "state": "open",
+      "created_date": "2023-12-20T10:00:00Z",
+      "comments": [
+        {
+          "body": "I can reproduce this locally; collecting logs."
+        },
+        {
+          "body": "Assigning to backend to investigate index and query plans."
+        }
+      ]
+    },
+    {
+      "number": 202,
+      "title": "feat: Database issue 3 - slow response",
+      "body": "Observed a problem in Database. Steps to reproduce:\n1) Prepare dataset\n2) Run the database flow\n3) Observe failure.\n\nExpected: Database should handle this gracefully.\n\nNotes: This was seen in Dec 2023 testing and reproduced in staging.",
+      "labels": [
+        "good first issue",
+        "bug"
+      ],
+      "assignees": [],
+      "state": "open",
+      "created_date": "2023-12-20T10:00:00Z",
+      "comments": [
+        {
+          "body": "I can reproduce this locally; collecting logs."
+        },
+        {
+          "body": "Assigning to backend to investigate index and query plans."
+        }
+      ]
+    },
+    {
+      "number": 203,
+      "title": "feat: API issue 4 - incorrect calculation",
+      "body": "Observed a problem in API. Steps to reproduce:\n1) Prepare dataset\n2) Run the api flow\n3) Observe failure.\n\nExpected: API should handle this gracefully.\n\nNotes: This was seen in Dec 2023 testing and reproduced in staging.",
+      "labels": [
+        "backend",
+        "critical"
+      ],
+      "assignees": [],
+      "state": "open",
+      "created_date": "2023-12-20T10:00:00Z",
+      "comments": [
+        {
+          "body": "I can reproduce this locally; collecting logs."
+        },
+        {
+          "body": "Assigning to backend to investigate index and query plans."
+        }
+      ]
+    },
+    {
+      "number": 204,
+      "title": "perf: Export issue 5 - slow response",
+      "body": "Observed a problem in Export. Steps to reproduce:\n1) Prepare dataset\n2) Run the export flow\n3) Observe failure.\n\nExpected: Export should handle this gracefully.\n\nNotes: This was seen in Dec 2023 testing and reproduced in staging.",
+      "labels": [
+        "enhancement",
+        "critical"
+      ],
+      "assignees": [],
+      "state": "open",
+      "created_date": "2023-12-20T10:00:00Z",
+      "comments": [
+        {
+          "body": "I can reproduce this locally; collecting logs."
+        },
+        {
+          "body": "Assigning to backend to investigate index and query plans."
+        }
+      ]
+    },
+    {
+      "number": 205,
+      "title": "fix: Auth issue 6 - incorrect calculation",
+      "body": "Observed a problem in Auth. Steps to reproduce:\n1) Prepare dataset\n2) Run the auth flow\n3) Observe failure.\n\nExpected: Auth should handle this gracefully.\n\nNotes: This was seen in Dec 2023 testing and reproduced in staging.",
+      "labels": [
+        "bug",
+        "performance"
+      ],
+      "assignees": [],
+      "state": "open",
+      "created_date": "2023-12-20T10:00:00Z",
+      "comments": [
+        {
+          "body": "I can reproduce this locally; collecting logs."
+        },
+        {
+          "body": "Assigning to backend to investigate index and query plans."
+        }
+      ]
+    },
+    {
+      "number": 206,
+      "title": "feat: Ledger issue 7 - edge-case failure",
+      "body": "Observed a problem in Ledger. Steps to reproduce:\n1) Prepare dataset\n2) Run the ledger flow\n3) Observe failure.\n\nExpected: Ledger should handle this gracefully.\n\nNotes: This was seen in Dec 2023 testing and reproduced in staging.",
+      "labels": [
+        "documentation",
+        "security"
+      ],
+      "assignees": [],
+      "state": "open",
+      "created_date": "2023-12-20T10:00:00Z",
+      "comments": [
+        {
+          "body": "I can reproduce this locally; collecting logs."
+        },
+        {
+          "body": "Assigning to backend to investigate index and query plans."
+        }
+      ]
+    },
+    {
+      "number": 207,
+      "title": "perf: UI issue 8 - incorrect calculation",
+      "body": "Observed a problem in UI. Steps to reproduce:\n1) Prepare dataset\n2) Run the ui flow\n3) Observe failure.\n\nExpected: UI should handle this gracefully.\n\nNotes: This was seen in Dec 2023 testing and reproduced in staging.",
+      "labels": [
+        "documentation",
+        "critical"
+      ],
+      "assignees": [],
+      "state": "open",
+      "created_date": "2023-12-20T10:00:00Z",
+      "comments": [
+        {
+          "body": "I can reproduce this locally; collecting logs."
+        },
+        {
+          "body": "Assigning to backend to investigate index and query plans."
+        }
+      ]
+    },
+    {
+      "number": 208,
+      "title": "chore: Notifications issue 9 - incorrect calculation",
+      "body": "Observed a problem in Notifications. Steps to reproduce:\n1) Prepare dataset\n2) Run the notifications flow\n3) Observe failure.\n\nExpected: Notifications should handle this gracefully.\n\nNotes: This was seen in Dec 2023 testing and reproduced in staging.",
+      "labels": [
+        "frontend",
+        "documentation"
+      ],
+      "assignees": [],
+      "state": "open",
+      "created_date": "2023-12-20T10:00:00Z",
+      "comments": [
+        {
+          "body": "I can reproduce this locally; collecting logs."
+        },
+        {
+          "body": "Assigning to backend to investigate index and query plans."
+        }
+      ]
+    },
+    {
+      "number": 209,
+      "title": "docs: Auth issue 10 - missing translation",
+      "body": "Observed a problem in Auth. Steps to reproduce:\n1) Prepare dataset\n2) Run the auth flow\n3) Observe failure.\n\nExpected: Auth should handle this gracefully.\n\nNotes: This was seen in Dec 2023 testing and reproduced in staging.",
+      "labels": [
+        "enhancement",
+        "bug"
+      ],
+      "assignees": [],
+      "state": "open",
+      "created_date": "2023-12-20T10:00:00Z",
+      "comments": [
+        {
+          "body": "I can reproduce this locally; collecting logs."
+        },
+        {
+          "body": "Assigning to backend to investigate index and query plans."
+        }
+      ]
+    },
+    {
+      "number": 210,
+      "title": "docs: Auth issue 11 - missing translation",
+      "body": "Observed a problem in Auth. Steps to reproduce:\n1) Prepare dataset\n2) Run the auth flow\n3) Observe failure.\n\nExpected: Auth should handle this gracefully.\n\nNotes: This was seen in Dec 2023 testing and reproduced in staging.",
+      "labels": [
+        "performance",
+        "good first issue"
+      ],
+      "assignees": [],
+      "state": "open",
+      "created_date": "2023-12-20T10:00:00Z",
+      "comments": [
+        {
+          "body": "I can reproduce this locally; collecting logs."
+        },
+        {
+          "body": "Assigning to backend to investigate index and query plans."
+        }
+      ]
+    },
+    {
+      "number": 211,
+      "title": "feat: Reporting issue 12 - edge-case failure",
+      "body": "Observed a problem in Reporting. Steps to reproduce:\n1) Prepare dataset\n2) Run the reporting flow\n3) Observe failure.\n\nExpected: Reporting should handle this gracefully.\n\nNotes: This was seen in Dec 2023 testing and reproduced in staging.",
+      "labels": [
+        "backend",
+        "frontend"
+      ],
+      "assignees": [],
+      "state": "open",
+      "created_date": "2023-12-20T10:00:00Z",
+      "comments": [
+        {
+          "body": "I can reproduce this locally; collecting logs."
+        },
+        {
+          "body": "Assigning to backend to investigate index and query plans."
+        }
+      ]
+    },
+    {
+      "number": 212,
+      "title": "fix: Reporting issue 13 - incorrect calculation",
+      "body": "Observed a problem in Reporting. Steps to reproduce:\n1) Prepare dataset\n2) Run the reporting flow\n3) Observe failure.\n\nExpected: Reporting should handle this gracefully.\n\nNotes: This was seen in Dec 2023 testing and reproduced in staging.",
+      "labels": [
+        "enhancement",
+        "good first issue"
+      ],
+      "assignees": [],
+      "state": "open",
+      "created_date": "2023-12-20T10:00:00Z",
+      "comments": [
+        {
+          "body": "I can reproduce this locally; collecting logs."
+        },
+        {
+          "body": "Assigning to backend to investigate index and query plans."
+        }
+      ]
+    },
+    {
+      "number": 213,
+      "title": "fix: Export issue 14 - timeouts",
+      "body": "Observed a problem in Export. Steps to reproduce:\n1) Prepare dataset\n2) Run the export flow\n3) Observe failure.\n\nExpected: Export should handle this gracefully.\n\nNotes: This was seen in Dec 2023 testing and reproduced in staging.",
+      "labels": [
+        "security",
+        "backend"
+      ],
+      "assignees": [],
+      "state": "open",
+      "created_date": "2023-12-20T10:00:00Z",
+      "comments": [
+        {
+          "body": "I can reproduce this locally; collecting logs."
+        },
+        {
+          "body": "Assigning to backend to investigate index and query plans."
+        }
+      ]
+    },
+    {
+      "number": 214,
+      "title": "feat: Database issue 15 - incorrect calculation",
+      "body": "Observed a problem in Database. Steps to reproduce:\n1) Prepare dataset\n2) Run the database flow\n3) Observe failure.\n\nExpected: Database should handle this gracefully.\n\nNotes: This was seen in Dec 2023 testing and reproduced in staging.",
+      "labels": [
+        "frontend",
+        "backend"
+      ],
+      "assignees": [],
+      "state": "open",
+      "created_date": "2023-12-20T10:00:00Z",
+      "comments": [
+        {
+          "body": "I can reproduce this locally; collecting logs."
+        },
+        {
+          "body": "Assigning to backend to investigate index and query plans."
+        }
+      ]
+    },
+    {
+      "number": 215,
+      "title": "fix: Export issue 16 - timeouts",
+      "body": "Observed a problem in Export. Steps to reproduce:\n1) Prepare dataset\n2) Run the export flow\n3) Observe failure.\n\nExpected: Export should handle this gracefully.\n\nNotes: This was seen in Dec 2023 testing and reproduced in staging.",
+      "labels": [
+        "backend",
+        "bug"
+      ],
+      "assignees": [],
+      "state": "open",
+      "created_date": "2023-12-20T10:00:00Z",
+      "comments": [
+        {
+          "body": "I can reproduce this locally; collecting logs."
+        },
+        {
+          "body": "Assigning to backend to investigate index and query plans."
+        }
+      ]
+    },
+    {
+      "number": 216,
+      "title": "feat: Export issue 17 - missing translation",
+      "body": "Observed a problem in Export. Steps to reproduce:\n1) Prepare dataset\n2) Run the export flow\n3) Observe failure.\n\nExpected: Export should handle this gracefully.\n\nNotes: This was seen in Dec 2023 testing and reproduced in staging.",
+      "labels": [
+        "documentation",
+        "performance"
+      ],
+      "assignees": [],
+      "state": "open",
+      "created_date": "2023-12-20T10:00:00Z",
+      "comments": [
+        {
+          "body": "I can reproduce this locally; collecting logs."
+        },
+        {
+          "body": "Assigning to backend to investigate index and query plans."
+        }
+      ]
+    },
+    {
+      "number": 217,
+      "title": "chore: Reconciliation issue 18 - incorrect calculation",
+      "body": "Observed a problem in Reconciliation. Steps to reproduce:\n1) Prepare dataset\n2) Run the reconciliation flow\n3) Observe failure.\n\nExpected: Reconciliation should handle this gracefully.\n\nNotes: This was seen in Dec 2023 testing and reproduced in staging.",
+      "labels": [
+        "enhancement",
+        "frontend"
+      ],
+      "assignees": [],
+      "state": "open",
+      "created_date": "2023-12-20T10:00:00Z",
+      "comments": [
+        {
+          "body": "I can reproduce this locally; collecting logs."
+        },
+        {
+          "body": "Assigning to backend to investigate index and query plans."
+        }
+      ]
+    },
+    {
+      "number": 218,
+      "title": "docs: Notifications issue 19 - incorrect calculation",
+      "body": "Observed a problem in Notifications. Steps to reproduce:\n1) Prepare dataset\n2) Run the notifications flow\n3) Observe failure.\n\nExpected: Notifications should handle this gracefully.\n\nNotes: This was seen in Dec 2023 testing and reproduced in staging.",
+      "labels": [
+        "documentation",
+        "backend"
+      ],
+      "assignees": [],
+      "state": "open",
+      "created_date": "2023-12-20T10:00:00Z",
+      "comments": [
+        {
+          "body": "I can reproduce this locally; collecting logs."
+        },
+        {
+          "body": "Assigning to backend to investigate index and query plans."
+        }
+      ]
+    },
+    {
+      "number": 219,
+      "title": "perf: Reporting issue 20 - missing translation",
+      "body": "Observed a problem in Reporting. Steps to reproduce:\n1) Prepare dataset\n2) Run the reporting flow\n3) Observe failure.\n\nExpected: Reporting should handle this gracefully.\n\nNotes: This was seen in Dec 2023 testing and reproduced in staging.",
+      "labels": [
+        "good first issue",
+        "backend"
+      ],
+      "assignees": [],
+      "state": "open",
+      "created_date": "2023-12-20T10:00:00Z",
+      "comments": [
+        {
+          "body": "I can reproduce this locally; collecting logs."
+        },
+        {
+          "body": "Assigning to backend to investigate index and query plans."
+        }
+      ]
+    },
+    {
+      "number": 220,
+      "title": "fix: UI issue 21 - missing translation",
+      "body": "Observed a problem in UI. Steps to reproduce:\n1) Prepare dataset\n2) Run the ui flow\n3) Observe failure.\n\nExpected: UI should handle this gracefully.\n\nNotes: This was seen in Dec 2023 testing and reproduced in staging.",
+      "labels": [
+        "security",
+        "documentation"
+      ],
+      "assignees": [],
+      "state": "open",
+      "created_date": "2023-12-20T10:00:00Z",
+      "comments": [
+        {
+          "body": "I can reproduce this locally; collecting logs."
+        },
+        {
+          "body": "Assigning to backend to investigate index and query plans."
+        }
+      ]
+    },
+    {
+      "number": 221,
+      "title": "chore: API issue 22 - incorrect calculation",
+      "body": "Observed a problem in API. Steps to reproduce:\n1) Prepare dataset\n2) Run the api flow\n3) Observe failure.\n\nExpected: API should handle this gracefully.\n\nNotes: This was seen in Dec 2023 testing and reproduced in staging.",
+      "labels": [
+        "documentation",
+        "good first issue"
+      ],
+      "assignees": [],
+      "state": "open",
+      "created_date": "2023-12-20T10:00:00Z",
+      "comments": [
+        {
+          "body": "I can reproduce this locally; collecting logs."
+        },
+        {
+          "body": "Assigning to backend to investigate index and query plans."
+        }
+      ]
+    },
+    {
+      "number": 222,
+      "title": "docs: UI issue 23 - slow response",
+      "body": "Observed a problem in UI. Steps to reproduce:\n1) Prepare dataset\n2) Run the ui flow\n3) Observe failure.\n\nExpected: UI should handle this gracefully.\n\nNotes: This was seen in Dec 2023 testing and reproduced in staging.",
+      "labels": [
+        "database",
+        "good first issue"
+      ],
+      "assignees": [],
+      "state": "open",
+      "created_date": "2023-12-20T10:00:00Z",
+      "comments": [
+        {
+          "body": "I can reproduce this locally; collecting logs."
+        },
+        {
+          "body": "Assigning to backend to investigate index and query plans."
+        }
+      ]
+    },
+    {
+      "number": 223,
+      "title": "docs: Import issue 24 - timeouts",
+      "body": "Observed a problem in Import. Steps to reproduce:\n1) Prepare dataset\n2) Run the import flow\n3) Observe failure.\n\nExpected: Import should handle this gracefully.\n\nNotes: This was seen in Dec 2023 testing and reproduced in staging.",
+      "labels": [
+        "security",
+        "good first issue"
+      ],
+      "assignees": [],
+      "state": "open",
+      "created_date": "2023-12-20T10:00:00Z",
+      "comments": [
+        {
+          "body": "I can reproduce this locally; collecting logs."
+        },
+        {
+          "body": "Assigning to backend to investigate index and query plans."
+        }
+      ]
+    },
+    {
+      "number": 224,
+      "title": "chore: Reporting issue 25 - incorrect calculation",
+      "body": "Observed a problem in Reporting. Steps to reproduce:\n1) Prepare dataset\n2) Run the reporting flow\n3) Observe failure.\n\nExpected: Reporting should handle this gracefully.\n\nNotes: This was seen in Dec 2023 testing and reproduced in staging.",
+      "labels": [
+        "bug",
+        "documentation"
+      ],
+      "assignees": [],
+      "state": "open",
+      "created_date": "2023-12-20T10:00:00Z",
+      "comments": [
+        {
+          "body": "I can reproduce this locally; collecting logs."
+        },
+        {
+          "body": "Assigning to backend to investigate index and query plans."
+        }
+      ]
+    },
+    {
+      "number": 225,
+      "title": "fix: Reporting issue 26 - timeouts",
+      "body": "Observed a problem in Reporting. Steps to reproduce:\n1) Prepare dataset\n2) Run the reporting flow\n3) Observe failure.\n\nExpected: Reporting should handle this gracefully.\n\nNotes: This was seen in Dec 2023 testing and reproduced in staging.",
+      "labels": [
+        "frontend",
+        "good first issue"
+      ],
+      "assignees": [],
+      "state": "open",
+      "created_date": "2023-12-20T10:00:00Z",
+      "comments": [
+        {
+          "body": "I can reproduce this locally; collecting logs."
+        },
+        {
+          "body": "Assigning to backend to investigate index and query plans."
+        }
+      ]
+    },
+    {
+      "number": 226,
+      "title": "chore: Reporting issue 27 - incorrect calculation",
+      "body": "Observed a problem in Reporting. Steps to reproduce:\n1) Prepare dataset\n2) Run the reporting flow\n3) Observe failure.\n\nExpected: Reporting should handle this gracefully.\n\nNotes: This was seen in Dec 2023 testing and reproduced in staging.",
+      "labels": [
+        "backend",
+        "performance"
+      ],
+      "assignees": [],
+      "state": "open",
+      "created_date": "2023-12-20T10:00:00Z",
+      "comments": [
+        {
+          "body": "I can reproduce this locally; collecting logs."
+        },
+        {
+          "body": "Assigning to backend to investigate index and query plans."
+        }
+      ]
+    },
+    {
+      "number": 227,
+      "title": "perf: Auth issue 28 - edge-case failure",
+      "body": "Observed a problem in Auth. Steps to reproduce:\n1) Prepare dataset\n2) Run the auth flow\n3) Observe failure.\n\nExpected: Auth should handle this gracefully.\n\nNotes: This was seen in Dec 2023 testing and reproduced in staging.",
+      "labels": [
+        "good first issue",
+        "database"
+      ],
+      "assignees": [],
+      "state": "open",
+      "created_date": "2023-12-20T10:00:00Z",
+      "comments": [
+        {
+          "body": "I can reproduce this locally; collecting logs."
+        },
+        {
+          "body": "Assigning to backend to investigate index and query plans."
+        }
+      ]
+    },
+    {
+      "number": 228,
+      "title": "feat: Export issue 29 - missing translation",
+      "body": "Observed a problem in Export. Steps to reproduce:\n1) Prepare dataset\n2) Run the export flow\n3) Observe failure.\n\nExpected: Export should handle this gracefully.\n\nNotes: This was seen in Dec 2023 testing and reproduced in staging.",
+      "labels": [
+        "critical",
+        "good first issue"
+      ],
+      "assignees": [],
+      "state": "open",
+      "created_date": "2023-12-20T10:00:00Z",
+      "comments": [
+        {
+          "body": "I can reproduce this locally; collecting logs."
+        },
+        {
+          "body": "Assigning to backend to investigate index and query plans."
+        }
+      ]
+    },
+    {
+      "number": 229,
+      "title": "fix: Ledger issue 30 - slow response",
+      "body": "Observed a problem in Ledger. Steps to reproduce:\n1) Prepare dataset\n2) Run the ledger flow\n3) Observe failure.\n\nExpected: Ledger should handle this gracefully.\n\nNotes: This was seen in Dec 2023 testing and reproduced in staging.",
+      "labels": [
+        "bug",
+        "enhancement"
+      ],
+      "assignees": [],
+      "state": "open",
+      "created_date": "2023-12-20T10:00:00Z",
+      "comments": [
+        {
+          "body": "I can reproduce this locally; collecting logs."
+        },
+        {
+          "body": "Assigning to backend to investigate index and query plans."
+        }
+      ]
+    },
+    {
+      "number": 230,
+      "title": "chore: Database issue 31 - incorrect calculation",
+      "body": "Observed a problem in Database. Steps to reproduce:\n1) Prepare dataset\n2) Run the database flow\n3) Observe failure.\n\nExpected: Database should handle this gracefully.\n\nNotes: This was seen in Dec 2023 testing and reproduced in staging.",
+      "labels": [
+        "good first issue",
+        "performance"
+      ],
+      "assignees": [],
+      "state": "open",
+      "created_date": "2023-12-20T10:00:00Z",
+      "comments": [
+        {
+          "body": "I can reproduce this locally; collecting logs."
+        },
+        {
+          "body": "Assigning to backend to investigate index and query plans."
+        }
+      ]
+    },
+    {
+      "number": 231,
+      "title": "chore: API issue 32 - edge-case failure",
+      "body": "Observed a problem in API. Steps to reproduce:\n1) Prepare dataset\n2) Run the api flow\n3) Observe failure.\n\nExpected: API should handle this gracefully.\n\nNotes: This was seen in Dec 2023 testing and reproduced in staging.",
+      "labels": [
+        "good first issue",
+        "security"
+      ],
+      "assignees": [],
+      "state": "open",
+      "created_date": "2023-12-20T10:00:00Z",
+      "comments": [
+        {
+          "body": "I can reproduce this locally; collecting logs."
+        },
+        {
+          "body": "Assigning to backend to investigate index and query plans."
+        }
+      ]
+    },
+    {
+      "number": 232,
+      "title": "feat: Ledger issue 33 - edge-case failure",
+      "body": "Observed a problem in Ledger. Steps to reproduce:\n1) Prepare dataset\n2) Run the ledger flow\n3) Observe failure.\n\nExpected: Ledger should handle this gracefully.\n\nNotes: This was seen in Dec 2023 testing and reproduced in staging.",
+      "labels": [
+        "backend",
+        "bug"
+      ],
+      "assignees": [],
+      "state": "open",
+      "created_date": "2023-12-20T10:00:00Z",
+      "comments": [
+        {
+          "body": "I can reproduce this locally; collecting logs."
+        },
+        {
+          "body": "Assigning to backend to investigate index and query plans."
+        }
+      ]
+    },
+    {
+      "number": 233,
+      "title": "docs: UI issue 34 - missing translation",
+      "body": "Observed a problem in UI. Steps to reproduce:\n1) Prepare dataset\n2) Run the ui flow\n3) Observe failure.\n\nExpected: UI should handle this gracefully.\n\nNotes: This was seen in Dec 2023 testing and reproduced in staging.",
+      "labels": [
+        "bug",
+        "backend"
+      ],
+      "assignees": [],
+      "state": "open",
+      "created_date": "2023-12-20T10:00:00Z",
+      "comments": [
+        {
+          "body": "I can reproduce this locally; collecting logs."
+        },
+        {
+          "body": "Assigning to backend to investigate index and query plans."
+        }
+      ]
+    },
+    {
+      "number": 234,
+      "title": "chore: API issue 35 - incorrect calculation",
+      "body": "Observed a problem in API. Steps to reproduce:\n1) Prepare dataset\n2) Run the api flow\n3) Observe failure.\n\nExpected: API should handle this gracefully.\n\nNotes: This was seen in Dec 2023 testing and reproduced in staging.",
+      "labels": [
+        "backend",
+        "bug"
+      ],
+      "assignees": [],
+      "state": "open",
+      "created_date": "2023-12-20T10:00:00Z",
+      "comments": [
+        {
+          "body": "I can reproduce this locally; collecting logs."
+        },
+        {
+          "body": "Assigning to backend to investigate index and query plans."
+        }
+      ]
+    },
+    {
+      "number": 235,
+      "title": "docs: Reconciliation issue 36 - missing translation",
+      "body": "Observed a problem in Reconciliation. Steps to reproduce:\n1) Prepare dataset\n2) Run the reconciliation flow\n3) Observe failure.\n\nExpected: Reconciliation should handle this gracefully.\n\nNotes: This was seen in Dec 2023 testing and reproduced in staging.",
+      "labels": [
+        "security",
+        "frontend"
+      ],
+      "assignees": [],
+      "state": "open",
+      "created_date": "2023-12-20T10:00:00Z",
+      "comments": [
+        {
+          "body": "I can reproduce this locally; collecting logs."
+        },
+        {
+          "body": "Assigning to backend to investigate index and query plans."
+        }
+      ]
+    },
+    {
+      "number": 236,
+      "title": "feat: Notifications issue 37 - edge-case failure",
+      "body": "Observed a problem in Notifications. Steps to reproduce:\n1) Prepare dataset\n2) Run the notifications flow\n3) Observe failure.\n\nExpected: Notifications should handle this gracefully.\n\nNotes: This was seen in Dec 2023 testing and reproduced in staging.",
+      "labels": [
+        "security",
+        "database"
+      ],
+      "assignees": [],
+      "state": "open",
+      "created_date": "2023-12-20T10:00:00Z",
+      "comments": [
+        {
+          "body": "I can reproduce this locally; collecting logs."
+        },
+        {
+          "body": "Assigning to backend to investigate index and query plans."
+        }
+      ]
+    },
+    {
+      "number": 237,
+      "title": "chore: Import issue 38 - edge-case failure",
+      "body": "Observed a problem in Import. Steps to reproduce:\n1) Prepare dataset\n2) Run the import flow\n3) Observe failure.\n\nExpected: Import should handle this gracefully.\n\nNotes: This was seen in Dec 2023 testing and reproduced in staging.",
+      "labels": [
+        "backend",
+        "good first issue"
+      ],
+      "assignees": [],
+      "state": "open",
+      "created_date": "2023-12-20T10:00:00Z",
+      "comments": [
+        {
+          "body": "I can reproduce this locally; collecting logs."
+        },
+        {
+          "body": "Assigning to backend to investigate index and query plans."
+        }
+      ]
+    },
+    {
+      "number": 238,
+      "title": "perf: UI issue 39 - incorrect calculation",
+      "body": "Observed a problem in UI. Steps to reproduce:\n1) Prepare dataset\n2) Run the ui flow\n3) Observe failure.\n\nExpected: UI should handle this gracefully.\n\nNotes: This was seen in Dec 2023 testing and reproduced in staging.",
+      "labels": [
+        "performance",
+        "security"
+      ],
+      "assignees": [],
+      "state": "open",
+      "created_date": "2023-12-20T10:00:00Z",
+      "comments": [
+        {
+          "body": "I can reproduce this locally; collecting logs."
+        },
+        {
+          "body": "Assigning to backend to investigate index and query plans."
+        }
+      ]
+    },
+    {
+      "number": 239,
+      "title": "fix: API issue 40 - edge-case failure",
+      "body": "Observed a problem in API. Steps to reproduce:\n1) Prepare dataset\n2) Run the api flow\n3) Observe failure.\n\nExpected: API should handle this gracefully.\n\nNotes: This was seen in Dec 2023 testing and reproduced in staging.",
+      "labels": [
+        "backend",
+        "bug"
+      ],
+      "assignees": [],
+      "state": "open",
+      "created_date": "2023-12-20T10:00:00Z",
+      "comments": [
+        {
+          "body": "I can reproduce this locally; collecting logs."
+        },
+        {
+          "body": "Assigning to backend to investigate index and query plans."
+        }
+      ]
+    },
+    {
+      "number": 240,
+      "title": "chore: Export issue 41 - timeouts",
+      "body": "Observed a problem in Export. Steps to reproduce:\n1) Prepare dataset\n2) Run the export flow\n3) Observe failure.\n\nExpected: Export should handle this gracefully.\n\nNotes: This was seen in Dec 2023 testing and reproduced in staging.",
+      "labels": [
+        "documentation",
+        "backend"
+      ],
+      "assignees": [],
+      "state": "open",
+      "created_date": "2023-12-20T10:00:00Z",
+      "comments": [
+        {
+          "body": "I can reproduce this locally; collecting logs."
+        },
+        {
+          "body": "Assigning to backend to investigate index and query plans."
+        }
+      ]
+    },
+    {
+      "number": 241,
+      "title": "feat: Export issue 42 - incorrect calculation",
+      "body": "Observed a problem in Export. Steps to reproduce:\n1) Prepare dataset\n2) Run the export flow\n3) Observe failure.\n\nExpected: Export should handle this gracefully.\n\nNotes: This was seen in Dec 2023 testing and reproduced in staging.",
+      "labels": [
+        "security",
+        "backend"
+      ],
+      "assignees": [],
+      "state": "open",
+      "created_date": "2023-12-20T10:00:00Z",
+      "comments": [
+        {
+          "body": "I can reproduce this locally; collecting logs."
+        },
+        {
+          "body": "Assigning to backend to investigate index and query plans."
+        }
+      ]
+    },
+    {
+      "number": 242,
+      "title": "perf: Database issue 43 - slow response",
+      "body": "Observed a problem in Database. Steps to reproduce:\n1) Prepare dataset\n2) Run the database flow\n3) Observe failure.\n\nExpected: Database should handle this gracefully.\n\nNotes: This was seen in Dec 2023 testing and reproduced in staging.",
+      "labels": [
+        "critical",
+        "enhancement"
+      ],
+      "assignees": [],
+      "state": "open",
+      "created_date": "2023-12-20T10:00:00Z",
+      "comments": [
+        {
+          "body": "I can reproduce this locally; collecting logs."
+        },
+        {
+          "body": "Assigning to backend to investigate index and query plans."
+        }
+      ]
+    },
+    {
+      "number": 243,
+      "title": "perf: Reporting issue 44 - missing translation",
+      "body": "Observed a problem in Reporting. Steps to reproduce:\n1) Prepare dataset\n2) Run the reporting flow\n3) Observe failure.\n\nExpected: Reporting should handle this gracefully.\n\nNotes: This was seen in Dec 2023 testing and reproduced in staging.",
+      "labels": [
+        "critical",
+        "database"
+      ],
+      "assignees": [],
+      "state": "open",
+      "created_date": "2023-12-20T10:00:00Z",
+      "comments": [
+        {
+          "body": "I can reproduce this locally; collecting logs."
+        },
+        {
+          "body": "Assigning to backend to investigate index and query plans."
+        }
+      ]
+    },
+    {
+      "number": 244,
+      "title": "perf: Database issue 45 - incorrect calculation",
+      "body": "Observed a problem in Database. Steps to reproduce:\n1) Prepare dataset\n2) Run the database flow\n3) Observe failure.\n\nExpected: Database should handle this gracefully.\n\nNotes: This was seen in Dec 2023 testing and reproduced in staging.",
+      "labels": [
+        "documentation",
+        "good first issue"
+      ],
+      "assignees": [],
+      "state": "open",
+      "created_date": "2023-12-20T10:00:00Z",
+      "comments": [
+        {
+          "body": "I can reproduce this locally; collecting logs."
+        },
+        {
+          "body": "Assigning to backend to investigate index and query plans."
+        }
+      ]
+    },
+    {
+      "number": 245,
+      "title": "fix: Ledger issue 46 - incorrect calculation",
+      "body": "Observed a problem in Ledger. Steps to reproduce:\n1) Prepare dataset\n2) Run the ledger flow\n3) Observe failure.\n\nExpected: Ledger should handle this gracefully.\n\nNotes: This was seen in Dec 2023 testing and reproduced in staging.",
+      "labels": [
+        "good first issue",
+        "security"
+      ],
+      "assignees": [],
+      "state": "open",
+      "created_date": "2023-12-20T10:00:00Z",
+      "comments": [
+        {
+          "body": "I can reproduce this locally; collecting logs."
+        },
+        {
+          "body": "Assigning to backend to investigate index and query plans."
+        }
+      ]
+    },
+    {
+      "number": 246,
+      "title": "docs: Import issue 47 - edge-case failure",
+      "body": "Observed a problem in Import. Steps to reproduce:\n1) Prepare dataset\n2) Run the import flow\n3) Observe failure.\n\nExpected: Import should handle this gracefully.\n\nNotes: This was seen in Dec 2023 testing and reproduced in staging.",
+      "labels": [
+        "enhancement",
+        "frontend"
+      ],
+      "assignees": [],
+      "state": "open",
+      "created_date": "2023-12-20T10:00:00Z",
+      "comments": [
+        {
+          "body": "I can reproduce this locally; collecting logs."
+        },
+        {
+          "body": "Assigning to backend to investigate index and query plans."
+        }
+      ]
+    },
+    {
+      "number": 247,
+      "title": "feat: Database issue 48 - slow response",
+      "body": "Observed a problem in Database. Steps to reproduce:\n1) Prepare dataset\n2) Run the database flow\n3) Observe failure.\n\nExpected: Database should handle this gracefully.\n\nNotes: This was seen in Dec 2023 testing and reproduced in staging.",
+      "labels": [
+        "critical",
+        "database"
+      ],
+      "assignees": [],
+      "state": "open",
+      "created_date": "2023-12-20T10:00:00Z",
+      "comments": [
+        {
+          "body": "I can reproduce this locally; collecting logs."
+        },
+        {
+          "body": "Assigning to backend to investigate index and query plans."
+        }
+      ]
+    },
+    {
+      "number": 248,
+      "title": "fix: Import issue 49 - slow response",
+      "body": "Observed a problem in Import. Steps to reproduce:\n1) Prepare dataset\n2) Run the import flow\n3) Observe failure.\n\nExpected: Import should handle this gracefully.\n\nNotes: This was seen in Dec 2023 testing and reproduced in staging.",
+      "labels": [
+        "database",
+        "bug"
+      ],
+      "assignees": [],
+      "state": "open",
+      "created_date": "2023-12-20T10:00:00Z",
+      "comments": [
+        {
+          "body": "I can reproduce this locally; collecting logs."
+        },
+        {
+          "body": "Assigning to backend to investigate index and query plans."
+        }
+      ]
+    },
+    {
+      "number": 249,
+      "title": "fix: Import issue 50 - missing translation",
+      "body": "Observed a problem in Import. Steps to reproduce:\n1) Prepare dataset\n2) Run the import flow\n3) Observe failure.\n\nExpected: Import should handle this gracefully.\n\nNotes: This was seen in Dec 2023 testing and reproduced in staging.",
+      "labels": [
+        "enhancement",
+        "security"
+      ],
+      "assignees": [],
+      "state": "open",
+      "created_date": "2023-12-20T10:00:00Z",
+      "comments": [
+        {
+          "body": "I can reproduce this locally; collecting logs."
+        },
+        {
+          "body": "Assigning to backend to investigate index and query plans."
+        }
+      ]
+    }
+  ]
+}

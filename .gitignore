@@ -1,0 +1,6 @@
+.env
+__pycache__/
+.venv/
+archive01/
+archive02/
+empty-repo/

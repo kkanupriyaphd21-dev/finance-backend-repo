@@ -1,0 +1,38 @@
+[
+  {
+    "title": "fix: Reconciliation export fails for end-of-day timezone offsets",
+    "body": "When exporting reconciliation at month-end, offsets near DST transitions cause missing rows. Steps to reproduce: 1) Set branch timezone to 'America/New_York' 2) Run month-end export for 2023-11-30 to 2023-12-01 3) Observe missing reconciled rows. Suggested investigation: normalize to UTC before grouping.",
+    "labels": ["bug","backend","high priority"],
+    "assignees": [],
+    "state": "open",
+    "created_at": "2023-12-12T10:15:00Z",
+    "comments": [
+      {"body": "I can reproduce — likely caused by naive datetime usage in export."},
+      {"body": "Working on a patch that normalizes timestamps to UTC before aggregation."}
+    ]
+  },
+  {
+    "title": "perf: Ledger query slow for December batch imports",
+    "body": "Large December batch imports (100k+ rows) cause ledger query latency spikes exceeding 2s per request. Profiling shows heavy GROUP BY on unindexed columns. Proposed fix: add composite index and paginate aggregation.",
+    "labels": ["performance","database","backend"],
+    "assignees": [],
+    "state": "open",
+    "created_at": "2023-12-18T14:30:00Z",
+    "comments": [
+      {"body": "Tagging DB: this looks like missing index on (branch_id, posting_date)."},
+      {"body": "Agree — will test adding index in a staging snapshot."}
+    ]
+  },
+  {
+    "title": "docs: Clarify year-end closing procedure for 2023",
+    "body": "The README mentions year-end closing but lacks steps for ledger rollovers in 2023. Add explicit commands, expected backup locations, and common pitfalls (e.g., timezone, fiscal vs calendar year).",
+    "labels": ["documentation","good first issue"],
+    "assignees": [],
+    "state": "open",
+    "created_at": "2023-12-28T09:00:00Z",
+    "comments": [
+      {"body": "I can draft the README updates and include example commands."},
+      {"body": "Please include a checklist for backups and migration steps."}
+    ]
+  }
+]

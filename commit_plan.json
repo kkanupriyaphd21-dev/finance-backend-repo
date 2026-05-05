@@ -1,0 +1,5534 @@
+{
+  "metadata": {
+    "target_commits": 320,
+    "date_start": "2021-01-04",
+    "date_end": "2022-12-30",
+    "notes": "Commit timeline for release and maintenance work."
+  },
+  "commits": [
+    {
+      "commit_id": "c001",
+      "phase": "PHASE_A",
+      "feature_id": "F001",
+      "developer": "DEV_A",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "files": [
+        "README.rst",
+        "microfinance/settings.py",
+        "microfinance/settings_local.py"
+      ],
+      "commit_message": "tighten bootstrap config",
+      "commit_body": "Keeps the change scoped to bootstrap and preserves the existing behavior.",
+      "date": "2021-01-04T10:00:00",
+      "branch": "main",
+      "is_fix_commit": true,
+      "linked_issue_number": 1,
+      "notes": "PHASE_A / bootstrap / DEV_A"
+    },
+    {
+      "commit_id": "c002",
+      "phase": "PHASE_A",
+      "feature_id": "F002",
+      "developer": "DEV_B",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "files": [
+        "requirements.txt"
+      ],
+      "commit_message": "fix(bootstrap): startup settings",
+      "commit_body": "",
+      "date": "2021-01-06T10:11:07",
+      "branch": "main",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_A / bootstrap / DEV_B"
+    },
+    {
+      "commit_id": "c003",
+      "phase": "PHASE_A",
+      "feature_id": "F003",
+      "developer": "DEV_C",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "files": [
+        "microfinance/settings.py"
+      ],
+      "commit_message": "wire the initial project files",
+      "commit_body": "",
+      "date": "2021-01-08T13:22:14",
+      "branch": "main",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_A / bootstrap / DEV_C"
+    },
+    {
+      "commit_id": "c004",
+      "phase": "PHASE_A",
+      "feature_id": "F004",
+      "developer": "DEV_A",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "files": [
+        "microfinance/settings_local.py"
+      ],
+      "commit_message": "guard deployment entrypoint",
+      "commit_body": "",
+      "date": "2021-01-11T10:33:21",
+      "branch": "main",
+      "is_fix_commit": false,
+      "linked_issue_number": 1,
+      "notes": "PHASE_A / bootstrap / DEV_A"
+    },
+    {
+      "commit_id": "c005",
+      "phase": "PHASE_A",
+      "feature_id": "F005",
+      "developer": "DEV_B",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "files": [
+        "Procfile"
+      ],
+      "commit_message": "feat(bootstrap): bootstrap config",
+      "commit_body": "",
+      "date": "2021-01-13T09:44:28",
+      "branch": "main",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_A / bootstrap / DEV_B"
+    },
+    {
+      "commit_id": "c006",
+      "phase": "PHASE_A",
+      "feature_id": "F006",
+      "developer": "DEV_C",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "files": [
+        "README.rst"
+      ],
+      "commit_message": "fix the startup settings",
+      "commit_body": "",
+      "date": "2021-01-15T16:55:35",
+      "branch": "main",
+      "is_fix_commit": true,
+      "linked_issue_number": null,
+      "notes": "PHASE_A / bootstrap / DEV_C"
+    },
+    {
+      "commit_id": "c007",
+      "phase": "PHASE_A",
+      "feature_id": "F007",
+      "developer": "DEV_A",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "files": [
+        "requirements.txt",
+        "microfinance/settings_local.py"
+      ],
+      "commit_message": "refactor initial project files",
+      "commit_body": "",
+      "date": "2021-01-18T10:06:42",
+      "branch": "main",
+      "is_fix_commit": false,
+      "linked_issue_number": 2,
+      "notes": "PHASE_A / bootstrap / DEV_A"
+    },
+    {
+      "commit_id": "c008",
+      "phase": "PHASE_A",
+      "feature_id": "F008",
+      "developer": "DEV_B",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "files": [
+        "microfinance/settings.py"
+      ],
+      "commit_message": "adjust(bootstrap): deployment entrypoint",
+      "commit_body": "Keeps the change scoped to bootstrap and preserves the existing behavior.",
+      "date": "2021-01-20T12:17:49",
+      "branch": "main",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_A / bootstrap / DEV_B"
+    },
+    {
+      "commit_id": "c009",
+      "phase": "PHASE_A",
+      "feature_id": "F009",
+      "developer": "DEV_C",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "files": [
+        "microfinance/settings_local.py"
+      ],
+      "commit_message": "update the bootstrap config",
+      "commit_body": "",
+      "date": "2021-01-22T13:28:56",
+      "branch": "main",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_A / bootstrap / DEV_C"
+    },
+    {
+      "commit_id": "c010",
+      "phase": "PHASE_A",
+      "feature_id": "F010",
+      "developer": "DEV_A",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "files": [
+        "Procfile"
+      ],
+      "commit_message": "fix startup settings",
+      "commit_body": "Follow-up after review. The main path is unchanged; the null case is now handled.",
+      "date": "2021-01-24T10:39:03",
+      "branch": "main",
+      "is_fix_commit": false,
+      "linked_issue_number": 3,
+      "notes": "PHASE_A / bootstrap / DEV_A"
+    },
+    {
+      "commit_id": "c011",
+      "phase": "PHASE_A",
+      "feature_id": "F011",
+      "developer": "DEV_B",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "files": [
+        "README.rst"
+      ],
+      "commit_message": "test(bootstrap): initial project files",
+      "commit_body": "",
+      "date": "2021-01-27T11:50:10",
+      "branch": "main",
+      "is_fix_commit": true,
+      "linked_issue_number": null,
+      "notes": "PHASE_A / bootstrap / DEV_B"
+    },
+    {
+      "commit_id": "c012",
+      "phase": "PHASE_A",
+      "feature_id": "F012",
+      "developer": "DEV_C",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "files": [
+        "requirements.txt",
+        "Procfile"
+      ],
+      "commit_message": "polish the deployment entrypoint",
+      "commit_body": "",
+      "date": "2021-01-29T16:01:17",
+      "branch": "main",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_A / bootstrap / DEV_C"
+    },
+    {
+      "commit_id": "c013",
+      "phase": "PHASE_A",
+      "feature_id": "F013",
+      "developer": "DEV_A",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "files": [
+        "microfinance/settings.py",
+        "Procfile"
+      ],
+      "commit_message": "tighten bootstrap config",
+      "commit_body": "",
+      "date": "2021-01-31T10:12:24",
+      "branch": "main",
+      "is_fix_commit": false,
+      "linked_issue_number": 4,
+      "notes": "PHASE_A / bootstrap / DEV_A"
+    },
+    {
+      "commit_id": "c014",
+      "phase": "PHASE_A",
+      "feature_id": "F014",
+      "developer": "DEV_B",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "files": [
+        "microfinance/settings_local.py"
+      ],
+      "commit_message": "fix(bootstrap): startup settings",
+      "commit_body": "This is the small cleanup pass that came out of QA feedback.",
+      "date": "2021-02-02T10:23:31",
+      "branch": "main",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_A / bootstrap / DEV_B"
+    },
+    {
+      "commit_id": "c015",
+      "phase": "PHASE_A",
+      "feature_id": "F015",
+      "developer": "DEV_C",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "files": [
+        "Procfile"
+      ],
+      "commit_message": "wire the initial project files",
+      "commit_body": "Keeps the change scoped to bootstrap and preserves the existing behavior.",
+      "date": "2021-02-05T13:34:38",
+      "branch": "main",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_A / bootstrap / DEV_C"
+    },
+    {
+      "commit_id": "c016",
+      "phase": "PHASE_A",
+      "feature_id": "F016",
+      "developer": "DEV_A",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "files": [
+        "README.rst"
+      ],
+      "commit_message": "guard deployment entrypoint",
+      "commit_body": "",
+      "date": "2021-02-07T10:45:45",
+      "branch": "main",
+      "is_fix_commit": true,
+      "linked_issue_number": 4,
+      "notes": "PHASE_A / bootstrap / DEV_A"
+    },
+    {
+      "commit_id": "c017",
+      "phase": "PHASE_A",
+      "feature_id": "F017",
+      "developer": "DEV_B",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "files": [
+        "requirements.txt"
+      ],
+      "commit_message": "feat(bootstrap): bootstrap config",
+      "commit_body": "",
+      "date": "2021-02-09T09:56:52",
+      "branch": "main",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_A / bootstrap / DEV_B"
+    },
+    {
+      "commit_id": "c018",
+      "phase": "PHASE_A",
+      "feature_id": "F018",
+      "developer": "DEV_C",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "files": [
+        "microfinance/settings.py"
+      ],
+      "commit_message": "fix the startup settings",
+      "commit_body": "",
+      "date": "2021-02-12T16:07:59",
+      "branch": "main",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_A / bootstrap / DEV_C"
+    },
+    {
+      "commit_id": "c019",
+      "phase": "PHASE_A",
+      "feature_id": "F019",
+      "developer": "DEV_A",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "files": [
+        "microfinance/settings_local.py",
+        "README.rst"
+      ],
+      "commit_message": "refactor initial project files",
+      "commit_body": "Follow-up after review. The main path is unchanged; the null case is now handled.",
+      "date": "2021-02-14T10:18:06",
+      "branch": "feature/bootstrap-19",
+      "is_fix_commit": false,
+      "linked_issue_number": 5,
+      "notes": "PHASE_A / bootstrap / DEV_A"
+    },
+    {
+      "commit_id": "c020",
+      "phase": "PHASE_A",
+      "feature_id": "F020",
+      "developer": "DEV_B",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "files": [
+        "Procfile"
+      ],
+      "commit_message": "adjust(bootstrap): deployment entrypoint",
+      "commit_body": "",
+      "date": "2021-02-16T12:29:13",
+      "branch": "feature/bootstrap-20",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_A / bootstrap / DEV_B"
+    },
+    {
+      "commit_id": "c021",
+      "phase": "PHASE_A",
+      "feature_id": "F021",
+      "developer": "DEV_C",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "files": [
+        "README.rst"
+      ],
+      "commit_message": "update the bootstrap config",
+      "commit_body": "",
+      "date": "2021-02-18T13:40:20",
+      "branch": "fix/bootstrap-21",
+      "is_fix_commit": true,
+      "linked_issue_number": null,
+      "notes": "PHASE_A / bootstrap / DEV_C"
+    },
+    {
+      "commit_id": "c022",
+      "phase": "PHASE_A",
+      "feature_id": "F022",
+      "developer": "DEV_A",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "files": [
+        "requirements.txt"
+      ],
+      "commit_message": "fix startup settings",
+      "commit_body": "Keeps the change scoped to bootstrap and preserves the existing behavior.",
+      "date": "2021-02-21T10:51:27",
+      "branch": "feature/bootstrap-22",
+      "is_fix_commit": false,
+      "linked_issue_number": 6,
+      "notes": "PHASE_A / bootstrap / DEV_A"
+    },
+    {
+      "commit_id": "c023",
+      "phase": "PHASE_A",
+      "feature_id": "F023",
+      "developer": "DEV_B",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "files": [
+        "microfinance/settings.py",
+        "README.rst"
+      ],
+      "commit_message": "test(bootstrap): initial project files",
+      "commit_body": "",
+      "date": "2021-02-23T11:02:34",
+      "branch": "feature/bootstrap-23",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_A / bootstrap / DEV_B"
+    },
+    {
+      "commit_id": "c024",
+      "phase": "PHASE_A",
+      "feature_id": "F024",
+      "developer": "DEV_C",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "files": [
+        "microfinance/settings_local.py"
+      ],
+      "commit_message": "polish the deployment entrypoint",
+      "commit_body": "",
+      "date": "2021-02-25T16:13:41",
+      "branch": "feature/bootstrap-24",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_A / bootstrap / DEV_C"
+    },
+    {
+      "commit_id": "c025",
+      "phase": "PHASE_A",
+      "feature_id": "F025",
+      "developer": "DEV_A",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "files": [
+        "Procfile",
+        "requirements.txt"
+      ],
+      "commit_message": "tighten bootstrap config",
+      "commit_body": "",
+      "date": "2021-02-27T10:24:48",
+      "branch": "fix/bootstrap-25",
+      "is_fix_commit": false,
+      "linked_issue_number": 7,
+      "notes": "PHASE_A / bootstrap / DEV_A"
+    },
+    {
+      "commit_id": "c026",
+      "phase": "PHASE_A",
+      "feature_id": "F026",
+      "developer": "DEV_B",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "files": [
+        "README.rst"
+      ],
+      "commit_message": "fix(bootstrap): startup settings",
+      "commit_body": "",
+      "date": "2021-03-02T10:35:55",
+      "branch": "feature/bootstrap-26",
+      "is_fix_commit": true,
+      "linked_issue_number": null,
+      "notes": "PHASE_A / bootstrap / DEV_B"
+    },
+    {
+      "commit_id": "c027",
+      "phase": "PHASE_A",
+      "feature_id": "F027",
+      "developer": "DEV_C",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "files": [
+        "requirements.txt"
+      ],
+      "commit_message": "wire the initial project files",
+      "commit_body": "This is the small cleanup pass that came out of QA feedback.",
+      "date": "2021-03-04T13:46:02",
+      "branch": "feature/bootstrap-27",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_A / bootstrap / DEV_C"
+    },
+    {
+      "commit_id": "c028",
+      "phase": "PHASE_A",
+      "feature_id": "F028",
+      "developer": "DEV_A",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "files": [
+        "microfinance/settings.py"
+      ],
+      "commit_message": "guard deployment entrypoint",
+      "commit_body": "Follow-up after review. The main path is unchanged; the null case is now handled.",
+      "date": "2021-03-06T10:57:09",
+      "branch": "feature/bootstrap-28",
+      "is_fix_commit": false,
+      "linked_issue_number": 7,
+      "notes": "PHASE_A / bootstrap / DEV_A"
+    },
+    {
+      "commit_id": "c029",
+      "phase": "PHASE_A",
+      "feature_id": "F029",
+      "developer": "DEV_B",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "files": [
+        "microfinance/settings_local.py"
+      ],
+      "commit_message": "feat(bootstrap): bootstrap config",
+      "commit_body": "Keeps the change scoped to bootstrap and preserves the existing behavior.",
+      "date": "2021-03-09T09:08:16",
+      "branch": "fix/bootstrap-29",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_A / bootstrap / DEV_B"
+    },
+    {
+      "commit_id": "c030",
+      "phase": "PHASE_A",
+      "feature_id": "F030",
+      "developer": "DEV_C",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "files": [
+        "Procfile"
+      ],
+      "commit_message": "fix the startup settings",
+      "commit_body": "",
+      "date": "2021-03-11T16:19:23",
+      "branch": "feature/bootstrap-30",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_A / bootstrap / DEV_C"
+    },
+    {
+      "commit_id": "c031",
+      "phase": "PHASE_A",
+      "feature_id": "F001",
+      "developer": "DEV_A",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "files": [
+        "README.rst",
+        "microfinance/settings.py"
+      ],
+      "commit_message": "refactor initial project files",
+      "commit_body": "",
+      "date": "2021-03-13T10:30:30",
+      "branch": "feature/bootstrap-31",
+      "is_fix_commit": true,
+      "linked_issue_number": 8,
+      "notes": "PHASE_A / bootstrap / DEV_A"
+    },
+    {
+      "commit_id": "c032",
+      "phase": "PHASE_A",
+      "feature_id": "F002",
+      "developer": "DEV_B",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "files": [
+        "requirements.txt"
+      ],
+      "commit_message": "adjust(bootstrap): deployment entrypoint",
+      "commit_body": "",
+      "date": "2021-03-15T12:41:37",
+      "branch": "feature/bootstrap-32",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_A / bootstrap / DEV_B"
+    },
+    {
+      "commit_id": "c033",
+      "phase": "PHASE_A",
+      "feature_id": "F003",
+      "developer": "DEV_C",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "files": [
+        "microfinance/settings.py"
+      ],
+      "commit_message": "update the bootstrap config",
+      "commit_body": "",
+      "date": "2021-03-18T13:52:44",
+      "branch": "fix/bootstrap-33",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_A / bootstrap / DEV_C"
+    },
+    {
+      "commit_id": "c034",
+      "phase": "PHASE_A",
+      "feature_id": "F004",
+      "developer": "DEV_A",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "files": [
+        "microfinance/settings_local.py",
+        "requirements.txt"
+      ],
+      "commit_message": "fix startup settings",
+      "commit_body": "",
+      "date": "2021-03-20T10:03:51",
+      "branch": "feature/bootstrap-34",
+      "is_fix_commit": false,
+      "linked_issue_number": 9,
+      "notes": "PHASE_A / bootstrap / DEV_A"
+    },
+    {
+      "commit_id": "c035",
+      "phase": "PHASE_A",
+      "feature_id": "F005",
+      "developer": "DEV_B",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "files": [
+        "Procfile"
+      ],
+      "commit_message": "test(bootstrap): initial project files",
+      "commit_body": "",
+      "date": "2021-03-22T11:14:58",
+      "branch": "feature/bootstrap-35",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_A / bootstrap / DEV_B"
+    },
+    {
+      "commit_id": "c036",
+      "phase": "PHASE_A",
+      "feature_id": "F006",
+      "developer": "DEV_C",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "files": [
+        "README.rst"
+      ],
+      "commit_message": "polish the deployment entrypoint",
+      "commit_body": "Keeps the change scoped to bootstrap and preserves the existing behavior.",
+      "date": "2021-03-24T16:25:05",
+      "branch": "feature/bootstrap-36",
+      "is_fix_commit": true,
+      "linked_issue_number": null,
+      "notes": "PHASE_A / bootstrap / DEV_C"
+    },
+    {
+      "commit_id": "c037",
+      "phase": "PHASE_A",
+      "feature_id": "F007",
+      "developer": "DEV_A",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "files": [
+        "requirements.txt",
+        "microfinance/settings_local.py"
+      ],
+      "commit_message": "tighten bootstrap config",
+      "commit_body": "Follow-up after review. The main path is unchanged; the null case is now handled.",
+      "date": "2021-03-27T10:36:12",
+      "branch": "fix/bootstrap-37",
+      "is_fix_commit": false,
+      "linked_issue_number": 10,
+      "notes": "PHASE_A / bootstrap / DEV_A"
+    },
+    {
+      "commit_id": "c038",
+      "phase": "PHASE_A",
+      "feature_id": "F008",
+      "developer": "DEV_B",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "files": [
+        "microfinance/settings.py"
+      ],
+      "commit_message": "fix(bootstrap): startup settings",
+      "commit_body": "",
+      "date": "2021-03-29T10:47:19",
+      "branch": "feature/bootstrap-38",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_A / bootstrap / DEV_B"
+    },
+    {
+      "commit_id": "c039",
+      "phase": "PHASE_A",
+      "feature_id": "F009",
+      "developer": "DEV_C",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "files": [
+        "microfinance/settings_local.py"
+      ],
+      "commit_message": "wire the initial project files",
+      "commit_body": "",
+      "date": "2021-03-31T13:58:26",
+      "branch": "feature/bootstrap-39",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_A / bootstrap / DEV_C"
+    },
+    {
+      "commit_id": "c040",
+      "phase": "PHASE_A",
+      "feature_id": "F010",
+      "developer": "DEV_A",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "files": [
+        "Procfile"
+      ],
+      "commit_message": "guard deployment entrypoint",
+      "commit_body": "This is the small cleanup pass that came out of QA feedback.",
+      "date": "2021-04-03T10:09:33",
+      "branch": "feature/bootstrap-40",
+      "is_fix_commit": false,
+      "linked_issue_number": 10,
+      "notes": "PHASE_A / bootstrap / DEV_A"
+    },
+    {
+      "commit_id": "c041",
+      "phase": "PHASE_A",
+      "feature_id": "F011",
+      "developer": "DEV_B",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "files": [
+        "README.rst"
+      ],
+      "commit_message": "feat(bootstrap): bootstrap config",
+      "commit_body": "",
+      "date": "2021-04-05T09:20:40",
+      "branch": "fix/bootstrap-41",
+      "is_fix_commit": true,
+      "linked_issue_number": null,
+      "notes": "PHASE_A / bootstrap / DEV_B"
+    },
+    {
+      "commit_id": "c042",
+      "phase": "PHASE_A",
+      "feature_id": "F012",
+      "developer": "DEV_C",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "files": [
+        "requirements.txt"
+      ],
+      "commit_message": "fix the startup settings",
+      "commit_body": "",
+      "date": "2021-04-07T16:31:47",
+      "branch": "feature/bootstrap-42",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_A / bootstrap / DEV_C"
+    },
+    {
+      "commit_id": "c043",
+      "phase": "PHASE_A",
+      "feature_id": "F013",
+      "developer": "DEV_A",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "files": [
+        "microfinance/settings.py",
+        "Procfile"
+      ],
+      "commit_message": "refactor initial project files",
+      "commit_body": "Keeps the change scoped to bootstrap and preserves the existing behavior.",
+      "date": "2021-04-09T10:42:54",
+      "branch": "feature/bootstrap-43",
+      "is_fix_commit": false,
+      "linked_issue_number": 11,
+      "notes": "PHASE_A / bootstrap / DEV_A"
+    },
+    {
+      "commit_id": "c044",
+      "phase": "PHASE_A",
+      "feature_id": "F014",
+      "developer": "DEV_B",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "files": [
+        "microfinance/settings_local.py"
+      ],
+      "commit_message": "adjust(bootstrap): deployment entrypoint",
+      "commit_body": "",
+      "date": "2021-04-12T12:53:01",
+      "branch": "feature/bootstrap-44",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_A / bootstrap / DEV_B"
+    },
+    {
+      "commit_id": "c045",
+      "phase": "PHASE_A",
+      "feature_id": "F015",
+      "developer": "DEV_C",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "files": [
+        "Procfile",
+        "microfinance/settings.py"
+      ],
+      "commit_message": "update the bootstrap config",
+      "commit_body": "",
+      "date": "2021-04-14T13:04:08",
+      "branch": "fix/bootstrap-45",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_A / bootstrap / DEV_C"
+    },
+    {
+      "commit_id": "c046",
+      "phase": "PHASE_A",
+      "feature_id": "F016",
+      "developer": "DEV_A",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "files": [
+        "README.rst"
+      ],
+      "commit_message": "fix startup settings",
+      "commit_body": "Follow-up after review. The main path is unchanged; the null case is now handled.",
+      "date": "2021-04-16T10:15:15",
+      "branch": "feature/bootstrap-46",
+      "is_fix_commit": true,
+      "linked_issue_number": 12,
+      "notes": "PHASE_A / bootstrap / DEV_A"
+    },
+    {
+      "commit_id": "c047",
+      "phase": "PHASE_B",
+      "feature_id": "F017",
+      "developer": "DEV_B",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "files": [
+        "micro_admin/admin.py"
+      ],
+      "commit_message": "test(data-layer): admin tweaks",
+      "commit_body": "",
+      "date": "2021-04-19T11:26:22",
+      "branch": "feature/data-layer-47",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_B / data-layer / DEV_B"
+    },
+    {
+      "commit_id": "c048",
+      "phase": "PHASE_B",
+      "feature_id": "F018",
+      "developer": "DEV_C",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "files": [
+        "micro_admin/migrations/0001_initial.py"
+      ],
+      "commit_message": "polish the migration cleanup",
+      "commit_body": "",
+      "date": "2021-04-21T16:37:29",
+      "branch": "feature/data-layer-48",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_B / data-layer / DEV_C"
+    },
+    {
+      "commit_id": "c049",
+      "phase": "PHASE_B",
+      "feature_id": "F019",
+      "developer": "DEV_A",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "files": [
+        "micro_admin/models.py",
+        "micro_admin/admin.py"
+      ],
+      "commit_message": "tighten model wiring",
+      "commit_body": "",
+      "date": "2021-04-23T10:48:36",
+      "branch": "fix/data-layer-49",
+      "is_fix_commit": false,
+      "linked_issue_number": 13,
+      "notes": "PHASE_B / data-layer / DEV_A"
+    },
+    {
+      "commit_id": "c050",
+      "phase": "PHASE_B",
+      "feature_id": "F020",
+      "developer": "DEV_B",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "files": [
+        "micro_admin/forms.py"
+      ],
+      "commit_message": "fix(data-layer): form validation",
+      "commit_body": "Keeps the change scoped to data-layer and preserves the existing behavior.",
+      "date": "2021-04-25T10:59:43",
+      "branch": "feature/data-layer-50",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_B / data-layer / DEV_B"
+    },
+    {
+      "commit_id": "c051",
+      "phase": "PHASE_B",
+      "feature_id": "F021",
+      "developer": "DEV_C",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "files": [
+        "micro_admin/admin.py"
+      ],
+      "commit_message": "wire the admin tweaks",
+      "commit_body": "",
+      "date": "2021-04-28T13:10:50",
+      "branch": "feature/data-layer-51",
+      "is_fix_commit": true,
+      "linked_issue_number": null,
+      "notes": "PHASE_B / data-layer / DEV_C"
+    },
+    {
+      "commit_id": "c052",
+      "phase": "PHASE_B",
+      "feature_id": "F022",
+      "developer": "DEV_A",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "files": [
+        "micro_admin/migrations/0001_initial.py"
+      ],
+      "commit_message": "guard migration cleanup",
+      "commit_body": "",
+      "date": "2021-04-30T10:21:57",
+      "branch": "feature/data-layer-52",
+      "is_fix_commit": false,
+      "linked_issue_number": 13,
+      "notes": "PHASE_B / data-layer / DEV_A"
+    },
+    {
+      "commit_id": "c053",
+      "phase": "PHASE_B",
+      "feature_id": "F023",
+      "developer": "DEV_B",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "files": [
+        "micro_admin/models.py"
+      ],
+      "commit_message": "feat(data-layer): model wiring",
+      "commit_body": "This is the small cleanup pass that came out of QA feedback.",
+      "date": "2021-05-02T09:32:04",
+      "branch": "fix/data-layer-53",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_B / data-layer / DEV_B"
+    },
+    {
+      "commit_id": "c054",
+      "phase": "PHASE_B",
+      "feature_id": "F024",
+      "developer": "DEV_C",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "files": [
+        "micro_admin/forms.py"
+      ],
+      "commit_message": "fix the form validation",
+      "commit_body": "",
+      "date": "2021-05-04T16:43:11",
+      "branch": "feature/data-layer-54",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_B / data-layer / DEV_C"
+    },
+    {
+      "commit_id": "c055",
+      "phase": "PHASE_B",
+      "feature_id": "F025",
+      "developer": "DEV_A",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "files": [
+        "micro_admin/admin.py",
+        "micro_admin/models.py"
+      ],
+      "commit_message": "refactor admin tweaks",
+      "commit_body": "Follow-up after review. The main path is unchanged; the null case is now handled.",
+      "date": "2021-05-07T10:54:18",
+      "branch": "feature/data-layer-55",
+      "is_fix_commit": false,
+      "linked_issue_number": 14,
+      "notes": "PHASE_B / data-layer / DEV_A"
+    },
+    {
+      "commit_id": "c056",
+      "phase": "PHASE_B",
+      "feature_id": "F026",
+      "developer": "DEV_B",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "files": [
+        "micro_admin/migrations/0001_initial.py",
+        "micro_admin/admin.py"
+      ],
+      "commit_message": "adjust(data-layer): migration cleanup",
+      "commit_body": "",
+      "date": "2021-05-09T12:05:25",
+      "branch": "feature/data-layer-56",
+      "is_fix_commit": true,
+      "linked_issue_number": null,
+      "notes": "PHASE_B / data-layer / DEV_B"
+    },
+    {
+      "commit_id": "c057",
+      "phase": "PHASE_B",
+      "feature_id": "F027",
+      "developer": "DEV_C",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "files": [
+        "micro_admin/models.py"
+      ],
+      "commit_message": "update the model wiring",
+      "commit_body": "Keeps the change scoped to data-layer and preserves the existing behavior.",
+      "date": "2021-05-11T13:16:32",
+      "branch": "fix/data-layer-57",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_B / data-layer / DEV_C"
+    },
+    {
+      "commit_id": "c058",
+      "phase": "PHASE_B",
+      "feature_id": "F028",
+      "developer": "DEV_A",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "files": [
+        "micro_admin/forms.py"
+      ],
+      "commit_message": "fix form validation",
+      "commit_body": "",
+      "date": "2021-05-14T10:27:39",
+      "branch": "feature/data-layer-58",
+      "is_fix_commit": false,
+      "linked_issue_number": 15,
+      "notes": "PHASE_B / data-layer / DEV_A"
+    },
+    {
+      "commit_id": "c059",
+      "phase": "PHASE_B",
+      "feature_id": "F029",
+      "developer": "DEV_B",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "files": [
+        "micro_admin/admin.py"
+      ],
+      "commit_message": "test(data-layer): admin tweaks",
+      "commit_body": "",
+      "date": "2021-05-16T11:38:46",
+      "branch": "feature/data-layer-59",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_B / data-layer / DEV_B"
+    },
+    {
+      "commit_id": "c060",
+      "phase": "PHASE_B",
+      "feature_id": "F030",
+      "developer": "DEV_C",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "files": [
+        "micro_admin/migrations/0001_initial.py"
+      ],
+      "commit_message": "polish the migration cleanup",
+      "commit_body": "",
+      "date": "2021-05-18T16:49:53",
+      "branch": "feature/data-layer-60",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_B / data-layer / DEV_C"
+    },
+    {
+      "commit_id": "c061",
+      "phase": "PHASE_B",
+      "feature_id": "F001",
+      "developer": "DEV_A",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "files": [
+        "micro_admin/models.py",
+        "micro_admin/admin.py"
+      ],
+      "commit_message": "tighten model wiring",
+      "commit_body": "",
+      "date": "2021-05-20T10:00:00",
+      "branch": "fix/data-layer-61",
+      "is_fix_commit": true,
+      "linked_issue_number": 16,
+      "notes": "PHASE_B / data-layer / DEV_A"
+    },
+    {
+      "commit_id": "c062",
+      "phase": "PHASE_B",
+      "feature_id": "F002",
+      "developer": "DEV_B",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "files": [
+        "micro_admin/forms.py"
+      ],
+      "commit_message": "fix(data-layer): form validation",
+      "commit_body": "",
+      "date": "2021-05-23T10:11:07",
+      "branch": "feature/data-layer-62",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_B / data-layer / DEV_B"
+    },
+    {
+      "commit_id": "c063",
+      "phase": "PHASE_B",
+      "feature_id": "F003",
+      "developer": "DEV_C",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "files": [
+        "micro_admin/admin.py"
+      ],
+      "commit_message": "wire the admin tweaks",
+      "commit_body": "",
+      "date": "2021-05-25T13:22:14",
+      "branch": "feature/data-layer-63",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_B / data-layer / DEV_C"
+    },
+    {
+      "commit_id": "c064",
+      "phase": "PHASE_B",
+      "feature_id": "F004",
+      "developer": "DEV_A",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "files": [
+        "micro_admin/migrations/0001_initial.py"
+      ],
+      "commit_message": "guard migration cleanup",
+      "commit_body": "Keeps the change scoped to data-layer and preserves the existing behavior.",
+      "date": "2021-05-27T10:33:21",
+      "branch": "feature/data-layer-64",
+      "is_fix_commit": false,
+      "linked_issue_number": 16,
+      "notes": "PHASE_B / data-layer / DEV_A"
+    },
+    {
+      "commit_id": "c065",
+      "phase": "PHASE_B",
+      "feature_id": "F005",
+      "developer": "DEV_B",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "files": [
+        "micro_admin/models.py"
+      ],
+      "commit_message": "feat(data-layer): model wiring",
+      "commit_body": "",
+      "date": "2021-05-29T09:44:28",
+      "branch": "fix/data-layer-65",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_B / data-layer / DEV_B"
+    },
+    {
+      "commit_id": "c066",
+      "phase": "PHASE_B",
+      "feature_id": "F006",
+      "developer": "DEV_C",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "files": [
+        "micro_admin/forms.py"
+      ],
+      "commit_message": "fix the form validation",
+      "commit_body": "This is the small cleanup pass that came out of QA feedback.",
+      "date": "2021-06-01T16:55:35",
+      "branch": "feature/data-layer-66",
+      "is_fix_commit": true,
+      "linked_issue_number": null,
+      "notes": "PHASE_B / data-layer / DEV_C"
+    },
+    {
+      "commit_id": "c067",
+      "phase": "PHASE_B",
+      "feature_id": "F007",
+      "developer": "DEV_A",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "files": [
+        "micro_admin/admin.py",
+        "micro_admin/models.py",
+        "micro_admin/forms.py"
+      ],
+      "commit_message": "refactor admin tweaks",
+      "commit_body": "",
+      "date": "2021-06-03T10:06:42",
+      "branch": "feature/data-layer-67",
+      "is_fix_commit": false,
+      "linked_issue_number": 17,
+      "notes": "PHASE_B / data-layer / DEV_A"
+    },
+    {
+      "commit_id": "c068",
+      "phase": "PHASE_B",
+      "feature_id": "F008",
+      "developer": "DEV_B",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "files": [
+        "micro_admin/migrations/0001_initial.py"
+      ],
+      "commit_message": "adjust(data-layer): migration cleanup",
+      "commit_body": "",
+      "date": "2021-06-05T12:17:49",
+      "branch": "feature/data-layer-68",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_B / data-layer / DEV_B"
+    },
+    {
+      "commit_id": "c069",
+      "phase": "PHASE_B",
+      "feature_id": "F009",
+      "developer": "DEV_C",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "files": [
+        "micro_admin/models.py"
+      ],
+      "commit_message": "update the model wiring",
+      "commit_body": "",
+      "date": "2021-06-08T13:28:56",
+      "branch": "fix/data-layer-69",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_B / data-layer / DEV_C"
+    },
+    {
+      "commit_id": "c070",
+      "phase": "PHASE_B",
+      "feature_id": "F010",
+      "developer": "DEV_A",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "files": [
+        "micro_admin/forms.py"
+      ],
+      "commit_message": "fix form validation",
+      "commit_body": "",
+      "date": "2021-06-10T10:39:03",
+      "branch": "feature/data-layer-70",
+      "is_fix_commit": false,
+      "linked_issue_number": 18,
+      "notes": "PHASE_B / data-layer / DEV_A"
+    },
+    {
+      "commit_id": "c071",
+      "phase": "PHASE_B",
+      "feature_id": "F011",
+      "developer": "DEV_B",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "files": [
+        "micro_admin/admin.py"
+      ],
+      "commit_message": "test(data-layer): admin tweaks",
+      "commit_body": "Keeps the change scoped to data-layer and preserves the existing behavior.",
+      "date": "2021-06-12T11:50:10",
+      "branch": "feature/data-layer-71",
+      "is_fix_commit": true,
+      "linked_issue_number": null,
+      "notes": "PHASE_B / data-layer / DEV_B"
+    },
+    {
+      "commit_id": "c072",
+      "phase": "PHASE_B",
+      "feature_id": "F012",
+      "developer": "DEV_C",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "files": [
+        "micro_admin/migrations/0001_initial.py"
+      ],
+      "commit_message": "polish the migration cleanup",
+      "commit_body": "",
+      "date": "2021-06-14T16:01:17",
+      "branch": "feature/data-layer-72",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_B / data-layer / DEV_C"
+    },
+    {
+      "commit_id": "c073",
+      "phase": "PHASE_B",
+      "feature_id": "F013",
+      "developer": "DEV_A",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "files": [
+        "micro_admin/models.py",
+        "micro_admin/admin.py"
+      ],
+      "commit_message": "tighten model wiring",
+      "commit_body": "Follow-up after review. The main path is unchanged; the null case is now handled.",
+      "date": "2021-06-17T10:12:24",
+      "branch": "fix/data-layer-73",
+      "is_fix_commit": false,
+      "linked_issue_number": 19,
+      "notes": "PHASE_B / data-layer / DEV_A"
+    },
+    {
+      "commit_id": "c074",
+      "phase": "PHASE_B",
+      "feature_id": "F014",
+      "developer": "DEV_B",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "files": [
+        "micro_admin/forms.py"
+      ],
+      "commit_message": "fix(data-layer): form validation",
+      "commit_body": "",
+      "date": "2021-06-19T10:23:31",
+      "branch": "feature/data-layer-74",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_B / data-layer / DEV_B"
+    },
+    {
+      "commit_id": "c075",
+      "phase": "PHASE_B",
+      "feature_id": "F015",
+      "developer": "DEV_C",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "files": [
+        "micro_admin/admin.py"
+      ],
+      "commit_message": "wire the admin tweaks",
+      "commit_body": "",
+      "date": "2021-06-21T13:34:38",
+      "branch": "feature/data-layer-75",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_B / data-layer / DEV_C"
+    },
+    {
+      "commit_id": "c076",
+      "phase": "PHASE_B",
+      "feature_id": "F016",
+      "developer": "DEV_A",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "files": [
+        "micro_admin/migrations/0001_initial.py"
+      ],
+      "commit_message": "guard migration cleanup",
+      "commit_body": "",
+      "date": "2021-06-23T10:45:45",
+      "branch": "feature/data-layer-76",
+      "is_fix_commit": true,
+      "linked_issue_number": 19,
+      "notes": "PHASE_B / data-layer / DEV_A"
+    },
+    {
+      "commit_id": "c077",
+      "phase": "PHASE_B",
+      "feature_id": "F017",
+      "developer": "DEV_B",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "files": [
+        "micro_admin/models.py"
+      ],
+      "commit_message": "feat(data-layer): model wiring",
+      "commit_body": "",
+      "date": "2021-06-26T09:56:52",
+      "branch": "fix/data-layer-77",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_B / data-layer / DEV_B"
+    },
+    {
+      "commit_id": "c078",
+      "phase": "PHASE_B",
+      "feature_id": "F018",
+      "developer": "DEV_C",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "files": [
+        "micro_admin/forms.py",
+        "micro_admin/models.py"
+      ],
+      "commit_message": "fix the form validation",
+      "commit_body": "Keeps the change scoped to data-layer and preserves the existing behavior.",
+      "date": "2021-06-28T16:07:59",
+      "branch": "feature/data-layer-78",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_B / data-layer / DEV_C"
+    },
+    {
+      "commit_id": "c079",
+      "phase": "PHASE_B",
+      "feature_id": "F019",
+      "developer": "DEV_A",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "files": [
+        "micro_admin/admin.py",
+        "micro_admin/models.py"
+      ],
+      "commit_message": "refactor admin tweaks",
+      "commit_body": "This is the small cleanup pass that came out of QA feedback.",
+      "date": "2021-06-30T10:18:06",
+      "branch": "feature/data-layer-79",
+      "is_fix_commit": false,
+      "linked_issue_number": 20,
+      "notes": "PHASE_B / data-layer / DEV_A"
+    },
+    {
+      "commit_id": "c080",
+      "phase": "PHASE_B",
+      "feature_id": "F020",
+      "developer": "DEV_B",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "files": [
+        "micro_admin/migrations/0001_initial.py"
+      ],
+      "commit_message": "adjust(data-layer): migration cleanup",
+      "commit_body": "",
+      "date": "2021-07-03T12:29:13",
+      "branch": "feature/data-layer-80",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_B / data-layer / DEV_B"
+    },
+    {
+      "commit_id": "c081",
+      "phase": "PHASE_B",
+      "feature_id": "F021",
+      "developer": "DEV_C",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "files": [
+        "micro_admin/models.py"
+      ],
+      "commit_message": "update the model wiring",
+      "commit_body": "",
+      "date": "2021-07-05T13:40:20",
+      "branch": "fix/data-layer-81",
+      "is_fix_commit": true,
+      "linked_issue_number": null,
+      "notes": "PHASE_B / data-layer / DEV_C"
+    },
+    {
+      "commit_id": "c082",
+      "phase": "PHASE_B",
+      "feature_id": "F022",
+      "developer": "DEV_A",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "files": [
+        "micro_admin/forms.py"
+      ],
+      "commit_message": "fix form validation",
+      "commit_body": "Follow-up after review. The main path is unchanged; the null case is now handled.",
+      "date": "2021-07-07T10:51:27",
+      "branch": "feature/data-layer-82",
+      "is_fix_commit": false,
+      "linked_issue_number": 21,
+      "notes": "PHASE_B / data-layer / DEV_A"
+    },
+    {
+      "commit_id": "c083",
+      "phase": "PHASE_B",
+      "feature_id": "F023",
+      "developer": "DEV_B",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "files": [
+        "micro_admin/admin.py"
+      ],
+      "commit_message": "test(data-layer): admin tweaks",
+      "commit_body": "",
+      "date": "2021-07-09T11:02:34",
+      "branch": "feature/data-layer-83",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_B / data-layer / DEV_B"
+    },
+    {
+      "commit_id": "c084",
+      "phase": "PHASE_B",
+      "feature_id": "F024",
+      "developer": "DEV_C",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "files": [
+        "micro_admin/migrations/0001_initial.py"
+      ],
+      "commit_message": "polish the migration cleanup",
+      "commit_body": "",
+      "date": "2021-07-12T16:13:41",
+      "branch": "feature/data-layer-84",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_B / data-layer / DEV_C"
+    },
+    {
+      "commit_id": "c085",
+      "phase": "PHASE_B",
+      "feature_id": "F025",
+      "developer": "DEV_A",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "files": [
+        "micro_admin/models.py",
+        "micro_admin/admin.py"
+      ],
+      "commit_message": "tighten model wiring",
+      "commit_body": "Keeps the change scoped to data-layer and preserves the existing behavior.",
+      "date": "2021-07-14T10:24:48",
+      "branch": "fix/data-layer-85",
+      "is_fix_commit": false,
+      "linked_issue_number": 22,
+      "notes": "PHASE_B / data-layer / DEV_A"
+    },
+    {
+      "commit_id": "c086",
+      "phase": "PHASE_B",
+      "feature_id": "F026",
+      "developer": "DEV_B",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "files": [
+        "micro_admin/forms.py"
+      ],
+      "commit_message": "fix(data-layer): form validation",
+      "commit_body": "",
+      "date": "2021-07-16T10:35:55",
+      "branch": "feature/data-layer-86",
+      "is_fix_commit": true,
+      "linked_issue_number": null,
+      "notes": "PHASE_B / data-layer / DEV_B"
+    },
+    {
+      "commit_id": "c087",
+      "phase": "PHASE_B",
+      "feature_id": "F027",
+      "developer": "DEV_C",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "files": [
+        "micro_admin/admin.py"
+      ],
+      "commit_message": "wire the admin tweaks",
+      "commit_body": "",
+      "date": "2021-07-18T13:46:02",
+      "branch": "feature/data-layer-87",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_B / data-layer / DEV_C"
+    },
+    {
+      "commit_id": "c088",
+      "phase": "PHASE_B",
+      "feature_id": "F028",
+      "developer": "DEV_A",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "files": [
+        "micro_admin/migrations/0001_initial.py"
+      ],
+      "commit_message": "guard migration cleanup",
+      "commit_body": "",
+      "date": "2021-07-21T10:57:09",
+      "branch": "feature/data-layer-88",
+      "is_fix_commit": false,
+      "linked_issue_number": 22,
+      "notes": "PHASE_B / data-layer / DEV_A"
+    },
+    {
+      "commit_id": "c089",
+      "phase": "PHASE_B",
+      "feature_id": "F029",
+      "developer": "DEV_B",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "files": [
+        "micro_admin/models.py",
+        "micro_admin/migrations/0001_initial.py"
+      ],
+      "commit_message": "feat(data-layer): model wiring",
+      "commit_body": "",
+      "date": "2021-07-23T09:08:16",
+      "branch": "fix/data-layer-89",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_B / data-layer / DEV_B"
+    },
+    {
+      "commit_id": "c090",
+      "phase": "PHASE_B",
+      "feature_id": "F030",
+      "developer": "DEV_C",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "files": [
+        "micro_admin/forms.py"
+      ],
+      "commit_message": "fix the form validation",
+      "commit_body": "",
+      "date": "2021-07-25T16:19:23",
+      "branch": "feature/data-layer-90",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_B / data-layer / DEV_C"
+    },
+    {
+      "commit_id": "c091",
+      "phase": "PHASE_B",
+      "feature_id": "F001",
+      "developer": "DEV_A",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "files": [
+        "micro_admin/admin.py",
+        "micro_admin/models.py"
+      ],
+      "commit_message": "refactor admin tweaks",
+      "commit_body": "Follow-up after review. The main path is unchanged; the null case is now handled.",
+      "date": "2021-07-28T10:30:30",
+      "branch": "feature/data-layer-91",
+      "is_fix_commit": true,
+      "linked_issue_number": 23,
+      "notes": "PHASE_B / data-layer / DEV_A"
+    },
+    {
+      "commit_id": "c092",
+      "phase": "PHASE_B",
+      "feature_id": "F002",
+      "developer": "DEV_B",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "files": [
+        "micro_admin/migrations/0001_initial.py"
+      ],
+      "commit_message": "adjust(data-layer): migration cleanup",
+      "commit_body": "Keeps the change scoped to data-layer and preserves the existing behavior.",
+      "date": "2021-07-30T12:41:37",
+      "branch": "feature/data-layer-92",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_B / data-layer / DEV_B"
+    },
+    {
+      "commit_id": "c093",
+      "phase": "PHASE_C",
+      "feature_id": "F003",
+      "developer": "DEV_A",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "files": [
+        "micro_admin/views.py"
+      ],
+      "commit_message": "tighten bootstrap config",
+      "commit_body": "",
+      "date": "2021-08-01T12:52:44",
+      "branch": "fix/business-93",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_C / business / DEV_A"
+    },
+    {
+      "commit_id": "c094",
+      "phase": "PHASE_C",
+      "feature_id": "F004",
+      "developer": "DEV_B",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "files": [
+        "micro_admin/tasks.py"
+      ],
+      "commit_message": "fix(business): startup settings",
+      "commit_body": "",
+      "date": "2021-08-03T10:03:51",
+      "branch": "feature/business-94",
+      "is_fix_commit": false,
+      "linked_issue_number": 24,
+      "notes": "PHASE_C / business / DEV_B"
+    },
+    {
+      "commit_id": "c095",
+      "phase": "PHASE_C",
+      "feature_id": "F005",
+      "developer": "DEV_C",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "files": [
+        "core/mixins.py"
+      ],
+      "commit_message": "wire the initial project files",
+      "commit_body": "",
+      "date": "2021-08-06T15:14:58",
+      "branch": "feature/business-95",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_C / business / DEV_C"
+    },
+    {
+      "commit_id": "c096",
+      "phase": "PHASE_C",
+      "feature_id": "F006",
+      "developer": "DEV_D",
+      "github_token_env": "GITHUB_TOKEN_4",
+      "files": [
+        "loans/views.py"
+      ],
+      "commit_message": "verify: deployment entrypoint",
+      "commit_body": "Adds regression coverage and keeps the edge cases checked.",
+      "date": "2021-08-08T09:25:05",
+      "branch": "feature/business-96",
+      "is_fix_commit": true,
+      "linked_issue_number": null,
+      "notes": "PHASE_C / business / DEV_D"
+    },
+    {
+      "commit_id": "c097",
+      "phase": "PHASE_C",
+      "feature_id": "F007",
+      "developer": "DEV_A",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "files": [
+        "savings/views.py",
+        "core/utils.py"
+      ],
+      "commit_message": "tighten bootstrap config",
+      "commit_body": "",
+      "date": "2021-08-10T10:36:12",
+      "branch": "fix/business-97",
+      "is_fix_commit": false,
+      "linked_issue_number": 25,
+      "notes": "PHASE_C / business / DEV_A"
+    },
+    {
+      "commit_id": "c098",
+      "phase": "PHASE_C",
+      "feature_id": "F008",
+      "developer": "DEV_B",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "files": [
+        "micro_admin/tests.py"
+      ],
+      "commit_message": "fix(business): startup settings",
+      "commit_body": "",
+      "date": "2021-08-12T10:47:19",
+      "branch": "feature/business-98",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_C / business / DEV_B"
+    },
+    {
+      "commit_id": "c099",
+      "phase": "PHASE_C",
+      "feature_id": "F009",
+      "developer": "DEV_C",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "files": [
+        "core/utils.py"
+      ],
+      "commit_message": "wire the initial project files",
+      "commit_body": "Keeps the change scoped to business and preserves the existing behavior.",
+      "date": "2021-08-15T13:58:26",
+      "branch": "feature/business-99",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_C / business / DEV_C"
+    },
+    {
+      "commit_id": "c100",
+      "phase": "PHASE_C",
+      "feature_id": "F010",
+      "developer": "DEV_D",
+      "github_token_env": "GITHUB_TOKEN_4",
+      "files": [
+        "micro_admin/views.py",
+        "loans/views.py"
+      ],
+      "commit_message": "verify: deployment entrypoint",
+      "commit_body": "Follow-up after review. The main path is unchanged; the null case is now handled.",
+      "date": "2021-08-17T13:09:33",
+      "branch": "feature/business-100",
+      "is_fix_commit": false,
+      "linked_issue_number": 25,
+      "notes": "PHASE_C / business / DEV_D"
+    },
+    {
+      "commit_id": "c101",
+      "phase": "PHASE_C",
+      "feature_id": "F011",
+      "developer": "DEV_A",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "files": [
+        "micro_admin/tasks.py"
+      ],
+      "commit_message": "tighten bootstrap config",
+      "commit_body": "",
+      "date": "2021-08-19T11:20:40",
+      "branch": "fix/business-101",
+      "is_fix_commit": true,
+      "linked_issue_number": null,
+      "notes": "PHASE_C / business / DEV_A"
+    },
+    {
+      "commit_id": "c102",
+      "phase": "PHASE_C",
+      "feature_id": "F012",
+      "developer": "DEV_B",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "files": [
+        "core/mixins.py"
+      ],
+      "commit_message": "fix(business): startup settings",
+      "commit_body": "",
+      "date": "2021-08-22T10:31:47",
+      "branch": "feature/business-102",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_C / business / DEV_B"
+    },
+    {
+      "commit_id": "c103",
+      "phase": "PHASE_C",
+      "feature_id": "F013",
+      "developer": "DEV_C",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "files": [
+        "loans/views.py",
+        "micro_admin/tests.py"
+      ],
+      "commit_message": "wire the initial project files",
+      "commit_body": "",
+      "date": "2021-08-24T11:42:54",
+      "branch": "feature/business-103",
+      "is_fix_commit": false,
+      "linked_issue_number": 26,
+      "notes": "PHASE_C / business / DEV_C"
+    },
+    {
+      "commit_id": "c104",
+      "phase": "PHASE_C",
+      "feature_id": "F014",
+      "developer": "DEV_D",
+      "github_token_env": "GITHUB_TOKEN_4",
+      "files": [
+        "savings/views.py"
+      ],
+      "commit_message": "verify: deployment entrypoint",
+      "commit_body": "Adds regression coverage and keeps the edge cases checked.",
+      "date": "2021-08-26T12:53:01",
+      "branch": "feature/business-104",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_C / business / DEV_D"
+    },
+    {
+      "commit_id": "c105",
+      "phase": "PHASE_C",
+      "feature_id": "F015",
+      "developer": "DEV_A",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "files": [
+        "micro_admin/tests.py"
+      ],
+      "commit_message": "tighten bootstrap config",
+      "commit_body": "This is the small cleanup pass that came out of QA feedback.",
+      "date": "2021-08-28T12:04:08",
+      "branch": "fix/business-105",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_C / business / DEV_A"
+    },
+    {
+      "commit_id": "c106",
+      "phase": "PHASE_C",
+      "feature_id": "F016",
+      "developer": "DEV_B",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "files": [
+        "core/utils.py"
+      ],
+      "commit_message": "fix(business): startup settings",
+      "commit_body": "Keeps the change scoped to business and preserves the existing behavior.",
+      "date": "2021-08-31T10:15:15",
+      "branch": "feature/business-106",
+      "is_fix_commit": true,
+      "linked_issue_number": 27,
+      "notes": "PHASE_C / business / DEV_B"
+    },
+    {
+      "commit_id": "c107",
+      "phase": "PHASE_C",
+      "feature_id": "F017",
+      "developer": "DEV_C",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "files": [
+        "micro_admin/views.py"
+      ],
+      "commit_message": "wire the initial project files",
+      "commit_body": "",
+      "date": "2021-09-02T15:26:22",
+      "branch": "feature/business-107",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_C / business / DEV_C"
+    },
+    {
+      "commit_id": "c108",
+      "phase": "PHASE_C",
+      "feature_id": "F018",
+      "developer": "DEV_D",
+      "github_token_env": "GITHUB_TOKEN_4",
+      "files": [
+        "micro_admin/tasks.py"
+      ],
+      "commit_message": "verify: deployment entrypoint",
+      "commit_body": "Adds regression coverage and keeps the edge cases checked.",
+      "date": "2021-09-04T11:37:29",
+      "branch": "feature/business-108",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_C / business / DEV_D"
+    },
+    {
+      "commit_id": "c109",
+      "phase": "PHASE_C",
+      "feature_id": "F019",
+      "developer": "DEV_A",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "files": [
+        "core/mixins.py",
+        "savings/views.py"
+      ],
+      "commit_message": "tighten bootstrap config",
+      "commit_body": "Follow-up after review. The main path is unchanged; the null case is now handled.",
+      "date": "2021-09-06T10:48:36",
+      "branch": "fix/business-109",
+      "is_fix_commit": false,
+      "linked_issue_number": 28,
+      "notes": "PHASE_C / business / DEV_A"
+    },
+    {
+      "commit_id": "c110",
+      "phase": "PHASE_C",
+      "feature_id": "F020",
+      "developer": "DEV_B",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "files": [
+        "loans/views.py"
+      ],
+      "commit_message": "fix(business): startup settings",
+      "commit_body": "",
+      "date": "2021-09-09T10:59:43",
+      "branch": "feature/business-110",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_C / business / DEV_B"
+    },
+    {
+      "commit_id": "c111",
+      "phase": "PHASE_C",
+      "feature_id": "F021",
+      "developer": "DEV_C",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "files": [
+        "savings/views.py",
+        "micro_admin/views.py"
+      ],
+      "commit_message": "wire the initial project files",
+      "commit_body": "",
+      "date": "2021-09-11T13:10:50",
+      "branch": "feature/business-111",
+      "is_fix_commit": true,
+      "linked_issue_number": null,
+      "notes": "PHASE_C / business / DEV_C"
+    },
+    {
+      "commit_id": "c112",
+      "phase": "PHASE_C",
+      "feature_id": "F022",
+      "developer": "DEV_D",
+      "github_token_env": "GITHUB_TOKEN_4",
+      "files": [
+        "micro_admin/tests.py"
+      ],
+      "commit_message": "verify: deployment entrypoint",
+      "commit_body": "Adds regression coverage and keeps the edge cases checked.",
+      "date": "2021-09-13T10:21:57",
+      "branch": "feature/business-112",
+      "is_fix_commit": false,
+      "linked_issue_number": 28,
+      "notes": "PHASE_C / business / DEV_D"
+    },
+    {
+      "commit_id": "c113",
+      "phase": "PHASE_C",
+      "feature_id": "F023",
+      "developer": "DEV_A",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "files": [
+        "core/utils.py"
+      ],
+      "commit_message": "tighten bootstrap config",
+      "commit_body": "Keeps the change scoped to business and preserves the existing behavior.",
+      "date": "2021-09-16T11:32:04",
+      "branch": "fix/business-113",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_C / business / DEV_A"
+    },
+    {
+      "commit_id": "c114",
+      "phase": "PHASE_C",
+      "feature_id": "F024",
+      "developer": "DEV_B",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "files": [
+        "micro_admin/views.py"
+      ],
+      "commit_message": "fix(business): startup settings",
+      "commit_body": "",
+      "date": "2021-09-18T10:43:11",
+      "branch": "feature/business-114",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_C / business / DEV_B"
+    },
+    {
+      "commit_id": "c115",
+      "phase": "PHASE_C",
+      "feature_id": "F025",
+      "developer": "DEV_C",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "files": [
+        "micro_admin/tasks.py",
+        "loans/views.py"
+      ],
+      "commit_message": "wire the initial project files",
+      "commit_body": "",
+      "date": "2021-09-20T11:54:18",
+      "branch": "feature/business-115",
+      "is_fix_commit": false,
+      "linked_issue_number": 29,
+      "notes": "PHASE_C / business / DEV_C"
+    },
+    {
+      "commit_id": "c116",
+      "phase": "PHASE_C",
+      "feature_id": "F026",
+      "developer": "DEV_D",
+      "github_token_env": "GITHUB_TOKEN_4",
+      "files": [
+        "core/mixins.py"
+      ],
+      "commit_message": "verify: deployment entrypoint",
+      "commit_body": "Adds regression coverage and keeps the edge cases checked.",
+      "date": "2021-09-22T09:05:25",
+      "branch": "feature/business-116",
+      "is_fix_commit": true,
+      "linked_issue_number": null,
+      "notes": "PHASE_C / business / DEV_D"
+    },
+    {
+      "commit_id": "c117",
+      "phase": "PHASE_C",
+      "feature_id": "F027",
+      "developer": "DEV_A",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "files": [
+        "loans/views.py"
+      ],
+      "commit_message": "tighten bootstrap config",
+      "commit_body": "",
+      "date": "2021-09-25T12:16:32",
+      "branch": "fix/business-117",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_C / business / DEV_A"
+    },
+    {
+      "commit_id": "c118",
+      "phase": "PHASE_C",
+      "feature_id": "F028",
+      "developer": "DEV_B",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "files": [
+        "savings/views.py"
+      ],
+      "commit_message": "fix(business): startup settings",
+      "commit_body": "Follow-up after review. The main path is unchanged; the null case is now handled.",
+      "date": "2021-09-27T10:27:39",
+      "branch": "feature/business-118",
+      "is_fix_commit": false,
+      "linked_issue_number": 30,
+      "notes": "PHASE_C / business / DEV_B"
+    },
+    {
+      "commit_id": "c119",
+      "phase": "PHASE_C",
+      "feature_id": "F029",
+      "developer": "DEV_C",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "files": [
+        "micro_admin/tests.py"
+      ],
+      "commit_message": "wire the initial project files",
+      "commit_body": "",
+      "date": "2021-09-29T15:38:46",
+      "branch": "feature/business-119",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_C / business / DEV_C"
+    },
+    {
+      "commit_id": "c120",
+      "phase": "PHASE_C",
+      "feature_id": "F030",
+      "developer": "DEV_D",
+      "github_token_env": "GITHUB_TOKEN_4",
+      "files": [
+        "core/utils.py"
+      ],
+      "commit_message": "verify: deployment entrypoint",
+      "commit_body": "Keeps the change scoped to business and preserves the existing behavior.",
+      "date": "2021-10-01T13:49:53",
+      "branch": "feature/business-120",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_C / business / DEV_D"
+    },
+    {
+      "commit_id": "c121",
+      "phase": "PHASE_C",
+      "feature_id": "F001",
+      "developer": "DEV_A",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "files": [
+        "micro_admin/views.py",
+        "core/mixins.py"
+      ],
+      "commit_message": "tighten bootstrap config",
+      "commit_body": "",
+      "date": "2021-10-04T10:00:00",
+      "branch": "fix/business-121",
+      "is_fix_commit": true,
+      "linked_issue_number": 31,
+      "notes": "PHASE_C / business / DEV_A"
+    },
+    {
+      "commit_id": "c122",
+      "phase": "PHASE_C",
+      "feature_id": "F002",
+      "developer": "DEV_B",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "files": [
+        "micro_admin/tasks.py",
+        "savings/views.py"
+      ],
+      "commit_message": "fix(business): startup settings",
+      "commit_body": "",
+      "date": "2021-10-06T10:11:07",
+      "branch": "feature/business-122",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_C / business / DEV_B"
+    },
+    {
+      "commit_id": "c123",
+      "phase": "PHASE_C",
+      "feature_id": "F003",
+      "developer": "DEV_C",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "files": [
+        "core/mixins.py"
+      ],
+      "commit_message": "wire the initial project files",
+      "commit_body": "",
+      "date": "2021-10-08T13:22:14",
+      "branch": "feature/business-123",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_C / business / DEV_C"
+    },
+    {
+      "commit_id": "c124",
+      "phase": "PHASE_C",
+      "feature_id": "F004",
+      "developer": "DEV_D",
+      "github_token_env": "GITHUB_TOKEN_4",
+      "files": [
+        "loans/views.py"
+      ],
+      "commit_message": "verify: deployment entrypoint",
+      "commit_body": "Adds regression coverage and keeps the edge cases checked.",
+      "date": "2021-10-11T12:33:21",
+      "branch": "feature/business-124",
+      "is_fix_commit": false,
+      "linked_issue_number": 31,
+      "notes": "PHASE_C / business / DEV_D"
+    },
+    {
+      "commit_id": "c125",
+      "phase": "PHASE_C",
+      "feature_id": "F005",
+      "developer": "DEV_A",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "files": [
+        "savings/views.py"
+      ],
+      "commit_message": "tighten bootstrap config",
+      "commit_body": "",
+      "date": "2021-10-13T11:44:28",
+      "branch": "fix/business-125",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_C / business / DEV_A"
+    },
+    {
+      "commit_id": "c126",
+      "phase": "PHASE_C",
+      "feature_id": "F006",
+      "developer": "DEV_B",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "files": [
+        "micro_admin/tests.py"
+      ],
+      "commit_message": "fix(business): startup settings",
+      "commit_body": "",
+      "date": "2021-10-15T10:55:35",
+      "branch": "feature/business-126",
+      "is_fix_commit": true,
+      "linked_issue_number": null,
+      "notes": "PHASE_C / business / DEV_B"
+    },
+    {
+      "commit_id": "c127",
+      "phase": "PHASE_C",
+      "feature_id": "F007",
+      "developer": "DEV_C",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "files": [
+        "core/utils.py",
+        "micro_admin/tasks.py"
+      ],
+      "commit_message": "wire the initial project files",
+      "commit_body": "Keeps the change scoped to business and preserves the existing behavior.",
+      "date": "2021-10-17T11:06:42",
+      "branch": "feature/business-127",
+      "is_fix_commit": false,
+      "linked_issue_number": 32,
+      "notes": "PHASE_C / business / DEV_C"
+    },
+    {
+      "commit_id": "c128",
+      "phase": "PHASE_C",
+      "feature_id": "F008",
+      "developer": "DEV_D",
+      "github_token_env": "GITHUB_TOKEN_4",
+      "files": [
+        "micro_admin/views.py"
+      ],
+      "commit_message": "verify: deployment entrypoint",
+      "commit_body": "Adds regression coverage and keeps the edge cases checked.",
+      "date": "2021-10-20T11:17:49",
+      "branch": "feature/business-128",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_C / business / DEV_D"
+    },
+    {
+      "commit_id": "c129",
+      "phase": "PHASE_C",
+      "feature_id": "F009",
+      "developer": "DEV_A",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "files": [
+        "micro_admin/tasks.py"
+      ],
+      "commit_message": "tighten bootstrap config",
+      "commit_body": "",
+      "date": "2021-10-22T12:28:56",
+      "branch": "fix/business-129",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_C / business / DEV_A"
+    },
+    {
+      "commit_id": "c130",
+      "phase": "PHASE_C",
+      "feature_id": "F010",
+      "developer": "DEV_B",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "files": [
+        "core/mixins.py"
+      ],
+      "commit_message": "fix(business): startup settings",
+      "commit_body": "",
+      "date": "2021-10-24T10:39:03",
+      "branch": "feature/business-130",
+      "is_fix_commit": false,
+      "linked_issue_number": 33,
+      "notes": "PHASE_C / business / DEV_B"
+    },
+    {
+      "commit_id": "c131",
+      "phase": "PHASE_C",
+      "feature_id": "F011",
+      "developer": "DEV_C",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "files": [
+        "loans/views.py"
+      ],
+      "commit_message": "wire the initial project files",
+      "commit_body": "This is the small cleanup pass that came out of QA feedback.",
+      "date": "2021-10-26T15:50:10",
+      "branch": "feature/business-131",
+      "is_fix_commit": true,
+      "linked_issue_number": null,
+      "notes": "PHASE_C / business / DEV_C"
+    },
+    {
+      "commit_id": "c132",
+      "phase": "PHASE_C",
+      "feature_id": "F012",
+      "developer": "DEV_D",
+      "github_token_env": "GITHUB_TOKEN_4",
+      "files": [
+        "savings/views.py"
+      ],
+      "commit_message": "verify: deployment entrypoint",
+      "commit_body": "Adds regression coverage and keeps the edge cases checked.",
+      "date": "2021-10-29T10:01:17",
+      "branch": "feature/business-132",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_C / business / DEV_D"
+    },
+    {
+      "commit_id": "c133",
+      "phase": "PHASE_C",
+      "feature_id": "F013",
+      "developer": "DEV_A",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "files": [
+        "micro_admin/tests.py",
+        "micro_admin/views.py",
+        "micro_admin/tasks.py"
+      ],
+      "commit_message": "tighten bootstrap config",
+      "commit_body": "",
+      "date": "2021-10-31T10:12:24",
+      "branch": "fix/business-133",
+      "is_fix_commit": false,
+      "linked_issue_number": 34,
+      "notes": "PHASE_C / business / DEV_A"
+    },
+    {
+      "commit_id": "c134",
+      "phase": "PHASE_C",
+      "feature_id": "F014",
+      "developer": "DEV_B",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "files": [
+        "core/utils.py"
+      ],
+      "commit_message": "fix(business): startup settings",
+      "commit_body": "Keeps the change scoped to business and preserves the existing behavior.",
+      "date": "2021-11-02T10:23:31",
+      "branch": "feature/business-134",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_C / business / DEV_B"
+    },
+    {
+      "commit_id": "c135",
+      "phase": "PHASE_C",
+      "feature_id": "F015",
+      "developer": "DEV_C",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "files": [
+        "micro_admin/views.py"
+      ],
+      "commit_message": "wire the initial project files",
+      "commit_body": "",
+      "date": "2021-11-05T13:34:38",
+      "branch": "feature/business-135",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_C / business / DEV_C"
+    },
+    {
+      "commit_id": "c136",
+      "phase": "PHASE_C",
+      "feature_id": "F016",
+      "developer": "DEV_D",
+      "github_token_env": "GITHUB_TOKEN_4",
+      "files": [
+        "micro_admin/tasks.py"
+      ],
+      "commit_message": "verify: deployment entrypoint",
+      "commit_body": "Follow-up after review. The main path is unchanged; the null case is now handled.",
+      "date": "2021-11-07T09:45:45",
+      "branch": "feature/business-136",
+      "is_fix_commit": true,
+      "linked_issue_number": 34,
+      "notes": "PHASE_C / business / DEV_D"
+    },
+    {
+      "commit_id": "c137",
+      "phase": "PHASE_C",
+      "feature_id": "F017",
+      "developer": "DEV_A",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "files": [
+        "core/mixins.py"
+      ],
+      "commit_message": "tighten bootstrap config",
+      "commit_body": "",
+      "date": "2021-11-09T11:56:52",
+      "branch": "fix/business-137",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_C / business / DEV_A"
+    },
+    {
+      "commit_id": "c138",
+      "phase": "PHASE_C",
+      "feature_id": "F018",
+      "developer": "DEV_B",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "files": [
+        "loans/views.py"
+      ],
+      "commit_message": "fix(business): startup settings",
+      "commit_body": "",
+      "date": "2021-11-11T10:07:59",
+      "branch": "feature/business-138",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_C / business / DEV_B"
+    },
+    {
+      "commit_id": "c139",
+      "phase": "PHASE_D",
+      "feature_id": "F019",
+      "developer": "DEV_A",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "files": [
+        "templates/index.html",
+        "microfinance/urls.py"
+      ],
+      "commit_message": "refactor response shape",
+      "commit_body": "",
+      "date": "2021-11-14T10:18:06",
+      "branch": "feature/api-139",
+      "is_fix_commit": false,
+      "linked_issue_number": 35,
+      "notes": "PHASE_D / api / DEV_A"
+    },
+    {
+      "commit_id": "c140",
+      "phase": "PHASE_D",
+      "feature_id": "F020",
+      "developer": "DEV_D",
+      "github_token_env": "GITHUB_TOKEN_4",
+      "files": [
+        "templates/reports.html"
+      ],
+      "commit_message": "verify: view integration",
+      "commit_body": "Adds regression coverage and keeps the edge cases checked.",
+      "date": "2021-11-16T13:29:13",
+      "branch": "feature/api-140",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_D / api / DEV_D"
+    },
+    {
+      "commit_id": "c141",
+      "phase": "PHASE_D",
+      "feature_id": "F021",
+      "developer": "DEV_B",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "files": [
+        "microfinance/urls.py"
+      ],
+      "commit_message": "feat(api): controller wiring",
+      "commit_body": "Keeps the change scoped to api and preserves the existing behavior.",
+      "date": "2021-11-18T09:40:20",
+      "branch": "fix/api-141",
+      "is_fix_commit": true,
+      "linked_issue_number": null,
+      "notes": "PHASE_D / api / DEV_B"
+    },
+    {
+      "commit_id": "c142",
+      "phase": "PHASE_D",
+      "feature_id": "F022",
+      "developer": "DEV_C",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "files": [
+        "core/views.py"
+      ],
+      "commit_message": "fix the route cleanup",
+      "commit_body": "",
+      "date": "2021-11-20T14:51:27",
+      "branch": "feature/api-142",
+      "is_fix_commit": false,
+      "linked_issue_number": 36,
+      "notes": "PHASE_D / api / DEV_C"
+    },
+    {
+      "commit_id": "c143",
+      "phase": "PHASE_D",
+      "feature_id": "F023",
+      "developer": "DEV_A",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "files": [
+        "templates/base.html"
+      ],
+      "commit_message": "refactor response shape",
+      "commit_body": "",
+      "date": "2021-11-23T11:02:34",
+      "branch": "feature/api-143",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_D / api / DEV_A"
+    },
+    {
+      "commit_id": "c144",
+      "phase": "PHASE_D",
+      "feature_id": "F024",
+      "developer": "DEV_D",
+      "github_token_env": "GITHUB_TOKEN_4",
+      "files": [
+        "templates/index.html",
+        "core/views.py"
+      ],
+      "commit_message": "verify: view integration",
+      "commit_body": "This is the small cleanup pass that came out of QA feedback.",
+      "date": "2021-11-25T12:13:41",
+      "branch": "feature/api-144",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_D / api / DEV_D"
+    },
+    {
+      "commit_id": "c145",
+      "phase": "PHASE_D",
+      "feature_id": "F025",
+      "developer": "DEV_B",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "files": [
+        "templates/reports.html",
+        "core/views.py"
+      ],
+      "commit_message": "feat(api): controller wiring",
+      "commit_body": "Follow-up after review. The main path is unchanged; the null case is now handled.",
+      "date": "2021-11-27T09:24:48",
+      "branch": "fix/api-145",
+      "is_fix_commit": false,
+      "linked_issue_number": 37,
+      "notes": "PHASE_D / api / DEV_B"
+    },
+    {
+      "commit_id": "c146",
+      "phase": "PHASE_D",
+      "feature_id": "F026",
+      "developer": "DEV_C",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "files": [
+        "microfinance/urls.py"
+      ],
+      "commit_message": "fix the route cleanup",
+      "commit_body": "",
+      "date": "2021-11-30T12:35:55",
+      "branch": "feature/api-146",
+      "is_fix_commit": true,
+      "linked_issue_number": null,
+      "notes": "PHASE_D / api / DEV_C"
+    },
+    {
+      "commit_id": "c147",
+      "phase": "PHASE_D",
+      "feature_id": "F027",
+      "developer": "DEV_A",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "files": [
+        "core/views.py"
+      ],
+      "commit_message": "refactor response shape",
+      "commit_body": "",
+      "date": "2021-12-02T12:46:02",
+      "branch": "feature/api-147",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_D / api / DEV_A"
+    },
+    {
+      "commit_id": "c148",
+      "phase": "PHASE_D",
+      "feature_id": "F028",
+      "developer": "DEV_D",
+      "github_token_env": "GITHUB_TOKEN_4",
+      "files": [
+        "templates/base.html"
+      ],
+      "commit_message": "verify: view integration",
+      "commit_body": "Keeps the change scoped to api and preserves the existing behavior.",
+      "date": "2021-12-04T11:57:09",
+      "branch": "feature/api-148",
+      "is_fix_commit": false,
+      "linked_issue_number": 37,
+      "notes": "PHASE_D / api / DEV_D"
+    },
+    {
+      "commit_id": "c149",
+      "phase": "PHASE_D",
+      "feature_id": "F029",
+      "developer": "DEV_B",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "files": [
+        "templates/index.html"
+      ],
+      "commit_message": "feat(api): controller wiring",
+      "commit_body": "",
+      "date": "2021-12-06T09:08:16",
+      "branch": "fix/api-149",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_D / api / DEV_B"
+    },
+    {
+      "commit_id": "c150",
+      "phase": "PHASE_D",
+      "feature_id": "F030",
+      "developer": "DEV_C",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "files": [
+        "templates/reports.html"
+      ],
+      "commit_message": "fix the route cleanup",
+      "commit_body": "",
+      "date": "2021-12-09T16:19:23",
+      "branch": "feature/api-150",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_D / api / DEV_C"
+    },
+    {
+      "commit_id": "c151",
+      "phase": "PHASE_D",
+      "feature_id": "F001",
+      "developer": "DEV_A",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "files": [
+        "microfinance/urls.py",
+        "templates/base.html"
+      ],
+      "commit_message": "refactor response shape",
+      "commit_body": "",
+      "date": "2021-12-11T10:30:30",
+      "branch": "feature/api-151",
+      "is_fix_commit": true,
+      "linked_issue_number": 38,
+      "notes": "PHASE_D / api / DEV_A"
+    },
+    {
+      "commit_id": "c152",
+      "phase": "PHASE_D",
+      "feature_id": "F002",
+      "developer": "DEV_D",
+      "github_token_env": "GITHUB_TOKEN_4",
+      "files": [
+        "core/views.py"
+      ],
+      "commit_message": "verify: view integration",
+      "commit_body": "Adds regression coverage and keeps the edge cases checked.",
+      "date": "2021-12-13T10:41:37",
+      "branch": "feature/api-152",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_D / api / DEV_D"
+    },
+    {
+      "commit_id": "c153",
+      "phase": "PHASE_D",
+      "feature_id": "F003",
+      "developer": "DEV_B",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "files": [
+        "templates/base.html"
+      ],
+      "commit_message": "feat(api): controller wiring",
+      "commit_body": "",
+      "date": "2021-12-16T09:52:44",
+      "branch": "fix/api-153",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_D / api / DEV_B"
+    },
+    {
+      "commit_id": "c154",
+      "phase": "PHASE_D",
+      "feature_id": "F004",
+      "developer": "DEV_C",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "files": [
+        "templates/index.html"
+      ],
+      "commit_message": "fix the route cleanup",
+      "commit_body": "Follow-up after review. The main path is unchanged; the null case is now handled.",
+      "date": "2021-12-18T14:03:51",
+      "branch": "feature/api-154",
+      "is_fix_commit": false,
+      "linked_issue_number": 39,
+      "notes": "PHASE_D / api / DEV_C"
+    },
+    {
+      "commit_id": "c155",
+      "phase": "PHASE_D",
+      "feature_id": "F005",
+      "developer": "DEV_A",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "files": [
+        "templates/reports.html",
+        "templates/base.html"
+      ],
+      "commit_message": "refactor response shape",
+      "commit_body": "Keeps the change scoped to api and preserves the existing behavior.",
+      "date": "2021-12-20T11:14:58",
+      "branch": "feature/api-155",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_D / api / DEV_A"
+    },
+    {
+      "commit_id": "c156",
+      "phase": "PHASE_D",
+      "feature_id": "F006",
+      "developer": "DEV_D",
+      "github_token_env": "GITHUB_TOKEN_4",
+      "files": [
+        "microfinance/urls.py"
+      ],
+      "commit_message": "verify: view integration",
+      "commit_body": "Adds regression coverage and keeps the edge cases checked.",
+      "date": "2021-12-22T09:25:05",
+      "branch": "feature/api-156",
+      "is_fix_commit": true,
+      "linked_issue_number": null,
+      "notes": "PHASE_D / api / DEV_D"
+    },
+    {
+      "commit_id": "c157",
+      "phase": "PHASE_D",
+      "feature_id": "F007",
+      "developer": "DEV_B",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "files": [
+        "core/views.py",
+        "templates/index.html"
+      ],
+      "commit_message": "feat(api): controller wiring",
+      "commit_body": "This is the small cleanup pass that came out of QA feedback.",
+      "date": "2021-12-25T09:36:12",
+      "branch": "fix/api-157",
+      "is_fix_commit": false,
+      "linked_issue_number": 40,
+      "notes": "PHASE_D / api / DEV_B"
+    },
+    {
+      "commit_id": "c158",
+      "phase": "PHASE_D",
+      "feature_id": "F008",
+      "developer": "DEV_C",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "files": [
+        "templates/base.html"
+      ],
+      "commit_message": "fix the route cleanup",
+      "commit_body": "",
+      "date": "2021-12-27T12:47:19",
+      "branch": "feature/api-158",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_D / api / DEV_C"
+    },
+    {
+      "commit_id": "c159",
+      "phase": "PHASE_D",
+      "feature_id": "F009",
+      "developer": "DEV_A",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "files": [
+        "templates/index.html"
+      ],
+      "commit_message": "refactor response shape",
+      "commit_body": "",
+      "date": "2021-12-29T12:58:26",
+      "branch": "feature/api-159",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_D / api / DEV_A"
+    },
+    {
+      "commit_id": "c160",
+      "phase": "PHASE_D",
+      "feature_id": "F010",
+      "developer": "DEV_D",
+      "github_token_env": "GITHUB_TOKEN_4",
+      "files": [
+        "templates/reports.html"
+      ],
+      "commit_message": "verify: view integration",
+      "commit_body": "Adds regression coverage and keeps the edge cases checked.",
+      "date": "2021-12-31T13:09:33",
+      "branch": "feature/api-160",
+      "is_fix_commit": false,
+      "linked_issue_number": 40,
+      "notes": "PHASE_D / api / DEV_D"
+    },
+    {
+      "commit_id": "c161",
+      "phase": "PHASE_D",
+      "feature_id": "F011",
+      "developer": "DEV_B",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "files": [
+        "microfinance/urls.py"
+      ],
+      "commit_message": "feat(api): controller wiring",
+      "commit_body": "",
+      "date": "2022-01-03T09:20:40",
+      "branch": "fix/api-161",
+      "is_fix_commit": true,
+      "linked_issue_number": null,
+      "notes": "PHASE_D / api / DEV_B"
+    },
+    {
+      "commit_id": "c162",
+      "phase": "PHASE_D",
+      "feature_id": "F012",
+      "developer": "DEV_C",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "files": [
+        "core/views.py"
+      ],
+      "commit_message": "fix the route cleanup",
+      "commit_body": "Keeps the change scoped to api and preserves the existing behavior.",
+      "date": "2022-01-05T16:31:47",
+      "branch": "feature/api-162",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_D / api / DEV_C"
+    },
+    {
+      "commit_id": "c163",
+      "phase": "PHASE_D",
+      "feature_id": "F013",
+      "developer": "DEV_A",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "files": [
+        "templates/base.html",
+        "templates/reports.html"
+      ],
+      "commit_message": "refactor response shape",
+      "commit_body": "Follow-up after review. The main path is unchanged; the null case is now handled.",
+      "date": "2022-01-07T10:42:54",
+      "branch": "feature/api-163",
+      "is_fix_commit": false,
+      "linked_issue_number": 41,
+      "notes": "PHASE_D / api / DEV_A"
+    },
+    {
+      "commit_id": "c164",
+      "phase": "PHASE_D",
+      "feature_id": "F014",
+      "developer": "DEV_D",
+      "github_token_env": "GITHUB_TOKEN_4",
+      "files": [
+        "templates/index.html"
+      ],
+      "commit_message": "verify: view integration",
+      "commit_body": "Adds regression coverage and keeps the edge cases checked.",
+      "date": "2022-01-10T12:53:01",
+      "branch": "feature/api-164",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_D / api / DEV_D"
+    },
+    {
+      "commit_id": "c165",
+      "phase": "PHASE_D",
+      "feature_id": "F015",
+      "developer": "DEV_B",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "files": [
+        "templates/reports.html"
+      ],
+      "commit_message": "feat(api): controller wiring",
+      "commit_body": "",
+      "date": "2022-01-12T09:04:08",
+      "branch": "fix/api-165",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_D / api / DEV_B"
+    },
+    {
+      "commit_id": "c166",
+      "phase": "PHASE_D",
+      "feature_id": "F016",
+      "developer": "DEV_C",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "files": [
+        "microfinance/urls.py",
+        "templates/index.html"
+      ],
+      "commit_message": "fix the route cleanup",
+      "commit_body": "",
+      "date": "2022-01-14T14:15:15",
+      "branch": "feature/api-166",
+      "is_fix_commit": true,
+      "linked_issue_number": 42,
+      "notes": "PHASE_D / api / DEV_C"
+    },
+    {
+      "commit_id": "c167",
+      "phase": "PHASE_D",
+      "feature_id": "F017",
+      "developer": "DEV_A",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "files": [
+        "core/views.py"
+      ],
+      "commit_message": "refactor response shape",
+      "commit_body": "",
+      "date": "2022-01-16T11:26:22",
+      "branch": "feature/api-167",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_D / api / DEV_A"
+    },
+    {
+      "commit_id": "c168",
+      "phase": "PHASE_D",
+      "feature_id": "F018",
+      "developer": "DEV_D",
+      "github_token_env": "GITHUB_TOKEN_4",
+      "files": [
+        "templates/base.html"
+      ],
+      "commit_message": "verify: view integration",
+      "commit_body": "Adds regression coverage and keeps the edge cases checked.",
+      "date": "2022-01-19T11:37:29",
+      "branch": "feature/api-168",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_D / api / DEV_D"
+    },
+    {
+      "commit_id": "c169",
+      "phase": "PHASE_D",
+      "feature_id": "F019",
+      "developer": "DEV_B",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "files": [
+        "templates/index.html",
+        "microfinance/urls.py"
+      ],
+      "commit_message": "feat(api): controller wiring",
+      "commit_body": "Keeps the change scoped to api and preserves the existing behavior.",
+      "date": "2022-01-21T09:48:36",
+      "branch": "fix/api-169",
+      "is_fix_commit": false,
+      "linked_issue_number": 43,
+      "notes": "PHASE_D / api / DEV_B"
+    },
+    {
+      "commit_id": "c170",
+      "phase": "PHASE_D",
+      "feature_id": "F020",
+      "developer": "DEV_C",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "files": [
+        "templates/reports.html"
+      ],
+      "commit_message": "fix the route cleanup",
+      "commit_body": "This is the small cleanup pass that came out of QA feedback.",
+      "date": "2022-01-23T12:59:43",
+      "branch": "feature/api-170",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_D / api / DEV_C"
+    },
+    {
+      "commit_id": "c171",
+      "phase": "PHASE_D",
+      "feature_id": "F021",
+      "developer": "DEV_A",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "files": [
+        "microfinance/urls.py"
+      ],
+      "commit_message": "refactor response shape",
+      "commit_body": "",
+      "date": "2022-01-25T12:10:50",
+      "branch": "feature/api-171",
+      "is_fix_commit": true,
+      "linked_issue_number": null,
+      "notes": "PHASE_D / api / DEV_A"
+    },
+    {
+      "commit_id": "c172",
+      "phase": "PHASE_D",
+      "feature_id": "F022",
+      "developer": "DEV_D",
+      "github_token_env": "GITHUB_TOKEN_4",
+      "files": [
+        "core/views.py"
+      ],
+      "commit_message": "verify: view integration",
+      "commit_body": "Follow-up after review. The main path is unchanged; the null case is now handled.",
+      "date": "2022-01-28T10:21:57",
+      "branch": "feature/api-172",
+      "is_fix_commit": false,
+      "linked_issue_number": 43,
+      "notes": "PHASE_D / api / DEV_D"
+    },
+    {
+      "commit_id": "c173",
+      "phase": "PHASE_D",
+      "feature_id": "F023",
+      "developer": "DEV_B",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "files": [
+        "templates/base.html"
+      ],
+      "commit_message": "feat(api): controller wiring",
+      "commit_body": "",
+      "date": "2022-01-30T09:32:04",
+      "branch": "fix/api-173",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_D / api / DEV_B"
+    },
+    {
+      "commit_id": "c174",
+      "phase": "PHASE_D",
+      "feature_id": "F024",
+      "developer": "DEV_C",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "files": [
+        "templates/index.html"
+      ],
+      "commit_message": "fix the route cleanup",
+      "commit_body": "",
+      "date": "2022-02-01T16:43:11",
+      "branch": "feature/api-174",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_D / api / DEV_C"
+    },
+    {
+      "commit_id": "c175",
+      "phase": "PHASE_D",
+      "feature_id": "F025",
+      "developer": "DEV_A",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "files": [
+        "templates/reports.html",
+        "core/views.py"
+      ],
+      "commit_message": "refactor response shape",
+      "commit_body": "",
+      "date": "2022-02-04T10:54:18",
+      "branch": "feature/api-175",
+      "is_fix_commit": false,
+      "linked_issue_number": 44,
+      "notes": "PHASE_D / api / DEV_A"
+    },
+    {
+      "commit_id": "c176",
+      "phase": "PHASE_D",
+      "feature_id": "F026",
+      "developer": "DEV_D",
+      "github_token_env": "GITHUB_TOKEN_4",
+      "files": [
+        "microfinance/urls.py"
+      ],
+      "commit_message": "verify: view integration",
+      "commit_body": "Keeps the change scoped to api and preserves the existing behavior.",
+      "date": "2022-02-06T09:05:25",
+      "branch": "feature/api-176",
+      "is_fix_commit": true,
+      "linked_issue_number": null,
+      "notes": "PHASE_D / api / DEV_D"
+    },
+    {
+      "commit_id": "c177",
+      "phase": "PHASE_D",
+      "feature_id": "F027",
+      "developer": "DEV_B",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "files": [
+        "core/views.py",
+        "templates/reports.html"
+      ],
+      "commit_message": "feat(api): controller wiring",
+      "commit_body": "",
+      "date": "2022-02-08T09:16:32",
+      "branch": "fix/api-177",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_D / api / DEV_B"
+    },
+    {
+      "commit_id": "c178",
+      "phase": "PHASE_D",
+      "feature_id": "F028",
+      "developer": "DEV_C",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "files": [
+        "templates/base.html"
+      ],
+      "commit_message": "fix the route cleanup",
+      "commit_body": "",
+      "date": "2022-02-10T14:27:39",
+      "branch": "feature/api-178",
+      "is_fix_commit": false,
+      "linked_issue_number": 45,
+      "notes": "PHASE_D / api / DEV_C"
+    },
+    {
+      "commit_id": "c179",
+      "phase": "PHASE_D",
+      "feature_id": "F029",
+      "developer": "DEV_A",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "files": [
+        "templates/index.html"
+      ],
+      "commit_message": "refactor response shape",
+      "commit_body": "",
+      "date": "2022-02-13T11:38:46",
+      "branch": "feature/api-179",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_D / api / DEV_A"
+    },
+    {
+      "commit_id": "c180",
+      "phase": "PHASE_D",
+      "feature_id": "F030",
+      "developer": "DEV_D",
+      "github_token_env": "GITHUB_TOKEN_4",
+      "files": [
+        "templates/reports.html"
+      ],
+      "commit_message": "verify: view integration",
+      "commit_body": "Adds regression coverage and keeps the edge cases checked.",
+      "date": "2022-02-15T13:49:53",
+      "branch": "feature/api-180",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_D / api / DEV_D"
+    },
+    {
+      "commit_id": "c181",
+      "phase": "PHASE_D",
+      "feature_id": "F001",
+      "developer": "DEV_B",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "files": [
+        "microfinance/urls.py",
+        "templates/base.html"
+      ],
+      "commit_message": "feat(api): controller wiring",
+      "commit_body": "Follow-up after review. The main path is unchanged; the null case is now handled.",
+      "date": "2022-02-17T09:00:00",
+      "branch": "fix/api-181",
+      "is_fix_commit": true,
+      "linked_issue_number": 46,
+      "notes": "PHASE_D / api / DEV_B"
+    },
+    {
+      "commit_id": "c182",
+      "phase": "PHASE_D",
+      "feature_id": "F002",
+      "developer": "DEV_C",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "files": [
+        "core/views.py"
+      ],
+      "commit_message": "fix the route cleanup",
+      "commit_body": "",
+      "date": "2022-02-19T12:11:07",
+      "branch": "feature/api-182",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_D / api / DEV_C"
+    },
+    {
+      "commit_id": "c183",
+      "phase": "PHASE_D",
+      "feature_id": "F003",
+      "developer": "DEV_A",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "files": [
+        "templates/base.html"
+      ],
+      "commit_message": "refactor response shape",
+      "commit_body": "Keeps the change scoped to api and preserves the existing behavior.",
+      "date": "2022-02-22T12:22:14",
+      "branch": "feature/api-183",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_D / api / DEV_A"
+    },
+    {
+      "commit_id": "c184",
+      "phase": "PHASE_D",
+      "feature_id": "F004",
+      "developer": "DEV_D",
+      "github_token_env": "GITHUB_TOKEN_4",
+      "files": [
+        "templates/index.html"
+      ],
+      "commit_message": "verify: view integration",
+      "commit_body": "Adds regression coverage and keeps the edge cases checked.",
+      "date": "2022-02-24T12:33:21",
+      "branch": "feature/api-184",
+      "is_fix_commit": false,
+      "linked_issue_number": 46,
+      "notes": "PHASE_D / api / DEV_D"
+    },
+    {
+      "commit_id": "c185",
+      "phase": "PHASE_E",
+      "feature_id": "F005",
+      "developer": "DEV_A",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "files": [
+        "static/css/mf.css"
+      ],
+      "commit_message": "tighten regression fix",
+      "commit_body": "",
+      "date": "2022-02-26T11:44:28",
+      "branch": "fix/stabilize-185",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_E / stabilize / DEV_A"
+    },
+    {
+      "commit_id": "c186",
+      "phase": "PHASE_E",
+      "feature_id": "F006",
+      "developer": "DEV_B",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "files": [
+        "core/tests.py"
+      ],
+      "commit_message": "fix(stabilize): edge case guard",
+      "commit_body": "",
+      "date": "2022-03-01T10:55:35",
+      "branch": "feature/stabilize-186",
+      "is_fix_commit": true,
+      "linked_issue_number": null,
+      "notes": "PHASE_E / stabilize / DEV_B"
+    },
+    {
+      "commit_id": "c187",
+      "phase": "PHASE_E",
+      "feature_id": "F007",
+      "developer": "DEV_C",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "files": [
+        "templates/pdfgeneral_ledger.html",
+        "templates/generalledger.html"
+      ],
+      "commit_message": "wire the cleanup pass",
+      "commit_body": "",
+      "date": "2022-03-03T11:06:42",
+      "branch": "feature/stabilize-187",
+      "is_fix_commit": false,
+      "linked_issue_number": 47,
+      "notes": "PHASE_E / stabilize / DEV_C"
+    },
+    {
+      "commit_id": "c188",
+      "phase": "PHASE_E",
+      "feature_id": "F008",
+      "developer": "DEV_D",
+      "github_token_env": "GITHUB_TOKEN_4",
+      "files": [
+        "templates/pdf_daybook.html",
+        "static/css/mf.css"
+      ],
+      "commit_message": "verify: test coverage",
+      "commit_body": "Adds regression coverage and keeps the edge cases checked.",
+      "date": "2022-03-05T11:17:49",
+      "branch": "feature/stabilize-188",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_E / stabilize / DEV_D"
+    },
+    {
+      "commit_id": "c189",
+      "phase": "PHASE_E",
+      "feature_id": "F009",
+      "developer": "DEV_A",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "files": [
+        "templates/generalledger.html"
+      ],
+      "commit_message": "tighten regression fix",
+      "commit_body": "",
+      "date": "2022-03-07T12:28:56",
+      "branch": "fix/stabilize-189",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_E / stabilize / DEV_A"
+    },
+    {
+      "commit_id": "c190",
+      "phase": "PHASE_E",
+      "feature_id": "F010",
+      "developer": "DEV_B",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "files": [
+        "templates/clientledgertable.html"
+      ],
+      "commit_message": "fix(stabilize): edge case guard",
+      "commit_body": "Keeps the change scoped to stabilize and preserves the existing behavior.",
+      "date": "2022-03-10T10:39:03",
+      "branch": "feature/stabilize-190",
+      "is_fix_commit": false,
+      "linked_issue_number": 48,
+      "notes": "PHASE_E / stabilize / DEV_B"
+    },
+    {
+      "commit_id": "c191",
+      "phase": "PHASE_E",
+      "feature_id": "F011",
+      "developer": "DEV_C",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "files": [
+        "static/css/mf.css"
+      ],
+      "commit_message": "wire the cleanup pass",
+      "commit_body": "",
+      "date": "2022-03-12T15:50:10",
+      "branch": "feature/stabilize-191",
+      "is_fix_commit": true,
+      "linked_issue_number": null,
+      "notes": "PHASE_E / stabilize / DEV_C"
+    },
+    {
+      "commit_id": "c192",
+      "phase": "PHASE_E",
+      "feature_id": "F012",
+      "developer": "DEV_D",
+      "github_token_env": "GITHUB_TOKEN_4",
+      "files": [
+        "core/tests.py"
+      ],
+      "commit_message": "verify: test coverage",
+      "commit_body": "Adds regression coverage and keeps the edge cases checked.",
+      "date": "2022-03-14T10:01:17",
+      "branch": "feature/stabilize-192",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_E / stabilize / DEV_D"
+    },
+    {
+      "commit_id": "c193",
+      "phase": "PHASE_E",
+      "feature_id": "F013",
+      "developer": "DEV_A",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "files": [
+        "templates/pdfgeneral_ledger.html",
+        "templates/generalledger.html"
+      ],
+      "commit_message": "tighten regression fix",
+      "commit_body": "",
+      "date": "2022-03-16T10:12:24",
+      "branch": "fix/stabilize-193",
+      "is_fix_commit": false,
+      "linked_issue_number": 49,
+      "notes": "PHASE_E / stabilize / DEV_A"
+    },
+    {
+      "commit_id": "c194",
+      "phase": "PHASE_E",
+      "feature_id": "F014",
+      "developer": "DEV_B",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "files": [
+        "templates/pdf_daybook.html"
+      ],
+      "commit_message": "fix(stabilize): edge case guard",
+      "commit_body": "",
+      "date": "2022-03-19T10:23:31",
+      "branch": "feature/stabilize-194",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_E / stabilize / DEV_B"
+    },
+    {
+      "commit_id": "c195",
+      "phase": "PHASE_E",
+      "feature_id": "F015",
+      "developer": "DEV_C",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "files": [
+        "templates/generalledger.html"
+      ],
+      "commit_message": "wire the cleanup pass",
+      "commit_body": "",
+      "date": "2022-03-21T13:34:38",
+      "branch": "feature/stabilize-195",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_E / stabilize / DEV_C"
+    },
+    {
+      "commit_id": "c196",
+      "phase": "PHASE_E",
+      "feature_id": "F016",
+      "developer": "DEV_D",
+      "github_token_env": "GITHUB_TOKEN_4",
+      "files": [
+        "templates/clientledgertable.html"
+      ],
+      "commit_message": "verify: test coverage",
+      "commit_body": "This is the small cleanup pass that came out of QA feedback.",
+      "date": "2022-03-23T09:45:45",
+      "branch": "feature/stabilize-196",
+      "is_fix_commit": true,
+      "linked_issue_number": 49,
+      "notes": "PHASE_E / stabilize / DEV_D"
+    },
+    {
+      "commit_id": "c197",
+      "phase": "PHASE_E",
+      "feature_id": "F017",
+      "developer": "DEV_A",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "files": [
+        "static/css/mf.css"
+      ],
+      "commit_message": "tighten regression fix",
+      "commit_body": "Keeps the change scoped to stabilize and preserves the existing behavior.",
+      "date": "2022-03-26T11:56:52",
+      "branch": "fix/stabilize-197",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_E / stabilize / DEV_A"
+    },
+    {
+      "commit_id": "c198",
+      "phase": "PHASE_E",
+      "feature_id": "F018",
+      "developer": "DEV_B",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "files": [
+        "core/tests.py"
+      ],
+      "commit_message": "fix(stabilize): edge case guard",
+      "commit_body": "",
+      "date": "2022-03-28T10:07:59",
+      "branch": "feature/stabilize-198",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_E / stabilize / DEV_B"
+    },
+    {
+      "commit_id": "c199",
+      "phase": "PHASE_E",
+      "feature_id": "F019",
+      "developer": "DEV_C",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "files": [
+        "templates/pdfgeneral_ledger.html",
+        "templates/generalledger.html",
+        "templates/clientledgertable.html"
+      ],
+      "commit_message": "wire the cleanup pass",
+      "commit_body": "Follow-up after review. The main path is unchanged; the null case is now handled.",
+      "date": "2022-03-30T11:18:06",
+      "branch": "feature/stabilize-199",
+      "is_fix_commit": false,
+      "linked_issue_number": 50,
+      "notes": "PHASE_E / stabilize / DEV_C"
+    },
+    {
+      "commit_id": "c200",
+      "phase": "PHASE_E",
+      "feature_id": "F020",
+      "developer": "DEV_D",
+      "github_token_env": "GITHUB_TOKEN_4",
+      "files": [
+        "templates/pdf_daybook.html"
+      ],
+      "commit_message": "verify: test coverage",
+      "commit_body": "Adds regression coverage and keeps the edge cases checked.",
+      "date": "2022-04-01T13:29:13",
+      "branch": "feature/stabilize-200",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_E / stabilize / DEV_D"
+    },
+    {
+      "commit_id": "c201",
+      "phase": "PHASE_E",
+      "feature_id": "F021",
+      "developer": "DEV_A",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "files": [
+        "templates/generalledger.html"
+      ],
+      "commit_message": "tighten regression fix",
+      "commit_body": "",
+      "date": "2022-04-04T12:40:20",
+      "branch": "fix/stabilize-201",
+      "is_fix_commit": true,
+      "linked_issue_number": null,
+      "notes": "PHASE_E / stabilize / DEV_A"
+    },
+    {
+      "commit_id": "c202",
+      "phase": "PHASE_E",
+      "feature_id": "F022",
+      "developer": "DEV_B",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "files": [
+        "templates/clientledgertable.html"
+      ],
+      "commit_message": "fix(stabilize): edge case guard",
+      "commit_body": "",
+      "date": "2022-04-06T10:51:27",
+      "branch": "feature/stabilize-202",
+      "is_fix_commit": false,
+      "linked_issue_number": 51,
+      "notes": "PHASE_E / stabilize / DEV_B"
+    },
+    {
+      "commit_id": "c203",
+      "phase": "PHASE_E",
+      "feature_id": "F023",
+      "developer": "DEV_C",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "files": [
+        "static/css/mf.css"
+      ],
+      "commit_message": "wire the cleanup pass",
+      "commit_body": "",
+      "date": "2022-04-08T15:02:34",
+      "branch": "feature/stabilize-203",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_E / stabilize / DEV_C"
+    },
+    {
+      "commit_id": "c204",
+      "phase": "PHASE_E",
+      "feature_id": "F024",
+      "developer": "DEV_D",
+      "github_token_env": "GITHUB_TOKEN_4",
+      "files": [
+        "core/tests.py"
+      ],
+      "commit_message": "verify: test coverage",
+      "commit_body": "Keeps the change scoped to stabilize and preserves the existing behavior.",
+      "date": "2022-04-10T12:13:41",
+      "branch": "feature/stabilize-204",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_E / stabilize / DEV_D"
+    },
+    {
+      "commit_id": "c205",
+      "phase": "PHASE_E",
+      "feature_id": "F025",
+      "developer": "DEV_A",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "files": [
+        "templates/pdfgeneral_ledger.html",
+        "templates/generalledger.html"
+      ],
+      "commit_message": "tighten regression fix",
+      "commit_body": "",
+      "date": "2022-04-13T10:24:48",
+      "branch": "fix/stabilize-205",
+      "is_fix_commit": false,
+      "linked_issue_number": 52,
+      "notes": "PHASE_E / stabilize / DEV_A"
+    },
+    {
+      "commit_id": "c206",
+      "phase": "PHASE_E",
+      "feature_id": "F026",
+      "developer": "DEV_B",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "files": [
+        "templates/pdf_daybook.html"
+      ],
+      "commit_message": "fix(stabilize): edge case guard",
+      "commit_body": "",
+      "date": "2022-04-15T10:35:55",
+      "branch": "feature/stabilize-206",
+      "is_fix_commit": true,
+      "linked_issue_number": null,
+      "notes": "PHASE_E / stabilize / DEV_B"
+    },
+    {
+      "commit_id": "c207",
+      "phase": "PHASE_E",
+      "feature_id": "F027",
+      "developer": "DEV_C",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "files": [
+        "templates/generalledger.html"
+      ],
+      "commit_message": "wire the cleanup pass",
+      "commit_body": "",
+      "date": "2022-04-17T13:46:02",
+      "branch": "feature/stabilize-207",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_E / stabilize / DEV_C"
+    },
+    {
+      "commit_id": "c208",
+      "phase": "PHASE_E",
+      "feature_id": "F028",
+      "developer": "DEV_D",
+      "github_token_env": "GITHUB_TOKEN_4",
+      "files": [
+        "templates/clientledgertable.html"
+      ],
+      "commit_message": "verify: test coverage",
+      "commit_body": "Follow-up after review. The main path is unchanged; the null case is now handled.",
+      "date": "2022-04-20T11:57:09",
+      "branch": "feature/stabilize-208",
+      "is_fix_commit": false,
+      "linked_issue_number": 52,
+      "notes": "PHASE_E / stabilize / DEV_D"
+    },
+    {
+      "commit_id": "c209",
+      "phase": "PHASE_E",
+      "feature_id": "F029",
+      "developer": "DEV_A",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "files": [
+        "static/css/mf.css"
+      ],
+      "commit_message": "tighten regression fix",
+      "commit_body": "This is the small cleanup pass that came out of QA feedback.",
+      "date": "2022-04-22T11:08:16",
+      "branch": "fix/stabilize-209",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_E / stabilize / DEV_A"
+    },
+    {
+      "commit_id": "c210",
+      "phase": "PHASE_E",
+      "feature_id": "F030",
+      "developer": "DEV_B",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "files": [
+        "core/tests.py",
+        "templates/generalledger.html"
+      ],
+      "commit_message": "fix(stabilize): edge case guard",
+      "commit_body": "",
+      "date": "2022-04-24T10:19:23",
+      "branch": "feature/stabilize-210",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_E / stabilize / DEV_B"
+    },
+    {
+      "commit_id": "c211",
+      "phase": "PHASE_E",
+      "feature_id": "F001",
+      "developer": "DEV_C",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "files": [
+        "templates/pdfgeneral_ledger.html",
+        "templates/generalledger.html"
+      ],
+      "commit_message": "wire the cleanup pass",
+      "commit_body": "Keeps the change scoped to stabilize and preserves the existing behavior.",
+      "date": "2022-04-26T11:30:30",
+      "branch": "feature/stabilize-211",
+      "is_fix_commit": true,
+      "linked_issue_number": 53,
+      "notes": "PHASE_E / stabilize / DEV_C"
+    },
+    {
+      "commit_id": "c212",
+      "phase": "PHASE_E",
+      "feature_id": "F002",
+      "developer": "DEV_D",
+      "github_token_env": "GITHUB_TOKEN_4",
+      "files": [
+        "templates/pdf_daybook.html"
+      ],
+      "commit_message": "verify: test coverage",
+      "commit_body": "Adds regression coverage and keeps the edge cases checked.",
+      "date": "2022-04-29T10:41:37",
+      "branch": "feature/stabilize-212",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_E / stabilize / DEV_D"
+    },
+    {
+      "commit_id": "c213",
+      "phase": "PHASE_E",
+      "feature_id": "F003",
+      "developer": "DEV_A",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "files": [
+        "templates/generalledger.html"
+      ],
+      "commit_message": "tighten regression fix",
+      "commit_body": "",
+      "date": "2022-05-01T12:52:44",
+      "branch": "fix/stabilize-213",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_E / stabilize / DEV_A"
+    },
+    {
+      "commit_id": "c214",
+      "phase": "PHASE_E",
+      "feature_id": "F004",
+      "developer": "DEV_B",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "files": [
+        "templates/clientledgertable.html"
+      ],
+      "commit_message": "fix(stabilize): edge case guard",
+      "commit_body": "",
+      "date": "2022-05-03T10:03:51",
+      "branch": "feature/stabilize-214",
+      "is_fix_commit": false,
+      "linked_issue_number": 54,
+      "notes": "PHASE_E / stabilize / DEV_B"
+    },
+    {
+      "commit_id": "c215",
+      "phase": "PHASE_E",
+      "feature_id": "F005",
+      "developer": "DEV_C",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "files": [
+        "static/css/mf.css"
+      ],
+      "commit_message": "wire the cleanup pass",
+      "commit_body": "",
+      "date": "2022-05-05T15:14:58",
+      "branch": "feature/stabilize-215",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_E / stabilize / DEV_C"
+    },
+    {
+      "commit_id": "c216",
+      "phase": "PHASE_E",
+      "feature_id": "F006",
+      "developer": "DEV_D",
+      "github_token_env": "GITHUB_TOKEN_4",
+      "files": [
+        "core/tests.py"
+      ],
+      "commit_message": "verify: test coverage",
+      "commit_body": "Adds regression coverage and keeps the edge cases checked.",
+      "date": "2022-05-08T09:25:05",
+      "branch": "feature/stabilize-216",
+      "is_fix_commit": true,
+      "linked_issue_number": null,
+      "notes": "PHASE_E / stabilize / DEV_D"
+    },
+    {
+      "commit_id": "c217",
+      "phase": "PHASE_E",
+      "feature_id": "F007",
+      "developer": "DEV_A",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "files": [
+        "templates/pdfgeneral_ledger.html",
+        "templates/generalledger.html"
+      ],
+      "commit_message": "tighten regression fix",
+      "commit_body": "Follow-up after review. The main path is unchanged; the null case is now handled.",
+      "date": "2022-05-10T10:36:12",
+      "branch": "fix/stabilize-217",
+      "is_fix_commit": false,
+      "linked_issue_number": 55,
+      "notes": "PHASE_E / stabilize / DEV_A"
+    },
+    {
+      "commit_id": "c218",
+      "phase": "PHASE_E",
+      "feature_id": "F008",
+      "developer": "DEV_B",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "files": [
+        "templates/pdf_daybook.html"
+      ],
+      "commit_message": "fix(stabilize): edge case guard",
+      "commit_body": "Keeps the change scoped to stabilize and preserves the existing behavior.",
+      "date": "2022-05-12T10:47:19",
+      "branch": "feature/stabilize-218",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_E / stabilize / DEV_B"
+    },
+    {
+      "commit_id": "c219",
+      "phase": "PHASE_E",
+      "feature_id": "F009",
+      "developer": "DEV_C",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "files": [
+        "templates/generalledger.html"
+      ],
+      "commit_message": "wire the cleanup pass",
+      "commit_body": "",
+      "date": "2022-05-15T13:58:26",
+      "branch": "feature/stabilize-219",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_E / stabilize / DEV_C"
+    },
+    {
+      "commit_id": "c220",
+      "phase": "PHASE_E",
+      "feature_id": "F010",
+      "developer": "DEV_D",
+      "github_token_env": "GITHUB_TOKEN_4",
+      "files": [
+        "templates/clientledgertable.html"
+      ],
+      "commit_message": "verify: test coverage",
+      "commit_body": "Adds regression coverage and keeps the edge cases checked.",
+      "date": "2022-05-17T13:09:33",
+      "branch": "feature/stabilize-220",
+      "is_fix_commit": false,
+      "linked_issue_number": 55,
+      "notes": "PHASE_E / stabilize / DEV_D"
+    },
+    {
+      "commit_id": "c221",
+      "phase": "PHASE_E",
+      "feature_id": "F011",
+      "developer": "DEV_A",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "files": [
+        "static/css/mf.css",
+        "templates/pdf_daybook.html"
+      ],
+      "commit_message": "tighten regression fix",
+      "commit_body": "",
+      "date": "2022-05-19T11:20:40",
+      "branch": "fix/stabilize-221",
+      "is_fix_commit": true,
+      "linked_issue_number": null,
+      "notes": "PHASE_E / stabilize / DEV_A"
+    },
+    {
+      "commit_id": "c222",
+      "phase": "PHASE_E",
+      "feature_id": "F012",
+      "developer": "DEV_B",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "files": [
+        "core/tests.py"
+      ],
+      "commit_message": "fix(stabilize): edge case guard",
+      "commit_body": "This is the small cleanup pass that came out of QA feedback.",
+      "date": "2022-05-21T10:31:47",
+      "branch": "feature/stabilize-222",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_E / stabilize / DEV_B"
+    },
+    {
+      "commit_id": "c223",
+      "phase": "PHASE_E",
+      "feature_id": "F013",
+      "developer": "DEV_C",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "files": [
+        "templates/pdfgeneral_ledger.html",
+        "templates/generalledger.html"
+      ],
+      "commit_message": "wire the cleanup pass",
+      "commit_body": "",
+      "date": "2022-05-24T11:42:54",
+      "branch": "feature/stabilize-223",
+      "is_fix_commit": false,
+      "linked_issue_number": 56,
+      "notes": "PHASE_E / stabilize / DEV_C"
+    },
+    {
+      "commit_id": "c224",
+      "phase": "PHASE_E",
+      "feature_id": "F014",
+      "developer": "DEV_D",
+      "github_token_env": "GITHUB_TOKEN_4",
+      "files": [
+        "templates/pdf_daybook.html"
+      ],
+      "commit_message": "verify: test coverage",
+      "commit_body": "Adds regression coverage and keeps the edge cases checked.",
+      "date": "2022-05-26T12:53:01",
+      "branch": "feature/stabilize-224",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_E / stabilize / DEV_D"
+    },
+    {
+      "commit_id": "c225",
+      "phase": "PHASE_E",
+      "feature_id": "F015",
+      "developer": "DEV_A",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "files": [
+        "templates/generalledger.html"
+      ],
+      "commit_message": "tighten regression fix",
+      "commit_body": "Keeps the change scoped to stabilize and preserves the existing behavior.",
+      "date": "2022-05-28T12:04:08",
+      "branch": "fix/stabilize-225",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_E / stabilize / DEV_A"
+    },
+    {
+      "commit_id": "c226",
+      "phase": "PHASE_E",
+      "feature_id": "F016",
+      "developer": "DEV_B",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "files": [
+        "templates/clientledgertable.html"
+      ],
+      "commit_message": "fix(stabilize): edge case guard",
+      "commit_body": "Follow-up after review. The main path is unchanged; the null case is now handled.",
+      "date": "2022-05-30T10:15:15",
+      "branch": "feature/stabilize-226",
+      "is_fix_commit": true,
+      "linked_issue_number": 57,
+      "notes": "PHASE_E / stabilize / DEV_B"
+    },
+    {
+      "commit_id": "c227",
+      "phase": "PHASE_E",
+      "feature_id": "F017",
+      "developer": "DEV_C",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "files": [
+        "static/css/mf.css"
+      ],
+      "commit_message": "wire the cleanup pass",
+      "commit_body": "",
+      "date": "2022-06-02T15:26:22",
+      "branch": "feature/stabilize-227",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_E / stabilize / DEV_C"
+    },
+    {
+      "commit_id": "c228",
+      "phase": "PHASE_E",
+      "feature_id": "F018",
+      "developer": "DEV_D",
+      "github_token_env": "GITHUB_TOKEN_4",
+      "files": [
+        "core/tests.py"
+      ],
+      "commit_message": "verify: test coverage",
+      "commit_body": "Adds regression coverage and keeps the edge cases checked.",
+      "date": "2022-06-04T11:37:29",
+      "branch": "feature/stabilize-228",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_E / stabilize / DEV_D"
+    },
+    {
+      "commit_id": "c229",
+      "phase": "PHASE_E",
+      "feature_id": "F019",
+      "developer": "DEV_A",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "files": [
+        "templates/pdfgeneral_ledger.html",
+        "templates/generalledger.html"
+      ],
+      "commit_message": "tighten regression fix",
+      "commit_body": "",
+      "date": "2022-06-06T10:48:36",
+      "branch": "fix/stabilize-229",
+      "is_fix_commit": false,
+      "linked_issue_number": 58,
+      "notes": "PHASE_E / stabilize / DEV_A"
+    },
+    {
+      "commit_id": "c230",
+      "phase": "PHASE_E",
+      "feature_id": "F020",
+      "developer": "DEV_B",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "files": [
+        "templates/pdf_daybook.html"
+      ],
+      "commit_message": "fix(stabilize): edge case guard",
+      "commit_body": "",
+      "date": "2022-06-09T10:59:43",
+      "branch": "feature/stabilize-230",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_E / stabilize / DEV_B"
+    },
+    {
+      "commit_id": "c231",
+      "phase": "PHASE_F",
+      "feature_id": "F021",
+      "developer": "DEV_A",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "files": [
+        "templates/list_of_payments.html"
+      ],
+      "commit_message": "refactor report export",
+      "commit_body": "",
+      "date": "2022-06-11T12:10:50",
+      "branch": "feature/expansion-231",
+      "is_fix_commit": true,
+      "linked_issue_number": null,
+      "notes": "PHASE_F / expansion / DEV_A"
+    },
+    {
+      "commit_id": "c232",
+      "phase": "PHASE_F",
+      "feature_id": "F022",
+      "developer": "DEV_D",
+      "github_token_env": "GITHUB_TOKEN_4",
+      "files": [
+        "templates/listof_receipts.html",
+        "templates/receiptsform.html"
+      ],
+      "commit_message": "verify: support request",
+      "commit_body": "Keeps the change scoped to expansion and preserves the existing behavior.",
+      "date": "2022-06-13T10:21:57",
+      "branch": "feature/expansion-232",
+      "is_fix_commit": false,
+      "linked_issue_number": 58,
+      "notes": "PHASE_F / expansion / DEV_D"
+    },
+    {
+      "commit_id": "c233",
+      "phase": "PHASE_F",
+      "feature_id": "F023",
+      "developer": "DEV_B",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "files": [
+        "templates/group/dashboard.html"
+      ],
+      "commit_message": "feat(expansion): feature wiring",
+      "commit_body": "",
+      "date": "2022-06-15T09:32:04",
+      "branch": "fix/expansion-233",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_F / expansion / DEV_B"
+    },
+    {
+      "commit_id": "c234",
+      "phase": "PHASE_F",
+      "feature_id": "F024",
+      "developer": "DEV_C",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "files": [
+        "micro_admin/management/commands/import_clients.py"
+      ],
+      "commit_message": "fix the new workflow",
+      "commit_body": "",
+      "date": "2022-06-18T16:43:11",
+      "branch": "feature/expansion-234",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_F / expansion / DEV_C"
+    },
+    {
+      "commit_id": "c235",
+      "phase": "PHASE_F",
+      "feature_id": "F025",
+      "developer": "DEV_A",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "files": [
+        "templates/receiptsform.html",
+        "templates/list_of_payments.html"
+      ],
+      "commit_message": "refactor report export",
+      "commit_body": "Follow-up after review. The main path is unchanged; the null case is now handled.",
+      "date": "2022-06-20T10:54:18",
+      "branch": "feature/expansion-235",
+      "is_fix_commit": false,
+      "linked_issue_number": 59,
+      "notes": "PHASE_F / expansion / DEV_A"
+    },
+    {
+      "commit_id": "c236",
+      "phase": "PHASE_F",
+      "feature_id": "F026",
+      "developer": "DEV_D",
+      "github_token_env": "GITHUB_TOKEN_4",
+      "files": [
+        "templates/paymentform.html"
+      ],
+      "commit_message": "verify: support request",
+      "commit_body": "Adds regression coverage and keeps the edge cases checked.",
+      "date": "2022-06-22T09:05:25",
+      "branch": "feature/expansion-236",
+      "is_fix_commit": true,
+      "linked_issue_number": null,
+      "notes": "PHASE_F / expansion / DEV_D"
+    },
+    {
+      "commit_id": "c237",
+      "phase": "PHASE_F",
+      "feature_id": "F027",
+      "developer": "DEV_B",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "files": [
+        "templates/list_of_payments.html"
+      ],
+      "commit_message": "feat(expansion): feature wiring",
+      "commit_body": "",
+      "date": "2022-06-24T09:16:32",
+      "branch": "fix/expansion-237",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_F / expansion / DEV_B"
+    },
+    {
+      "commit_id": "c238",
+      "phase": "PHASE_F",
+      "feature_id": "F028",
+      "developer": "DEV_C",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "files": [
+        "templates/listof_receipts.html"
+      ],
+      "commit_message": "fix the new workflow",
+      "commit_body": "",
+      "date": "2022-06-27T14:27:39",
+      "branch": "feature/expansion-238",
+      "is_fix_commit": false,
+      "linked_issue_number": 60,
+      "notes": "PHASE_F / expansion / DEV_C"
+    },
+    {
+      "commit_id": "c239",
+      "phase": "PHASE_F",
+      "feature_id": "F029",
+      "developer": "DEV_A",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "files": [
+        "templates/group/dashboard.html"
+      ],
+      "commit_message": "refactor report export",
+      "commit_body": "Keeps the change scoped to expansion and preserves the existing behavior.",
+      "date": "2022-06-29T11:38:46",
+      "branch": "feature/expansion-239",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_F / expansion / DEV_A"
+    },
+    {
+      "commit_id": "c240",
+      "phase": "PHASE_F",
+      "feature_id": "F030",
+      "developer": "DEV_D",
+      "github_token_env": "GITHUB_TOKEN_4",
+      "files": [
+        "micro_admin/management/commands/import_clients.py"
+      ],
+      "commit_message": "verify: support request",
+      "commit_body": "Adds regression coverage and keeps the edge cases checked.",
+      "date": "2022-07-01T13:49:53",
+      "branch": "feature/expansion-240",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_F / expansion / DEV_D"
+    },
+    {
+      "commit_id": "c241",
+      "phase": "PHASE_F",
+      "feature_id": "F001",
+      "developer": "DEV_B",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "files": [
+        "templates/receiptsform.html",
+        "templates/list_of_payments.html"
+      ],
+      "commit_message": "feat(expansion): feature wiring",
+      "commit_body": "",
+      "date": "2022-07-04T09:00:00",
+      "branch": "fix/expansion-241",
+      "is_fix_commit": true,
+      "linked_issue_number": 61,
+      "notes": "PHASE_F / expansion / DEV_B"
+    },
+    {
+      "commit_id": "c242",
+      "phase": "PHASE_F",
+      "feature_id": "F002",
+      "developer": "DEV_C",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "files": [
+        "templates/paymentform.html"
+      ],
+      "commit_message": "fix the new workflow",
+      "commit_body": "",
+      "date": "2022-07-06T12:11:07",
+      "branch": "feature/expansion-242",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_F / expansion / DEV_C"
+    },
+    {
+      "commit_id": "c243",
+      "phase": "PHASE_F",
+      "feature_id": "F003",
+      "developer": "DEV_A",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "files": [
+        "templates/list_of_payments.html",
+        "micro_admin/management/commands/import_clients.py"
+      ],
+      "commit_message": "refactor report export",
+      "commit_body": "",
+      "date": "2022-07-08T12:22:14",
+      "branch": "feature/expansion-243",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_F / expansion / DEV_A"
+    },
+    {
+      "commit_id": "c244",
+      "phase": "PHASE_F",
+      "feature_id": "F004",
+      "developer": "DEV_D",
+      "github_token_env": "GITHUB_TOKEN_4",
+      "files": [
+        "templates/listof_receipts.html"
+      ],
+      "commit_message": "verify: support request",
+      "commit_body": "Follow-up after review. The main path is unchanged; the null case is now handled.",
+      "date": "2022-07-10T12:33:21",
+      "branch": "feature/expansion-244",
+      "is_fix_commit": false,
+      "linked_issue_number": 61,
+      "notes": "PHASE_F / expansion / DEV_D"
+    },
+    {
+      "commit_id": "c245",
+      "phase": "PHASE_F",
+      "feature_id": "F005",
+      "developer": "DEV_B",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "files": [
+        "templates/group/dashboard.html"
+      ],
+      "commit_message": "feat(expansion): feature wiring",
+      "commit_body": "",
+      "date": "2022-07-13T09:44:28",
+      "branch": "fix/expansion-245",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_F / expansion / DEV_B"
+    },
+    {
+      "commit_id": "c246",
+      "phase": "PHASE_F",
+      "feature_id": "F006",
+      "developer": "DEV_C",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "files": [
+        "micro_admin/management/commands/import_clients.py"
+      ],
+      "commit_message": "fix the new workflow",
+      "commit_body": "Keeps the change scoped to expansion and preserves the existing behavior.",
+      "date": "2022-07-15T16:55:35",
+      "branch": "feature/expansion-246",
+      "is_fix_commit": true,
+      "linked_issue_number": null,
+      "notes": "PHASE_F / expansion / DEV_C"
+    },
+    {
+      "commit_id": "c247",
+      "phase": "PHASE_F",
+      "feature_id": "F007",
+      "developer": "DEV_A",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "files": [
+        "templates/receiptsform.html",
+        "templates/list_of_payments.html"
+      ],
+      "commit_message": "refactor report export",
+      "commit_body": "",
+      "date": "2022-07-17T10:06:42",
+      "branch": "feature/expansion-247",
+      "is_fix_commit": false,
+      "linked_issue_number": 62,
+      "notes": "PHASE_F / expansion / DEV_A"
+    },
+    {
+      "commit_id": "c248",
+      "phase": "PHASE_F",
+      "feature_id": "F008",
+      "developer": "DEV_D",
+      "github_token_env": "GITHUB_TOKEN_4",
+      "files": [
+        "templates/paymentform.html"
+      ],
+      "commit_message": "verify: support request",
+      "commit_body": "This is the small cleanup pass that came out of QA feedback.",
+      "date": "2022-07-20T11:17:49",
+      "branch": "feature/expansion-248",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_F / expansion / DEV_D"
+    },
+    {
+      "commit_id": "c249",
+      "phase": "PHASE_F",
+      "feature_id": "F009",
+      "developer": "DEV_B",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "files": [
+        "templates/list_of_payments.html"
+      ],
+      "commit_message": "feat(expansion): feature wiring",
+      "commit_body": "",
+      "date": "2022-07-22T09:28:56",
+      "branch": "fix/expansion-249",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_F / expansion / DEV_B"
+    },
+    {
+      "commit_id": "c250",
+      "phase": "PHASE_F",
+      "feature_id": "F010",
+      "developer": "DEV_C",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "files": [
+        "templates/listof_receipts.html"
+      ],
+      "commit_message": "fix the new workflow",
+      "commit_body": "",
+      "date": "2022-07-24T14:39:03",
+      "branch": "feature/expansion-250",
+      "is_fix_commit": false,
+      "linked_issue_number": 63,
+      "notes": "PHASE_F / expansion / DEV_C"
+    },
+    {
+      "commit_id": "c251",
+      "phase": "PHASE_F",
+      "feature_id": "F011",
+      "developer": "DEV_A",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "files": [
+        "templates/group/dashboard.html"
+      ],
+      "commit_message": "refactor report export",
+      "commit_body": "",
+      "date": "2022-07-26T11:50:10",
+      "branch": "feature/expansion-251",
+      "is_fix_commit": true,
+      "linked_issue_number": null,
+      "notes": "PHASE_F / expansion / DEV_A"
+    },
+    {
+      "commit_id": "c252",
+      "phase": "PHASE_F",
+      "feature_id": "F012",
+      "developer": "DEV_D",
+      "github_token_env": "GITHUB_TOKEN_4",
+      "files": [
+        "micro_admin/management/commands/import_clients.py"
+      ],
+      "commit_message": "verify: support request",
+      "commit_body": "Adds regression coverage and keeps the edge cases checked.",
+      "date": "2022-07-29T10:01:17",
+      "branch": "feature/expansion-252",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_F / expansion / DEV_D"
+    },
+    {
+      "commit_id": "c253",
+      "phase": "PHASE_F",
+      "feature_id": "F013",
+      "developer": "DEV_B",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "files": [
+        "templates/receiptsform.html",
+        "templates/list_of_payments.html"
+      ],
+      "commit_message": "feat(expansion): feature wiring",
+      "commit_body": "Keeps the change scoped to expansion and preserves the existing behavior.",
+      "date": "2022-07-31T09:12:24",
+      "branch": "fix/expansion-253",
+      "is_fix_commit": false,
+      "linked_issue_number": 64,
+      "notes": "PHASE_F / expansion / DEV_B"
+    },
+    {
+      "commit_id": "c254",
+      "phase": "PHASE_F",
+      "feature_id": "F014",
+      "developer": "DEV_C",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "files": [
+        "templates/paymentform.html",
+        "templates/group/dashboard.html"
+      ],
+      "commit_message": "fix the new workflow",
+      "commit_body": "",
+      "date": "2022-08-02T12:23:31",
+      "branch": "feature/expansion-254",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_F / expansion / DEV_C"
+    },
+    {
+      "commit_id": "c255",
+      "phase": "PHASE_F",
+      "feature_id": "F015",
+      "developer": "DEV_A",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "files": [
+        "templates/list_of_payments.html"
+      ],
+      "commit_message": "refactor report export",
+      "commit_body": "",
+      "date": "2022-08-04T12:34:38",
+      "branch": "feature/expansion-255",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_F / expansion / DEV_A"
+    },
+    {
+      "commit_id": "c256",
+      "phase": "PHASE_F",
+      "feature_id": "F016",
+      "developer": "DEV_D",
+      "github_token_env": "GITHUB_TOKEN_4",
+      "files": [
+        "templates/listof_receipts.html"
+      ],
+      "commit_message": "verify: support request",
+      "commit_body": "Adds regression coverage and keeps the edge cases checked.",
+      "date": "2022-08-07T09:45:45",
+      "branch": "feature/expansion-256",
+      "is_fix_commit": true,
+      "linked_issue_number": 64,
+      "notes": "PHASE_F / expansion / DEV_D"
+    },
+    {
+      "commit_id": "c257",
+      "phase": "PHASE_F",
+      "feature_id": "F017",
+      "developer": "DEV_B",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "files": [
+        "templates/group/dashboard.html"
+      ],
+      "commit_message": "feat(expansion): feature wiring",
+      "commit_body": "",
+      "date": "2022-08-09T09:56:52",
+      "branch": "fix/expansion-257",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_F / expansion / DEV_B"
+    },
+    {
+      "commit_id": "c258",
+      "phase": "PHASE_F",
+      "feature_id": "F018",
+      "developer": "DEV_C",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "files": [
+        "micro_admin/management/commands/import_clients.py"
+      ],
+      "commit_message": "fix the new workflow",
+      "commit_body": "",
+      "date": "2022-08-11T16:07:59",
+      "branch": "feature/expansion-258",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_F / expansion / DEV_C"
+    },
+    {
+      "commit_id": "c259",
+      "phase": "PHASE_F",
+      "feature_id": "F019",
+      "developer": "DEV_A",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "files": [
+        "templates/receiptsform.html",
+        "templates/list_of_payments.html"
+      ],
+      "commit_message": "refactor report export",
+      "commit_body": "",
+      "date": "2022-08-14T10:18:06",
+      "branch": "feature/expansion-259",
+      "is_fix_commit": false,
+      "linked_issue_number": 65,
+      "notes": "PHASE_F / expansion / DEV_A"
+    },
+    {
+      "commit_id": "c260",
+      "phase": "PHASE_F",
+      "feature_id": "F020",
+      "developer": "DEV_D",
+      "github_token_env": "GITHUB_TOKEN_4",
+      "files": [
+        "templates/paymentform.html"
+      ],
+      "commit_message": "verify: support request",
+      "commit_body": "Keeps the change scoped to expansion and preserves the existing behavior.",
+      "date": "2022-08-16T13:29:13",
+      "branch": "feature/expansion-260",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_F / expansion / DEV_D"
+    },
+    {
+      "commit_id": "c261",
+      "phase": "PHASE_F",
+      "feature_id": "F021",
+      "developer": "DEV_B",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "files": [
+        "templates/list_of_payments.html"
+      ],
+      "commit_message": "feat(expansion): feature wiring",
+      "commit_body": "This is the small cleanup pass that came out of QA feedback.",
+      "date": "2022-08-18T09:40:20",
+      "branch": "fix/expansion-261",
+      "is_fix_commit": true,
+      "linked_issue_number": null,
+      "notes": "PHASE_F / expansion / DEV_B"
+    },
+    {
+      "commit_id": "c262",
+      "phase": "PHASE_F",
+      "feature_id": "F022",
+      "developer": "DEV_C",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "files": [
+        "templates/listof_receipts.html"
+      ],
+      "commit_message": "fix the new workflow",
+      "commit_body": "Follow-up after review. The main path is unchanged; the null case is now handled.",
+      "date": "2022-08-20T14:51:27",
+      "branch": "feature/expansion-262",
+      "is_fix_commit": false,
+      "linked_issue_number": 66,
+      "notes": "PHASE_F / expansion / DEV_C"
+    },
+    {
+      "commit_id": "c263",
+      "phase": "PHASE_F",
+      "feature_id": "F023",
+      "developer": "DEV_A",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "files": [
+        "templates/group/dashboard.html"
+      ],
+      "commit_message": "refactor report export",
+      "commit_body": "",
+      "date": "2022-08-23T11:02:34",
+      "branch": "feature/expansion-263",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_F / expansion / DEV_A"
+    },
+    {
+      "commit_id": "c264",
+      "phase": "PHASE_F",
+      "feature_id": "F024",
+      "developer": "DEV_D",
+      "github_token_env": "GITHUB_TOKEN_4",
+      "files": [
+        "micro_admin/management/commands/import_clients.py"
+      ],
+      "commit_message": "verify: support request",
+      "commit_body": "Adds regression coverage and keeps the edge cases checked.",
+      "date": "2022-08-25T12:13:41",
+      "branch": "feature/expansion-264",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_F / expansion / DEV_D"
+    },
+    {
+      "commit_id": "c265",
+      "phase": "PHASE_F",
+      "feature_id": "F025",
+      "developer": "DEV_B",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "files": [
+        "templates/receiptsform.html",
+        "templates/list_of_payments.html",
+        "templates/listof_receipts.html"
+      ],
+      "commit_message": "feat(expansion): feature wiring",
+      "commit_body": "",
+      "date": "2022-08-27T09:24:48",
+      "branch": "fix/expansion-265",
+      "is_fix_commit": false,
+      "linked_issue_number": 67,
+      "notes": "PHASE_F / expansion / DEV_B"
+    },
+    {
+      "commit_id": "c266",
+      "phase": "PHASE_F",
+      "feature_id": "F026",
+      "developer": "DEV_C",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "files": [
+        "templates/paymentform.html"
+      ],
+      "commit_message": "fix the new workflow",
+      "commit_body": "",
+      "date": "2022-08-29T12:35:55",
+      "branch": "feature/expansion-266",
+      "is_fix_commit": true,
+      "linked_issue_number": null,
+      "notes": "PHASE_F / expansion / DEV_C"
+    },
+    {
+      "commit_id": "c267",
+      "phase": "PHASE_F",
+      "feature_id": "F027",
+      "developer": "DEV_A",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "files": [
+        "templates/list_of_payments.html"
+      ],
+      "commit_message": "refactor report export",
+      "commit_body": "Keeps the change scoped to expansion and preserves the existing behavior.",
+      "date": "2022-09-01T12:46:02",
+      "branch": "feature/expansion-267",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_F / expansion / DEV_A"
+    },
+    {
+      "commit_id": "c268",
+      "phase": "PHASE_F",
+      "feature_id": "F028",
+      "developer": "DEV_D",
+      "github_token_env": "GITHUB_TOKEN_4",
+      "files": [
+        "templates/listof_receipts.html"
+      ],
+      "commit_message": "verify: support request",
+      "commit_body": "Adds regression coverage and keeps the edge cases checked.",
+      "date": "2022-09-03T11:57:09",
+      "branch": "feature/expansion-268",
+      "is_fix_commit": false,
+      "linked_issue_number": 67,
+      "notes": "PHASE_F / expansion / DEV_D"
+    },
+    {
+      "commit_id": "c269",
+      "phase": "PHASE_F",
+      "feature_id": "F029",
+      "developer": "DEV_B",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "files": [
+        "templates/group/dashboard.html"
+      ],
+      "commit_message": "feat(expansion): feature wiring",
+      "commit_body": "",
+      "date": "2022-09-05T09:08:16",
+      "branch": "fix/expansion-269",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_F / expansion / DEV_B"
+    },
+    {
+      "commit_id": "c270",
+      "phase": "PHASE_F",
+      "feature_id": "F030",
+      "developer": "DEV_C",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "files": [
+        "micro_admin/management/commands/import_clients.py"
+      ],
+      "commit_message": "fix the new workflow",
+      "commit_body": "",
+      "date": "2022-09-08T16:19:23",
+      "branch": "feature/expansion-270",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_F / expansion / DEV_C"
+    },
+    {
+      "commit_id": "c271",
+      "phase": "PHASE_F",
+      "feature_id": "F001",
+      "developer": "DEV_A",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "files": [
+        "templates/receiptsform.html",
+        "templates/list_of_payments.html"
+      ],
+      "commit_message": "refactor report export",
+      "commit_body": "Follow-up after review. The main path is unchanged; the null case is now handled.",
+      "date": "2022-09-10T10:30:30",
+      "branch": "feature/expansion-271",
+      "is_fix_commit": true,
+      "linked_issue_number": 68,
+      "notes": "PHASE_F / expansion / DEV_A"
+    },
+    {
+      "commit_id": "c272",
+      "phase": "PHASE_F",
+      "feature_id": "F002",
+      "developer": "DEV_D",
+      "github_token_env": "GITHUB_TOKEN_4",
+      "files": [
+        "templates/paymentform.html"
+      ],
+      "commit_message": "verify: support request",
+      "commit_body": "Adds regression coverage and keeps the edge cases checked.",
+      "date": "2022-09-12T10:41:37",
+      "branch": "feature/expansion-272",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_F / expansion / DEV_D"
+    },
+    {
+      "commit_id": "c273",
+      "phase": "PHASE_F",
+      "feature_id": "F003",
+      "developer": "DEV_B",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "files": [
+        "templates/list_of_payments.html"
+      ],
+      "commit_message": "feat(expansion): feature wiring",
+      "commit_body": "",
+      "date": "2022-09-14T09:52:44",
+      "branch": "fix/expansion-273",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_F / expansion / DEV_B"
+    },
+    {
+      "commit_id": "c274",
+      "phase": "PHASE_F",
+      "feature_id": "F004",
+      "developer": "DEV_C",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "files": [
+        "templates/listof_receipts.html"
+      ],
+      "commit_message": "fix the new workflow",
+      "commit_body": "Keeps the change scoped to expansion and preserves the existing behavior.",
+      "date": "2022-09-17T14:03:51",
+      "branch": "feature/expansion-274",
+      "is_fix_commit": false,
+      "linked_issue_number": 69,
+      "notes": "PHASE_F / expansion / DEV_C"
+    },
+    {
+      "commit_id": "c275",
+      "phase": "PHASE_F",
+      "feature_id": "F005",
+      "developer": "DEV_A",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "files": [
+        "templates/group/dashboard.html"
+      ],
+      "commit_message": "refactor report export",
+      "commit_body": "",
+      "date": "2022-09-19T11:14:58",
+      "branch": "feature/expansion-275",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_F / expansion / DEV_A"
+    },
+    {
+      "commit_id": "c276",
+      "phase": "PHASE_F",
+      "feature_id": "F006",
+      "developer": "DEV_D",
+      "github_token_env": "GITHUB_TOKEN_4",
+      "files": [
+        "micro_admin/management/commands/import_clients.py",
+        "templates/list_of_payments.html"
+      ],
+      "commit_message": "verify: support request",
+      "commit_body": "Adds regression coverage and keeps the edge cases checked.",
+      "date": "2022-09-21T09:25:05",
+      "branch": "feature/expansion-276",
+      "is_fix_commit": true,
+      "linked_issue_number": null,
+      "notes": "PHASE_F / expansion / DEV_D"
+    },
+    {
+      "commit_id": "c277",
+      "phase": "PHASE_G",
+      "feature_id": "F007",
+      "developer": "DEV_A",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "files": [
+        "micro_admin/management/commands/generate_compliance_reports.py",
+        "docs/source/conf.py"
+      ],
+      "commit_message": "tighten release prep",
+      "commit_body": "",
+      "date": "2022-09-23T10:36:12",
+      "branch": "fix/hardening-277",
+      "is_fix_commit": false,
+      "linked_issue_number": 70,
+      "notes": "PHASE_G / hardening / DEV_A"
+    },
+    {
+      "commit_id": "c278",
+      "phase": "PHASE_G",
+      "feature_id": "F008",
+      "developer": "DEV_B",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "files": [
+        "docs/source/index.rst"
+      ],
+      "commit_message": "fix(hardening): compliance note",
+      "commit_body": "",
+      "date": "2022-09-26T10:47:19",
+      "branch": "feature/hardening-278",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_G / hardening / DEV_B"
+    },
+    {
+      "commit_id": "c279",
+      "phase": "PHASE_G",
+      "feature_id": "F009",
+      "developer": "DEV_D",
+      "github_token_env": "GITHUB_TOKEN_4",
+      "files": [
+        "docs/source/conf.py"
+      ],
+      "commit_message": "regression: performance pass",
+      "commit_body": "Adds regression coverage and keeps the edge cases checked.",
+      "date": "2022-09-28T12:58:26",
+      "branch": "feature/hardening-279",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_G / hardening / DEV_D"
+    },
+    {
+      "commit_id": "c280",
+      "phase": "PHASE_G",
+      "feature_id": "F010",
+      "developer": "DEV_C",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "files": [
+        "microfinance/settings.py"
+      ],
+      "commit_message": "polish the final cleanup",
+      "commit_body": "Follow-up after review. The main path is unchanged; the null case is now handled.",
+      "date": "2022-09-30T14:09:33",
+      "branch": "feature/hardening-280",
+      "is_fix_commit": false,
+      "linked_issue_number": 70,
+      "notes": "PHASE_G / hardening / DEV_C"
+    },
+    {
+      "commit_id": "c281",
+      "phase": "PHASE_G",
+      "feature_id": "F011",
+      "developer": "DEV_A",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "files": [
+        "micro_admin/management/commands/cleanup_archive.py"
+      ],
+      "commit_message": "tighten release prep",
+      "commit_body": "Keeps the change scoped to hardening and preserves the existing behavior.",
+      "date": "2022-10-03T11:20:40",
+      "branch": "fix/hardening-281",
+      "is_fix_commit": true,
+      "linked_issue_number": null,
+      "notes": "PHASE_G / hardening / DEV_A"
+    },
+    {
+      "commit_id": "c282",
+      "phase": "PHASE_G",
+      "feature_id": "F012",
+      "developer": "DEV_B",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "files": [
+        "micro_admin/management/commands/generate_compliance_reports.py"
+      ],
+      "commit_message": "fix(hardening): compliance note",
+      "commit_body": "",
+      "date": "2022-10-05T10:31:47",
+      "branch": "feature/hardening-282",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_G / hardening / DEV_B"
+    },
+    {
+      "commit_id": "c283",
+      "phase": "PHASE_G",
+      "feature_id": "F013",
+      "developer": "DEV_D",
+      "github_token_env": "GITHUB_TOKEN_4",
+      "files": [
+        "docs/source/index.rst",
+        "microfinance/settings.py"
+      ],
+      "commit_message": "regression: performance pass",
+      "commit_body": "Adds regression coverage and keeps the edge cases checked.",
+      "date": "2022-10-07T11:42:54",
+      "branch": "feature/hardening-283",
+      "is_fix_commit": false,
+      "linked_issue_number": 70,
+      "notes": "PHASE_G / hardening / DEV_D"
+    },
+    {
+      "commit_id": "c284",
+      "phase": "PHASE_G",
+      "feature_id": "F014",
+      "developer": "DEV_C",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "files": [
+        "docs/source/conf.py"
+      ],
+      "commit_message": "polish the final cleanup",
+      "commit_body": "",
+      "date": "2022-10-09T12:53:01",
+      "branch": "feature/hardening-284",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_G / hardening / DEV_C"
+    },
+    {
+      "commit_id": "c285",
+      "phase": "PHASE_G",
+      "feature_id": "F015",
+      "developer": "DEV_A",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "files": [
+        "microfinance/settings.py"
+      ],
+      "commit_message": "tighten release prep",
+      "commit_body": "",
+      "date": "2022-10-12T12:04:08",
+      "branch": "fix/hardening-285",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_G / hardening / DEV_A"
+    },
+    {
+      "commit_id": "c286",
+      "phase": "PHASE_G",
+      "feature_id": "F016",
+      "developer": "DEV_B",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "files": [
+        "micro_admin/management/commands/cleanup_archive.py"
+      ],
+      "commit_message": "fix(hardening): compliance note",
+      "commit_body": "",
+      "date": "2022-10-14T10:15:15",
+      "branch": "feature/hardening-286",
+      "is_fix_commit": true,
+      "linked_issue_number": 70,
+      "notes": "PHASE_G / hardening / DEV_B"
+    },
+    {
+      "commit_id": "c287",
+      "phase": "PHASE_G",
+      "feature_id": "F017",
+      "developer": "DEV_D",
+      "github_token_env": "GITHUB_TOKEN_4",
+      "files": [
+        "micro_admin/management/commands/generate_compliance_reports.py",
+        "microfinance/settings.py"
+      ],
+      "commit_message": "regression: performance pass",
+      "commit_body": "This is the small cleanup pass that came out of QA feedback.",
+      "date": "2022-10-16T10:26:22",
+      "branch": "feature/hardening-287",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_G / hardening / DEV_D"
+    },
+    {
+      "commit_id": "c288",
+      "phase": "PHASE_G",
+      "feature_id": "F018",
+      "developer": "DEV_C",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "files": [
+        "docs/source/index.rst"
+      ],
+      "commit_message": "polish the final cleanup",
+      "commit_body": "Keeps the change scoped to hardening and preserves the existing behavior.",
+      "date": "2022-10-18T16:37:29",
+      "branch": "feature/hardening-288",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_G / hardening / DEV_C"
+    },
+    {
+      "commit_id": "c289",
+      "phase": "PHASE_G",
+      "feature_id": "F019",
+      "developer": "DEV_A",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "files": [
+        "docs/source/conf.py",
+        "micro_admin/management/commands/cleanup_archive.py"
+      ],
+      "commit_message": "tighten release prep",
+      "commit_body": "Follow-up after review. The main path is unchanged; the null case is now handled.",
+      "date": "2022-10-21T10:48:36",
+      "branch": "fix/hardening-289",
+      "is_fix_commit": false,
+      "linked_issue_number": 70,
+      "notes": "PHASE_G / hardening / DEV_A"
+    },
+    {
+      "commit_id": "c290",
+      "phase": "PHASE_G",
+      "feature_id": "F020",
+      "developer": "DEV_B",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "files": [
+        "microfinance/settings.py"
+      ],
+      "commit_message": "fix(hardening): compliance note",
+      "commit_body": "",
+      "date": "2022-10-23T10:59:43",
+      "branch": "feature/hardening-290",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_G / hardening / DEV_B"
+    },
+    {
+      "commit_id": "c291",
+      "phase": "PHASE_G",
+      "feature_id": "F021",
+      "developer": "DEV_D",
+      "github_token_env": "GITHUB_TOKEN_4",
+      "files": [
+        "micro_admin/management/commands/cleanup_archive.py"
+      ],
+      "commit_message": "regression: performance pass",
+      "commit_body": "Adds regression coverage and keeps the edge cases checked.",
+      "date": "2022-10-25T09:10:50",
+      "branch": "feature/hardening-291",
+      "is_fix_commit": true,
+      "linked_issue_number": null,
+      "notes": "PHASE_G / hardening / DEV_D"
+    },
+    {
+      "commit_id": "c292",
+      "phase": "PHASE_G",
+      "feature_id": "F022",
+      "developer": "DEV_C",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "files": [
+        "micro_admin/management/commands/generate_compliance_reports.py"
+      ],
+      "commit_message": "polish the final cleanup",
+      "commit_body": "",
+      "date": "2022-10-28T14:21:57",
+      "branch": "feature/hardening-292",
+      "is_fix_commit": false,
+      "linked_issue_number": 70,
+      "notes": "PHASE_G / hardening / DEV_C"
+    },
+    {
+      "commit_id": "c293",
+      "phase": "PHASE_G",
+      "feature_id": "F023",
+      "developer": "DEV_A",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "files": [
+        "docs/source/index.rst"
+      ],
+      "commit_message": "tighten release prep",
+      "commit_body": "",
+      "date": "2022-10-30T11:32:04",
+      "branch": "fix/hardening-293",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_G / hardening / DEV_A"
+    },
+    {
+      "commit_id": "c294",
+      "phase": "PHASE_G",
+      "feature_id": "F024",
+      "developer": "DEV_B",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "files": [
+        "docs/source/conf.py"
+      ],
+      "commit_message": "fix(hardening): compliance note",
+      "commit_body": "",
+      "date": "2022-11-01T10:43:11",
+      "branch": "feature/hardening-294",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_G / hardening / DEV_B"
+    },
+    {
+      "commit_id": "c295",
+      "phase": "PHASE_G",
+      "feature_id": "F025",
+      "developer": "DEV_D",
+      "github_token_env": "GITHUB_TOKEN_4",
+      "files": [
+        "microfinance/settings.py",
+        "micro_admin/management/commands/generate_compliance_reports.py"
+      ],
+      "commit_message": "regression: performance pass",
+      "commit_body": "Keeps the change scoped to hardening and preserves the existing behavior.",
+      "date": "2022-11-03T13:54:18",
+      "branch": "feature/hardening-295",
+      "is_fix_commit": false,
+      "linked_issue_number": 70,
+      "notes": "PHASE_G / hardening / DEV_D"
+    },
+    {
+      "commit_id": "c296",
+      "phase": "PHASE_G",
+      "feature_id": "F026",
+      "developer": "DEV_C",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "files": [
+        "micro_admin/management/commands/cleanup_archive.py"
+      ],
+      "commit_message": "polish the final cleanup",
+      "commit_body": "",
+      "date": "2022-11-06T12:05:25",
+      "branch": "feature/hardening-296",
+      "is_fix_commit": true,
+      "linked_issue_number": null,
+      "notes": "PHASE_G / hardening / DEV_C"
+    },
+    {
+      "commit_id": "c297",
+      "phase": "PHASE_G",
+      "feature_id": "F027",
+      "developer": "DEV_A",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "files": [
+        "micro_admin/management/commands/generate_compliance_reports.py"
+      ],
+      "commit_message": "tighten release prep",
+      "commit_body": "",
+      "date": "2022-11-08T12:16:32",
+      "branch": "fix/hardening-297",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_G / hardening / DEV_A"
+    },
+    {
+      "commit_id": "c298",
+      "phase": "PHASE_G",
+      "feature_id": "F028",
+      "developer": "DEV_B",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "files": [
+        "docs/source/index.rst",
+        "micro_admin/management/commands/cleanup_archive.py"
+      ],
+      "commit_message": "fix(hardening): compliance note",
+      "commit_body": "Follow-up after review. The main path is unchanged; the null case is now handled.",
+      "date": "2022-11-10T10:27:39",
+      "branch": "feature/hardening-298",
+      "is_fix_commit": false,
+      "linked_issue_number": 70,
+      "notes": "PHASE_G / hardening / DEV_B"
+    },
+    {
+      "commit_id": "c299",
+      "phase": "PHASE_G",
+      "feature_id": "F029",
+      "developer": "DEV_D",
+      "github_token_env": "GITHUB_TOKEN_4",
+      "files": [
+        "docs/source/conf.py"
+      ],
+      "commit_message": "regression: performance pass",
+      "commit_body": "Adds regression coverage and keeps the edge cases checked.",
+      "date": "2022-11-12T12:38:46",
+      "branch": "feature/hardening-299",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_G / hardening / DEV_D"
+    },
+    {
+      "commit_id": "c300",
+      "phase": "PHASE_G",
+      "feature_id": "F030",
+      "developer": "DEV_C",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "files": [
+        "microfinance/settings.py"
+      ],
+      "commit_message": "polish the final cleanup",
+      "commit_body": "This is the small cleanup pass that came out of QA feedback.",
+      "date": "2022-11-15T16:49:53",
+      "branch": "feature/hardening-300",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_G / hardening / DEV_C"
+    },
+    {
+      "commit_id": "c301",
+      "phase": "PHASE_G",
+      "feature_id": "F001",
+      "developer": "DEV_A",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "files": [
+        "micro_admin/management/commands/cleanup_archive.py",
+        "docs/source/index.rst"
+      ],
+      "commit_message": "tighten release prep",
+      "commit_body": "",
+      "date": "2022-11-17T10:00:00",
+      "branch": "fix/hardening-301",
+      "is_fix_commit": true,
+      "linked_issue_number": 70,
+      "notes": "PHASE_G / hardening / DEV_A"
+    },
+    {
+      "commit_id": "c302",
+      "phase": "PHASE_G",
+      "feature_id": "F002",
+      "developer": "DEV_B",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "files": [
+        "micro_admin/management/commands/generate_compliance_reports.py"
+      ],
+      "commit_message": "fix(hardening): compliance note",
+      "commit_body": "Keeps the change scoped to hardening and preserves the existing behavior.",
+      "date": "2022-11-19T10:11:07",
+      "branch": "feature/hardening-302",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_G / hardening / DEV_B"
+    },
+    {
+      "commit_id": "c303",
+      "phase": "PHASE_G",
+      "feature_id": "F003",
+      "developer": "DEV_D",
+      "github_token_env": "GITHUB_TOKEN_4",
+      "files": [
+        "docs/source/index.rst"
+      ],
+      "commit_message": "regression: performance pass",
+      "commit_body": "Adds regression coverage and keeps the edge cases checked.",
+      "date": "2022-11-22T11:22:14",
+      "branch": "feature/hardening-303",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_G / hardening / DEV_D"
+    },
+    {
+      "commit_id": "c304",
+      "phase": "PHASE_G",
+      "feature_id": "F004",
+      "developer": "DEV_C",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "files": [
+        "docs/source/conf.py"
+      ],
+      "commit_message": "polish the final cleanup",
+      "commit_body": "",
+      "date": "2022-11-24T14:33:21",
+      "branch": "feature/hardening-304",
+      "is_fix_commit": false,
+      "linked_issue_number": 70,
+      "notes": "PHASE_G / hardening / DEV_C"
+    },
+    {
+      "commit_id": "c305",
+      "phase": "PHASE_G",
+      "feature_id": "F005",
+      "developer": "DEV_A",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "files": [
+        "microfinance/settings.py"
+      ],
+      "commit_message": "tighten release prep",
+      "commit_body": "",
+      "date": "2022-11-26T11:44:28",
+      "branch": "fix/hardening-305",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_G / hardening / DEV_A"
+    },
+    {
+      "commit_id": "c306",
+      "phase": "PHASE_G",
+      "feature_id": "F006",
+      "developer": "DEV_B",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "files": [
+        "micro_admin/management/commands/cleanup_archive.py"
+      ],
+      "commit_message": "fix(hardening): compliance note",
+      "commit_body": "",
+      "date": "2022-11-28T10:55:35",
+      "branch": "feature/hardening-306",
+      "is_fix_commit": true,
+      "linked_issue_number": null,
+      "notes": "PHASE_G / hardening / DEV_B"
+    },
+    {
+      "commit_id": "c307",
+      "phase": "PHASE_G",
+      "feature_id": "F007",
+      "developer": "DEV_D",
+      "github_token_env": "GITHUB_TOKEN_4",
+      "files": [
+        "micro_admin/management/commands/generate_compliance_reports.py",
+        "docs/source/conf.py"
+      ],
+      "commit_message": "regression: performance pass",
+      "commit_body": "Follow-up after review. The main path is unchanged; the null case is now handled.",
+      "date": "2022-12-01T10:06:42",
+      "branch": "feature/hardening-307",
+      "is_fix_commit": false,
+      "linked_issue_number": 70,
+      "notes": "PHASE_G / hardening / DEV_D"
+    },
+    {
+      "commit_id": "c308",
+      "phase": "PHASE_G",
+      "feature_id": "F008",
+      "developer": "DEV_C",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "files": [
+        "docs/source/index.rst"
+      ],
+      "commit_message": "polish the final cleanup",
+      "commit_body": "",
+      "date": "2022-12-03T12:17:49",
+      "branch": "feature/hardening-308",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_G / hardening / DEV_C"
+    },
+    {
+      "commit_id": "c309",
+      "phase": "PHASE_G",
+      "feature_id": "F009",
+      "developer": "DEV_A",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "files": [
+        "docs/source/conf.py",
+        "micro_admin/management/commands/generate_compliance_reports.py"
+      ],
+      "commit_message": "tighten release prep",
+      "commit_body": "Keeps the change scoped to hardening and preserves the existing behavior.",
+      "date": "2022-12-05T12:28:56",
+      "branch": "fix/hardening-309",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_G / hardening / DEV_A"
+    },
+    {
+      "commit_id": "c310",
+      "phase": "PHASE_G",
+      "feature_id": "F010",
+      "developer": "DEV_B",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "files": [
+        "microfinance/settings.py"
+      ],
+      "commit_message": "fix(hardening): compliance note",
+      "commit_body": "",
+      "date": "2022-12-07T10:39:03",
+      "branch": "feature/hardening-310",
+      "is_fix_commit": false,
+      "linked_issue_number": 70,
+      "notes": "PHASE_G / hardening / DEV_B"
+    },
+    {
+      "commit_id": "c311",
+      "phase": "PHASE_G",
+      "feature_id": "F011",
+      "developer": "DEV_D",
+      "github_token_env": "GITHUB_TOKEN_4",
+      "files": [
+        "micro_admin/management/commands/cleanup_archive.py"
+      ],
+      "commit_message": "regression: performance pass",
+      "commit_body": "Adds regression coverage and keeps the edge cases checked.",
+      "date": "2022-12-10T09:50:10",
+      "branch": "feature/hardening-311",
+      "is_fix_commit": true,
+      "linked_issue_number": null,
+      "notes": "PHASE_G / hardening / DEV_D"
+    },
+    {
+      "commit_id": "c312",
+      "phase": "PHASE_G",
+      "feature_id": "F012",
+      "developer": "DEV_C",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "files": [
+        "micro_admin/management/commands/generate_compliance_reports.py"
+      ],
+      "commit_message": "polish the final cleanup",
+      "commit_body": "",
+      "date": "2022-12-12T16:01:17",
+      "branch": "feature/hardening-312",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_G / hardening / DEV_C"
+    },
+    {
+      "commit_id": "c313",
+      "phase": "PHASE_G",
+      "feature_id": "F013",
+      "developer": "DEV_A",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "files": [
+        "docs/source/index.rst",
+        "microfinance/settings.py"
+      ],
+      "commit_message": "tighten release prep",
+      "commit_body": "This is the small cleanup pass that came out of QA feedback.",
+      "date": "2022-12-14T10:12:24",
+      "branch": "fix/hardening-313",
+      "is_fix_commit": false,
+      "linked_issue_number": 70,
+      "notes": "PHASE_G / hardening / DEV_A"
+    },
+    {
+      "commit_id": "c314",
+      "phase": "PHASE_G",
+      "feature_id": "F014",
+      "developer": "DEV_B",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "files": [
+        "docs/source/conf.py"
+      ],
+      "commit_message": "fix(hardening): compliance note",
+      "commit_body": "",
+      "date": "2022-12-17T10:23:31",
+      "branch": "feature/hardening-314",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_G / hardening / DEV_B"
+    },
+    {
+      "commit_id": "c315",
+      "phase": "PHASE_G",
+      "feature_id": "F015",
+      "developer": "DEV_D",
+      "github_token_env": "GITHUB_TOKEN_4",
+      "files": [
+        "microfinance/settings.py"
+      ],
+      "commit_message": "regression: performance pass",
+      "commit_body": "Adds regression coverage and keeps the edge cases checked.",
+      "date": "2022-12-19T13:34:38",
+      "branch": "feature/hardening-315",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_G / hardening / DEV_D"
+    },
+    {
+      "commit_id": "c316",
+      "phase": "PHASE_G",
+      "feature_id": "F016",
+      "developer": "DEV_C",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "files": [
+        "micro_admin/management/commands/cleanup_archive.py"
+      ],
+      "commit_message": "polish the final cleanup",
+      "commit_body": "Keeps the change scoped to hardening and preserves the existing behavior.",
+      "date": "2022-12-21T14:45:45",
+      "branch": "feature/hardening-316",
+      "is_fix_commit": true,
+      "linked_issue_number": 70,
+      "notes": "PHASE_G / hardening / DEV_C"
+    },
+    {
+      "commit_id": "c317",
+      "phase": "PHASE_G",
+      "feature_id": "F017",
+      "developer": "DEV_A",
+      "github_token_env": "GITHUB_TOKEN_1",
+      "files": [
+        "micro_admin/management/commands/generate_compliance_reports.py"
+      ],
+      "commit_message": "tighten release prep",
+      "commit_body": "",
+      "date": "2022-12-23T11:56:52",
+      "branch": "fix/hardening-317",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_G / hardening / DEV_A"
+    },
+    {
+      "commit_id": "c318",
+      "phase": "PHASE_G",
+      "feature_id": "F018",
+      "developer": "DEV_B",
+      "github_token_env": "GITHUB_TOKEN_2",
+      "files": [
+        "docs/source/index.rst"
+      ],
+      "commit_message": "fix(hardening): compliance note",
+      "commit_body": "",
+      "date": "2022-12-26T10:07:59",
+      "branch": "feature/hardening-318",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_G / hardening / DEV_B"
+    },
+    {
+      "commit_id": "c319",
+      "phase": "PHASE_G",
+      "feature_id": "F019",
+      "developer": "DEV_D",
+      "github_token_env": "GITHUB_TOKEN_4",
+      "files": [
+        "docs/source/conf.py",
+        "micro_admin/management/commands/cleanup_archive.py"
+      ],
+      "commit_message": "regression: performance pass",
+      "commit_body": "Adds regression coverage and keeps the edge cases checked.",
+      "date": "2022-12-28T12:18:06",
+      "branch": "feature/hardening-319",
+      "is_fix_commit": false,
+      "linked_issue_number": 70,
+      "notes": "PHASE_G / hardening / DEV_D"
+    },
+    {
+      "commit_id": "c320",
+      "phase": "PHASE_G",
+      "feature_id": "F020",
+      "developer": "DEV_C",
+      "github_token_env": "GITHUB_TOKEN_3",
+      "files": [
+        "microfinance/settings.py",
+        "docs/source/index.rst"
+      ],
+      "commit_message": "polish the final cleanup",
+      "commit_body": "",
+      "date": "2022-12-30T12:29:13",
+      "branch": "feature/hardening-320",
+      "is_fix_commit": false,
+      "linked_issue_number": null,
+      "notes": "PHASE_G / hardening / DEV_C"
+    }
+  ]
+}
