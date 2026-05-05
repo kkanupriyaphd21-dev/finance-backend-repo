@@ -1,0 +1,709 @@
+{
+  "metadata": {
+    "purpose": "Backdate mapping for synthetic GitHub issue dataset",
+    "note": "GitHub API cannot retroactively set issue timestamps; this file preserves intended historical dates for training data export",
+    "generated_at": "2026-05-05T09:33:30.841069Z"
+  },
+  "issues": [
+    {
+      "plan_issue_number": 1,
+      "remote_issue_number": 1,
+      "intended_created_date": "2021-05-03T09:05:00",
+      "intended_closed_date": "2021-05-07T09:05:00",
+      "intended_state": "closed",
+      "title": "Guarantor validation crashes when guarantor list is empty",
+      "github_created_at": "2026-05-05T00:00:00Z (API time, not historical)",
+      "api_created_timestamp": "2026-05-05T09:33:30.841414Z"
+    },
+    {
+      "plan_issue_number": 2,
+      "remote_issue_number": 2,
+      "intended_created_date": "2021-05-16T10:15:00",
+      "intended_closed_date": "2021-05-21T10:15:00",
+      "intended_state": "closed",
+      "title": "Payment form accepts zero amount on retry",
+      "github_created_at": "2026-05-05T00:00:00Z (API time, not historical)",
+      "api_created_timestamp": "2026-05-05T09:33:30.841418Z"
+    },
+    {
+      "plan_issue_number": 3,
+      "remote_issue_number": 3,
+      "intended_created_date": "2021-05-29T11:25:00",
+      "intended_closed_date": "2021-06-04T11:25:00",
+      "intended_state": "closed",
+      "title": "Ledger totals drift after deleting a stale receipt",
+      "github_created_at": "2026-05-05T00:00:00Z (API time, not historical)",
+      "api_created_timestamp": "2026-05-05T09:33:30.841420Z"
+    },
+    {
+      "plan_issue_number": 4,
+      "remote_issue_number": 4,
+      "intended_created_date": "2021-06-11T14:35:00",
+      "intended_closed_date": "2021-06-18T14:35:00",
+      "intended_state": "closed",
+      "title": "Receipt list duplicates row after retry flow",
+      "github_created_at": "2026-05-05T00:00:00Z (API time, not historical)",
+      "api_created_timestamp": "2026-05-05T09:33:30.841422Z"
+    },
+    {
+      "plan_issue_number": 5,
+      "remote_issue_number": 5,
+      "intended_created_date": "2021-06-20T15:45:00",
+      "intended_closed_date": "2021-06-28T15:45:00",
+      "intended_state": "closed",
+      "title": "Client update loses branch selection after save",
+      "github_created_at": "2026-05-05T00:00:00Z (API time, not historical)",
+      "api_created_timestamp": "2026-05-05T09:33:30.841424Z"
+    },
+    {
+      "plan_issue_number": 6,
+      "remote_issue_number": 6,
+      "intended_created_date": "2021-07-03T16:55:00",
+      "intended_closed_date": "2021-07-12T16:55:00",
+      "intended_state": "closed",
+      "title": "Savings withdrawal can go negative on partial edit",
+      "github_created_at": "2026-05-05T00:00:00Z (API time, not historical)",
+      "api_created_timestamp": "2026-05-05T09:33:30.841426Z"
+    },
+    {
+      "plan_issue_number": 7,
+      "remote_issue_number": 7,
+      "intended_created_date": "2021-07-16T19:05:00",
+      "intended_closed_date": "2021-07-26T19:05:00",
+      "intended_state": "closed",
+      "title": "Group interest calc uses old rate after approval",
+      "github_created_at": "2026-05-05T00:00:00Z (API time, not historical)",
+      "api_created_timestamp": "2026-05-05T09:33:30.841428Z"
+    },
+    {
+      "plan_issue_number": 8,
+      "remote_issue_number": 8,
+      "intended_created_date": "2021-07-29T09:15:00",
+      "intended_closed_date": "2021-08-02T09:15:00",
+      "intended_state": "closed",
+      "title": "Add installment preview to loan workflow",
+      "github_created_at": "2026-05-05T00:00:00Z (API time, not historical)",
+      "api_created_timestamp": "2026-05-05T09:33:30.841430Z"
+    },
+    {
+      "plan_issue_number": 9,
+      "remote_issue_number": 9,
+      "intended_created_date": "2021-08-07T10:25:00",
+      "intended_closed_date": "2021-08-12T10:25:00",
+      "intended_state": "closed",
+      "title": "Export ledger with optional branch filter",
+      "github_created_at": "2026-05-05T00:00:00Z (API time, not historical)",
+      "api_created_timestamp": "2026-05-05T09:33:30.841431Z"
+    },
+    {
+      "plan_issue_number": 10,
+      "remote_issue_number": 10,
+      "intended_created_date": "2021-08-20T11:35:00",
+      "intended_closed_date": "2021-08-26T11:35:00",
+      "intended_state": "closed",
+      "title": "Improve payment form hints for first-time operators",
+      "github_created_at": "2026-05-05T00:00:00Z (API time, not historical)",
+      "api_created_timestamp": "2026-05-05T09:33:30.841433Z"
+    },
+    {
+      "plan_issue_number": 11,
+      "remote_issue_number": 11,
+      "intended_created_date": "2021-09-02T14:45:00",
+      "intended_closed_date": "2021-09-09T14:45:00",
+      "intended_state": "closed",
+      "title": "Allow receipt reprint from the list page",
+      "github_created_at": "2026-05-05T00:00:00Z (API time, not historical)",
+      "api_created_timestamp": "2026-05-05T09:33:30.841435Z"
+    },
+    {
+      "plan_issue_number": 12,
+      "remote_issue_number": 12,
+      "intended_created_date": "2021-09-15T15:55:00",
+      "intended_closed_date": "2021-09-23T15:55:00",
+      "intended_state": "closed",
+      "title": "Make client search remember the last branch",
+      "github_created_at": "2026-05-05T00:00:00Z (API time, not historical)",
+      "api_created_timestamp": "2026-05-05T09:33:30.841437Z"
+    },
+    {
+      "plan_issue_number": 13,
+      "remote_issue_number": 13,
+      "intended_created_date": "2021-09-24T16:05:00",
+      "intended_closed_date": "2021-10-03T16:05:00",
+      "intended_state": "closed",
+      "title": "Should we document the branch approval flow?",
+      "github_created_at": "2026-05-05T00:00:00Z (API time, not historical)",
+      "api_created_timestamp": "2026-05-05T09:33:30.841439Z"
+    },
+    {
+      "plan_issue_number": 14,
+      "remote_issue_number": 14,
+      "intended_created_date": "2021-10-07T19:15:00",
+      "intended_closed_date": "2021-10-17T19:15:00",
+      "intended_state": "closed",
+      "title": "Docs: add setup notes for local branch testing",
+      "github_created_at": "2026-05-05T00:00:00Z (API time, not historical)",
+      "api_created_timestamp": "2026-05-05T09:33:30.841441Z"
+    },
+    {
+      "plan_issue_number": 15,
+      "remote_issue_number": 1,
+      "intended_created_date": "2021-10-20T09:25:00",
+      "intended_closed_date": "2021-10-24T09:25:00",
+      "intended_state": "closed",
+      "title": "Guarantor validation crashes when guarantor list is empty",
+      "github_created_at": "2026-05-05T00:00:00Z (API time, not historical)",
+      "api_created_timestamp": "2026-05-05T09:33:30.841442Z"
+    },
+    {
+      "plan_issue_number": 16,
+      "remote_issue_number": 2,
+      "intended_created_date": "2021-11-02T10:35:00",
+      "intended_closed_date": "2021-11-07T10:35:00",
+      "intended_state": "closed",
+      "title": "Payment form accepts zero amount on retry",
+      "github_created_at": "2026-05-05T00:00:00Z (API time, not historical)",
+      "api_created_timestamp": "2026-05-05T09:33:30.841444Z"
+    },
+    {
+      "plan_issue_number": 17,
+      "remote_issue_number": 3,
+      "intended_created_date": "2021-11-11T11:45:00",
+      "intended_closed_date": "2021-11-17T11:45:00",
+      "intended_state": "closed",
+      "title": "Ledger totals drift after deleting a stale receipt",
+      "github_created_at": "2026-05-05T00:00:00Z (API time, not historical)",
+      "api_created_timestamp": "2026-05-05T09:33:30.841446Z"
+    },
+    {
+      "plan_issue_number": 18,
+      "remote_issue_number": 4,
+      "intended_created_date": "2021-11-24T14:55:00",
+      "intended_closed_date": "2021-12-01T14:55:00",
+      "intended_state": "closed",
+      "title": "Receipt list duplicates row after retry flow",
+      "github_created_at": "2026-05-05T00:00:00Z (API time, not historical)",
+      "api_created_timestamp": "2026-05-05T09:33:30.841448Z"
+    },
+    {
+      "plan_issue_number": 19,
+      "remote_issue_number": 5,
+      "intended_created_date": "2021-12-07T15:05:00",
+      "intended_closed_date": "2021-12-15T15:05:00",
+      "intended_state": "closed",
+      "title": "Client update loses branch selection after save",
+      "github_created_at": "2026-05-05T00:00:00Z (API time, not historical)",
+      "api_created_timestamp": "2026-05-05T09:33:30.841450Z"
+    },
+    {
+      "plan_issue_number": 20,
+      "remote_issue_number": 6,
+      "intended_created_date": "2021-12-20T16:15:00",
+      "intended_closed_date": "2021-12-29T16:15:00",
+      "intended_state": "closed",
+      "title": "Savings withdrawal can go negative on partial edit",
+      "github_created_at": "2026-05-05T00:00:00Z (API time, not historical)",
+      "api_created_timestamp": "2026-05-05T09:33:30.841452Z"
+    },
+    {
+      "plan_issue_number": 21,
+      "remote_issue_number": 7,
+      "intended_created_date": "2021-12-29T19:25:00",
+      "intended_closed_date": "2022-01-08T19:25:00",
+      "intended_state": "closed",
+      "title": "Group interest calc uses old rate after approval",
+      "github_created_at": "2026-05-05T00:00:00Z (API time, not historical)",
+      "api_created_timestamp": "2026-05-05T09:33:30.841453Z"
+    },
+    {
+      "plan_issue_number": 22,
+      "remote_issue_number": 8,
+      "intended_created_date": "2022-01-11T09:35:00",
+      "intended_closed_date": "2022-01-15T09:35:00",
+      "intended_state": "closed",
+      "title": "Add installment preview to loan workflow",
+      "github_created_at": "2026-05-05T00:00:00Z (API time, not historical)",
+      "api_created_timestamp": "2026-05-05T09:33:30.841455Z"
+    },
+    {
+      "plan_issue_number": 23,
+      "remote_issue_number": 9,
+      "intended_created_date": "2022-01-24T10:45:00",
+      "intended_closed_date": "2022-01-29T10:45:00",
+      "intended_state": "closed",
+      "title": "Export ledger with optional branch filter",
+      "github_created_at": "2026-05-05T00:00:00Z (API time, not historical)",
+      "api_created_timestamp": "2026-05-05T09:33:30.841457Z"
+    },
+    {
+      "plan_issue_number": 24,
+      "remote_issue_number": 10,
+      "intended_created_date": "2022-02-06T11:55:00",
+      "intended_closed_date": "2022-02-12T11:55:00",
+      "intended_state": "closed",
+      "title": "Improve payment form hints for first-time operators",
+      "github_created_at": "2026-05-05T00:00:00Z (API time, not historical)",
+      "api_created_timestamp": "2026-05-05T09:33:30.841458Z"
+    },
+    {
+      "plan_issue_number": 25,
+      "remote_issue_number": 11,
+      "intended_created_date": "2022-02-15T14:05:00",
+      "intended_closed_date": "2022-02-22T14:05:00",
+      "intended_state": "closed",
+      "title": "Allow receipt reprint from the list page",
+      "github_created_at": "2026-05-05T00:00:00Z (API time, not historical)",
+      "api_created_timestamp": "2026-05-05T09:33:30.841460Z"
+    },
+    {
+      "plan_issue_number": 26,
+      "remote_issue_number": 12,
+      "intended_created_date": "2022-02-28T15:15:00",
+      "intended_closed_date": "2022-03-08T15:15:00",
+      "intended_state": "closed",
+      "title": "Make client search remember the last branch",
+      "github_created_at": "2026-05-05T00:00:00Z (API time, not historical)",
+      "api_created_timestamp": "2026-05-05T09:33:30.841462Z"
+    },
+    {
+      "plan_issue_number": 27,
+      "remote_issue_number": 13,
+      "intended_created_date": "2022-03-13T16:25:00",
+      "intended_closed_date": "2022-03-22T16:25:00",
+      "intended_state": "closed",
+      "title": "Should we document the branch approval flow?",
+      "github_created_at": "2026-05-05T00:00:00Z (API time, not historical)",
+      "api_created_timestamp": "2026-05-05T09:33:30.841464Z"
+    },
+    {
+      "plan_issue_number": 28,
+      "remote_issue_number": 14,
+      "intended_created_date": "2022-03-26T19:35:00",
+      "intended_closed_date": "2022-04-05T19:35:00",
+      "intended_state": "closed",
+      "title": "Docs: add setup notes for local branch testing",
+      "github_created_at": "2026-05-05T00:00:00Z (API time, not historical)",
+      "api_created_timestamp": "2026-05-05T09:33:30.841466Z"
+    },
+    {
+      "plan_issue_number": 29,
+      "remote_issue_number": 1,
+      "intended_created_date": "2022-04-04T09:45:00",
+      "intended_closed_date": "2022-04-08T09:45:00",
+      "intended_state": "closed",
+      "title": "Guarantor validation crashes when guarantor list is empty",
+      "github_created_at": "2026-05-05T00:00:00Z (API time, not historical)",
+      "api_created_timestamp": "2026-05-05T09:33:30.841468Z"
+    },
+    {
+      "plan_issue_number": 30,
+      "remote_issue_number": 2,
+      "intended_created_date": "2022-04-17T10:55:00",
+      "intended_closed_date": "2022-04-22T10:55:00",
+      "intended_state": "closed",
+      "title": "Payment form accepts zero amount on retry",
+      "github_created_at": "2026-05-05T00:00:00Z (API time, not historical)",
+      "api_created_timestamp": "2026-05-05T09:33:30.841469Z"
+    },
+    {
+      "plan_issue_number": 31,
+      "remote_issue_number": 3,
+      "intended_created_date": "2022-04-30T11:05:00",
+      "intended_closed_date": "2022-05-06T11:05:00",
+      "intended_state": "closed",
+      "title": "Ledger totals drift after deleting a stale receipt",
+      "github_created_at": "2026-05-05T00:00:00Z (API time, not historical)",
+      "api_created_timestamp": "2026-05-05T09:33:30.841471Z"
+    },
+    {
+      "plan_issue_number": 32,
+      "remote_issue_number": 4,
+      "intended_created_date": "2022-05-13T14:15:00",
+      "intended_closed_date": "2022-05-20T14:15:00",
+      "intended_state": "closed",
+      "title": "Receipt list duplicates row after retry flow",
+      "github_created_at": "2026-05-05T00:00:00Z (API time, not historical)",
+      "api_created_timestamp": "2026-05-05T09:33:30.841473Z"
+    },
+    {
+      "plan_issue_number": 33,
+      "remote_issue_number": 5,
+      "intended_created_date": "2022-05-22T15:25:00",
+      "intended_closed_date": "2022-05-30T15:25:00",
+      "intended_state": "closed",
+      "title": "Client update loses branch selection after save",
+      "github_created_at": "2026-05-05T00:00:00Z (API time, not historical)",
+      "api_created_timestamp": "2026-05-05T09:33:30.841475Z"
+    },
+    {
+      "plan_issue_number": 34,
+      "remote_issue_number": 6,
+      "intended_created_date": "2022-06-04T16:35:00",
+      "intended_closed_date": "2022-06-13T16:35:00",
+      "intended_state": "closed",
+      "title": "Savings withdrawal can go negative on partial edit",
+      "github_created_at": "2026-05-05T00:00:00Z (API time, not historical)",
+      "api_created_timestamp": "2026-05-05T09:33:30.841477Z"
+    },
+    {
+      "plan_issue_number": 35,
+      "remote_issue_number": 7,
+      "intended_created_date": "2022-06-17T19:45:00",
+      "intended_closed_date": "2022-06-27T19:45:00",
+      "intended_state": "closed",
+      "title": "Group interest calc uses old rate after approval",
+      "github_created_at": "2026-05-05T00:00:00Z (API time, not historical)",
+      "api_created_timestamp": "2026-05-05T09:33:30.841478Z"
+    },
+    {
+      "plan_issue_number": 36,
+      "remote_issue_number": 8,
+      "intended_created_date": "2022-06-30T09:55:00",
+      "intended_closed_date": "2022-07-04T09:55:00",
+      "intended_state": "closed",
+      "title": "Add installment preview to loan workflow",
+      "github_created_at": "2026-05-05T00:00:00Z (API time, not historical)",
+      "api_created_timestamp": "2026-05-05T09:33:30.841480Z"
+    },
+    {
+      "plan_issue_number": 37,
+      "remote_issue_number": 9,
+      "intended_created_date": "2022-07-09T10:05:00",
+      "intended_closed_date": "2022-07-14T10:05:00",
+      "intended_state": "closed",
+      "title": "Export ledger with optional branch filter",
+      "github_created_at": "2026-05-05T00:00:00Z (API time, not historical)",
+      "api_created_timestamp": "2026-05-05T09:33:30.841482Z"
+    },
+    {
+      "plan_issue_number": 38,
+      "remote_issue_number": 10,
+      "intended_created_date": "2022-07-22T11:15:00",
+      "intended_closed_date": "2022-07-28T11:15:00",
+      "intended_state": "closed",
+      "title": "Improve payment form hints for first-time operators",
+      "github_created_at": "2026-05-05T00:00:00Z (API time, not historical)",
+      "api_created_timestamp": "2026-05-05T09:33:30.841483Z"
+    },
+    {
+      "plan_issue_number": 39,
+      "remote_issue_number": 11,
+      "intended_created_date": "2022-08-04T14:25:00",
+      "intended_closed_date": "2022-08-11T14:25:00",
+      "intended_state": "closed",
+      "title": "Allow receipt reprint from the list page",
+      "github_created_at": "2026-05-05T00:00:00Z (API time, not historical)",
+      "api_created_timestamp": "2026-05-05T09:33:30.841485Z"
+    },
+    {
+      "plan_issue_number": 40,
+      "remote_issue_number": 12,
+      "intended_created_date": "2022-08-17T15:35:00",
+      "intended_closed_date": "2022-08-25T15:35:00",
+      "intended_state": "closed",
+      "title": "Make client search remember the last branch",
+      "github_created_at": "2026-05-05T00:00:00Z (API time, not historical)",
+      "api_created_timestamp": "2026-05-05T09:33:30.841487Z"
+    },
+    {
+      "plan_issue_number": 41,
+      "remote_issue_number": 13,
+      "intended_created_date": "2022-08-26T16:45:00",
+      "intended_closed_date": null,
+      "intended_state": "open",
+      "title": "Should we document the branch approval flow?",
+      "github_created_at": "2026-05-05T00:00:00Z (API time, not historical)",
+      "api_created_timestamp": "2026-05-05T09:33:30.841489Z"
+    },
+    {
+      "plan_issue_number": 42,
+      "remote_issue_number": 14,
+      "intended_created_date": "2022-09-08T19:55:00",
+      "intended_closed_date": "2022-09-18T19:55:00",
+      "intended_state": "closed",
+      "title": "Docs: add setup notes for local branch testing",
+      "github_created_at": "2026-05-05T00:00:00Z (API time, not historical)",
+      "api_created_timestamp": "2026-05-05T09:33:30.841491Z"
+    },
+    {
+      "plan_issue_number": 43,
+      "remote_issue_number": 1,
+      "intended_created_date": "2022-09-21T09:05:00",
+      "intended_closed_date": "2022-09-25T09:05:00",
+      "intended_state": "closed",
+      "title": "Guarantor validation crashes when guarantor list is empty",
+      "github_created_at": "2026-05-05T00:00:00Z (API time, not historical)",
+      "api_created_timestamp": "2026-05-05T09:33:30.841492Z"
+    },
+    {
+      "plan_issue_number": 44,
+      "remote_issue_number": 2,
+      "intended_created_date": "2022-10-04T10:15:00",
+      "intended_closed_date": "2022-10-09T10:15:00",
+      "intended_state": "closed",
+      "title": "Payment form accepts zero amount on retry",
+      "github_created_at": "2026-05-05T00:00:00Z (API time, not historical)",
+      "api_created_timestamp": "2026-05-05T09:33:30.841494Z"
+    },
+    {
+      "plan_issue_number": 45,
+      "remote_issue_number": 3,
+      "intended_created_date": "2022-10-13T11:25:00",
+      "intended_closed_date": "2022-10-19T11:25:00",
+      "intended_state": "closed",
+      "title": "Ledger totals drift after deleting a stale receipt",
+      "github_created_at": "2026-05-05T00:00:00Z (API time, not historical)",
+      "api_created_timestamp": "2026-05-05T09:33:30.841496Z"
+    },
+    {
+      "plan_issue_number": 46,
+      "remote_issue_number": 4,
+      "intended_created_date": "2022-10-26T14:35:00",
+      "intended_closed_date": "2022-11-02T14:35:00",
+      "intended_state": "closed",
+      "title": "Receipt list duplicates row after retry flow",
+      "github_created_at": "2026-05-05T00:00:00Z (API time, not historical)",
+      "api_created_timestamp": "2026-05-05T09:33:30.841497Z"
+    },
+    {
+      "plan_issue_number": 47,
+      "remote_issue_number": 5,
+      "intended_created_date": "2022-11-08T15:45:00",
+      "intended_closed_date": "2022-11-16T15:45:00",
+      "intended_state": "closed",
+      "title": "Client update loses branch selection after save",
+      "github_created_at": "2026-05-05T00:00:00Z (API time, not historical)",
+      "api_created_timestamp": "2026-05-05T09:33:30.841499Z"
+    },
+    {
+      "plan_issue_number": 48,
+      "remote_issue_number": 6,
+      "intended_created_date": "2022-11-21T16:55:00",
+      "intended_closed_date": "2022-11-30T16:55:00",
+      "intended_state": "closed",
+      "title": "Savings withdrawal can go negative on partial edit",
+      "github_created_at": "2026-05-05T00:00:00Z (API time, not historical)",
+      "api_created_timestamp": "2026-05-05T09:33:30.841501Z"
+    },
+    {
+      "plan_issue_number": 49,
+      "remote_issue_number": 7,
+      "intended_created_date": "2022-11-30T19:05:00",
+      "intended_closed_date": "2022-12-10T19:05:00",
+      "intended_state": "closed",
+      "title": "Group interest calc uses old rate after approval",
+      "github_created_at": "2026-05-05T00:00:00Z (API time, not historical)",
+      "api_created_timestamp": "2026-05-05T09:33:30.841503Z"
+    },
+    {
+      "plan_issue_number": 50,
+      "remote_issue_number": 8,
+      "intended_created_date": "2022-12-13T09:15:00",
+      "intended_closed_date": "2022-12-17T09:15:00",
+      "intended_state": "closed",
+      "title": "Add installment preview to loan workflow",
+      "github_created_at": "2026-05-05T00:00:00Z (API time, not historical)",
+      "api_created_timestamp": "2026-05-05T09:33:30.841504Z"
+    },
+    {
+      "plan_issue_number": 51,
+      "remote_issue_number": 9,
+      "intended_created_date": "2022-12-26T10:25:00",
+      "intended_closed_date": "2022-12-31T10:25:00",
+      "intended_state": "closed",
+      "title": "Export ledger with optional branch filter",
+      "github_created_at": "2026-05-05T00:00:00Z (API time, not historical)",
+      "api_created_timestamp": "2026-05-05T09:33:30.841506Z"
+    },
+    {
+      "plan_issue_number": 52,
+      "remote_issue_number": 10,
+      "intended_created_date": "2023-01-08T11:35:00",
+      "intended_closed_date": "2023-01-14T11:35:00",
+      "intended_state": "closed",
+      "title": "Improve payment form hints for first-time operators",
+      "github_created_at": "2026-05-05T00:00:00Z (API time, not historical)",
+      "api_created_timestamp": "2026-05-05T09:33:30.841508Z"
+    },
+    {
+      "plan_issue_number": 53,
+      "remote_issue_number": 11,
+      "intended_created_date": "2023-01-17T14:45:00",
+      "intended_closed_date": "2023-01-24T14:45:00",
+      "intended_state": "closed",
+      "title": "Allow receipt reprint from the list page",
+      "github_created_at": "2026-05-05T00:00:00Z (API time, not historical)",
+      "api_created_timestamp": "2026-05-05T09:33:30.841510Z"
+    },
+    {
+      "plan_issue_number": 54,
+      "remote_issue_number": 12,
+      "intended_created_date": "2023-01-30T15:55:00",
+      "intended_closed_date": "2023-02-07T15:55:00",
+      "intended_state": "closed",
+      "title": "Make client search remember the last branch",
+      "github_created_at": "2026-05-05T00:00:00Z (API time, not historical)",
+      "api_created_timestamp": "2026-05-05T09:33:30.841512Z"
+    },
+    {
+      "plan_issue_number": 55,
+      "remote_issue_number": 13,
+      "intended_created_date": "2023-02-12T16:05:00",
+      "intended_closed_date": "2023-02-21T16:05:00",
+      "intended_state": "closed",
+      "title": "Should we document the branch approval flow?",
+      "github_created_at": "2026-05-05T00:00:00Z (API time, not historical)",
+      "api_created_timestamp": "2026-05-05T09:33:30.841513Z"
+    },
+    {
+      "plan_issue_number": 56,
+      "remote_issue_number": 14,
+      "intended_created_date": "2023-02-25T19:15:00",
+      "intended_closed_date": "2023-03-07T19:15:00",
+      "intended_state": "closed",
+      "title": "Docs: add setup notes for local branch testing",
+      "github_created_at": "2026-05-05T00:00:00Z (API time, not historical)",
+      "api_created_timestamp": "2026-05-05T09:33:30.841515Z"
+    },
+    {
+      "plan_issue_number": 57,
+      "remote_issue_number": 1,
+      "intended_created_date": "2023-03-06T09:25:00",
+      "intended_closed_date": "2023-03-10T09:25:00",
+      "intended_state": "closed",
+      "title": "Guarantor validation crashes when guarantor list is empty",
+      "github_created_at": "2026-05-05T00:00:00Z (API time, not historical)",
+      "api_created_timestamp": "2026-05-05T09:33:30.841517Z"
+    },
+    {
+      "plan_issue_number": 58,
+      "remote_issue_number": 2,
+      "intended_created_date": "2023-03-19T10:35:00",
+      "intended_closed_date": "2023-03-24T10:35:00",
+      "intended_state": "closed",
+      "title": "Payment form accepts zero amount on retry",
+      "github_created_at": "2026-05-05T00:00:00Z (API time, not historical)",
+      "api_created_timestamp": "2026-05-05T09:33:30.841518Z"
+    },
+    {
+      "plan_issue_number": 59,
+      "remote_issue_number": 3,
+      "intended_created_date": "2023-04-01T11:45:00",
+      "intended_closed_date": "2023-04-07T11:45:00",
+      "intended_state": "closed",
+      "title": "Ledger totals drift after deleting a stale receipt",
+      "github_created_at": "2026-05-05T00:00:00Z (API time, not historical)",
+      "api_created_timestamp": "2026-05-05T09:33:30.841520Z"
+    },
+    {
+      "plan_issue_number": 60,
+      "remote_issue_number": 4,
+      "intended_created_date": "2023-04-14T14:55:00",
+      "intended_closed_date": "2023-04-21T14:55:00",
+      "intended_state": "closed",
+      "title": "Receipt list duplicates row after retry flow",
+      "github_created_at": "2026-05-05T00:00:00Z (API time, not historical)",
+      "api_created_timestamp": "2026-05-05T09:33:30.841522Z"
+    },
+    {
+      "plan_issue_number": 61,
+      "remote_issue_number": 5,
+      "intended_created_date": "2023-04-23T15:05:00",
+      "intended_closed_date": "2023-05-01T15:05:00",
+      "intended_state": "closed",
+      "title": "Client update loses branch selection after save",
+      "github_created_at": "2026-05-05T00:00:00Z (API time, not historical)",
+      "api_created_timestamp": "2026-05-05T09:33:30.841524Z"
+    },
+    {
+      "plan_issue_number": 62,
+      "remote_issue_number": 6,
+      "intended_created_date": "2023-05-06T16:15:00",
+      "intended_closed_date": "2023-05-15T16:15:00",
+      "intended_state": "closed",
+      "title": "Savings withdrawal can go negative on partial edit",
+      "github_created_at": "2026-05-05T00:00:00Z (API time, not historical)",
+      "api_created_timestamp": "2026-05-05T09:33:30.841525Z"
+    },
+    {
+      "plan_issue_number": 63,
+      "remote_issue_number": 7,
+      "intended_created_date": "2023-05-19T19:25:00",
+      "intended_closed_date": "2023-05-29T19:25:00",
+      "intended_state": "closed",
+      "title": "Group interest calc uses old rate after approval",
+      "github_created_at": "2026-05-05T00:00:00Z (API time, not historical)",
+      "api_created_timestamp": "2026-05-05T09:33:30.841527Z"
+    },
+    {
+      "plan_issue_number": 64,
+      "remote_issue_number": 8,
+      "intended_created_date": "2023-06-01T09:35:00",
+      "intended_closed_date": "2023-06-05T09:35:00",
+      "intended_state": "closed",
+      "title": "Add installment preview to loan workflow",
+      "github_created_at": "2026-05-05T00:00:00Z (API time, not historical)",
+      "api_created_timestamp": "2026-05-05T09:33:30.841529Z"
+    },
+    {
+      "plan_issue_number": 65,
+      "remote_issue_number": 9,
+      "intended_created_date": "2023-06-10T10:45:00",
+      "intended_closed_date": "2023-06-15T10:45:00",
+      "intended_state": "closed",
+      "title": "Export ledger with optional branch filter",
+      "github_created_at": "2026-05-05T00:00:00Z (API time, not historical)",
+      "api_created_timestamp": "2026-05-05T09:33:30.841531Z"
+    },
+    {
+      "plan_issue_number": 66,
+      "remote_issue_number": 10,
+      "intended_created_date": "2023-06-23T11:55:00",
+      "intended_closed_date": "2023-06-29T11:55:00",
+      "intended_state": "closed",
+      "title": "Improve payment form hints for first-time operators",
+      "github_created_at": "2026-05-05T00:00:00Z (API time, not historical)",
+      "api_created_timestamp": "2026-05-05T09:33:30.841533Z"
+    },
+    {
+      "plan_issue_number": 67,
+      "remote_issue_number": 11,
+      "intended_created_date": "2023-07-06T14:05:00",
+      "intended_closed_date": "2023-07-13T14:05:00",
+      "intended_state": "closed",
+      "title": "Allow receipt reprint from the list page",
+      "github_created_at": "2026-05-05T00:00:00Z (API time, not historical)",
+      "api_created_timestamp": "2026-05-05T09:33:30.841535Z"
+    },
+    {
+      "plan_issue_number": 68,
+      "remote_issue_number": 12,
+      "intended_created_date": "2023-07-19T15:15:00",
+      "intended_closed_date": "2023-07-27T15:15:00",
+      "intended_state": "closed",
+      "title": "Make client search remember the last branch",
+      "github_created_at": "2026-05-05T00:00:00Z (API time, not historical)",
+      "api_created_timestamp": "2026-05-05T09:33:30.841536Z"
+    },
+    {
+      "plan_issue_number": 69,
+      "remote_issue_number": 13,
+      "intended_created_date": "2023-07-28T16:25:00",
+      "intended_closed_date": "2023-08-06T16:25:00",
+      "intended_state": "closed",
+      "title": "Should we document the branch approval flow?",
+      "github_created_at": "2026-05-05T00:00:00Z (API time, not historical)",
+      "api_created_timestamp": "2026-05-05T09:33:30.841538Z"
+    },
+    {
+      "plan_issue_number": 70,
+      "remote_issue_number": 14,
+      "intended_created_date": "2023-08-10T19:35:00",
+      "intended_closed_date": "2023-08-20T19:35:00",
+      "intended_state": "closed",
+      "title": "Docs: add setup notes for local branch testing",
+      "github_created_at": "2026-05-05T00:00:00Z (API time, not historical)",
+      "api_created_timestamp": "2026-05-05T09:33:30.841540Z"
+    }
+  ]
+}
