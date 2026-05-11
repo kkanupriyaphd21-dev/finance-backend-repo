@@ -109,7 +109,15 @@ def main():
             issue_map = json.load(f)
 
     team = load_team()
-    run(["git", "stash", "push", "--include-untracked", "-m", "pr-replay-autostash"])
+    stash_created = False
+    stash_result = subprocess.run(
+        ["git", "stash", "push", "--include-untracked", "-m", "pr-replay-autostash"],
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+    if stash_result.returncode == 0 and "No local changes to save" not in (stash_result.stdout + stash_result.stderr):
+        stash_created = True
 
     try:
         for pr in prs:
@@ -204,7 +212,8 @@ def main():
                         raise RuntimeError(f"merge failed for PR {pr_number}: HTTP {merge_status}")
     finally:
         run(["git", "checkout", "main"])
-        run(["git", "stash", "pop", "--index"])
+        if stash_created:
+            subprocess.run(["git", "stash", "pop", "--index"], check=False)
 
 
 if __name__ == "__main__":

@@ -1,20 +1,32 @@
-# loans/views.py
-# Working file
+"""Loan collections view-model helpers.
 
-# c096 2021-08-08T09:25:05 verify: deployment entrypoint
+The repository is growing out of a generated scaffold. This module stays
+framework-agnostic so the collections logic can be validated independently and
+wired into Django views later.
+"""
 
-# c100 2021-08-17T13:09:33 verify: deployment entrypoint
+try:
+	from .services import CollectionAction, LoanSnapshot, build_branch_report, build_collection_plan
+except ImportError:  # pragma: no cover - direct execution fallback
+	from services import CollectionAction, LoanSnapshot, build_branch_report, build_collection_plan
 
-# c103 2021-08-24T11:42:54 wire the initial project files
 
-# c110 2021-09-09T10:59:43 fix(business): startup settings
+def build_collection_dashboard(branch_code, snapshots):
+	plan = build_collection_plan(snapshots)
+	report = build_branch_report(branch_code, snapshots)
+	return {
+		"branch_code": branch_code,
+		"plan": plan,
+		"summary": report["summary"],
+		"needs_escalation": report["needs_escalation"],
+	}
 
-# c115 2021-09-20T11:54:18 wire the initial project files
 
-# c117 2021-09-25T12:16:32 tighten bootstrap config
+def next_collection_action(snapshots):
+	plan = build_collection_plan(snapshots)
+	return plan[0] if plan else None
 
-# c124 2021-10-11T12:33:21 verify: deployment entrypoint
 
-# c131 2021-10-26T15:50:10 wire the initial project files
+def high_priority_actions(snapshots, minimum_score=60):
+	return [action for action in build_collection_plan(snapshots) if action.priority_score >= minimum_score]
 
-# c138 2021-11-11T10:07:59 fix(business): startup settings
